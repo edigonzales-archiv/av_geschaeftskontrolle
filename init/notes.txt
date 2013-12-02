@@ -1,0 +1,12 @@
+sudo apt-get install libreoffice-sdbc-postgresql
+
+
+
+dbname=xanadu hostaddr=127.0.0.1 port=5432
+
+
+
+Tabellen umbenennen über Tools -> SQL:
+ - ALTER TABLE av_geschaeftskontrolle."Table1" RENAME TO "rechnungsjahr";
+ - PK-Name bleibt leider mit altem Namen.
+
