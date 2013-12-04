@@ -1,0 +1,57 @@
+{
+
+var google_ads = new Array();
+var google_ad;
+var google_radlinks = new Array();
+var google_radlink;
+var google_info = new Object();
+google_radlink = new Object(); 
+google_radlink.n = 1; 
+google_radlink.url = ""; 
+google_radlink.line1 = "MS Access 2007"; 
+google_radlink.term = "MS Access 2007"; 
+google_radlink.url_escaped_term = "MS+Access+2007"; 
+google_radlink.radlink_token = "ChBSnadRAAcbDgp8G5IPAHSQEg5NUyBBY2Nlc3MgMjAwNxoIKAINsG_d5XUoAVITCLz0vtLhk7sCFVIdfAod3BUAqQ"; 
+google_radlinks[0] = google_radlink; 
+google_radlink = new Object(); 
+google_radlink.n = 2; 
+google_radlink.url = ""; 
+google_radlink.line1 = "SQL Database Tutorial"; 
+google_radlink.term = "SQL Database Tutorial"; 
+google_radlink.url_escaped_term = "SQL+Database+Tutorial"; 
+google_radlink.radlink_token = "ChBSnadRAAcbFwp8G5IPAHSQEhVTUUwgRGF0YWJhc2UgVHV0b3JpYWwaCIzdUG-kh-D6KAFSEwi89L7S4ZO7AhVSHXwKHdwVAKk"; 
+google_radlinks[1] = google_radlink; 
+google_radlink = new Object(); 
+google_radlink.n = 3; 
+google_radlink.url = ""; 
+google_radlink.line1 = "Relational Database"; 
+google_radlink.term = "Relational Database"; 
+google_radlink.url_escaped_term = "Relational+Database"; 
+google_radlink.radlink_token = "ChBSnadRAAcbGgp8G5IPAHSQEhNSZWxhdGlvbmFsIERhdGFiYXNlGgjvw_6xDSCuMSgBUhMIvPS-0uGTuwIVUh18Ch3cFQCp"; 
+google_radlinks[2] = google_radlink; 
+google_radlink = new Object(); 
+google_radlink.n = 4; 
+google_radlink.url = ""; 
+google_radlink.line1 = "What Is Database Design"; 
+google_radlink.term = "What Is Database Design"; 
+google_radlink.url_escaped_term = "What+Is+Database+Design"; 
+google_radlink.radlink_token = "ChBSnadRAAcbHQp8G5IPAHSQEhdXaGF0IElzIERhdGFiYXNlIERlc2lnbhoINv7L5DHODh4oAVITCLz0vtLhk7sCFVIdfAod3BUAqQ"; 
+google_radlinks[3] = google_radlink; 
+google_radlink = new Object(); 
+google_radlink.n = 5; 
+google_radlink.url = ""; 
+google_radlink.line1 = "OpenOffice Org Templates"; 
+google_radlink.term = "OpenOffice Org Templates"; 
+google_radlink.url_escaped_term = "OpenOffice+Org+Templates"; 
+google_radlink.radlink_token = "ChBSnadRAAcbIAp8G5IPAHSQEhhPcGVuT2ZmaWNlIE9yZyBUZW1wbGF0ZXMaCNJglZmbvBaCKAFSEwi89L7S4ZO7AhVSHXwKHdwVAKk"; 
+google_radlinks[4] = google_radlink; 
+google_info.feedback_url = "https://www.google.com/url?ct\x3dabg\x26q\x3dhttps://www.google.com/adsense/support/bin/request.py%3Fcontact%3Dabg_afc%26url%3Dhttp://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie%26gl%3DCH%26hl%3Den%26client%3Dca-pub-6958755572607374\x26usg\x3dAFQjCNHj9aVOg-hSbI8NBRsSgM-SJ98pbA";
+var google_attribution_text = "AdChoices";
+var google_is_rtl = false;
+if (window.google_ad_request_done) {
+google_ad_request_done(google_ads);
+}
+if (window.google_radlink_request_done) {
+google_radlink_request_done(google_radlinks);
+}
+}

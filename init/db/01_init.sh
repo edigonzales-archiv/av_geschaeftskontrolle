@@ -17,10 +17,15 @@ DB_SCHEMA="av_geschaeftskontrolle"
 #sudo -u postgres createlang plpgsql $DB_NAME
 #sudo -u postgres psql -d $DB_NAME -c "ALTER SCHEMA public OWNER TO $ADMIN;"
 
+echo "Load postgis"
+sudo -u postgres psql -d $DB_NAME -f /usr/share/postgresql/$PG_VERSION/contrib/postgis-1.5/postgis.sql
+sudo -u postgres psql -d $DB_NAME -f /usr/share/postgresql/$PG_VERSION/contrib/postgis-1.5/spatial_ref_sys.sql
+
+
 echo "Create schema: $DB_SCHEMA"
-sudo -u postgres psql -d $DB_NAME -c "CREATE SCHEMA $DB_SCHEMA;"
-sudo -u postgres psql -d $DB_NAME -c "ALTER SCHEMA $DB_SCHEMA OWNER TO $ADMIN;"
-sudo -u postgres psql -d $DB_NAME -c "GRANT USAGE ON SCHEMA $DB_SCHEMA TO $USER;"
+#sudo -u postgres psql -d $DB_NAME -c "CREATE SCHEMA $DB_SCHEMA;"
+#sudo -u postgres psql -d $DB_NAME -c "ALTER SCHEMA $DB_SCHEMA OWNER TO $ADMIN;"
+#sudo -u postgres psql -d $DB_NAME -c "GRANT USAGE ON SCHEMA $DB_SCHEMA TO $USER;"
 
 
 

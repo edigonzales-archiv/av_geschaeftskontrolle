@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie -->
+<html class="turbohub_2012"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>A Guide to OpenOffice Database by a Non-Techie</title><link rel="stylesheet" type="text/css" href="./A Guide to OpenOffice Database by a Non-Techie_files/hp-hub109163340.css"><link rel="alternate" type="application/rss+xml" title="A Guide to OpenOffice Database by a Non-Techie: Comments" href="http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie?rss">
+<script async="" src="./A Guide to OpenOffice Database by a Non-Techie_files/beacon.js"></script><script src="./A Guide to OpenOffice Database by a Non-Techie_files/quant.js" async="" type="text/javascript"></script><script type="text/javascript" src="./A Guide to OpenOffice Database by a Non-Techie_files/jquery.min.js"></script>
+<script type="text/javascript">jq = $.noConflict();</script>
+
+
+<script type="text/javascript">
+	var hpstdata = {
+hp_tracking_type: 'a',
+hp_tracking_id: 2957680,
+tracking: '?rf=https%3A%2F%2Fwww.google.ch%2F',
+extradata: { tid: 'HubPages', tm: 'rhimpression',  td: ['MzY0NjA5Nw==', 'MzY0NzMxMA==', 'MzI5NjgzOQ==', 'MzAxNjk2NQ==', 'Mzc0MTMyNA==', 'MzI2MjE3Ng==', 'MTMyNzc0', 'MzQwNzM2Nw==']},
+tratio: 0.8999,
+aid: 2957680,
+mviews: 423
+};
+hpstdata.clickoptions = { tid: 'HubPages', tm: 'rhclick', cb: function ( data ) {
+				jq(linknode).trigger("click");
+			}, td: ['MQ==']};
+
+
+	window.google_analytics_uacct = "UA-29092642-1";
+</script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(
+['t2._setAccount', 'UA-286186-1'],
+['t2._setDomainName', '.hubpages.com'],
+['t2._setCustomVar', 5, 'Auth', 'not loggedin', 2],
+['t2._trackPageview'],
+['t1._setAccount', 'UA-29092642-1'],
+['t1._trackPageview']
+);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+})();
+</script><script type="text/javascript" async="" src="./A Guide to OpenOffice Database by a Non-Techie_files/ga.js"></script><script type="text/javascript" async="" src="./A Guide to OpenOffice Database by a Non-Techie_files/tt186063629.js"></script>
+<script type="text/javascript" src="./A Guide to OpenOffice Database by a Non-Techie_files/ss12559086.js"></script>
+<!--[if lt IE 9]><script src="http://z.hubimg.com/s/ht56118478.js"></script><![endif]-->
+<script type="text/javascript">
+boonity_hpads_user_id = '2228856';
+boonity_hpads_category = 'technology';
+</script>
+<script type="text/javascript">
+jq(document).ready(function() {
+	initHub(2957680, false);
+	collectRating(2957680, 56700, '.hubpages.com', 0.03, 1, 0);
+	ssOnLoad();
+	fixHeaderAdWidth();
+});
+</script><meta name="format-detection" content="telephone=no"><meta name="description" content="An OpenOffice Database Guide written by a non-techie covering flat files, relational files, form creation, and queries."><meta property="og:site_name" content="HubPages"><meta property="fb:app_id" content="86382555399"><meta property="og:description" content="An OpenOffice Database Guide written by a non-techie covering flat files, relational files, form creation, and queries."><meta property="og:title" content="A Guide to OpenOffice Database by a Non-Techie"><meta property="og:image" content="http://s1.hubimg.com/u/6095176_100.jpg"><meta property="og:url" content="http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie"><meta property="og:type" content="article"><script type="text/javascript" src="./A Guide to OpenOffice Database by a Non-Techie_files/google_service.js">
+</script>
+<script type="text/javascript">
+  GS_googleAddAdSenseService("ca-pub-6958755572607374");
+  GS_googleEnableAllServices();
+</script><script src="./A Guide to OpenOffice Database by a Non-Techie_files/google_ads.js"></script>
+<script type="text/javascript">
+	GA_googleAddSlot("ca-pub-6958755572607374", "technology_hub_leaderboard_af_728x90");
+	GA_googleAddSlot("ca-pub-6958755572607374", "technology_hub_content_250x250");
+	GA_googleAddSlot("ca-pub-6958755572607374", "technology_hub_share_520x200");
+	GA_googleAddSlot("ca-pub-6958755572607374", "technology_hub_sidebar_120x600");
+	GA_googleAddSlot("ca-pub-6958755572607374", "technology_hub_footer_bf_300X250");
+	GA_googleAddAdSenseSlotAttr("technology_hub_leaderboard_af_728x90","google_ad_channel","0610352406+7552816219");
+	GA_googleAddAdSenseSlotAttr("technology_hub_content_250x250","google_ad_channel","7552816219");
+	GA_googleAddAdSenseSlotAttr("technology_hub_share_520x200","google_ad_channel","7552816219");
+	GA_googleAddAdSenseSlotAttr("technology_hub_sidebar_120x600","google_ad_channel","7552816219");
+	GA_googleAddAdSenseSlotAttr("technology_hub_footer_bf_300X250","google_ad_channel","9199565653+7552816219");
+	GA_googleFetchAds();
+</script>
+<script type="text/javascript" src="./A Guide to OpenOffice Database by a Non-Techie_files/segments.json"></script>
+<script type="text/javascript">
+var _qevents = _qevents || [];
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+</script><script type="text/javascript" src="./A Guide to OpenOffice Database by a Non-Techie_files/osd.js"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}
+.fb_invisible{display:none}
+.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}
+.fb_reset > div{overflow:hidden}
+.fb_link img{border:none}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}
+.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}
+.fb_dialog_content{background:#fff;color:#333}
+.fb_dialog_close_icon{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px;top:8px\9;right:7px\9}
+.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}
+.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}
+.fb_dialog_close_icon:hover{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_close_icon:active{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;_background-image:url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif)}
+.fb_dialog_loader{background-color:#f2f2f2;border:1px solid #606060;font-size:24px;padding:20px}
+.fb_dialog_top_left,
+.fb_dialog_top_right,
+.fb_dialog_bottom_left,
+.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}
+.fb_dialog_top_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}
+.fb_dialog_top_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}
+.fb_dialog_bottom_left{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}
+.fb_dialog_bottom_right{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right,
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}
+.fb_dialog_vert_left,
+.fb_dialog_vert_right{width:10px;height:100%}
+.fb_dialog_vert_left{margin-left:-10px}
+.fb_dialog_vert_right{right:0;margin-right:-10px}
+.fb_dialog_horiz_top,
+.fb_dialog_horiz_bottom{width:100%;height:10px}
+.fb_dialog_horiz_top{margin-top:-10px}
+.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}
+.fb_dialog_iframe{line-height:0}
+.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #3b5998;color:#fff;font-size:14px;font-weight:bold;margin:0}
+.fb_dialog_content .dialog_title > span{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif)
+no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}
+body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}
+.fb_dialog.fb_dialog_mobile.loading{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif)
+white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}
+.fb_dialog.fb_dialog_mobile.loading.centered{max-height:590px;min-height:590px;max-width:500px;min-width:500px}
+#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;left:0;top:0;width:100%;min-height:100%;z-index:10000}
+#fb-root #fb_dialog_ipad_overlay.hidden{display:none}
+.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}
+.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}
+.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%
+}
+.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px
+}
+.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6),
+color-stop(0.5, #355492), to(#2A4887));border:1px solid #29447e;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset,
+rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}
+.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}
+.fb_dialog_content .dialog_content{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}
+.fb_dialog_content .dialog_footer{background:#f2f2f2;border:1px solid #555;border-top-color:#ccc;height:40px}
+#fb_dialog_loader_close{float:left}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}
+.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}
+.fb_iframe_widget{display:inline-block;position:relative}
+.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}
+.fb_iframe_widget iframe{position:absolute}
+.fb_iframe_widget_lift{z-index:1}
+.fb_hide_iframes iframe{position:relative;left:-10000px}
+.fb_iframe_widget_loader{position:relative;display:inline-block}
+.fb_iframe_widget_fluid{display:inline}
+.fb_iframe_widget_fluid span{width:100%}
+.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}
+.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_connect_bar_container div,
+.fb_connect_bar_container span,
+.fb_connect_bar_container a,
+.fb_connect_bar_container img,
+.fb_connect_bar_container strong{background:none;border-spacing:0;border:0;direction:ltr;font-style:normal;font-variant:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal;vertical-align:baseline}
+.fb_connect_bar_container{position:fixed;left:0 !important;right:0 !important;height:42px !important;padding:0 25px !important;margin:0 !important;vertical-align:middle !important;border-bottom:1px solid #333 !important;background:#3b5998 !important;z-index:99999999 !important;overflow:hidden !important}
+.fb_connect_bar_container_ie6{position:absolute;top:expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px")}
+.fb_connect_bar{position:relative;margin:auto;height:100%;width:100%;padding:6px 0 0 0 !important;background:none;color:#fff !important;font-family:"lucida grande", tahoma, verdana, arial, sans-serif !important;font-size:13px !important;font-style:normal !important;font-variant:normal !important;font-weight:normal !important;letter-spacing:normal !important;line-height:1 !important;text-decoration:none !important;text-indent:0 !important;text-shadow:none !important;text-transform:none !important;white-space:normal !important;word-spacing:normal !important}
+.fb_connect_bar a:hover{color:#fff}
+.fb_connect_bar .fb_profile img{height:30px;width:30px;vertical-align:middle;margin:0 6px 5px 0}
+.fb_connect_bar div a,
+.fb_connect_bar span,
+.fb_connect_bar span a{color:#bac6da;font-size:11px;text-decoration:none}
+.fb_connect_bar .fb_buttons{float:right;margin-top:7px}
+.fb_edge_widget_with_comment{position:relative;*z-index:1000}
+.fb_edge_widget_with_comment span.fb_edge_comment_widget{position:absolute}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget{z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget .FB_Loader{left:0;top:1px;margin-top:6px;margin-left:0;background-position:50% 50%;background-color:#fff;height:150px;width:394px;border:1px #666 solid;border-bottom:2px solid #283e6c;z-index:1}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.dark .FB_Loader{background-color:#000;border-bottom:2px solid #ccc}
+.fb_edge_widget_with_comment span.fb_send_button_form_widget.siderender
+.FB_Loader{margin-top:0}
+.fbpluginrecommendationsbarleft,
+.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}
+.fbpluginrecommendationsbarleft{left:10px}
+.fbpluginrecommendationsbarright{right:10px}</style><style type="text/css">a.PIN_1386065065403_pin_it_button_20 {  background-repeat: none!important; background-size: 40px 60px!important; height: 20px!important; margin: 0!important; padding: 0!important; vertical-align: baseline!important; text-decoration: none!important; width: 40px!important; background-position: 0 -20px }
+a.PIN_1386065065403_pin_it_button_20:hover { background-position: 0 0px }
+a.PIN_1386065065403_pin_it_button_20:active, a.PIN_1386065065403_pin_it_button_20.PIN_1386065065403_hazClick { background-position: 0 -40px }
+a.PIN_1386065065403_pin_it_button_inline_20 { position: relative!important; display: inline-block!important; }
+a.PIN_1386065065403_pin_it_button_floating_20 { position: absolute!important; }
+a.PIN_1386065065403_pin_it_button_en_20_red { background-image: url(http://passets.pinterest.com/images/pidgets/pinit_bg_en_rect_red_20_1.png)!important; }
+a.PIN_1386065065403_pin_it_button_en_20_white { background-image: url(http://passets.pinterest.com/images/pidgets/pinit_bg_en_rect_white_20_1.png)!important; }
+a.PIN_1386065065403_pin_it_button_en_20_gray { background-image: url(http://passets.pinterest.com/images/pidgets/pinit_bg_en_rect_gray_20_1.png)!important; }
+a.PIN_1386065065403_pin_it_button_ja_20_red { background-image: url(http://passets.pinterest.com/images/pidgets/pinit_bg_ja_rect_red_20_1.png)!important; }
+a.PIN_1386065065403_pin_it_button_ja_20_white { background-image: url(http://passets.pinterest.com/images/pidgets/pinit_bg_ja_rect_white_20_1.png)!important; }
+a.PIN_1386065065403_pin_it_button_ja_20_gray { background-image: url(http://passets.pinterest.com/images/pidgets/pinit_bg_ja_rect_gray_20_1.png)!important; }
+a.PIN_1386065065403_pin_it_above_20 span.PIN_1386065065403_pin_it_button_count { background: transparent url(http://passets.pinterest.com/images/pidgets/count_north_white_rect_20_1.png) 0 0 no-repeat!important; background-size: 40px 29px!important; position: absolute!important; bottom: 21px!important; left: 0px!important; height: 29px!important; width: 40px!important; font: 12px Arial, Helvetica, sans-serif!important; line-height: 24px!important; text-indent: 0!important;}
+a.PIN_1386065065403_pin_it_button_20 span.PIN_1386065065403_pin_it_button_count { position: absolute!important; color: #777!important; text-align: center!important; text-indent: 0!important; }
+a.PIN_1386065065403_pin_it_beside_20 span.PIN_1386065065403_pin_it_button_count, a.PIN_1386065065403_pin_it_beside_20 span.PIN_1386065065403_pin_it_button_count i { background-color: transparent!important; background-repeat: no-repeat!important; background-image: url(http://passets.pinterest.com/images/pidgets/count_east_white_rect_20_1.png)!important; }
+a.PIN_1386065065403_pin_it_beside_20 span.PIN_1386065065403_pin_it_button_count { padding: 0 3px 0 10px!important; background-size: 45px 20px!important; background-position: 0 0!important; position: absolute!important; top: 0!important; left: 41px!important; height: 20px!important; font: 10px Arial, Helvetica, sans-serif!important; line-height: 20px!important; }
+a.PIN_1386065065403_pin_it_beside_20 span.PIN_1386065065403_pin_it_button_count i { background-position: 100% 0!important; position: absolute!important; top: 0!important; right: -2px!important; height: 20px!important; width: 2px!important; }
+a.PIN_1386065065403_pin_it_button_20.PIN_1386065065403_pin_it_above { margin-top: 20px!important; }
+a.PIN_1386065065403_pin_it_button_28 { background-repeat: none!important; background-size: 56px 84px!important; height: 28px!important; margin: 0!important; padding: 0!important; vertical-align: baseline!important; text-decoration: none!important; width: 56px!important; background-position: 0 -28px }
+a.PIN_1386065065403_pin_it_button_28:hover { background-position: 0 0px }
+a.PIN_1386065065403_pin_it_button_28:active, a.PIN_1386065065403_pin_it_button_28.PIN_1386065065403_hazClick { background-position: 0 -56px }
+a.PIN_1386065065403_pin_it_button_inline_28 { position: relative!important; display: inline-block!important; }
+a.PIN_1386065065403_pin_it_button_floating_28 { position: absolute!important; }
+a.PIN_1386065065403_pin_it_button_en_28_red { background-image: url(http://passets.pinterest.com/images/pidgets/pinit_bg_en_rect_red_28_1.png)!important; }
+a.PIN_1386065065403_pin_it_button_en_28_white { background-image: url(http://passets.pinterest.com/images/pidgets/pinit_bg_en_rect_white_28_1.png)!important; }
+a.PIN_1386065065403_pin_it_button_en_28_gray { background-image: url(http://passets.pinterest.com/images/pidgets/pinit_bg_en_rect_gray_28_1.png)!important; }
+a.PIN_1386065065403_pin_it_button_ja_28_red { background-image: url(http://passets.pinterest.com/images/pidgets/pinit_bg_ja_rect_red_28_1.png)!important; }
+a.PIN_1386065065403_pin_it_button_ja_28_white { background-image: url(http://passets.pinterest.com/images/pidgets/pinit_bg_ja_rect_white_28_1.png)!important; }
+a.PIN_1386065065403_pin_it_button_ja_28_gray { background-image: url(http://passets.pinterest.com/images/pidgets/pinit_bg_ja_rect_gray_28_1.png)!important; }
+a.PIN_1386065065403_pin_it_button_28 span.PIN_1386065065403_pin_it_button_count { position: absolute!important; color: #777!important; text-align: center!important; text-indent: 0!important; }
+a.PIN_1386065065403_pin_it_above_28 span.PIN_1386065065403_pin_it_button_count { background: transparent url(http://passets.pinterest.com/images/pidgets/count_north_white_rect_28_1.png) 0 0 no-repeat!important; background-size: 56px 37px!important; position: absolute!important; bottom: 29px!important; left: 0px!important; height: 37px!important; width: 56px!important; font: 15px Arial, Helvetica, sans-serif!important; line-height: 28px!important; text-indent: 0!important;}
+a.PIN_1386065065403_pin_it_beside_28 span.PIN_1386065065403_pin_it_button_count, a.PIN_1386065065403_pin_it_beside_28 span.PIN_1386065065403_pin_it_button_count i { background-color: transparent!important; background-repeat: no-repeat!important; background-image: url(http://passets.pinterest.com/images/pidgets/count_east_white_rect_28_1.png)!important; }
+a.PIN_1386065065403_pin_it_beside_28 span.PIN_1386065065403_pin_it_button_count { padding: 0 3px 0 10px!important; background-size: 63px 28px!important; background-position: 0 0!important; position: absolute!important; top: 0!important; left: 57px!important; height: 28px!important; font: 12px Arial, Helvetica, sans-serif!important; line-height: 28px!important; }
+a.PIN_1386065065403_pin_it_beside_28 span.PIN_1386065065403_pin_it_button_count i { background-position: 100% 0!important; position: absolute!important; top: 0!important; right: -2px!important; height: 28px!important; width: 2px!important; }
+a.PIN_1386065065403_pin_it_button_28.PIN_1386065065403_pin_it_above { margin-top: 28px!important; }
+a.PIN_1386065065403_follow_me_button, a.PIN_1386065065403_follow_me_button i { background-size: 200px 60px!important; background: transparent url(http://passets.pinterest.com/images/pidgets/bfs1.png) 0 0 no-repeat }
+a.PIN_1386065065403_follow_me_button { color: #444!important; display: inline-block!important; font: bold normal normal 11px/20px "Helvetica Neue",helvetica,arial,san-serif!important; height: 20px!important; margin: 0!important; padding: 0!important; position: relative!important; text-decoration: none!important; text-indent: 19px!important; vertical-align: baseline!important;}
+a.PIN_1386065065403_follow_me_button:hover { background-position: 0 -20px}
+a.PIN_1386065065403_follow_me_button:active  { background-position: 0 -40px}
+a.PIN_1386065065403_follow_me_button b { position: absolute!important; top: 3px!important; left: 3px!important; height: 14px!important; width: 14px!important; background-size: 14px 14px!important; background-image: url(http://passets.pinterest.com/images/pidgets/log1.png)!important; }
+a.PIN_1386065065403_follow_me_button i { position: absolute!important; top: 0!important; right: -4px!important; height: 20px!important; width: 4px!important; background-position: 100% 0px!important; }
+a.PIN_1386065065403_follow_me_button:hover i { background-position: 100% -20px!important;  }
+a.PIN_1386065065403_follow_me_button:active i { background-position: 100% -40px!important; }
+a.PIN_1386065065403_follow_me_button_tall, a.PIN_1386065065403_follow_me_button_tall i { background-size: 400px 84px!important; background: transparent url(http://passets.pinterest.com/images/pidgets/bft1.png) 0 0 no-repeat }
+a.PIN_1386065065403_follow_me_button_tall { color: #444!important; display: inline-block!important; font: bold normal normal 13px/28px "Helvetica Neue",helvetica,arial,san-serif!important; height: 28px!important; margin: 0!important; padding: 0!important; position: relative!important; text-decoration: none!important; text-indent: 33px!important; vertical-align: baseline!important;}
+a.PIN_1386065065403_follow_me_button_tall:hover { background-position: 0 -28px}
+a.PIN_1386065065403_follow_me_button_tall:active  { background-position: 0 -56px}
+a.PIN_1386065065403_follow_me_button_tall b { position: absolute!important; top: 5px!important; left: 10px!important; height: 18px!important; width: 18px!important; background-size: 18px 18px!important; background-image: url(http://passets.pinterest.com/images/pidgets/smt1.png)!important; }
+a.PIN_1386065065403_follow_me_button_tall i { position: absolute!important; top: 0!important; right: -10px!important; height: 28px!important; width: 10px!important; background-position: 100% 0px!important; }
+a.PIN_1386065065403_follow_me_button_tall:hover i { background-position: 100% -28px!important;  }
+a.PIN_1386065065403_follow_me_button_tall:active i { background-position: 100% -56px!important; }
+span.PIN_1386065065403_embed_pin { display: inline-block!important; text-align: center!important; width: 237px!important; overflow: hidden!important; vertical-align: top!important; }
+span.PIN_1386065065403_embed_pin.PIN_1386065065403_fancy { background: #fff!important; box-shadow: 0 0 3px #aaa!important; border-radius: 3px!important; }
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_link { display: block!important;  margin: 0 auto!important; padding: 0!important; position: relative!important;  line-height: 0}
+span.PIN_1386065065403_embed_pin img { border: 0!important; margin: 0!important; padding: 0!important;}
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_link i.PIN_1386065065403_repin { left: 10px!important; top: 10px!important; position: absolute!important; height: 33px!important; width: 64px!important; background-size: 64px 99px!important; background: transparent url(http://passets.pinterest.com/images/pidgets/repin1.png) }
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_link i.PIN_1386065065403_repin_ja { left: 10px!important; top: 10px!important; position: absolute!important; height: 33px!important; width: 64px!important; background-size: 64px 99px!important; background: transparent url(http://passets.pinterest.com/images/pidgets/ja_repin1.png) }
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_link i.PIN_1386065065403_repin:hover { background-position: 0 -33px!important; }
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_link i.PIN_1386065065403_repin.PIN_1386065065403_hazClick { background-position: 0 -66px!important; }
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_link i.PIN_1386065065403_getThis { display: none }
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_link:hover i.PIN_1386065065403_getThis, span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_link:hover i.PIN_1386065065403_getThis i { background: transparent url(http://passets.pinterest.com/images/pidgets/bfs1.png) }
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_link:hover i.PIN_1386065065403_getThis { color: #555!important; display: inline-block!important; font: normal normal normal 11px/20px "Helvetica Neue",helvetica,arial,san-serif!important; height: 20px!important; margin: 0!important; padding: 0 1px 0 5px!important; position: absolute!important; bottom: 10px!important; right: 10px!important; text-decoration: none!important;  }
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_link:hover i.PIN_1386065065403_getThis:hover { background-position: 0 -20px }
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_link:hover i.PIN_1386065065403_getThis i { position: absolute!important; top: 0!important; right: -4px!important; height: 20px!important; width: 5px!important; background-position: 100% 0px }
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_link:hover i.PIN_1386065065403_getThis:hover i { background-position: 100% -20px }
+span.PIN_1386065065403_embed_pin span.PIN_1386065065403_embed_pin_desc { color: #333!important; white-space: normal!important; border-bottom: 1px solid #eee!important; display: block!important; font-family: "Helvetica Neue", arial, sans-serif!important; font-size: 12px!important; line-height: 17px!important; padding: 10px!important; text-align: left!important; }
+span.PIN_1386065065403_embed_pin span.PIN_1386065065403_embed_pin_attrib, span.PIN_1386065065403_embed_pin span.PIN_1386065065403_embed_pin_text_container { color: #a7a7a7!important; font-family: "Helvetica", sans-serif!important; font-size: 10px!important; line-height: 18px!important; font-weight: bold!important; display: block!important;}
+span.PIN_1386065065403_embed_pin span.PIN_1386065065403_embed_pin_attrib img.PIN_1386065065403_embed_pin_attrib_icon { height: 16px!important; width: 16px!important; vertical-align: middle!important; margin-right: 5px!important; float: left!important;}
+span.PIN_1386065065403_embed_pin span.PIN_1386065065403_embed_pin_attrib a { color: #a7a7a7!important; text-decoration: none!important;}
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_text, span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_text span.PIN_1386065065403_embed_pin_text_container { position: relative!important; text-decoration: none!important; display: block!important; font-weight: bold!important; color: #b7b7b7!important; font-family: "Helvetica Neue", arial, sans-serif!important; font-size: 11px!important; line-height: 14px!important; height: 39px!important; text-align: left!important; }
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_text { padding: 5px 0 0 7px!important; }
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_text:hover { background: #eee!important;}
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_text img.PIN_1386065065403_embed_pin_text_avatar { border-radius: 2px!important; overflow: hidden!important; height: 30px!important; width: 30px!important; vertical-align: middle!important; margin-right: 5px!important; float: left!important;}
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_text span.PIN_1386065065403_embed_pin_text_container em.PIN_1386065065403_embed_pin_text_container_em { font-family: inherit!important; display: block!important; color: #717171!important; font-style: normal!important; width: 180px!important; text-overflow: ellipsis!important; overflow: hidden!important; white-space: nowrap!important; }
+span.PIN_1386065065403_embed_pin a.PIN_1386065065403_embed_pin_text b.PIN_1386065065403_embed_pin_link_shield { position: absolute!important; top: 0!important; left: 0!important; height: 100%!important; width: 100%!important; }
+span.PIN_1386065065403_embed_grid { display: inline-block!important; margin: 0!important; padding:10px 0!important; position: relative!important; text-align: center}
+span.PIN_1386065065403_embed_grid.PIN_1386065065403_fancy { background: #fff!important; box-shadow: 0 0 3px #aaa!important; border-radius: 3px!important; }
+span.PIN_1386065065403_embed_grid span.PIN_1386065065403_embed_grid_hd { display: block!important; margin: 0 10px!important; padding: 0!important; height: 45px!important; position: relative!important; background: #fff}
+span.PIN_1386065065403_embed_grid span.PIN_1386065065403_embed_grid_hd a.PIN_1386065065403_avatar { position: absolute!important; top: 0!important; left: 0!important; height: 36px!important; width: 36px!important; }
+span.PIN_1386065065403_embed_grid span.PIN_1386065065403_embed_grid_hd a.PIN_1386065065403_avatar::before { position: absolute!important; content:""!important; z-index: 2!important; top: 0!important; left: 0!important; right: 0!important; bottom: 0!important; box-shadow: inset 0 0 2px #888!important;  border-radius: 3px!important; }
+span.PIN_1386065065403_embed_grid span.PIN_1386065065403_embed_grid_hd a.PIN_1386065065403_avatar img { position: relative!important; height: 36px!important; width: 36px!important; margin: 0!important; padding: 0!important; border-radius: 3px!important; border: none!important;}
+span.PIN_1386065065403_embed_grid span.PIN_1386065065403_embed_grid_hd a { text-decoration: none!important; background: transparent!important; cursor: pointer!important; white-space: nowrap!important; position: absolute!important; left: 44px!important; text-align: left!important; overflow: hidden!important; text-overflow: ellipsis!important; }
+span.PIN_1386065065403_embed_grid span.PIN_1386065065403_embed_grid_hd a:hover { text-decoration: none!important; background: #fff!important; }
+span.PIN_1386065065403_embed_grid span.PIN_1386065065403_embed_grid_hd a:active { text-decoration: none!important; background: #fff!important; }
+span.PIN_1386065065403_embed_grid span.PIN_1386065065403_embed_grid_hd a.PIN_1386065065403_embed_grid_first { top: 2px!important; font-family: helvetica, sans-serif!important; font-weight: bold!important; color:#333!important; font-size: 14px!important; line-height: 16px!important; }
+span.PIN_1386065065403_embed_grid span.PIN_1386065065403_embed_grid_hd a.PIN_1386065065403_embed_grid_second { bottom: 11px!important; font-family: helvetica, sans-serif!important; color:#8e8e8e!important; font-size: 12px!important; line-height: 14px!important; }
+span.PIN_1386065065403_embed_grid span.PIN_1386065065403_embed_grid_hd a.PIN_1386065065403_embed_grid_mid { top: 12px!important; font-family: helvetica, sans-serif!important; font-weight: bold!important; color:#333!important; font-size: 14px!important; line-height: 16px!important; }
+span.PIN_1386065065403_embed_grid span.PIN_1386065065403_embed_grid_bd { display:block!important; margin: 0 10px!important; border-radius: 2px!important; position: relative!important; overflow: hidden }
+span.PIN_1386065065403_embed_grid span.PIN_1386065065403_embed_grid_scrolling_okay { overflow: auto!important; }
+span.PIN_1386065065403_embed_grid span.PIN_1386065065403_embed_grid_bd span.PIN_1386065065403_embed_grid_ct { display:block!important; position: relative!important; overflow: hidden!important; }
+span.PIN_1386065065403_embed_grid span.PIN_1386065065403_embed_grid_bd a.PIN_1386065065403_embed_grid_th { cursor: pointer!important; display: inline-block!important; position: absolute!important; overflow: hidden!important; }
+span.PIN_1386065065403_embed_grid span.PIN_1386065065403_embed_grid_bd a.PIN_1386065065403_embed_grid_th::before { position: absolute!important; content:""!important; z-index: 2!important; top: 0!important; left: 0!important; right: 0!important; bottom: 0!important; box-shadow: inset 0 0 2px #888!important; }
+span.PIN_1386065065403_embed_grid span.PIN_1386065065403_embed_grid_bd a.PIN_1386065065403_embed_grid_th img.PIN_1386065065403_embed_grid_img { border: none!important; position: absolute!important; top: 50%!important; left: 0!important; }
+a.PIN_1386065065403_embed_grid_ft { text-shadow: 0 1px #fff!important; display: block!important; text-align: center!important; border: 1px solid #ccc!important; margin: 10px 10px 0!important; height: 31px!important; line-height: 30px!important;border-radius: 2px!important; text-decoration: none!important; font-family: Helvetica!important; font-weight: bold!important; font-size: 13px!important; color: #746d6a!important; background: #f4f4f4 url(http://passets.pinterest.com/images/pidgets/board_button_link.png) 0 0 repeat-x}
+a.PIN_1386065065403_embed_grid_ft:hover { text-decoration: none!important; background: #fefefe url(http://passets.pinterest.com/images/pidgets/board_button_hover.png) 0 0 repeat-x}
+a.PIN_1386065065403_embed_grid_ft:active { text-decoration: none!important; background: #e4e4e4 url(http://passets.pinterest.com/images/pidgets/board_button_active.png) 0 0 repeat-x}
+a.PIN_1386065065403_embed_grid_ft span.PIN_1386065065403_embed_grid_ft_logo { vertical-align: top!important; display: inline-block!important; margin-left: 2px!important; height: 30px!important; width: 66px!important; background: transparent url(http://passets.pinterest.com/images/pidgets/board_button_logo.png) 50% 48% no-repeat!important; }
+.PIN_1386065065403_hidden { display:none!important; }</style></head><body class="hub hubpage"><!--[if lt IE 8]><script type="text/javascript">
+			jQuery("body").addClass("browser_ie7");
+		</script><![endif]--><noscript>
+  &lt;img src="http://b.scorecardresearch.com/p?c1=2&amp;c2=6035233&amp;cv=2.0&amp;cj=1" /&gt;
+</noscript>
+<script type="text/javascript">
+	initializeFollowButtons();
+	setupNavMenu();
+</script>
+<div id="header_wrap"><div id="header"><div id="site_title"><a tabindex="20" href="http://hubpages.com/" title="HubPages">HubPages</a></div><div id="header_search"><form action="http://samusaran.hubpages.com/search/" name="search_form" id="search_form" autocomplete="off"><input tabindex="21" id="search_input" name="s" accesskey="s" type="text" size="24" value="Search" onfocus="if(this.value==&#39;Search&#39;){jq(this).attr(&#39;value&#39;,&#39;&#39;); jq(this).css(&#39;color&#39;,&#39;#333&#39;);}"><div id="the_auto_comp_box" class="auto_comp_box" style="display: none;"></div><input tabindex="22" id="search_button" type="submit" value="search"></form><script type="text/javascript">
+jq('#search_form').bind('submit',function(event) {
+	if (jq.trim(jq('#search_input').val())=='') {
+		event.stopPropagation(); return false;
+	}}
+);
+initAutoComplete(10);
+</script></div><ul id="nav" class="hoverok"><li id="header_explore" class="singleton"><a tabindex="24" href="http://hubpages.com/topics/all/1">explore</a></li><li id="header_signin" class="singleton"><a tabindex="46" id="signin_span" href="https://hubpages.com/signin/">sign in</a></li><li id="header_join" class="singleton"><a tabindex="47" id="join_span" href="https://hubpages.com/user/new/">join now</a></li><li id="header_help" class="singleton rightmost"><a tabindex="46" id="help_span" href="http://hubpages.com/help-wizard/">help</a></li></ul></div></div>	<div id="container_wrap">
+		<div id="container">
+
+	<div class="moduleAdSpot header_ad" style="width: auto; left: 0px;">
+<div style="padding-bottom:5px"><script type="text/javascript">
+GA_googleFillSlot("technology_hub_leaderboard_af_728x90");
+</script><script src="./A Guide to OpenOffice Database by a Non-Techie_files/ads"></script><div id="google_ads_div_technology_hub_leaderboard_af_728x90_ad_wrapper">
+<div id="google_ads_div_technology_hub_leaderboard_af_728x90_ad_container" style="display:inline-block;">
+<ins style="width: 728px; height: 90px; display: inline-table; position: relative; border: 0px;"><ins style="width: 728px; height: 90px; display: block; position: relative; border: 0px;"><iframe id="google_ads_iframe_technology_hub_leaderboard_af_728x90" name="google_ads_iframe_technology_hub_leaderboard_af_728x90" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; position: absolute; top: 0px; left: 0px;"></iframe></ins></ins></div>
+</div>
+<script>GA_googleCreateDomIframe("google_ads_div_technology_hub_leaderboard_af_728x90_ad_container" ,"technology_hub_leaderboard_af_728x90");</script>
+</div><div style="width:100%; height:8px"></div>
+</div>
+	<div id="content" class="hub_body"><div class="flag_button_box" id="flag_box_2957680"><a class="flag_button" onclick="return showFlagHub(2957680);" href="http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie#"><span class="icon flag"></span><span class="line-correction"></span>report</a></div><div id="crumbs" class="">
+<ul id="crumbslist">
+<li class="" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="http://samusaran.hubpages.com/" itemprop="url"><span class="crumbspan" itemprop="title">SamusAran</span></a><em>»</em></li><li class="final" itemscope="itemscope" itemtype="http://data-vocabulary.org/Breadcrumb" itemprop="child"><a href="http://samusaran.hubpages.com/#mycontent_technology_hubs" itemprop="url"><span class="crumbspan" itemprop="title">Technology</span></a></li>
+</ul>
+</div><article><div id="title"><div class="author_attribution">
+<div class="author_attribution_img">
+
+<img src="./A Guide to OpenOffice Database by a Non-Techie_files/5869023_50.jpg" alt="SamusAran profile image" title="SamusAran profile image">
+</div>
+<div class="author_byline">
+by <a href="http://samusaran.hubpages.com/" rel="author">SamusAran</a><br>
+5 Followers
+</div>
+</div><div class="title_box"><div class=""><h1>A Guide to OpenOffice Database by a Non-Techie</h1></div></div></div><div id="hub_container"><div id="hub_main"><div class="moduleYieldBuild moduleAdSpot" style="clear:left;"></div><div class="floatclear"></div><div class="modfloat right firstright"><div id="mod_new14" class="module moduleAdSpot color0">
+<div style="padding-bottom:5px"><script type="text/javascript">
+GA_googleFillSlot("technology_hub_content_250x250");
+</script><script src="./A Guide to OpenOffice Database by a Non-Techie_files/ads(1)"></script><div id="google_ads_div_technology_hub_content_250x250_ad_wrapper">
+<div id="google_ads_div_technology_hub_content_250x250_ad_container" style="display:inline-block;">
+<ins style="width: 250px; height: 250px; display: inline-table; position: relative; border: 0px;"><ins style="width: 250px; height: 250px; display: block; position: relative; border: 0px;"><iframe id="google_ads_iframe_technology_hub_content_250x250" name="google_ads_iframe_technology_hub_content_250x250" width="250" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; position: absolute; top: 0px; left: 0px;"></iframe></ins></ins></div>
+</div>
+<script>GA_googleCreateDomIframe("google_ads_div_technology_hub_content_250x250_ad_container" ,"technology_hub_content_250x250");</script>
+</div>
+</div></div><div class="modfloat full"><div id="mod_17668965" class="module moduleText color0"><h2 class="subtitle">Introduction</h2><div style="" class="txtd" id="txtd_17668965"><p>OpenOffice Database, also known as OOo Base, is a free, open-source database that you can download from <a href="http://www.openoffice.org/">OpenOffice.org</a>. This guide was written by a non-techie, so please understand that some information might be flawed. This is by far not exhaustive but only meant to be an introduction that might help others with the speed bumps I found when trying to learn OpenOffice. I hope this guide will prove useful to another beginner. </p></div></div><div id="mod_17668914" class="module moduleText color0"><h2 class="subtitle">Contents</h2><div style="" class="txtd" id="txtd_17668914"><ul><li>Creating a Flat File</li>
+<li>Creating Relationships</li>
+<li>Adding Data/Creating a Form</li>
+<li>Modifying a Form</li>
+<li>Creating a Query</li>
+<li>Quick Search</li>
+<li>Helpful Links</li>
+</ul><p></p></div></div></div><div class="floatclear"></div><div class="modfloat right"><div id="mod_17563689" class="module moduleImage"><div id="imgs_17563689">				<div id="img_url_6095176" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6095176_f248.jpg" width="248" height="155" class="half_frame" alt=""><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s1.hubimg.com/u/6095176_f248.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=" class="pinit_btn" style="display:none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6095176">
+					
+				</div></div></div></div><div class="modfloat full"><div id="mod_17562256" class="module moduleText color0"><h2 class="subtitle">Creating A Flat File</h2><div style="" class="txtd" id="txtd_17562256"><p>A flat file is a file that contains one table. The fields of this table can be filled with information you want to group together, such as Customer Names, Phone Numbers, and Email Addresses. Though the wizard can be used to create a table, I found that I prefer creating my own. To create a database without the wizard, when you first start a new database, uncheck the box that says “Open the database for editing” and click on “Create table in design view...” after the database opens.</p>
+<p>The fields you wish to include in your table are entered in the left column and the field type will be selected to the right of that. One field should be designated as your Primary Key. A Primary Key is a field that distinguishes one record from another. It can be numbers, letters, or a combination of the two, but it must be unique. For example, if you were creating a table to keep track of your customers' information, a name would not be a suitable Primary Key because one customer may have the same name as another. You would want to create a unique customer ID for each individual.</p>
+<p>In the example below, I chose “Integer” as my field type for “CustomerID”. I did this so I could choose “Yes” for the “AutoValue” option at the bottom of the window. By choosing Auto Value, not only have I saved myself time, because the database will supply a number for me automatically, but I have made sure that I will not have the same number for any of my records because Auto Value will use the next consecutive number for each new record. I then right-clicked the area to the left of the “CustomerID” field and chose “Primary Key” from the menu.</p>
+<p>Link: Flat file tutorial  <a href="http://www.youtube.com/watch?v=63iZnw0S6tE">http://www.youtube.com/watch?v=63iZnw0S6tE</a></p></div></div><div id="mod_17562255" class="module moduleImage"><h2 class="subtitle">Customer Table</h2><div id="imgs_17562255">				<div id="img_url_6094981" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6094981_f520.jpg" width="520" height="325" class="full" alt=""><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s2.hubimg.com/u/6094981_f520.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=" class="pinit_btn" style="display: none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()" style="display: none;">See all 21 photos</div>
+				</div>				<div class="caption_full" id="img_desc_6094981">
+					
+				</div></div></div></div><div class="floatclear"></div><div class="modfloat right"><div id="mod_17577523" class="module moduleImage"><h2 class="subtitle">Product Table</h2><div id="imgs_17577523">				<div id="img_url_6099905" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6099905_f260.jpg" width="260" height="163" class="half" alt=""><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s2.hubimg.com/u/6099905_f260.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=" class="pinit_btn" style="display: none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()" style="display: none;">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6099905">
+					
+				</div></div></div><div id="mod_17577609" class="module moduleImage right_mod_margin"><h2 class="subtitle">Order Table</h2><div id="imgs_17577609">				<div id="img_url_6099932" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6099932_f248.jpg" width="248" height="155" class="half_frame" alt=""><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s1.hubimg.com/u/6099932_f248.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=" class="pinit_btn" style="display: none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()" style="display: none;">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6099932">
+					
+				</div></div></div></div><div class="modfloat full"><div id="mod_17568917" class="module moduleText color0"><h2 class="subtitle">Relational Database</h2><div style="" class="txtd" id="txtd_17568917"><p>So, I have created a customer table and if that is all I wanted and needed then I would be done. I could now add my data by left-clicking the table from the main screen or creating a form. I could search through the data with a query or build a report. But what if I wanted to also create another table for the products I sell and then link which customer bought what when? I would want to create two more tables, one to catalog my products and another to catalog my orders.</p>
+<p>My Product Table consists of ProductID (Integer), ProductName (Text), and ProductPrice (Number). By selecting "Number" for the field type for ProductPrice, I can add some decimal space.</p>
+<p>The Order Table will be my bridge between the Product Table and Customer Table. It contains OrderID (Integer), Date (Date), CustomerID (Integer), ProductID (Integer), and Quantity (Integer). I want to keep the field types for both Cusomer and Product the same as they are on the other two tables; in this case, they are integers.</p></div></div></div><div class="floatclear"></div><div class="modfloat right"><div id="mod_17577993" class="module moduleImage"><div id="imgs_17577993">				<div id="img_url_6100015" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6100015_f260.jpg" width="260" height="163" class="half" alt=""><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s4.hubimg.com/u/6100015_f260.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=" class="pinit_btn" style="display: none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()" style="display: none;">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6100015">
+					
+				</div></div></div><div id="mod_17725604" class="module moduleAmazon color2"><div class="single_product"><div class="product_image"><a rel="nofollow" href="http://www.amazon.com/Call-Duty-Ghosts-Xbox-360/dp/B002I098JE%3FSubscriptionId%3D14H876SFAKFS0EHBYQ02%26tag%3Dhubp0c1e3-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB002I098JE"><img src="./A Guide to OpenOffice Database by a Non-Techie_files/51mTNEeimDL._SL160_.jpg" border="0" alt="Call of Duty: Ghosts - Xbox 360" width="130" height="160"></a></div><div class="product_details"><a rel="nofollow" href="http://www.amazon.com/Call-Duty-Ghosts-Xbox-360/dp/B002I098JE%3FSubscriptionId%3D14H876SFAKFS0EHBYQ02%26tag%3Dhubp0c1e3-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB002I098JE">Call of Duty: Ghosts - Xbox 360</a><div class="price"><strong>Amazon Price:</strong> $44.99<br>List Price: $59.99</div></div><img src="./A Guide to OpenOffice Database by a Non-Techie_files/ir" width="1" height="1" border="0" alt="" class="imp_tracker" style="border:none !important; margin:0px !important;"></div></div></div><div class="modfloat full"><div id="mod_17578013" class="module moduleText color0"><div style="" class="txtd" id="txtd_17578013"><p>Now that I have finished creating my other two tables, I need to create my relationships. Go to your main window and look at the toolbar at the top. Find "Tools" and click on "Relationships". You will be prompted upon entering which tables you would like to add. Add any tables that you are linking together.</p>
+<p>I have added my Customer, Product, and Order Tables. To link my CustomerID from Customer Table to my Order Table, I clicked on the CustomerID in the Customer Table and dragged it to the CustomerID in the Order Table. A line should form between them. I did the same for ProductID. This should create a link between these tables.</p>
+<p>Link: <a href="http://www.youtube.com/watch?v=h770gCE2OyU">http://www.youtube.com/watch?v=h770gCE2OyU</a> (though this tutorial is in Italian, I would recommend watching it if you find yourself stuck.</p></div></div><div id="mod_17578879" class="module moduleImage"><div id="imgs_17578879">				<div id="img_url_6100288" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6100288_f520.jpg" width="520" height="325" class="full" alt=""><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s1.hubimg.com/u/6100288_f520.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=" class="pinit_btn" style="display: none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()" style="display: none;">See all 21 photos</div>
+				</div>				<div class="caption_full" id="img_desc_6100288">
+					
+				</div></div></div></div><div class="floatclear"></div><div class="modfloat right"><div id="mod_17570328" class="module moduleImage"><div id="imgs_17570328">				<div id="img_url_6131226" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6131226_f260.jpg" width="260" height="163" class="half" alt=""><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s3.hubimg.com/u/6131226_f260.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=" class="pinit_btn" style="display: none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()" style="display: none;">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6131226">
+					
+				</div></div></div><div id="mod_17664553" class="module moduleImage right_mod_margin"><div id="imgs_17664553">				<div id="img_url_6130169" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6130169_f260.jpg" width="260" height="163" class="half" alt=""><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s2.hubimg.com/u/6130169_f260.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=" class="pinit_btn" style="display:none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6130169">
+					
+				</div></div></div><div id="mod_17664853" class="module moduleImage right_mod_margin"><div id="imgs_17664853">				<div id="img_url_6130251" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6130251_f260.jpg" width="260" height="163" class="half" alt=""><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s4.hubimg.com/u/6130251_f260.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=" class="pinit_btn" style="display: none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()" style="display: none;">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6130251">
+					
+				</div></div></div></div><div class="modfloat full"><div id="mod_17576234" class="module moduleText color0"><h2 class="subtitle">Adding Data</h2><div style="" class="txtd" id="txtd_17576234"><p>To add your data, you can open your table from the main menu or you can create a form. I have added some data to my Order Table to the right by going to the main window and left clicking my table. The numbers typed in for CustomerID and ProductID were the corresponding numbers of the customers and the products they bought. For example, if John's customer ID was 5 and he bought lollipops with the product ID of 2, then I typed in 5 for Customer and 2 for Product. Note: Your AutoValue will start your records at "0", but you can change it to "1" once you have typed in the information for one record.</p>
+<p><strong><u>Simple Form Creation:</u></strong></p>
+<p><strong></strong>When creating a form, I recommend using the wizard. You can find the wizard by clicking the "Form" tab from the first window and looking at your options up top. Once in the wizard, you can choose which table you want to work from. To create my simple form, I have chosen my Customer Table. You can select fields one-by-one to move to your form or you choose all of your fields by selecting the "&gt;&gt;" button.</p>
+<p>I am going to keep my form simple and skip the subform. Information for subforms can be found at the link section below. Instead, I am going to skip down to "Arrange Controls" and choose the template on the left and then skip to "Apply Styles" to find a color I like. The very last tab, "Set Name", will give me the option to modify my form. You can skip this if you are not doing anything special to your form. I selected this so I can add a combo box to one of my fields.</p>
+<p>Subform - <a href="http://www.linuxtopia.org/online_books/office_guides/openoffice_3_getting_started_guide/openoffice_starter_Creating_a_database_form_Using_the_Wizard_to_create_a_form.html">http://www.linuxtopia.org</a></p></div></div><div id="mod_17665776" class="module moduleImage"><h2 class="subtitle">Modifying Form</h2><div id="imgs_17665776">				<div id="img_url_6130640" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6130640_f520.jpg" width="520" height="325" class="full" alt=""><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s1.hubimg.com/u/6130640_f520.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=" class="pinit_btn" style="display: none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()" style="display: none;">See all 21 photos</div>
+				</div>				<div class="caption_full" id="img_desc_6130640">
+					
+				</div></div></div></div><div class="floatclear"></div><div class="modfloat right"><div id="mod_17665124" class="module moduleImage"><div id="imgs_17665124">				<div id="img_url_6130375" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6130375_f260.jpg" width="260" height="163" class="half" alt="Ungroup (Step 1)" title="Ungroup (Step 1)"><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s4.hubimg.com/u/6130375_f260.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=Ungroup%20(Step%201)" class="pinit_btn" style="display: none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()" style="display: none;">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6130375">
+					Ungroup (Step 1)
+				</div>				<div id="img_url_6130511" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6130511_f260.jpg" width="260" height="163" class="half" alt="Combo Box (Step 2)" title="Combo Box (Step 2)"><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s4.hubimg.com/u/6130511_f260.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=Combo%20Box%20(Step%202)" class="pinit_btn" style="display: none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()" style="display: none;">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6130511">
+					Combo Box (Step 2)
+				</div>				<div id="img_url_6130512" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6130512_f260.jpg" width="260" height="163" class="half" alt="General Tab (Step 3)" title="General Tab (Step 3)"><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s1.hubimg.com/u/6130512_f260.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=General%20Tab%20(Step%203)" class="pinit_btn" style="display: none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()" style="display: none;">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6130512">
+					General Tab (Step 3)
+				</div>				<div id="img_url_6130535" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6130535_f260.jpg" width="260" height="163" class="half" alt="Data Tab (Step 4)" title="Data Tab (Step 4)"><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s4.hubimg.com/u/6130535_f260.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=Data%20Tab%20(Step%204)" class="pinit_btn" style="display:none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()" style="display: none;">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6130535">
+					Data Tab (Step 4)
+				</div>				<div id="img_url_6130564" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6130564_f260.jpg" width="260" height="163" class="half" alt="SQL (Step 5)" title="SQL (Step 5)"><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s1.hubimg.com/u/6130564_f260.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=SQL%20(Step%205)" class="pinit_btn" style="display:none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()" style="display: none;">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6130564">
+					SQL (Step 5)
+				</div></div></div></div><div class="modfloat full"><div id="mod_17665796" class="module moduleText color0"><h2 class="subtitle">Creating a Combo Box</h2><div style="" class="txtd" id="txtd_17665796"><p>Creating a Combo Box allows you to create a field that has a drop down list from which you can choose an entry or enter your own. In this example, I created one for my "State" field but you could find many different reasons to create one of your own. You can edit your form by right clicking the form from the form tab on the first window or selecting the "Modify Form" in the last step of the wizard.</p>
+<p>1. Right-click the field you want to modify and select "Group". Choose "Ungroup" in this menu. Ungroup will separate the text, in this case "State", from your field box. Note: Left-click anywhere on your screen before continuing to the next step.</p>
+<p>2. Right-click on the field box. You should be able to find a "Replace With" under "Control" and "Form". If "Replace With" is not there, click the screen somewhere away from the field box and try again. You can choose many different options here but I am choosing a "Combo Box". A Combo Box will allow me to type or to select something I have typed in the past.</p>
+<p>3. Double left-click on the field box. Scroll down the General Tab until you find the "Dropdown" option. Change it to yes.</p>
+<p>4. While this menu is still open, switch to the Data Tab. Change "Type of Input Required" to "SQL" and click on the "..." button found to the right of "List Content".</p>
+<p>5. I added the Customer Table and double-clicked the "State" field. This will add the "State" field to my bottom window. I changed my "Sort" option to "Ascending" so my entries will remain alphabetical. Save and exit.</p>
+<p>When you are done modifying your form, exit out. You can now use your form to enter your data.</p>
+<p>Link: <a href="http://www.youtube.com/watch?feature=endscreen&NR=1&v=XmyeSxHe44Y">http://www.youtube.com/watch?feature=endscreen&amp;NR=1&amp;v=XmyeSxHe44Y</a> (Italian, but useful)</p></div></div></div><div class="floatclear"></div><div class="modfloat right"><div id="mod_17725549" class="module moduleEbay color2">
+
+<div class="single_product">
+  <div class="product_image">
+    <a rel="nofollow" onclick="javascript:urchinTracker(&#39;/analytics/ebay_regular&#39;);" href="http://rover.ebay.com/rover/1/711-53200-19255-0/1?ff3=2&toolid=10044&campid=5337040531&customid=2957680-17725549&lgeo=1&vectorid=229466&item=221327572950">
+      <img border="0" src="./A Guide to OpenOffice Database by a Non-Techie_files/140.jpg" alt="Core i7-3770k Custom Gaming Computer">
+    </a>
+  </div>
+  <div class="product_details">
+    <a rel="nofollow" onclick="javascript:urchinTracker(&#39;/analytics/ebay_regular&#39;);" href="http://rover.ebay.com/rover/1/711-53200-19255-0/1?ff3=2&toolid=10044&campid=5337040531&customid=2957680-17725549&lgeo=1&vectorid=229466&item=221327572950">Core i7-3770k Custom Gaming Computer </a>
+    <div class="price"><strong>Current Bid:</strong> $500.00 </div>
+  </div>
+</div>
+<a rel="nofollow" href="http://rover.ebay.com/rover/1/711-53200-19255-0/1?type=1&campid=5337040531&toolid=10001&customid=2957680-17725549" target="_top"><img src="./A Guide to OpenOffice Database by a Non-Techie_files/image-2103840-5902068" width="1" height="1" border="0" alt="" class="imp_tracker"><span class="ebaylogo"></span></a><img style="text-decoration:none;border:0;padding:0;margin:0;" class="imp_tracker" src="./A Guide to OpenOffice Database by a Non-Techie_files/1"></div></div><div class="modfloat full"><div id="mod_17666857" class="module moduleText color0"><h2 class="subtitle">Queries</h2><div style="" class="txtd" id="txtd_17666857"><p>After filling in data for my Customer, Order, and Product Tables, I can now use a Query to search my data for particular information, define criterion to parse out specific records, or even multiply or sum totals. I will not be using the Wizard because I find, by using "Create Query in Design View", I have much more control over what I can do with the data I have.</p></div></div></div><div class="floatclear"></div><div class="modfloat right"><div id="mod_17668127" class="module moduleImage"><h2 class="subtitle">Creating a Query</h2><div id="imgs_17668127">				<div id="img_url_6131501" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6131501_f260.jpg" width="260" height="163" class="half" alt="Step 1" title="Step 1"><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s2.hubimg.com/u/6131501_f260.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=Step%201" class="pinit_btn" style="display:none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6131501">
+					Step 1
+				</div>				<div id="img_url_6131503" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6131503_f260.jpg" width="260" height="163" class="half" alt="Step 2 and 3" title="Step 2 and 3"><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s4.hubimg.com/u/6131503_f260.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=Step%202%20and%203" class="pinit_btn" style="display:none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6131503">
+					Step 2 and 3
+				</div></div></div></div><div class="modfloat full"><div id="mod_17668135" class="module moduleText color0"><div style="" class="txtd" id="txtd_17668135"><p><strong><u>Using Criterion to Parse Out Data</u></strong></p>
+<p>1. Click on "Create Query in Design View.." and add your tables. From the tables, double-click the fields that you would like to include in your query. In my example, I wanted to find out which of my customers had the most expensive sweet tooth. To find out, I have added "FirstName", "LastName", "ProductName", and "ProductPrice".</p>
+<p>2. Find the "Criterion" row in the bottom window and type whatever value you wish the query to retrieve. I wanted my query to retrieve who bought products that cost more than $2.00. To do this, I typed "&gt; 2.00" (without quotes).</p>
+<p>3. Find the "Run Query" button in the toolbar and give it a test run. If the data retrieved is what you wanted your query to produce, then save and exit. You can open this query any time in the future and it will take into account any new records that you have added since its creation.</p></div></div></div><div class="floatclear"></div><div class="modfloat right"><div id="mod_17666968" class="module moduleImage"><h2 class="subtitle">Create Query in Design View</h2><div id="imgs_17666968">				<div id="img_url_6131039" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6131039_f260.jpg" width="260" height="163" class="half" alt="Steps 1, 2, and 3" title="Steps 1, 2, and 3"><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s4.hubimg.com/u/6131039_f260.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=Steps%201,%202,%20and%203" class="pinit_btn" style="display:none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6131039">
+					Steps 1, 2, and 3
+				</div></div></div><div id="mod_17667023" class="module moduleImage right_mod_margin"><h2 class="subtitle">Run Query</h2><div id="imgs_17667023">				<div id="img_url_6131060" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6131060_f260.jpg" width="260" height="163" class="half" alt="Step 4" title="Step 4"><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s1.hubimg.com/u/6131060_f260.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=Step%204" class="pinit_btn" style="display:none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6131060">
+					Step 4
+				</div></div></div></div><div class="modfloat full"><div id="mod_17667371" class="module moduleText color0"><div style="" class="txtd" id="txtd_17667371"><p><strong>Calculating Totals<br></strong></p>
+<p>In this example, I want to extract certain fields that are linked, such as the names of my customers, the products they bought, and the date they purchased the items, and I would also like to create a new field that will tell me how much money they spent.</p>
+<p>1. First, I clicked on "Create Query in Design View" and added my three tables. From these tables, I added "Firstname", "LastName", "ProductName", "ProductPrice", and "Quantity".</p>
+<p>2. I decided I did not want the "ProductPrice" to be visible in my query, so I found the "Visibility" row beneath "ProductPrice" in the bottom window and unchecked the box.</p>
+<p>3. I want my query to calculate how much my customers spent with each purchase. To do that I typed " "ProductPrice" * "Quantity" " (remove the outside quotes) in the top row of an empty field. Beneath that I can type in how I want that field name to appear, in this case I typed "Total".</p>
+<p>4. I can check my query to see if everything turned out the way it should have by finding the "Run Query" button in the toolbar. Save query</p>
+<p>Link: <a href="http://openoffice.blogs.com/openoffice/2010/06/combining-and-summing-fields-in-openofficeorg-database-queries.html">http://openoffice.blogs.com</a></p></div></div></div><div class="floatclear"></div><div class="modfloat right"><div id="mod_17668613" class="module moduleImage"><h2 class="subtitle">Quick Search</h2><div id="imgs_17668613">				<div id="img_url_6131575" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6131575_f260.jpg" width="260" height="163" class="half" alt="AutoFilter" title="AutoFilter"><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s4.hubimg.com/u/6131575_f260.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=AutoFilter" class="pinit_btn" style="display:none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6131575">
+					AutoFilter
+				</div>				<div id="img_url_6131595" class="inline_hub_image fullWidth" style="position: relative; cursor: pointer;">
+					<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6131595_f260.jpg" width="260" height="163" class="half" alt="Alphabetize" title="Alphabetize"><a href="http://pinterest.com/pin/create/bookmarklet/?media=http://s4.hubimg.com/u/6131595_f260.jpg&url=http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&is_video=false&description=Alphabetize" class="pinit_btn" style="display:none;">Pin It</a>
+					<div class="slideshowButton" onclick="jQuery(this).closest(&quot;.inline_hub_image&quot;).find(&quot;img&quot;).click()">See all 21 photos</div>
+				</div>				<div class="caption_half" id="img_desc_6131595">
+					Alphabetize
+				</div></div></div></div><div class="modfloat full"><div id="mod_17668416" class="module moduleText color0"><h2 class="subtitle">Quick Search</h2><div style="" class="txtd" id="txtd_17668416"><p>You can do a quick search on your tables or queries by using the "AutoFilter" button or the "Standard Filter" button found in the toolbar when you have either your table or query opened. To use the AutoFilter, click on the text you want to filter, such as "Cookies", and then hit the button. All records that do not have cookies in the ProductName will be removed. You can alphabetize your results.</p>
+<p>You can also use the Standard Filter button to filter your records. You might choose to exclude records that have a particular value or you could include several values that you want to retrieve.</p></div></div></div><div class="floatclear"></div><div class="modfloat right"><div id="mod_17725526" class="module moduleAmazon color2"><div class="single_product"><div class="product_image"><a rel="nofollow" href="http://www.amazon.com/Google-Chromecast-Streaming-Media-Player/dp/B00DR0PDNE%3FSubscriptionId%3D14H876SFAKFS0EHBYQ02%26tag%3Dhubp0c1e3-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00DR0PDNE"><img src="./A Guide to OpenOffice Database by a Non-Techie_files/31Hgfy4y9DL._SL160_.jpg" border="0" alt="Google Chromecast HDMI Streaming Media Player" width="121" height="160"></a></div><div class="product_details"><a rel="nofollow" href="http://www.amazon.com/Google-Chromecast-Streaming-Media-Player/dp/B00DR0PDNE%3FSubscriptionId%3D14H876SFAKFS0EHBYQ02%26tag%3Dhubp0c1e3-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00DR0PDNE">Google Chromecast HDMI Streaming Media Player</a><div class="price"><strong>Amazon Price:</strong> $29.00<br>List Price: $35.00</div></div><img src="./A Guide to OpenOffice Database by a Non-Techie_files/ir(1)" width="1" height="1" border="0" alt="" class="imp_tracker" style="border:none !important; margin:0px !important;"></div></div><div id="mod_17725594" class="module moduleEbay color2">
+
+<div class="single_product">
+  <div class="product_image">
+    <a rel="nofollow" onclick="javascript:urchinTracker(&#39;/analytics/ebay_regular&#39;);" href="http://rover.ebay.com/rover/1/711-53200-19255-0/1?ff3=2&toolid=10044&campid=5337040531&customid=2957680-17725594&lgeo=1&vectorid=229466&item=151176607178">
+      <img border="0" src="./A Guide to OpenOffice Database by a Non-Techie_files/151176607178404000000001_1.jpg" alt="Ego CE4 1100mAh Vape Pen With Clearomizer Vaporizer &amp; Charger Starter Kit eGo-T">
+    </a>
+  </div>
+  <div class="product_details">
+    <a rel="nofollow" onclick="javascript:urchinTracker(&#39;/analytics/ebay_regular&#39;);" href="http://rover.ebay.com/rover/1/711-53200-19255-0/1?ff3=2&toolid=10044&campid=5337040531&customid=2957680-17725594&lgeo=1&vectorid=229466&item=151176607178">Ego CE4 1100mAh Vape Pen With Clearomizer Vaporizer &amp; Charger Starter Kit eGo-T </a>
+    <div class="price"><strong>Current Bid:</strong> $13.59 </div>
+  </div>
+</div>
+<a rel="nofollow" href="http://rover.ebay.com/rover/1/711-53200-19255-0/1?type=1&campid=5337040531&toolid=10001&customid=2957680-17725594" target="_top"><img src="./A Guide to OpenOffice Database by a Non-Techie_files/image-2103840-5902068" width="1" height="1" border="0" alt="" class="imp_tracker"><span class="ebaylogo"></span></a><img style="text-decoration:none;border:0;padding:0;margin:0;" class="imp_tracker" src="./A Guide to OpenOffice Database by a Non-Techie_files/1(1)"></div></div><div class="modfloat full"><div id="mod_17668897" class="module moduleText color0"><h2 class="subtitle">Links</h2><div style="" class="txtd" id="txtd_17668897"><ul><li>Download - <a href="http://www.openoffice.org/">http://www.openoffice.org/</a></li>
+<li>Forum - <a href="http://www.oooforum.org/forum/viewforum.phtml?f=10">http://www.oooforum.org/forum/viewforum.phtml?f=10</a></li>
+<li>OpenOffice User Guide - <a href="http://www.openoffice.org/documentation/manuals/OOo2.x/user_guide2_draft.pdf">http://www.openoffice.org/documentation/manuals</a></li>
+<li>Tutorial - <a href="http://sheepdogguides.com/fdb/fdb1main.htm">http://sheepdogguides.com/fdb/fdb1main.htm</a></li>
+<li>Tutorial -<a href="http://www.pitonyak.org/database/"> http://www.pitonyak.org/database/</a></li>
+<li>Tutorial - <a href="http://inpics.net/base.html">http://inpics.net/base.html</a></li>
+<li>Tutorial - <a href="http://www.euclideanspace.com/software/information/relational/example/">http://www.euclideanspace.com</a></li>
+<li>Flat file - <a href="http://www.youtube.com/watch?v=63iZnw0S6tE">http://www.youtube.com/watch?v=63iZnw0S6tE</a></li>
+<li>Relationships - <a href="http://sheepdogguides.com/fdb/fdb1relone.htm">http://sheepdogguides.com/fdb/fdb1relone.htm</a></li>
+<li>Relationships - <a href="http://www.youtube.com/watch?v=h770gCE2OyU">http://www.youtube.com (Parte 1)</a> (In Italian, but worth watching)</li>
+<li>Form - <a href="http://www.youtube.com/watch?feature=endscreen&NR=1&v=XmyeSxHe44Y">http://www.youtube.com (Parte 2)</a> (See above)</li>
+<li>Subform - <a href="http://www.linuxtopia.org/online_books/office_guides/openoffice_3_getting_started_guide/openoffice_starter_Creating_a_database_form_Using_the_Wizard_to_create_a_form.html">http://www.linuxtopia.org</a></li>
+<li>Combining and Summing - <a href="http://openoffice.blogs.com/openoffice/2010/06/combining-and-summing-fields-in-openofficeorg-database-queries.html">http://openoffice.blogs.com</a></li>
+</ul><p></p></div></div><div id="mod_new17" class="module moduleAdSpot color0">
+<br><div style="padding-bottom:5px"><script type="text/javascript">
+GA_googleFillSlot("technology_hub_share_520x200");
+</script><script src="./A Guide to OpenOffice Database by a Non-Techie_files/ads(2)"></script><div id="google_ads_div_technology_hub_share_520x200_ad_wrapper">
+<div id="google_ads_div_technology_hub_share_520x200_ad_container" style="display:inline-block;">
+<ins style="width: 520px; height: 200px; display: inline-table; position: relative; border: 0px;"><ins style="width: 520px; height: 200px; display: block; position: relative; border: 0px;"><iframe id="google_ads_iframe_technology_hub_share_520x200" name="google_ads_iframe_technology_hub_share_520x200" width="520" height="200" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; position: absolute; top: 0px; left: 0px;"></iframe></ins></ins></div>
+</div>
+<script>GA_googleCreateDomIframe("google_ads_div_technology_hub_share_520x200_ad_container" ,"technology_hub_share_520x200");</script>
+</div>
+</div><div id="mod_new18" class="module moduleAdSpot color0">
+
+<script type="text/javascript"><!--
+google_ad_client = 'ca-pub-6958755572607374';
+google_ad_output = 'js';
+google_max_num_ads = '0'; // we only want link units, not customjs
+google_num_radlinks = '5';
+google_ad_channel = '8618064443+5439060739+8103449537+3114846734';
+google_max_radlink_len = '40';
+google_radlinks_per_unit = '5';
+google_rl_filter = 'high';
+hubpages_category_url = 'technology';
+hubpages_landingspot = 'hub_linkland_above_share';
+//--></script>
+<script language="JavaScript" src="./A Guide to OpenOffice Database by a Non-Techie_files/show_ads.js"></script><script src="./A Guide to OpenOffice Database by a Non-Techie_files/show_ads_impl.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><script language="JavaScript1.1" src="./A Guide to OpenOffice Database by a Non-Techie_files/ads(3)"></script><section class="googleLinkUnit"><a class="adsbygoogle" href="https://www.google.com/url?ct=abg&q=https://www.google.com/adsense/support/bin/request.py%3Fcontact%3Dabg_afc%26url%3Dhttp://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie%26gl%3DCH%26hl%3Den%26client%3Dca-pub-6958755572607374&usg=AFQjCNHj9aVOg-hSbI8NBRsSgM-SJ98pbA">Related Search</a>
+<div class="linkAdUnit"><a target="_top" href="http://hubpages.com/linkunit/?term=MS+Access+2007&categoryurl=technology&landingspot=hub_linkland_above_share&token=ChBSnadRAAcbDgp8G5IPAHSQEg5NUyBBY2Nlc3MgMjAwNxoIKAINsG_d5XUoAVITCLz0vtLhk7sCFVIdfAod3BUAqQ&fromurl=http%3A%2F%2Fsamusaran.hubpages.com%2Fhub%2FA-Guide-to-OpenOffice-Database-by-a-Non-Techie">MS Access 2007</a> 
+<a target="_top" href="http://hubpages.com/linkunit/?term=SQL+Database+Tutorial&categoryurl=technology&landingspot=hub_linkland_above_share&token=ChBSnadRAAcbFwp8G5IPAHSQEhVTUUwgRGF0YWJhc2UgVHV0b3JpYWwaCIzdUG-kh-D6KAFSEwi89L7S4ZO7AhVSHXwKHdwVAKk&fromurl=http%3A%2F%2Fsamusaran.hubpages.com%2Fhub%2FA-Guide-to-OpenOffice-Database-by-a-Non-Techie">SQL Database Tutorial</a> 
+<a target="_top" href="http://hubpages.com/linkunit/?term=Relational+Database&categoryurl=technology&landingspot=hub_linkland_above_share&token=ChBSnadRAAcbGgp8G5IPAHSQEhNSZWxhdGlvbmFsIERhdGFiYXNlGgjvw_6xDSCuMSgBUhMIvPS-0uGTuwIVUh18Ch3cFQCp&fromurl=http%3A%2F%2Fsamusaran.hubpages.com%2Fhub%2FA-Guide-to-OpenOffice-Database-by-a-Non-Techie">Relational Database</a> 
+<a target="_top" href="http://hubpages.com/linkunit/?term=What+Is+Database+Design&categoryurl=technology&landingspot=hub_linkland_above_share&token=ChBSnadRAAcbHQp8G5IPAHSQEhdXaGF0IElzIERhdGFiYXNlIERlc2lnbhoINv7L5DHODh4oAVITCLz0vtLhk7sCFVIdfAod3BUAqQ&fromurl=http%3A%2F%2Fsamusaran.hubpages.com%2Fhub%2FA-Guide-to-OpenOffice-Database-by-a-Non-Techie">What Is Database Design</a> 
+<a target="_top" href="http://hubpages.com/linkunit/?term=OpenOffice+Org+Templates&categoryurl=technology&landingspot=hub_linkland_above_share&token=ChBSnadRAAcbIAp8G5IPAHSQEhhPcGVuT2ZmaWNlIE9yZyBUZW1wbGF0ZXMaCNJglZmbvBaCKAFSEwi89L7S4ZO7AhVSHXwKHdwVAKk&fromurl=http%3A%2F%2Fsamusaran.hubpages.com%2Fhub%2FA-Guide-to-OpenOffice-Database-by-a-Non-Techie">OpenOffice Org Templates</a> 
+</div></section>
+
+</div><div id="mod_new11" class="module moduleFeedback color0"><p class="muted"><small>&nbsp;<span class="lastUpdated">Last updated on February 26, 2013</span></small></p><div id="vote_bubble" style="display: none"><p>You can help the HubPages community highlight top quality content by ranking this article up or down.</p><div class="bubble_carrot"></div></div><div class="hub_feedback"><div id="hub_vote"><a href="http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie#" class="hub_vote_up"></a><a href="http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie#" class="hub_vote_down"></a></div><div class="hub_praise_choices"><span id="praise_item_1"><a href="http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie#" onclick="return praiseHub(2957680, 1);">Useful</a>&nbsp;{3}</span> • <span id="praise_item_2"><a href="http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie#" onclick="return praiseHub(2957680, 2);">Funny</a>&nbsp;</span> • <span id="praise_item_3"><a href="http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie#" onclick="return praiseHub(2957680, 3);">Awesome</a>&nbsp;</span> • <span id="praise_item_4"><a href="http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie#" onclick="return praiseHub(2957680, 4);">Beautiful</a>&nbsp;</span> • <span id="praise_item_5"><a href="http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie#" onclick="return praiseHub(2957680, 5);">Interesting</a>&nbsp;</span></div></div></div><div id="mod_new9" class="module moduleRelated color0"><div class="related_head head_two">Discover More Hubs</div><div id="related_hubs"><ul class="curled_page_row"><li class="curled_page"><a rel="hub_1_3646097" title="Developing a database application -- queries" class="tracked_link" href="http://bonnie-jeanrohne.hubpages.com/hub/Developing-a-database-application-queries"><span class="page_curl"></span>
+<img src="./A Guide to OpenOffice Database by a Non-Techie_files/7929499_100.jpg" alt="Developing a database application -- queries" title="Developing a database application -- queries">
+Developing a database application -- queries</a></li><li class="curled_page"><a rel="hub_2_3647310" title="database application development - forms" class="tracked_link" href="http://bonnie-jeanrohne.hubpages.com/hub/database-application-development-forms"><span class="page_curl"></span>
+<img src="./A Guide to OpenOffice Database by a Non-Techie_files/7933208_100.jpg" alt="database application development - forms" title="database application development - forms">
+database application development - forms</a></li></ul><ul class="curled_page_row"><li class="curled_page"><a rel="hub_3_3296839" title="How to use Queries in Access" class="tracked_link" href="http://ercramer36.hubpages.com/hub/How-to-use-Queries-in-Access"><span class="page_curl"></span>
+<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6954061_100.jpg" alt="How to use Queries in Access" title="How to use Queries in Access">
+How to use Queries in Access</a></li><li class="curled_page"><a rel="hub_4_3016965" title="Simple database development with sample Personal CDs Inventory" class="tracked_link" href="http://t08c15.hubpages.com/hub/Simple-database-development-with-sample-Personal-CDs-Inventory"><span class="page_curl"></span>
+<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6247140_100.jpg" alt="Simple database development with sample Personal CDs Inventory" title="Simple database development with sample Personal CDs Inventory">
+Simple database development with sample Personal CDs Inventory</a></li></ul><ul class="curled_page_row"><li class="curled_page"><a rel="hub_5_3741324" title="Techie Corner- Microsoft Access" class="tracked_link" href="http://epbooks.hubpages.com/hub/Techy-Corner-Microsoft-Access"><span class="page_curl"></span>
+<img src="./A Guide to OpenOffice Database by a Non-Techie_files/8256064_100.jpg" alt="Techie Corner- Microsoft Access" title="Techie Corner- Microsoft Access">
+Techie Corner- Microsoft Access</a></li><li class="curled_page"><a rel="hub_6_3262176" title="Configuring and Using Combo boxes in Excel 2007" class="tracked_link" href="http://robbiecwilson.hubpages.com/hub/Configuring-and-Using-Combo-boxes-in-Excel-2007"><span class="page_curl"></span>
+<img src="./A Guide to OpenOffice Database by a Non-Techie_files/6864506_100.jpg" alt="Configuring and Using Combo boxes in Excel 2007" title="Configuring and Using Combo boxes in Excel 2007">
+Configuring and Using Combo boxes in Excel 2007</a></li></ul><ul class="curled_page_row"><li class="curled_page"><a rel="hub_7_132774" title="Overview of Microsoft Access" class="tracked_link" href="http://liambean.hubpages.com/hub/Overview-of-Microsoft-Access_"><span class="page_curl"></span>
+<img src="./A Guide to OpenOffice Database by a Non-Techie_files/192261_100.jpg" alt="Overview of Microsoft Access" title="Overview of Microsoft Access">
+Overview of Microsoft Access</a></li><li class="curled_page"><a rel="hub_8_3407367" title="How to Keep Records With Microsoft Access" class="tracked_link" href="http://kimberlyvaughn.hubpages.com/hub/How-to-Keep-Records-With-Microsoft-Access"><span class="page_curl"></span>
+<img src="./A Guide to OpenOffice Database by a Non-Techie_files/7330355_100.jpg" alt="How to Keep Records With Microsoft Access" title="How to Keep Records With Microsoft Access">
+How to Keep Records With Microsoft Access</a></li></ul><script type="text/javascript">if (typeof(relatedHubStats) != "undefined") { relatedHubStats.recordImpression(2957680, 1, 3646097); }
+if (typeof(relatedHubStats) != "undefined") { relatedHubStats.recordImpression(2957680, 2, 3647310); }
+if (typeof(relatedHubStats) != "undefined") { relatedHubStats.recordImpression(2957680, 3, 3296839); }
+if (typeof(relatedHubStats) != "undefined") { relatedHubStats.recordImpression(2957680, 4, 3016965); }
+if (typeof(relatedHubStats) != "undefined") { relatedHubStats.recordImpression(2957680, 5, 3741324); }
+if (typeof(relatedHubStats) != "undefined") { relatedHubStats.recordImpression(2957680, 6, 3262176); }
+if (typeof(relatedHubStats) != "undefined") { relatedHubStats.recordImpression(2957680, 7, 132774); }
+if (typeof(relatedHubStats) != "undefined") { relatedHubStats.recordImpression(2957680, 8, 3407367); }
+if(typeof(relatedHubStats)!="undefined") relatedHubStats.commitImpressions();
+</script></div></div><div id="comFirst"></div><div id="mod_17562257" class="module moduleComment"><h2 class="subtitle"><a class="button small green_bg follow_article follow_article_2957680 " style="float: right" id="" href="http://hubpages.com/signin?explain=follow+Hubs&url=http%3A%2F%2Fsamusaran.hubpages.com%2Fhub%2FA-Guide-to-OpenOffice-Database-by-a-Non-Techie" title="Follow this Hub"><span class="follow_hack">&nbsp;</span><span class="icon arrow_right"></span>Follow (1)</a>Comments <span class="comment_count">3 comments</span></h2><div class="comment" id="comment11990670"><div class="author_photo"></div><p class="comment_meta"><strong>Robert&nbsp;</strong><span class="timestamp">5 months ago   </span></p><div class="comment_body"><p class="">What if a customer orders more than one product?</p></div></div><div class="comment authorComment" id="comment10594852"><div class="author_photo"><img src="./A Guide to OpenOffice Database by a Non-Techie_files/5869023_50.jpg" alt="SamusAran profile image" title="SamusAran profile image"></div><p class="comment_meta"><strong>SamusAran&nbsp;</strong><span class="timestamp">15 months ago   <small>Hub Author</small> </span></p><div class="comment_body"><p class="">I have not had any experience with libreoffice, as of yet, but will definitely check it out. This article might help you <a href="http://www.infoworld.com/d/applications/open-office-dilemma-openofficeorg-vs-libreoffice-716?page=0,0" rel="nofollow">http://www.infoworld.com/d/applications/open-offic</a></p></div></div><a id="lastcomment" name="lastcomment" class="commentanchor"></a><div class="comment very_last_comment" id="comment10578521"><div class="author_photo"></div><p class="comment_meta"><strong>haspa&nbsp;</strong><span class="timestamp">15 months ago   </span></p><div class="comment_body"><p class="">Does this guide apply to libreoffice as well? Thanks.</p></div></div><div id="comment_tgt" class="more_comments"></div><form name="comment_17562257" id="comment_17562257" method="get" action="http://samusaran.hubpages.com/xml/comment.php"><input type="hidden" name="mod_id" value="17562257"><div id="formErrors_17562257" class="alert"><ul></ul></div><div id="member_call" class="alerts alert-block"><p><a href="https://hubpages.com/signin/">Sign in</a> or <a href="https://hubpages.com/user/new/?utm_source=tocomment&utm_nooverride=1">sign up</a> and post using a HubPages account.</p></div><div class="commenter_anon"></div><input type="text" id="name" class="text_input placeholder" name="name" value=""><div class="compose_comment"><textarea wrap="virtual" autocomplete="off" onfocus="jq(&#39;#comText_17562257&#39;).select();" id="comText_17562257" name="comText_17562257" rows="6" class="placeholder"></textarea></div><div class="post"><div class="comment_char_count" id="comCharDiv_17562257"><span id="comText_17562257_chars">8173 characters left</span></div><a href="http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie#" id="comment_submit_17562257" class="button green_bg btn btn-primary btn-small btn-block">Post Comment</a><p class="comment_warning muted">No HTML is allowed in comments, but URLs will be hyperlinked. Comments are not for promoting your Hubs or other sites.</p><div id="spinner" style="text-align:center; display: none;"><img src="./A Guide to OpenOffice Database by a Non-Techie_files/spinner.gif" alt="sending" class="spinner"> working</div></div><p class="follow_comments"></p></form><script type="text/javascript">
+jq(document).ready( function() {
+initCommentsCapsule('17562257', false, { signInRequired: false, url: 'http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie#comText_17562257', success: false });
+});
+</script><br style="clear:both"></div></div>				<script type="text/javascript">
+				    jq(document).ready(function() {
+				        // wait a short interval for pageload to completely finish before ajax call
+				        var slideshowAjax = setTimeout(function() {
+				            HubPages.Lightbox.Slideshow.create({
+				                id: 2957680,
+				                title: 'A Guide to OpenOffice Database by a Non-Techie',
+				                url: 'http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie',
+				                type: 'Hub'
+				            });
+				        }, 20000);
+
+				        HubPages.Lightbox.Slideshow.init( 2957680, 'A Guide to OpenOffice Database by a Non-Techie', 'http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie', '.moduleImage div:not(.thumbnails) img', 'Hub' );
+
+				        // change pointer to indicate clickable images
+				        var imgIdList = [6095176,6094981,6099905,6099932,6100015,6100288,6131226,6130169,6130251,6130640,6130375,6130511,6130512,6130535,6130564,6131501,6131503,6131039,6131060,6131575,6131595];
+				        for (var i = 0; i < imgIdList.length; i++) {
+				            selector = '#img_url_' + imgIdList[i];
+				            jQuery(selector).css('cursor', 'pointer');
+				        }
+
+				        jQuery('.moduleImage').mouseover(function() {
+				            jQuery(this).find('.slideshowButton').show();
+				        });
+
+				        jQuery('.moduleImage').mouseout(function() {
+				            jQuery(this).find('.slideshowButton').hide();
+				        });
+
+				    });
+				</script></div><div id="turbo_hub_sidebar"><div id="share_hub"><div class="moduleAdSpot">
+<div style="padding-bottom:5px"><script type="text/javascript">
+GA_googleFillSlot("technology_hub_sidebar_120x600");
+</script><script src="./A Guide to OpenOffice Database by a Non-Techie_files/ads(4)"></script><div id="google_ads_div_technology_hub_sidebar_120x600_ad_wrapper">
+<div id="google_ads_div_technology_hub_sidebar_120x600_ad_container" style="display:inline-block;">
+<ins style="width: 120px; height: 600px; display: inline-table; position: relative; border: 0px;"><ins style="width: 120px; height: 600px; display: block; position: relative; border: 0px;"><iframe id="google_ads_iframe_technology_hub_sidebar_120x600" name="google_ads_iframe_technology_hub_sidebar_120x600" width="120" height="600" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; position: absolute; top: 0px; left: 0px;"></iframe></ins></ins></div>
+</div>
+<script>GA_googleCreateDomIframe("google_ads_div_technology_hub_sidebar_120x600_ad_container" ,"technology_hub_sidebar_120x600");</script>
+</div><div style="width:100%; height:8px"></div>
+</div><div id="hub_scrolling_sidebar" style="position: fixed; top: 10px;"><div class="moduleAdSpot hub_linkunit" style="padding:10px 0px">
+
+<script type="text/javascript"><!--
+google_ad_client = 'ca-pub-6958755572607374';
+google_ad_output = 'js';
+google_max_num_ads = '0'; // we only want link units, not customjs
+google_num_radlinks = '6';
+google_ad_channel = '8618064443+5439060739+8103449537+3114846734+8618064443';
+google_max_radlink_len = '16';
+google_radlinks_per_unit = '6';
+google_rl_filter = 'high';
+hubpages_category_url = 'technology';
+hubpages_landingspot = 'hub_linkland_sidebar';
+//--></script>
+<script language="JavaScript" src="./A Guide to OpenOffice Database by a Non-Techie_files/show_ads.js"></script><script src="./A Guide to OpenOffice Database by a Non-Techie_files/show_ads_impl.js"></script><script>google_protectAndRun("ads_core.google_render_ad", google_handleError, google_render_ad);</script><script language="JavaScript1.1" src="./A Guide to OpenOffice Database by a Non-Techie_files/ads(5)"></script><section class="googleLinkUnit"><a class="adsbygoogle" href="https://www.google.com/url?ct=abg&q=https://www.google.com/adsense/support/bin/request.py%3Fcontact%3Dabg_afc%26url%3Dhttp://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie%26gl%3DCH%26hl%3Den%26client%3Dca-pub-6958755572607374&usg=AFQjCNHj9aVOg-hSbI8NBRsSgM-SJ98pbA">Related Search</a>
+<div class="linkAdUnit"><a target="_top" href="http://hubpages.com/linkunit/?term=MS+Access+2007&categoryurl=technology&landingspot=hub_linkland_sidebar&token=ChBSnadRAA4d8gp8DgOnAC-_Eg5NUyBBY2Nlc3MgMjAwNxoIBVISeOmT_58oAVITCOT44dLhk7sCFQ0dfAodq3cApg&fromurl=http%3A%2F%2Fsamusaran.hubpages.com%2Fhub%2FA-Guide-to-OpenOffice-Database-by-a-Non-Techie">MS Access 2007</a> 
+<a target="_top" href="http://hubpages.com/linkunit/?term=Database+Designs&categoryurl=technology&landingspot=hub_linkland_sidebar&token=ChBSnadRAA4eAQp8DgOnAC-_EhBEYXRhYmFzZSBEZXNpZ25zGghw7UEcQ98SDCgBUhMI5Pjh0uGTuwIVDR18Ch2rdwCm&fromurl=http%3A%2F%2Fsamusaran.hubpages.com%2Fhub%2FA-Guide-to-OpenOffice-Database-by-a-Non-Techie">Database Designs</a> 
+<a target="_top" href="http://hubpages.com/linkunit/?term=Search+Database&categoryurl=technology&landingspot=hub_linkland_sidebar&token=ChBSnadRAA4eBAp8DgOnAC-_Eg9TZWFyY2ggRGF0YWJhc2UaCKNjbxU65xawKAFSEwjk-OHS4ZO7AhUNHXwKHat3AKY&fromurl=http%3A%2F%2Fsamusaran.hubpages.com%2Fhub%2FA-Guide-to-OpenOffice-Database-by-a-Non-Techie">Search Database</a> 
+<a target="_top" href="http://hubpages.com/linkunit/?term=OpenOffice+Ooo&categoryurl=technology&landingspot=hub_linkland_sidebar&token=ChBSnadRAA4eBgp8DgOnAC-_Eg5PcGVuT2ZmaWNlIE9vbxoITX7ImTPuFXIoAVITCOT44dLhk7sCFQ0dfAodq3cApg&fromurl=http%3A%2F%2Fsamusaran.hubpages.com%2Fhub%2FA-Guide-to-OpenOffice-Database-by-a-Non-Techie">OpenOffice Ooo</a> 
+<a target="_top" href="http://hubpages.com/linkunit/?term=SQL+to+Database&categoryurl=technology&landingspot=hub_linkland_sidebar&token=ChBSnadRAA4eCQp8DgOnAC-_Eg9TUUwgdG8gRGF0YWJhc2UaCKtMNMiWiZNBKAFSEwjk-OHS4ZO7AhUNHXwKHat3AKY&fromurl=http%3A%2F%2Fsamusaran.hubpages.com%2Fhub%2FA-Guide-to-OpenOffice-Database-by-a-Non-Techie">SQL to Database</a> 
+<a target="_top" href="http://hubpages.com/linkunit/?term=Open+Office&categoryurl=technology&landingspot=hub_linkland_sidebar&token=ChBSnadRAA4eCwp8DgOnAC-_EgtPcGVuIE9mZmljZRoIQtOQAvVdMdYoAVITCOT44dLhk7sCFQ0dfAodq3cApg&fromurl=http%3A%2F%2Fsamusaran.hubpages.com%2Fhub%2FA-Guide-to-OpenOffice-Database-by-a-Non-Techie">Open Office</a> 
+</div></section>
+
+</div><div id="share_hub_social" style="visibility: visible; opacity: 1;"><div class="head_three">Like This Hub?</div><div id="ratethispage" class="socialbuttons" style=""><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="./A Guide to OpenOffice Database by a Non-Techie_files/xd_arbiter.html" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="./A Guide to OpenOffice Database by a Non-Techie_files/xd_arbiter(1).html" style="border: none;"></iframe></div></div></div><div class="fb_share_wrap"><div class="fb-like fb_edge_widget_with_comment fb_iframe_widget" href="http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false" fb-xfbml-state="rendered"><span style="height: 20px; width: 73px;"><iframe id="f34e125e4c" name="f2905f62a8" scrolling="no" title="Like this content on Facebook." class="fb_ltr" src="./A Guide to OpenOffice Database by a Non-Techie_files/like.html" style="border: none; overflow: hidden; height: 20px; width: 73px;"></iframe></span></div></div><span class="twitter_wrap"><div class="twitter-btn"><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fhub.me%2Facpqw&text=A+Guide+to+OpenOffice+Database+by+a+Non-Techie"><i></i><span>Tweet</span></a></div></span><span class="pinit_wrap"><a href="http://www.pinterest.com/pin/create/button/?url=http%3A%2F%2Fsamusaran.hubpages.com%2Fhub%2FA-Guide-to-OpenOffice-Database-by-a-Non-Techie&media=http%3A%2F%2Fs1.hubimg.com%2Fu%2F6095176.jpg&guid=77nvETGTv285-0&description=A+Guide+to+OpenOffice+Database+by+a+Non-Techie#widget" class="PIN_1386065065403_pin_it_button_20 PIN_1386065065403_pin_it_button_en_20_gray PIN_1386065065403_pin_it_button_inline_20 PIN_1386065065403_pin_it_beside_20" target="_blank" data-pin-log="button_pinit" data-pin-config="beside"><span class="PIN_1386065065403_hidden" id="PIN_1386065065403_pin_count_0"><i></i></span></a></span></div><p>Want an audience? HubPages receives over 37 million visitors every month. <a href="http://hubpages.com/info/hubsb" class="join_today">Join today</a></p></div></div><div class="share_clear"></div></div></div><div class="clear"></div></div></article></div><div style="clear:left;"><div class="moduleYieldBuild" style="float:left;">
+<div style="padding-bottom:5px"><script type="text/javascript">
+GA_googleFillSlot("technology_hub_footer_bf_300X250");
+</script><script src="./A Guide to OpenOffice Database by a Non-Techie_files/ads(6)"></script><div id="google_ads_div_technology_hub_footer_bf_300X250_ad_wrapper">
+<div id="google_ads_div_technology_hub_footer_bf_300X250_ad_container" style="display:inline-block;">
+<ins style="width: 300px; height: 250px; display: inline-table; position: relative; border: 0px;"><ins style="width: 300px; height: 250px; display: block; position: relative; border: 0px;"><iframe id="google_ads_iframe_technology_hub_footer_bf_300X250" name="google_ads_iframe_technology_hub_footer_bf_300X250" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" style="border: 0px; position: absolute; top: 0px; left: 0px;"></iframe></ins></ins></div>
+</div>
+<script>GA_googleCreateDomIframe("google_ads_div_technology_hub_footer_bf_300X250_ad_container" ,"technology_hub_footer_bf_300X250");</script>
+</div><div style="width:100%; height:8px"></div>
+</div><div class="moduleYieldBuild" style="float:right;">
+<div style="width:300px;">
+<script type="text/javascript"><!--
+google_ad_host = "pub-6958755572607374";
+google_ad_client = "ca-pub-9297703836918695"; 
+google_alternate_ad_url = "http://hubpages.com/google_adsense_script.html";
+google_ad_width = 300;
+google_ad_height = 250;
+google_ad_format = "300x250_as";
+google_ad_type = "image";
+google_ad_channel = "";
+google_color_border = "FFFFFF";
+google_color_bg = "FFFFFF";
+google_color_link = "297CCF";
+google_color_url = "333333";
+google_color_text = "333333";
+google_ui_features = "rc:0";
+
+//--></script>
+<script type="text/javascript" src="./A Guide to OpenOffice Database by a Non-Techie_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div><div style="width:100%; height:8px"></div>
+</div><div class="clear"></div></div>
+<!-- YB: special (1x1) -->
+<script type="text/javascript"><!--
+yieldbuild_site = 1;
+yieldbuild_layout = "hpads_hub";
+yieldbuild_loc = "special";
+//--></script>
+<script type="text/javascript" src="./A Guide to OpenOffice Database by a Non-Techie_files/s_ad.js"></script><script src="./A Guide to OpenOffice Database by a Non-Techie_files/inline" type="text/javascript"> </script>
+<a href="http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie#" id="open_hub_rating" class="green_bg">Click to Rate This Article</a><div id="rate_hub" class="rate_hub" style="display: none;"><a href="http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie#" id="close_hub_rating"><span class="icon close"></span></a><div class="head_one">How good is this article?</div><div id="hop_explain">
+<div class="rate_explain" id="default_explain">
+  <p>Please rate this article using the scale below. The scale is from 1 to 10, where 10 is the best and 1 is the worst.</p>
+</div>
+</div><div id="rating_submission">
+<div class="slider_set"><div class="head_two">Your Rating: <strong>?</strong></div>
+<div id="quality" class="hub_rating_slider"></div></div>
+<p><a href="http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie#" id="rating_submit" class="button green_bg">submit</a></p>
+</div>
+
+</div></div><script type="text/javascript">jq(window).sampleDurationNew(2957680,6);</script><script>
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "6035233" });
+  (function() {
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+    el.parentNode.insertBefore(s, el);
+  })();
+</script></div><div id="footer_wrap"><div id="footer"><a id="footer_home" href="http://hubpages.com/" title="To the HubPages home page">HubPages</a><ul id="footerlist"><li><a href="http://hubpages.com/about/us">about us</a></li><li><a href="http://hubpages.com/help-wizard/">help</a></li><li><a href="http://blog.hubpages.com/">blog</a></li><li><a href="http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie#" onclick="showLinkArticle(&#39;http://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie&#39;,&#39;A Guide to OpenOffice Database by a Non-Techie&#39;); return false;">link to this page</a></li><li><a href="http://hubpages.com/help/copyright_infringement">copyright</a></li><li><a href="http://hubpages.com/directory">directory</a></li></ul><div class="glam_logo"></div><p>Copyright © 2013 HubPages Inc. and respective owners.</p><p class="disclaimer">Other product and company names shown may be trademarks of their respective owners.</p><p>HubPages<sup>®</sup> is a registered Service Mark of HubPages, Inc.</p><p><a href="http://hubpages.com/help/user_agreement">terms of use</a> <a href="http://hubpages.com/help/privacy_policy">privacy policy</a> (1.46 sec)</p></div></div>	<div id="ajaxing"><div id="ajaxing_box"><img src="./A Guide to OpenOffice Database by a Non-Techie_files/spinner.gif" alt="Please wait" class="spinner"> <span>working</span></div></div>
+	<script type="text/javascript">
+_qevents.push({
+qacct:"p-40hb1Sup4Jk_U",
+labels:"technology.computers-and-software"
+});
+</script>
+<noscript>
+&lt;img src="//pixel.quantserve.com/pixel/p-40hb1Sup4Jk_U.gif" style="display:none" border="0" height="1" width="1" alt="Quantcast"/&gt;
+</noscript>
+
+
+<!-- rendered by hubwbe04 at Tue, 03 Dec 13 01:41:33 -0800 -->
+<!-- technology hpads-authorshare -->
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancy-bg" id="fancy-bg-n"></div><div class="fancy-bg" id="fancy-bg-ne"></div><div class="fancy-bg" id="fancy-bg-e"></div><div class="fancy-bg" id="fancy-bg-se"></div><div class="fancy-bg" id="fancy-bg-s"></div><div class="fancy-bg" id="fancy-bg-sw"></div><div class="fancy-bg" id="fancy-bg-w"></div><div class="fancy-bg" id="fancy-bg-nw"></div><div id="fancybox-inner"></div><a id="fancybox-close"></a><a href="javascript:;" id="fancybox-left" style="width: 20%;"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right" style="width: 20%;"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><iframe id="google_osd_static_frame_9806767443660" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;"></iframe></body></html>

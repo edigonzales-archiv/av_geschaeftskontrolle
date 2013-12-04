@@ -51,7 +51,7 @@ CREATE TABLE public.plankostenkonto (
 --INSERT INTO public.plankostenkonto (kontoid, budget, jahr) VALUES (2, 1500000, 2013);
 
 Vorgehen:
-- Konten in Tabelle "konto" erfassen.
+- Konten in Tabelle "konto" erfassenkon.
 - Plankosten (pro Rechnungsjahr und pro Konto) erfassen. Tabellen "plankostenkonto" mit "v_konto" joinen, sonst sieht man (Mensch) gar nicht mit welchem Konto es verknüpft ist.
 - -> Mutation werden so möglich (vorallem wichtig anschliessend in anderen Tabellen, z.B. Rechungen)
 

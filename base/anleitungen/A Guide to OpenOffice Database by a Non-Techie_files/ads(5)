@@ -1,0 +1,65 @@
+{
+
+var google_ads = new Array();
+var google_ad;
+var google_radlinks = new Array();
+var google_radlink;
+var google_info = new Object();
+google_radlink = new Object(); 
+google_radlink.n = 1; 
+google_radlink.url = ""; 
+google_radlink.line1 = "MS Access 2007"; 
+google_radlink.term = "MS Access 2007"; 
+google_radlink.url_escaped_term = "MS+Access+2007"; 
+google_radlink.radlink_token = "ChBSnadRAA4d8gp8DgOnAC-_Eg5NUyBBY2Nlc3MgMjAwNxoIBVISeOmT_58oAVITCOT44dLhk7sCFQ0dfAodq3cApg"; 
+google_radlinks[0] = google_radlink; 
+google_radlink = new Object(); 
+google_radlink.n = 2; 
+google_radlink.url = ""; 
+google_radlink.line1 = "Database Designs"; 
+google_radlink.term = "Database Designs"; 
+google_radlink.url_escaped_term = "Database+Designs"; 
+google_radlink.radlink_token = "ChBSnadRAA4eAQp8DgOnAC-_EhBEYXRhYmFzZSBEZXNpZ25zGghw7UEcQ98SDCgBUhMI5Pjh0uGTuwIVDR18Ch2rdwCm"; 
+google_radlinks[1] = google_radlink; 
+google_radlink = new Object(); 
+google_radlink.n = 3; 
+google_radlink.url = ""; 
+google_radlink.line1 = "Search Database"; 
+google_radlink.term = "Search Database"; 
+google_radlink.url_escaped_term = "Search+Database"; 
+google_radlink.radlink_token = "ChBSnadRAA4eBAp8DgOnAC-_Eg9TZWFyY2ggRGF0YWJhc2UaCKNjbxU65xawKAFSEwjk-OHS4ZO7AhUNHXwKHat3AKY"; 
+google_radlinks[2] = google_radlink; 
+google_radlink = new Object(); 
+google_radlink.n = 4; 
+google_radlink.url = ""; 
+google_radlink.line1 = "OpenOffice Ooo"; 
+google_radlink.term = "OpenOffice Ooo"; 
+google_radlink.url_escaped_term = "OpenOffice+Ooo"; 
+google_radlink.radlink_token = "ChBSnadRAA4eBgp8DgOnAC-_Eg5PcGVuT2ZmaWNlIE9vbxoITX7ImTPuFXIoAVITCOT44dLhk7sCFQ0dfAodq3cApg"; 
+google_radlinks[3] = google_radlink; 
+google_radlink = new Object(); 
+google_radlink.n = 5; 
+google_radlink.url = ""; 
+google_radlink.line1 = "SQL to Database"; 
+google_radlink.term = "SQL to Database"; 
+google_radlink.url_escaped_term = "SQL+to+Database"; 
+google_radlink.radlink_token = "ChBSnadRAA4eCQp8DgOnAC-_Eg9TUUwgdG8gRGF0YWJhc2UaCKtMNMiWiZNBKAFSEwjk-OHS4ZO7AhUNHXwKHat3AKY"; 
+google_radlinks[4] = google_radlink; 
+google_radlink = new Object(); 
+google_radlink.n = 6; 
+google_radlink.url = ""; 
+google_radlink.line1 = "Open Office"; 
+google_radlink.term = "Open Office"; 
+google_radlink.url_escaped_term = "Open+Office"; 
+google_radlink.radlink_token = "ChBSnadRAA4eCwp8DgOnAC-_EgtPcGVuIE9mZmljZRoIQtOQAvVdMdYoAVITCOT44dLhk7sCFQ0dfAodq3cApg"; 
+google_radlinks[5] = google_radlink; 
+google_info.feedback_url = "https://www.google.com/url?ct\x3dabg\x26q\x3dhttps://www.google.com/adsense/support/bin/request.py%3Fcontact%3Dabg_afc%26url%3Dhttp://samusaran.hubpages.com/hub/A-Guide-to-OpenOffice-Database-by-a-Non-Techie%26gl%3DCH%26hl%3Den%26client%3Dca-pub-6958755572607374\x26usg\x3dAFQjCNHj9aVOg-hSbI8NBRsSgM-SJ98pbA";
+var google_attribution_text = "AdChoices";
+var google_is_rtl = false;
+if (window.google_ad_request_done) {
+google_ad_request_done(google_ads);
+}
+if (window.google_radlink_request_done) {
+google_radlink_request_done(google_radlinks);
+}
+}
