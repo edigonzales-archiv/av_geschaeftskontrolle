@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>604314.41054090473335236</xmin>
-            <ymin>225453.8585528215917293</ymin>
-            <xmax>652414.7784868081798777</xmax>
-            <ymax>264033.78543233219534159</ymax>
+            <xmin>601546.8404634646140039</xmin>
+            <ymin>215573.63337636133655906</ymin>
+            <xmax>613654.95955226430669427</xmax>
+            <ymax>225218.6150962394895032</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -43,7 +43,7 @@
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="unternehmer20131218082305403">
+    <legend updateDrawingOrder="false" activeLayer="projekt20131218082931932">
         <legendgroup open="true" checked="Qt::Unchecked" name="Teilzahlungen">
             <legendlayer drawingOrder="0" open="true" checked="Qt::Unchecked" name="planzahlung" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
