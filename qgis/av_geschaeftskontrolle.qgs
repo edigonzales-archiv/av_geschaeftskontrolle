@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>599062.1405901899561286</xmin>
-            <ymin>216889.88809018998290412</ymin>
-            <xmax>607660.08134018979035318</xmax>
-            <ymax>223786.05000359608675353</ymax>
+            <xmin>604314.41054090473335236</xmin>
+            <ymin>225453.8585528215917293</ymin>
+            <xmax>652414.7784868081798777</xmax>
+            <ymax>264033.78543233219534159</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -43,7 +43,7 @@
             </spatialrefsys>
         </destinationsrs>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="rechnung20131218153106024">
+    <legend updateDrawingOrder="false" activeLayer="unternehmer20131218082305403">
         <legendgroup open="true" checked="Qt::Unchecked" name="Teilzahlungen">
             <legendlayer drawingOrder="0" open="true" checked="Qt::Unchecked" name="planzahlung" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
@@ -106,7 +106,7 @@
         </legendgroup>
     </legend>
     <projectlayers layercount="10">
-        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>auftrag20131218082931946</id>
             <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."auftrag" sql=</datasource>
             <title></title>
@@ -135,6 +135,7 @@
                 <edittype labelontop="0" editable="1" type="12" name="bemerkung"/>
                 <edittype labelontop="0" editable="1" dateFormat="dd.MM.yyyy" type="13" name="datum_ende"/>
                 <edittype labelontop="0" editable="1" dateFormat="dd.MM.yyyy" type="13" name="datum_start"/>
+                <edittype labelontop="0" editable="1" unchecked="0" type="7" checked="1" name="geplant"/>
                 <edittype labelontop="0" editable="1" type="11" name="id"/>
                 <edittype labelontop="0" editable="1" type="0" name="kosten"/>
                 <edittype labelontop="0" editable="1" type="0" name="mwst"/>
@@ -152,9 +153,10 @@
             <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <aliases>
-                <alias field="bemerkung" index="8" name="Bemerkungen"/>
+                <alias field="bemerkung" index="9" name="Bemerkungen"/>
                 <alias field="datum_ende" index="7" name="Auftragsende"/>
                 <alias field="datum_start" index="6" name="Auftragsbeginn"/>
+                <alias field="geplant" index="8" name="Auftrag geplant?"/>
                 <alias field="kosten" index="3" name="Kosten (exkl. MWST)"/>
                 <alias field="mwst" index="4" name="MWST [%]"/>
                 <alias field="name" index="2" name="Auftragsname"/>
@@ -400,10 +402,10 @@
                 <edittype labelontop="0" editable="1" type="0" name="name"/>
                 <edittype labelontop="0" editable="1" type="0" name="ogc_fid"/>
             </edittypes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
@@ -598,10 +600,10 @@
                 <edittype labelontop="0" editable="1" type="11" name="id"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="projekt20131218082931932" allowMulti="false" filterExpression="" type="15" value="name" name="projekt_id"/>
             </edittypes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <aliases>
                 <alias field="projekt_id" index="1" name="Projekt"/>
@@ -666,7 +668,7 @@
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>planzahlung20131218153106010</id>
             <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."planzahlung" sql=</datasource>
             <title></title>
@@ -708,6 +710,7 @@
             <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <aliases>
+                <alias field="auftrag_id" index="1" name="Auftrag"/>
                 <alias field="bemerkung" index="6" name="Bemerkungen"/>
                 <alias field="kosten" index="3" name="Kosten"/>
                 <alias field="mwst" index="4" name="MWST [%]"/>
@@ -939,8 +942,8 @@
             <Automatic type="bool">true</Automatic>
             <DegreeFormat type="QString">D</DegreeFormat>
         </PositionPrecision>
-        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
         <WMSContactPhone type="QString"></WMSContactPhone>
+        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
         <WMSServiceAbstract type="QString"></WMSServiceAbstract>
         <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
         <Measure>

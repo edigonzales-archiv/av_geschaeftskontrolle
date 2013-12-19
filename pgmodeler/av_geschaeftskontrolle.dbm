@@ -126,7 +126,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="auftrag">
 	<schema name="av_geschaeftskontrolle"/>
 	<role name="stefan"/>
-	<position x="198.556" y="474.667"/>
+	<position x="175.699" y="466.096"/>
 	<column name="id">
 		<type name="serial"/>
 	</column>
@@ -151,6 +151,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="datum_ende">
 		<type name="date"/>
 	</column>
+	<column name="geplant">
+		<type name="boolean"/>
+	</column>
 	<column name="bemerkung">
 		<type name="varchar"/>
 	</column>
@@ -162,7 +165,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="rechnung">
 	<schema name="av_geschaeftskontrolle"/>
 	<role name="stefan"/>
-	<position x="698" y="396"/>
+	<position x="686.571" y="337.429"/>
 	<column name="id">
 		<type name="serial"/>
 	</column>
@@ -207,13 +210,13 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<return-type>
 	<type name="trigger"/>
 	</return-type>
-	<definition><![CDATA[ BEGIN
+	<definition><![CDATA[DECLARE gesamtkosten DOUBLE PRECISION;
 
-UPDATE av_geschaeftskontrolle.planzahlung SET
-   kosten = a.kosten * 100 / NEW.prozent
-FROM (SELECT kosten FROM av_geschaeftskontrolle.auftrag) as a
-WHERE auftrag_id = a.id;
+ BEGIN
  
+  SELECT kosten FROM av_geschaeftskontrolle.auftrag WHERE id = NEW.auftrag_id INTO gesamtkosten;
+  NEW.kosten = gesamtkosten*(NEW.prozent/100);
+  
  RETURN NEW;
  END;]]></definition>
 </function>
@@ -251,7 +254,7 @@ WHERE auftrag_id = a.id;
 	<comment><![CDATA[Geplante Zahlung pro Jahr.]]></comment>
 	<appended-sql><![CDATA[ALTER FUNCTION av_geschaeftskontrolle.calculate_order_costs_from_percentage()
   OWNER TO stefan;]]></appended-sql>
-	<position x="712" y="590"/>
+	<position x="712" y="588.571"/>
 	<column name="id">
 		<type name="serial"/>
 	</column>
@@ -280,7 +283,7 @@ WHERE auftrag_id = a.id;
 	<constraint name="planzahlung_positiv_prozent" type="ck-constr" table="av_geschaeftskontrolle.planzahlung">
 			<expression><![CDATA[(prozent > 0::numeric)]]></expression>
 	</constraint>
-	<trigger name="update_kosten" firing-type="AFTER" per-line="false" constraint="false"
+	<trigger name="update_kosten" firing-type="BEFORE" per-line="true" constraint="false"
 		 ins-event="true" del-event="false" upd-event="true" trunc-event="false"
 	 table="av_geschaeftskontrolle.planzahlung">
 		<function signature="av_geschaeftskontrolle.calculate_order_costs_from_percentage()"/>

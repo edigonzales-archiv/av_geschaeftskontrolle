@@ -1,5 +1,5 @@
 -- Database generated with pgModeler (PostgreSQL Database Modeler).
--- PostgreSQL version: 9.3
+-- PostgreSQL version: 9.1
 -- Project Site: pgmodeler.com.br
 -- Model Author: ---
 
@@ -99,6 +99,7 @@ CREATE TABLE av_geschaeftskontrolle.auftrag(
 	unternehmer_id int4 NOT NULL,
 	datum_start date,
 	datum_ende date,
+	geplant boolean,
 	bemerkung varchar,
 	CONSTRAINT auftrag_pkey PRIMARY KEY (id)
 
@@ -136,13 +137,13 @@ CREATE OR REPLACE FUNCTION av_geschaeftskontrolle.calculate_order_costs_from_per
 	CALLED ON NULL INPUT
 	SECURITY INVOKER
 	COST 100
-	AS $$ BEGIN
+	AS $$DECLARE gesamtkosten DOUBLE PRECISION;
 
-UPDATE av_geschaeftskontrolle.planzahlung SET
-   kosten = a.kosten * 100 / NEW.prozent
-FROM (SELECT kosten FROM av_geschaeftskontrolle.auftrag) as a
-WHERE auftrag_id = a.id;
+ BEGIN
  
+  SELECT kosten FROM av_geschaeftskontrolle.auftrag WHERE id = NEW.auftrag_id INTO gesamtkosten;
+  NEW.kosten = gesamtkosten*(NEW.prozent/100);
+  
  RETURN NEW;
  END;$$;
 -- ddl-end --
@@ -178,9 +179,9 @@ CREATE TABLE av_geschaeftskontrolle.planzahlung(
 -- ddl-end --
 -- object: update_kosten | type: TRIGGER --
 CREATE TRIGGER update_kosten
-	AFTER INSERT OR UPDATE
+	BEFORE INSERT OR UPDATE
 	ON av_geschaeftskontrolle.planzahlung
-	FOR EACH STATEMENT
+	FOR EACH ROW
 	EXECUTE PROCEDURE av_geschaeftskontrolle.calculate_order_costs_from_percentage();
 -- ddl-end --
 
@@ -208,7 +209,7 @@ ALTER TABLE av_geschaeftskontrolle.rechnungsjahr OWNER TO stefan;
 CREATE TABLE av_geschaeftskontrolle.perimeter(
 	id serial,
 	projekt_id int4 NOT NULL,
-	perimeter geometry(MULTIPOLYGON, 21781),
+	perimeter geometry,--(MULTIPOLYGON, 21781),
 	CONSTRAINT perimeter_pkey PRIMARY KEY (id)
 
 );
