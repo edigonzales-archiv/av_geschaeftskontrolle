@@ -67,6 +67,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<type name="numeric" length="20" precision="2"/>
 		<comment><![CDATA[exlusive Mehrwertsteuer]]></comment>
 	</column>
+	<column name="mwst">
+		<type name="double precision"/>
+	</column>
 	<column name="datum_start" not-null="true">
 		<type name="date"/>
 	</column>
@@ -123,7 +126,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="auftrag">
 	<schema name="av_geschaeftskontrolle"/>
 	<role name="stefan"/>
-	<position x="211.556" y="442.667"/>
+	<position x="198.556" y="474.667"/>
 	<column name="id">
 		<type name="serial"/>
 	</column>
@@ -135,6 +138,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</column>
 	<column name="kosten">
 		<type name="numeric" length="20" precision="2"/>
+	</column>
+	<column name="mwst">
+		<type name="double precision"/>
 	</column>
 	<column name="unternehmer_id" not-null="true">
 		<type name="int4"/>
@@ -156,7 +162,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="rechnung">
 	<schema name="av_geschaeftskontrolle"/>
 	<role name="stefan"/>
-	<position x="690" y="292"/>
+	<position x="698" y="396"/>
 	<column name="id">
 		<type name="serial"/>
 	</column>
@@ -243,6 +249,8 @@ WHERE auftrag_id = a.id;
 	<schema name="av_geschaeftskontrolle"/>
 	<role name="stefan"/>
 	<comment><![CDATA[Geplante Zahlung pro Jahr.]]></comment>
+	<appended-sql><![CDATA[ALTER FUNCTION av_geschaeftskontrolle.calculate_order_costs_from_percentage()
+  OWNER TO stefan;]]></appended-sql>
 	<position x="712" y="590"/>
 	<column name="id">
 		<type name="serial"/>
@@ -291,6 +299,24 @@ WHERE auftrag_id = a.id;
 	</column>
 </table>
 
+<table name="perimeter">
+	<schema name="av_geschaeftskontrolle"/>
+	<role name="stefan"/>
+	<position x="700.143" y="177"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="projekt_id" not-null="true">
+		<type name="int4"/>
+	</column>
+	<column name="perimeter">
+		<type name="geometry" spatial-type="MULTIPOLYGON" variation="0" srid="21781"/>
+	</column>
+	<constraint name="perimeter_pkey" type="pk-constr" factor="10" table="av_geschaeftskontrolle.perimeter">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
 <constraint name="projekt_konto_id_fkey" type="fk-constr"	 comparison-type="MATCH FULL"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="av_geschaeftskontrolle.konto" table="av_geschaeftskontrolle.projekt">
 	<columns names="konto_id" ref-type="src-columns"/>
@@ -311,14 +337,19 @@ WHERE auftrag_id = a.id;
 	<columns names="auftrag_id" ref-type="src-columns"/>
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
-<constraint name="planzahlung_projekt_id_fkey" type="fk-constr"	 comparison-type="MATCH FULL"
-	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="av_geschaeftskontrolle.auftrag" table="av_geschaeftskontrolle.planzahlung">
-	<columns names="id" ref-type="src-columns"/>
-	<columns names="id" ref-type="dst-columns"/>
-</constraint>
 <constraint name="plankostenkonto_konto_id_fkey" type="fk-constr"	 comparison-type="MATCH FULL"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="av_geschaeftskontrolle.konto" table="av_geschaeftskontrolle.plankostenkonto">
 	<columns names="konto_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+<constraint name="planzahlung_projekt_id_fkey" type="fk-constr"	 comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="av_geschaeftskontrolle.auftrag" table="av_geschaeftskontrolle.planzahlung">
+	<columns names="auftrag_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+<constraint name="perimeter_projekt_id_fkey" type="fk-constr"	 comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="av_geschaeftskontrolle.projekt" table="av_geschaeftskontrolle.perimeter">
+	<columns names="projekt_id" ref-type="src-columns"/>
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
 <relationship name="rel_plankostenkonto_konto" type="relfk"
@@ -349,6 +380,11 @@ WHERE auftrag_id = a.id;
 <relationship name="rel_planzahlung_auftrag" type="relfk"
 	 src-table="av_geschaeftskontrolle.planzahlung"
 	 dst-table="av_geschaeftskontrolle.auftrag"
+	 src-required="true" dst-required="true"/>
+
+<relationship name="rel_perimeter_projekt" type="relfk"
+	 src-table="av_geschaeftskontrolle.perimeter"
+	 dst-table="av_geschaeftskontrolle.projekt"
 	 src-required="true" dst-required="true"/>
 
 <permission>
