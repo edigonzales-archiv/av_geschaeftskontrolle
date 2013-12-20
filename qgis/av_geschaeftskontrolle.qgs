@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>601546.8404634646140039</xmin>
-            <ymin>215573.63337636133655906</ymin>
-            <xmax>613654.95955226430669427</xmax>
-            <ymax>225218.6150962394895032</ymax>
+            <xmin>590325.07042465126141906</xmin>
+            <ymin>211965.31065135830431245</ymin>
+            <xmax>641962.62945294985547662</xmax>
+            <ymax>259531.8588019072485622</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -42,8 +42,9 @@
                 <geographicflag>true</geographicflag>
             </spatialrefsys>
         </destinationsrs>
+        <layer_coordinate_transform_info/>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="projekt20131218082931932">
+    <legend updateDrawingOrder="false" activeLayer="unternehmer20131218082305403">
         <legendgroup open="true" checked="Qt::Unchecked" name="Teilzahlungen">
             <legendlayer drawingOrder="0" open="true" checked="Qt::Unchecked" name="planzahlung" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
@@ -133,9 +134,10 @@
             <vectorjoins/>
             <edittypes>
                 <edittype labelontop="0" editable="1" type="12" name="bemerkung"/>
+                <edittype labelontop="0" editable="1" dateFormat="dd.MM.yyyy" type="13" name="datum_abschluss"/>
                 <edittype labelontop="0" editable="1" dateFormat="dd.MM.yyyy" type="13" name="datum_ende"/>
                 <edittype labelontop="0" editable="1" dateFormat="dd.MM.yyyy" type="13" name="datum_start"/>
-                <edittype labelontop="0" editable="1" unchecked="0" type="7" checked="1" name="geplant"/>
+                <edittype labelontop="0" editable="1" unchecked="f" type="7" checked="t" name="geplant"/>
                 <edittype labelontop="0" editable="1" type="11" name="id"/>
                 <edittype labelontop="0" editable="1" type="0" name="kosten"/>
                 <edittype labelontop="0" editable="1" type="0" name="mwst"/>
@@ -153,10 +155,11 @@
             <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <aliases>
-                <alias field="bemerkung" index="9" name="Bemerkungen"/>
+                <alias field="bemerkung" index="10" name="Bemerkungen"/>
+                <alias field="datum_abschluss" index="8" name="Auftragsabschluss"/>
                 <alias field="datum_ende" index="7" name="Auftragsende"/>
                 <alias field="datum_start" index="6" name="Auftragsbeginn"/>
-                <alias field="geplant" index="8" name="Auftrag geplant?"/>
+                <alias field="geplant" index="9" name="Auftrag geplant?"/>
                 <alias field="kosten" index="3" name="Kosten (exkl. MWST)"/>
                 <alias field="mwst" index="4" name="MWST [%]"/>
                 <alias field="name" index="2" name="Auftragsname"/>
@@ -212,7 +215,7 @@
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="7" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>mbsf20131219110923729</id>
             <datasource>dbname='sogis' host=srsofaioi4531 port=5432 user='bjsvwzie' password='ziegler15' sslmode=disable key='ogc_fid' srid=21781 type=POLYGON table="av_avwmsde_t"."mbsf" (geometrie) sql=</datasource>
             <title></title>
@@ -411,7 +414,7 @@
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" minLabelScale="0" maxLabelScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="7" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
             <id>perimeter20131219110851854</id>
             <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' srid=21781 type=MULTIPOLYGON table="av_geschaeftskontrolle"."perimeter" (perimeter) sql=</datasource>
             <title></title>
@@ -668,7 +671,7 @@
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>planzahlung20131218153106010</id>
             <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."planzahlung" sql=</datasource>
             <title></title>
@@ -699,7 +702,7 @@
                 </edittype>
                 <edittype labelontop="0" editable="1" type="12" name="bemerkung"/>
                 <edittype labelontop="0" editable="1" type="11" name="id"/>
-                <edittype labelontop="0" editable="1" type="0" name="kosten"/>
+                <edittype labelontop="0" editable="1" type="10" name="kosten"/>
                 <edittype labelontop="0" editable="1" type="0" name="mwst"/>
                 <edittype labelontop="0" editable="1" type="0" name="prozent"/>
                 <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="jahr" layer="rechnungsjahr20131204162834226" allowMulti="false" filterExpression="" type="15" value="jahr" name="rechnungsjahr"/>

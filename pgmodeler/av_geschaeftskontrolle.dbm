@@ -126,7 +126,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="auftrag">
 	<schema name="av_geschaeftskontrolle"/>
 	<role name="stefan"/>
-	<position x="175.699" y="466.096"/>
+	<position x="198.556" y="474.667"/>
 	<column name="id">
 		<type name="serial"/>
 	</column>
@@ -149,6 +149,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<type name="date"/>
 	</column>
 	<column name="datum_ende">
+		<type name="date"/>
+	</column>
+	<column name="datum_abschluss">
 		<type name="date"/>
 	</column>
 	<column name="geplant">
@@ -210,13 +213,12 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<return-type>
 	<type name="trigger"/>
 	</return-type>
-	<definition><![CDATA[DECLARE gesamtkosten DOUBLE PRECISION;
-
+	<definition><![CDATA[ DECLARE gesamtkosten DOUBLE PRECISION;
  BEGIN
+
+SELECT kosten FROM av_geschaeftskontrolle.auftrag WHERE id = NEW.auftrag_id INTO gesamtkosten;
+NEW.kosten = gesamtkosten*(NEW.prozent/100);
  
-  SELECT kosten FROM av_geschaeftskontrolle.auftrag WHERE id = NEW.auftrag_id INTO gesamtkosten;
-  NEW.kosten = gesamtkosten*(NEW.prozent/100);
-  
  RETURN NEW;
  END;]]></definition>
 </function>
@@ -254,7 +256,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<comment><![CDATA[Geplante Zahlung pro Jahr.]]></comment>
 	<appended-sql><![CDATA[ALTER FUNCTION av_geschaeftskontrolle.calculate_order_costs_from_percentage()
   OWNER TO stefan;]]></appended-sql>
-	<position x="712" y="588.571"/>
+	<position x="712" y="590"/>
 	<column name="id">
 		<type name="serial"/>
 	</column>

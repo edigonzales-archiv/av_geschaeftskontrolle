@@ -99,6 +99,7 @@ CREATE TABLE av_geschaeftskontrolle.auftrag(
 	unternehmer_id int4 NOT NULL,
 	datum_start date,
 	datum_ende date,
+	datum_abschluss date,
 	geplant boolean,
 	bemerkung varchar,
 	CONSTRAINT auftrag_pkey PRIMARY KEY (id)
@@ -137,13 +138,12 @@ CREATE OR REPLACE FUNCTION av_geschaeftskontrolle.calculate_order_costs_from_per
 	CALLED ON NULL INPUT
 	SECURITY INVOKER
 	COST 100
-	AS $$DECLARE gesamtkosten DOUBLE PRECISION;
-
+	AS $$ DECLARE gesamtkosten DOUBLE PRECISION;
  BEGIN
+
+SELECT kosten FROM av_geschaeftskontrolle.auftrag WHERE id = NEW.auftrag_id INTO gesamtkosten;
+NEW.kosten = gesamtkosten*(NEW.prozent/100);
  
-  SELECT kosten FROM av_geschaeftskontrolle.auftrag WHERE id = NEW.auftrag_id INTO gesamtkosten;
-  NEW.kosten = gesamtkosten*(NEW.prozent/100);
-  
  RETURN NEW;
  END;$$;
 -- ddl-end --
@@ -266,35 +266,35 @@ ON DELETE NO ACTION ON UPDATE NO ACTION NOT DEFERRABLE;
 -- ddl-end --
 
 
--- object: grant_5d4889a935 | type: PERMISSION --
+-- object: grant_0446cdbd2e | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.konto
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_62ae7e41bf | type: PERMISSION --
+-- object: grant_e31ac6f604 | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.plankostenkonto
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_bb3622fc36 | type: PERMISSION --
+-- object: grant_2ccefcbdbb | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.projekt
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_f836f6994e | type: PERMISSION --
+-- object: grant_cc186da61d | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.planzahlung
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_158f5eac34 | type: PERMISSION --
+-- object: grant_f7999484ef | type: PERMISSION --
 GRANT USAGE
    ON SCHEMA av_geschaeftskontrolle
    TO stefan;
