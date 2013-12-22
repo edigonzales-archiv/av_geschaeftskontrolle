@@ -14,7 +14,7 @@
         <relation referencingLayer="plankostenkonto20131204162834238" referencedLayer="konto20131204152724930" id="fk_konto_plankostenkonto" name="Plankostenkonto">
             <fieldRef referencedField="id" referencingField="konto_id"/>
         </relation>
-        <relation referencingLayer="projekt20131218082931932" referencedLayer="konto20131204152724930" id="fk_konto_projekt" name="Projekt_Konto">
+        <relation referencingLayer="projekt20131218082931932" referencedLayer="konto20131204152724930" id="fk_konto_projekt" name="Projekte">
             <fieldRef referencedField="id" referencingField="konto_id"/>
         </relation>
         <relation referencingLayer="auftrag20131218082931946" referencedLayer="unternehmer20131218082305403" id="fk_projekt_unternehmer" name="Auftrag_Unternehmer">
@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>590325.07042465126141906</xmin>
-            <ymin>211965.31065135830431245</ymin>
-            <xmax>641962.62945294985547662</xmax>
-            <ymax>259531.8588019072485622</ymax>
+            <xmin>593432.85255700198467821</xmin>
+            <ymin>213901.0619314189243596</ymin>
+            <xmax>613624.02488452254328877</xmax>
+            <ymax>226522.96447939911740832</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -99,15 +99,10 @@
                     <legendlayerfile isInOverview="0" layerid="perimeter20131219110851854" visible="1"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="8" open="true" checked="Qt::Checked" name="AV-Gemeindegrenzen" showFeatureCount="0">
-                <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="mbsf20131219110923729" visible="1"/>
-                </filegroup>
-            </legendlayer>
         </legendgroup>
     </legend>
-    <projectlayers layercount="10">
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+    <projectlayers layercount="9">
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>auftrag20131218082931946</id>
             <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."auftrag" sql=</datasource>
             <title></title>
@@ -153,7 +148,7 @@
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
             <annotationform>.</annotationform>
-            <editorlayout>generatedlayout</editorlayout>
+            <editorlayout>tablayout</editorlayout>
             <aliases>
                 <alias field="bemerkung" index="10" name="Bemerkungen"/>
                 <alias field="datum_abschluss" index="8" name="Auftragsabschluss"/>
@@ -168,6 +163,25 @@
             </aliases>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
+            <attributeEditorForm>
+                <attributeEditorContainer name="Allgemein">
+                    <attributeEditorField index="1" name="projekt_id"/>
+                    <attributeEditorField index="2" name="name"/>
+                    <attributeEditorField index="3" name="kosten"/>
+                    <attributeEditorField index="4" name="mwst"/>
+                    <attributeEditorField index="5" name="unternehmer_id"/>
+                    <attributeEditorField index="6" name="datum_start"/>
+                    <attributeEditorField index="7" name="datum_ende"/>
+                    <attributeEditorField index="8" name="datum_abschluss"/>
+                    <attributeEditorField index="9" name="geplant"/>
+                </attributeEditorContainer>
+                <attributeEditorContainer name="Planzahlung">
+                    <attributeEditorRelation relation="fk_auftrag_planzahlung" name="fk_auftrag_planzahlung"/>
+                </attributeEditorContainer>
+                <attributeEditorContainer name="Rechnungen">
+                    <attributeEditorField index="145" name="fk_auftrag_rechnung"/>
+                </attributeEditorContainer>
+            </attributeEditorForm>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -213,205 +227,19 @@
             </aliases>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
-            <attributeactions/>
-        </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="7" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
-            <id>mbsf20131219110923729</id>
-            <datasource>dbname='sogis' host=srsofaioi4531 port=5432 user='bjsvwzie' password='ziegler15' sslmode=disable key='ogc_fid' srid=21781 type=POLYGON table="av_avwmsde_t"."mbsf" (geometrie) sql=</datasource>
-            <title></title>
-            <abstract></abstract>
-            <keywordList>
-                <value></value>
-            </keywordList>
-            <layername>AV-Gemeindegrenzen</layername>
-            <srs>
-                <spatialrefsys>
-                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
-                    <srsid>1919</srsid>
-                    <srid>21781</srid>
-                    <authid>EPSG:21781</authid>
-                    <description>CH1903 / LV03</description>
-                    <projectionacronym>somerc</projectionacronym>
-                    <ellipsoidacronym>bessel</ellipsoidacronym>
-                    <geographicflag>false</geographicflag>
-                </spatialrefsys>
-            </srs>
-            <provider encoding="System">postgres</provider>
-            <previewExpression></previewExpression>
-            <vectorjoins/>
-            <renderer-v2 symbollevels="0" type="singleSymbol">
-                <symbols>
-                    <symbol alpha="1" type="fill" name="0">
-                        <layer pass="0" class="SimpleFill" locked="0">
-                            <prop k="border_width_unit" v="MM"/>
-                            <prop k="color" v="255,170,0,255"/>
-                            <prop k="color_border" v="143,143,143,255"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="offset_unit" v="MM"/>
-                            <prop k="style" v="no"/>
-                            <prop k="style_border" v="solid"/>
-                            <prop k="width_border" v="0.8"/>
-                        </layer>
-                    </symbol>
-                </symbols>
-                <rotation field=""/>
-                <sizescale field="" scalemethod="area"/>
-            </renderer-v2>
-            <customproperties>
-                <property key="labeling" value="pal"/>
-                <property key="labeling/addDirectionSymbol" value="false"/>
-                <property key="labeling/angleOffset" value="0"/>
-                <property key="labeling/blendMode" value="0"/>
-                <property key="labeling/bufferBlendMode" value="0"/>
-                <property key="labeling/bufferColorA" value="255"/>
-                <property key="labeling/bufferColorB" value="255"/>
-                <property key="labeling/bufferColorG" value="255"/>
-                <property key="labeling/bufferColorR" value="255"/>
-                <property key="labeling/bufferDraw" value="true"/>
-                <property key="labeling/bufferJoinStyle" value="64"/>
-                <property key="labeling/bufferNoFill" value="false"/>
-                <property key="labeling/bufferSize" value="0.5"/>
-                <property key="labeling/bufferSizeInMapUnits" value="false"/>
-                <property key="labeling/bufferTransp" value="0"/>
-                <property key="labeling/centroidWhole" value="false"/>
-                <property key="labeling/decimals" value="3"/>
-                <property key="labeling/displayAll" value="false"/>
-                <property key="labeling/dist" value="0"/>
-                <property key="labeling/distInMapUnits" value="false"/>
-                <property key="labeling/enabled" value="true"/>
-                <property key="labeling/fieldName" value="name"/>
-                <property key="labeling/fontBold" value="false"/>
-                <property key="labeling/fontCapitals" value="0"/>
-                <property key="labeling/fontFamily" value="CadastraCondensed"/>
-                <property key="labeling/fontItalic" value="false"/>
-                <property key="labeling/fontLetterSpacing" value="0"/>
-                <property key="labeling/fontLimitPixelSize" value="false"/>
-                <property key="labeling/fontMaxPixelSize" value="10000"/>
-                <property key="labeling/fontMinPixelSize" value="3"/>
-                <property key="labeling/fontSize" value="8"/>
-                <property key="labeling/fontSizeInMapUnits" value="false"/>
-                <property key="labeling/fontStrikeout" value="false"/>
-                <property key="labeling/fontUnderline" value="false"/>
-                <property key="labeling/fontWeight" value="50"/>
-                <property key="labeling/fontWordSpacing" value="0"/>
-                <property key="labeling/formatNumbers" value="false"/>
-                <property key="labeling/isExpression" value="false"/>
-                <property key="labeling/labelOffsetInMapUnits" value="true"/>
-                <property key="labeling/labelPerPart" value="false"/>
-                <property key="labeling/leftDirectionSymbol" value="&lt;"/>
-                <property key="labeling/limitNumLabels" value="false"/>
-                <property key="labeling/maxCurvedCharAngleIn" value="20"/>
-                <property key="labeling/maxCurvedCharAngleOut" value="-20"/>
-                <property key="labeling/maxNumLabels" value="2000"/>
-                <property key="labeling/mergeLines" value="false"/>
-                <property key="labeling/minFeatureSize" value="0"/>
-                <property key="labeling/multilineAlign" value="0"/>
-                <property key="labeling/multilineHeight" value="1"/>
-                <property key="labeling/namedStyle" value="Regular Condensed"/>
-                <property key="labeling/obstacle" value="true"/>
-                <property key="labeling/placeDirectionSymbol" value="0"/>
-                <property key="labeling/placement" value="4"/>
-                <property key="labeling/placementFlags" value="0"/>
-                <property key="labeling/plussign" value="false"/>
-                <property key="labeling/preserveRotation" value="true"/>
-                <property key="labeling/previewBkgrdColor" value="#ffffff"/>
-                <property key="labeling/priority" value="5"/>
-                <property key="labeling/quadOffset" value="4"/>
-                <property key="labeling/reverseDirectionSymbol" value="false"/>
-                <property key="labeling/rightDirectionSymbol" value=">"/>
-                <property key="labeling/scaleMax" value="50000"/>
-                <property key="labeling/scaleMin" value="1"/>
-                <property key="labeling/scaleVisibility" value="true"/>
-                <property key="labeling/shadowBlendMode" value="6"/>
-                <property key="labeling/shadowColorB" value="0"/>
-                <property key="labeling/shadowColorG" value="0"/>
-                <property key="labeling/shadowColorR" value="0"/>
-                <property key="labeling/shadowDraw" value="false"/>
-                <property key="labeling/shadowOffsetAngle" value="135"/>
-                <property key="labeling/shadowOffsetDist" value="1"/>
-                <property key="labeling/shadowOffsetGlobal" value="true"/>
-                <property key="labeling/shadowOffsetUnits" value="1"/>
-                <property key="labeling/shadowRadius" value="1.5"/>
-                <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
-                <property key="labeling/shadowRadiusUnits" value="1"/>
-                <property key="labeling/shadowScale" value="100"/>
-                <property key="labeling/shadowTransparency" value="30"/>
-                <property key="labeling/shadowUnder" value="0"/>
-                <property key="labeling/shapeBlendMode" value="0"/>
-                <property key="labeling/shapeBorderColorA" value="255"/>
-                <property key="labeling/shapeBorderColorB" value="128"/>
-                <property key="labeling/shapeBorderColorG" value="128"/>
-                <property key="labeling/shapeBorderColorR" value="128"/>
-                <property key="labeling/shapeBorderWidth" value="0"/>
-                <property key="labeling/shapeBorderWidthUnits" value="1"/>
-                <property key="labeling/shapeDraw" value="false"/>
-                <property key="labeling/shapeFillColorA" value="255"/>
-                <property key="labeling/shapeFillColorB" value="255"/>
-                <property key="labeling/shapeFillColorG" value="255"/>
-                <property key="labeling/shapeFillColorR" value="255"/>
-                <property key="labeling/shapeJoinStyle" value="64"/>
-                <property key="labeling/shapeOffsetUnits" value="1"/>
-                <property key="labeling/shapeOffsetX" value="0"/>
-                <property key="labeling/shapeOffsetY" value="0"/>
-                <property key="labeling/shapeRadiiUnits" value="1"/>
-                <property key="labeling/shapeRadiiX" value="0"/>
-                <property key="labeling/shapeRadiiY" value="0"/>
-                <property key="labeling/shapeRotation" value="0"/>
-                <property key="labeling/shapeRotationType" value="0"/>
-                <property key="labeling/shapeSVGFile" value=""/>
-                <property key="labeling/shapeSizeType" value="0"/>
-                <property key="labeling/shapeSizeUnits" value="1"/>
-                <property key="labeling/shapeSizeX" value="0"/>
-                <property key="labeling/shapeSizeY" value="0"/>
-                <property key="labeling/shapeTransparency" value="0"/>
-                <property key="labeling/shapeType" value="0"/>
-                <property key="labeling/textColorA" value="255"/>
-                <property key="labeling/textColorB" value="0"/>
-                <property key="labeling/textColorG" value="0"/>
-                <property key="labeling/textColorR" value="0"/>
-                <property key="labeling/textTransp" value="0"/>
-                <property key="labeling/upsidedownLabels" value="0"/>
-                <property key="labeling/wrapChar" value=""/>
-                <property key="labeling/xOffset" value="0"/>
-                <property key="labeling/yOffset" value="0"/>
-            </customproperties>
-            <blendMode>0</blendMode>
-            <featureBlendMode>0</featureBlendMode>
-            <layerTransparency>0</layerTransparency>
-            <displayfield>name</displayfield>
-            <label>0</label>
-            <labelattributes>
-                <label fieldname="" text="Beschriftung"/>
-                <family fieldname="" name="Ubuntu"/>
-                <size fieldname="" units="pt" value="12"/>
-                <bold fieldname="" on="0"/>
-                <italic fieldname="" on="0"/>
-                <underline fieldname="" on="0"/>
-                <strikeout fieldname="" on="0"/>
-                <color fieldname="" red="0" blue="0" green="0"/>
-                <x fieldname=""/>
-                <y fieldname=""/>
-                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
-                <angle fieldname="" value="0" auto="0"/>
-                <alignment fieldname="" value="center"/>
-                <buffercolor fieldname="" red="255" blue="255" green="255"/>
-                <buffersize fieldname="" units="pt" value="1"/>
-                <bufferenabled fieldname="" on=""/>
-                <multilineenabled fieldname="" on=""/>
-                <selectedonly on=""/>
-            </labelattributes>
-            <edittypes>
-                <edittype labelontop="0" editable="1" type="0" name="bfsnr"/>
-                <edittype labelontop="0" editable="1" type="0" name="name"/>
-                <edittype labelontop="0" editable="1" type="0" name="ogc_fid"/>
-            </edittypes>
-            <editform>.</editform>
-            <editforminit></editforminit>
-            <featformsuppress>0</featformsuppress>
-            <annotationform>.</annotationform>
-            <editorlayout>generatedlayout</editorlayout>
-            <excludeAttributesWMS/>
-            <excludeAttributesWFS/>
+            <attributeEditorForm>
+                <attributeEditorContainer name="Allgemein">
+                    <attributeEditorField index="1" name="nr"/>
+                    <attributeEditorField index="2" name="name"/>
+                    <attributeEditorField index="3" name="bemerkung"/>
+                </attributeEditorContainer>
+                <attributeEditorContainer name="Plankostenkonto">
+                    <attributeEditorField index="-1" name="fk_konto_plankostenkonto"/>
+                </attributeEditorContainer>
+                <attributeEditorContainer name="Projekte">
+                    <attributeEditorField index="-1" name="fk_konto_projekt"/>
+                </attributeEditorContainer>
+            </attributeEditorForm>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="7" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
@@ -724,7 +552,7 @@
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>projekt20131218082931932</id>
             <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."projekt" sql=</datasource>
             <title></title>
@@ -765,7 +593,7 @@
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
             <annotationform>.</annotationform>
-            <editorlayout>generatedlayout</editorlayout>
+            <editorlayout>tablayout</editorlayout>
             <aliases>
                 <alias field="bemerkung" index="7" name="Bemerkungen"/>
                 <alias field="datum_ende" index="6" name="Projektende"/>
@@ -777,6 +605,20 @@
             </aliases>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
+            <attributeEditorForm>
+                <attributeEditorContainer name="Allgemein">
+                    <attributeEditorField index="1" name="konto_id"/>
+                    <attributeEditorField index="2" name="name"/>
+                    <attributeEditorField index="3" name="kosten"/>
+                    <attributeEditorField index="4" name="mwst"/>
+                    <attributeEditorField index="5" name="datum_start"/>
+                    <attributeEditorField index="6" name="datum_ende"/>
+                    <attributeEditorField index="7" name="bemerkung"/>
+                </attributeEditorContainer>
+                <attributeEditorContainer name="Aufträge">
+                    <attributeEditorRelation relation="fk_auftrag_projekt" name="fk_auftrag_projekt"/>
+                </attributeEditorContainer>
+            </attributeEditorForm>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
@@ -868,7 +710,7 @@
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>unternehmer20131218082305403</id>
             <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."unternehmer" sql=</datasource>
             <title></title>
@@ -909,7 +751,7 @@
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
             <annotationform>.</annotationform>
-            <editorlayout>generatedlayout</editorlayout>
+            <editorlayout>tablayout</editorlayout>
             <aliases>
                 <alias field="bemerkung" index="9" name="Bemerkung"/>
                 <alias field="firma" index="1" name="Firma"/>
@@ -923,6 +765,22 @@
             </aliases>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
+            <attributeEditorForm>
+                <attributeEditorContainer name="Allgemein">
+                    <attributeEditorField index="1" name="firma"/>
+                    <attributeEditorField index="2" name="uid"/>
+                    <attributeEditorField index="3" name="nachname"/>
+                    <attributeEditorField index="4" name="vorname"/>
+                    <attributeEditorField index="5" name="strasse"/>
+                    <attributeEditorField index="6" name="hausnummer"/>
+                    <attributeEditorField index="7" name="plz"/>
+                    <attributeEditorField index="8" name="ortschaft"/>
+                    <attributeEditorField index="9" name="bemerkung"/>
+                </attributeEditorContainer>
+                <attributeEditorContainer name="Aufträge">
+                    <attributeEditorRelation relation="fk_projekt_unternehmer" name="fk_projekt_unternehmer"/>
+                </attributeEditorContainer>
+            </attributeEditorForm>
             <attributeactions/>
         </maplayer>
     </projectlayers>
