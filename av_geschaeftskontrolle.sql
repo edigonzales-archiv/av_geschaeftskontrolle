@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.11
 -- Dumped by pg_dump version 9.1.11
--- Started on 2013-12-20 17:13:53 CET
+-- Started on 2013-12-23 15:07:14 CET
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -602,6 +602,7 @@ INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, unternehmer_id, datum_s
 der effektiven Elemente.
 
 Abgabetermin gemäss Vertrag "1 Jahr nach Arbeitsbeginn". In dieser Form nicht umsetzbar. Geschätzter Abschluss ist Ende 2015.');
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (13, 7, 'Digitalisierung Nutzungspläne (2014)', 200000.00, 8, 8, '2014-01-01', '2014-12-31', NULL, true, NULL);
 
 
 --
@@ -610,7 +611,7 @@ Abgabetermin gemäss Vertrag "1 Jahr nach Arbeitsbeginn". In dieser Form nicht u
 -- Name: auftrag_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('auftrag_id_seq', 12, true);
+SELECT pg_catalog.setval('auftrag_id_seq', 13, true);
 
 
 --
@@ -690,6 +691,7 @@ INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, b
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (12, 6, 100.000, 54305.10, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (13, 8, 100.000, 10000.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (14, 9, 100.000, 23574.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (15, 13, 100.000, 200000.00, 8, 2014, NULL);
 
 
 --
@@ -698,7 +700,7 @@ INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, b
 -- Name: planzahlung_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('planzahlung_id_seq', 14, true);
+SELECT pg_catalog.setval('planzahlung_id_seq', 15, true);
 
 
 --
@@ -713,8 +715,11 @@ INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, 
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (5, 2, 'Schlusszahlungen RADAV-Operate', 95204.10, 8, '2014-01-01', NULL, 'Sammelprojekt für die ausstehenden Schlusszahlungen der RADAV-Operate. Verschiedene Gemeinden und verschiedene Unternehmer.
 
 Achtung: LRO noch ergänzen!!!');
-INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (4, 2, 'Lidar-Befliegung Kanton Solothurn', 250000.00, 8, '2014-01-01', NULL, NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (6, 2, 'LRO', 198000.00, 8, '2006-03-28', NULL, NULL);
+INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (4, 1, 'Lidar-Befliegung Kanton Solothurn', 250000.00, 8, '2014-01-01', NULL, NULL);
+INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (7, 2, 'Digitalisierung Nutzungspläne (2014)', 200000.00, 8, '2014-01-01', NULL, 'Budgetiert sind Fr. 300''000. Es ist davon auszugehen, dass im ersten Jahr nicht alles ausgeschöpft wird.
+
+Anmerkung: Oder ein ''Projekt'' für das gesamte Projekt? In diesem Fall ist es ja von geringerem Interesse, da kein AGI-/AV-Projekt...');
 
 
 --
@@ -723,7 +728,7 @@ INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, 
 -- Name: projekt_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('projekt_id_seq', 6, true);
+SELECT pg_catalog.setval('projekt_id_seq', 7, true);
 
 
 --
@@ -779,6 +784,7 @@ INSERT INTO unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer,
 INSERT INTO unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer, plz, ortschaft, bemerkung) VALUES (5, 'Submission', NULL, 'Submission', 'Submission', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer, plz, ortschaft, bemerkung) VALUES (6, 'Einladung', NULL, 'Einladung', 'Einladung', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer, plz, ortschaft, bemerkung) VALUES (7, 'Geocad + Partner AG', NULL, 'Tschudin', 'Peter', 'Gitterlistrasse', '5', 4410, 'Liestal', NULL);
+INSERT INTO unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer, plz, ortschaft, bemerkung) VALUES (8, 'Platzhalter', NULL, 'Platzhalter', 'Platzhalter', NULL, NULL, NULL, NULL, NULL);
 
 
 --
@@ -787,7 +793,7 @@ INSERT INTO unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer,
 -- Name: unternehmer_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('unternehmer_id_seq', 7, true);
+SELECT pg_catalog.setval('unternehmer_id_seq', 8, true);
 
 
 --
@@ -1028,7 +1034,7 @@ GRANT ALL ON TABLE projekt TO stefan;
 GRANT SELECT ON TABLE projekt TO mspublic;
 
 
--- Completed on 2013-12-20 17:13:54 CET
+-- Completed on 2013-12-23 15:07:14 CET
 
 --
 -- PostgreSQL database dump complete

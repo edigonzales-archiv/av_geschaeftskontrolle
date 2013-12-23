@@ -19,7 +19,7 @@ INSERT INTO av_geschaeftskontrolle.unternehmer (id, firma, uid, nachname, vornam
 INSERT INTO av_geschaeftskontrolle.unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer, plz, ortschaft, bemerkung) VALUES (5, 'Submission', NULL, 'Submission', 'Submission', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO av_geschaeftskontrolle.unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer, plz, ortschaft, bemerkung) VALUES (6, 'Einladung', NULL, 'Einladung', 'Einladung', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO av_geschaeftskontrolle.unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer, plz, ortschaft, bemerkung) VALUES (7, 'Geocad + Partner AG', NULL, 'Tschudin', 'Peter', 'Gitterlistrasse', '5', 4410, 'Liestal', NULL);
-
+INSERT INTO av_geschaeftskontrolle.unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer, plz, ortschaft, bemerkung) VALUES (8, 'Platzhalter', NULL, 'Platzhalter', 'Platzhalter', NULL, NULL, NULL, NULL, NULL);
 
 INSERT INTO av_geschaeftskontrolle.projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (1, 1, 'Fusion Buchegg (Zusammenführen der AV-Operate)', 35040.00, 8, '2013-10-03', NULL, '');
 INSERT INTO av_geschaeftskontrolle.projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (2, 2, 'Luftbildbefliegung und Orthofotoerstellung Kanton Solothurn (Teilgebiet West)', 85600.00, 8, '2014-01-01', NULL, '');
@@ -27,8 +27,11 @@ INSERT INTO av_geschaeftskontrolle.projekt (id, konto_id, name, kosten, mwst, da
 INSERT INTO av_geschaeftskontrolle.projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (5, 2, 'Schlusszahlungen RADAV-Operate', 95204.10, 8, '2014-01-01', NULL, 'Sammelprojekt für die ausstehenden Schlusszahlungen der RADAV-Operate. Verschiedene Gemeinden und verschiedene Unternehmer.
 
 Achtung: LRO noch ergänzen!!!');
-INSERT INTO av_geschaeftskontrolle.projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (4, 2, 'Lidar-Befliegung Kanton Solothurn', 250000.00, 8, '2014-01-01', NULL, NULL);
+INSERT INTO av_geschaeftskontrolle.projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (4, 1, 'Lidar-Befliegung Kanton Solothurn', 250000.00, 8, '2014-01-01', NULL, NULL);
 INSERT INTO av_geschaeftskontrolle.projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (6, 2, 'LRO', 198000.00, 8, '2006-03-28', NULL, NULL);
+INSERT INTO av_geschaeftskontrolle.projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (7, 2, 'Digitalisierung Nutzungspläne (2014)', 200000.00, 8, '2014-01-01', NULL, 'Budgetiert sind Fr. 300''000. Es ist davon auszugehen, dass im ersten Jahr nicht alles ausgeschöpft wird.
+
+Anmerkung: Oder ein ''Projekt'' für das gesamte Projekt? In diesem Fall ist es ja von geringerem Interesse, da kein AGI-/AV-Projekt...');
 
 INSERT INTO av_geschaeftskontrolle.auftrag (id, projekt_id, name, kosten, mwst, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (2, 2, 'Luftbildbefliegung und Orthofotoerstellung Kanton Solothurn (Teilgebiet West)', 85600.00, 8, 4, '2014-01-01', '2014-09-01', NULL, false, 'pauschal');
 INSERT INTO av_geschaeftskontrolle.auftrag (id, projekt_id, name, kosten, mwst, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (3, 3, 'Beratungsmandat lokale Spannungen', 20130.00, 8, 2, '2012-09-03', '2015-12-31', NULL, false, 'Ursprünglicher Auftrag: "Erarbeiten eines Konzeptes für die Realisierung des LV95-Überganges...". Neu wird der Auftrag für Beratertätigkeiten für den Themenkreis "lokale Spannungen" verwendet.');

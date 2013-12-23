@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>593326.37945268582552671</xmin>
-            <ymin>214230.16061748555512168</ymin>
-            <xmax>613517.5517802070826292</xmax>
-            <ymax>226852.06316546627203934</ymax>
+            <xmin>586577.12340972269885242</xmin>
+            <ymin>211640.22864362286054529</ymin>
+            <xmax>607425.68274326110258698</xmax>
+            <ymax>230845.12562306490144692</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -148,7 +148,7 @@
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
             <annotationform>.</annotationform>
-            <editorlayout>tablayout</editorlayout>
+            <editorlayout>generatedlayout</editorlayout>
             <aliases>
                 <alias field="bemerkung" index="10" name="Bemerkungen"/>
                 <alias field="datum_abschluss" index="8" name="Auftragsabschluss"/>
@@ -176,10 +176,8 @@
                     <attributeEditorField index="9" name="geplant"/>
                 </attributeEditorContainer>
                 <attributeEditorContainer name="Planzahlung">
-                    <attributeEditorRelation relation="fk_auftrag_planzahlung" name="fk_auftrag_planzahlung"/>
-                </attributeEditorContainer>
-                <attributeEditorContainer name="Rechnungen">
-                    <attributeEditorField index="145" name="fk_auftrag_rechnung"/>
+                    <attributeEditorField index="-1" name="fk_auftrag_planzahlung"/>
+                    <attributeEditorField index="-1" name="fk_auftrag_rechnung"/>
                 </attributeEditorContainer>
             </attributeEditorForm>
             <attributeactions/>
@@ -234,10 +232,10 @@
                     <attributeEditorField index="3" name="bemerkung"/>
                 </attributeEditorContainer>
                 <attributeEditorContainer name="Plankostenkonto">
-                    <attributeEditorField index="-1" name="fk_konto_plankostenkonto"/>
+                    <attributeEditorField index="161" name="fk_konto_plankostenkonto"/>
                 </attributeEditorContainer>
                 <attributeEditorContainer name="Projekte">
-                    <attributeEditorField index="-1" name="fk_konto_projekt"/>
+                    <attributeEditorField index="145" name="fk_konto_projekt"/>
                 </attributeEditorContainer>
             </attributeEditorForm>
             <attributeactions/>
