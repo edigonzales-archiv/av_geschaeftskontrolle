@@ -1,4 +1,9 @@
-﻿-- to_char(12454.8, E'999\'999\'999\'999D99S')
+﻿-- Verifikation:
+-- Aufträge ohne Ende-Datum
+-- Aufträge ohne Planzahlungen
+
+
+-- to_char(12454.8, E'999\'999\'999\'999D99S')
 
 -- Alle laufenden Projekte.
 -- Projekte ohne 'datum_ende'
@@ -30,7 +35,7 @@ ORDER BY b."name", a."name"
 
 -- IDEE: auch geglieder nach Konto, so entspricht summe - differenz dem was ich noch zur verfügung habe.
 
-
+/*
 SELECT *
 FROM
 (
@@ -65,6 +70,15 @@ WHERE a.projekt_id = b.id
 AND b.konto_id = c.id
 ORDER BY b."name", a."name"
 ) as y ON (y.id = x.id)
+*/
+
+-- laufende Aufträge
+
+SELECT auf.id as auf_id, auf."name", proj.id as proj_id, proj."name", auf.kosten, auf.mwst, (auf.kosten * (1 + auf.mwst / 100)) as kosten_inkl, auf.datum_start, auf.datum_ende, auf.geplant
+FROM av_geschaeftskontrolle.auftrag as auf, av_geschaeftskontrolle.projekt as proj
+WHERE auf.projekt_id = proj.id
+AND auf.datum_abschluss IS NULL or trim('' from datum_abschluss::text) = ''
+ORDER BY auf.datum_start, auf."name"
 
 
 
