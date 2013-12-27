@@ -74,11 +74,21 @@ ORDER BY b."name", a."name"
 
 -- laufende Aufträge
 
-SELECT auf.id as auf_id, auf."name", proj.id as proj_id, proj."name", auf.kosten, auf.mwst, (auf.kosten * (1 + auf.mwst / 100)) as kosten_inkl, auf.datum_start, auf.datum_ende, auf.geplant
-FROM av_geschaeftskontrolle.auftrag as auf, av_geschaeftskontrolle.projekt as proj
-WHERE auf.projekt_id = proj.id
-AND auf.datum_abschluss IS NULL or trim('' from datum_abschluss::text) = ''
-ORDER BY auf.datum_start, auf."name"
+SELECT auftrag.*, rechnung.bezahlt, (auftrag.kosten_inkl - rechnung.bezahlt) as ausstehend
+FROM
+(
+ SELECT auf.id as auf_id, auf."name" as auftrag_name, auf.geplant, proj.id as proj_id, proj."name" as projekt_name, konto.nr || ' (' || konto."name" || ')' as konto, auf.datum_start, auf.datum_ende, auf.kosten as kosten_exkl, auf.mwst, (auf.kosten * (1 + auf.mwst / 100)) as kosten_inkl
+ FROM av_geschaeftskontrolle.auftrag as auf, av_geschaeftskontrolle.projekt as proj, av_geschaeftskontrolle.konto as konto
+ WHERE auf.projekt_id = proj.id
+ AND proj.konto_id = konto.id
+ AND auf.datum_abschluss IS NULL or trim('' from datum_abschluss::text) = ''
+ ORDER BY auf.datum_start, auf."name"
+) as auftrag LEFT JOIN
+(
+ SELECT sum(kosten * (1 + mwst / 100)) as bezahlt, auftrag_id
+ FROM av_geschaeftskontrolle.rechnung
+ GROUP BY auftrag_id
+) as rechnung ON (rechnung.auftrag_id = auftrag.auf_id);
 
 
 

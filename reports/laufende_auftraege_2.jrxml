@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="laufende_auftraege_2" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="37533d79-1db3-41e2-95bc-303933f192a0">
+	<property name="ireport.zoom" value="1.1000000000000005"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Laufende_Auftraege" uuid="9d9a6807-959f-40a7-90a0-90aa418326dd">
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM av_geschaeftskontrolle.vr_laufende_auftraege;]]>
+		</queryString>
+		<field name="auf_id" class="java.lang.Integer"/>
+		<field name="auftrag_name" class="java.lang.String"/>
+		<field name="geplant" class="java.lang.Boolean"/>
+		<field name="proj_id" class="java.lang.Integer"/>
+		<field name="projekt_name" class="java.lang.String"/>
+		<field name="konto" class="java.lang.String"/>
+		<field name="datum_start" class="java.sql.Date"/>
+		<field name="datum_ende" class="java.sql.Date"/>
+		<field name="kosten_exkl" class="java.math.BigDecimal"/>
+		<field name="mwst" class="java.lang.Double"/>
+		<field name="kosten_inkl" class="java.lang.Double"/>
+		<field name="bezahlt" class="java.lang.Double"/>
+		<field name="ausstehend" class="java.lang.Double"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT 1 as foo FROM av_geschaeftskontrolle.vr_laufende_auftraege LIMIT 1;]]>
+	</queryString>
+	<field name="foo" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="33" y="66" width="70" height="13" uuid="8ae7d9af-9ebd-4aa6-9576-693b654ef4ca"/>
+				<textElement textAlignment="Left">
+					<font fontName="Frutiger 55 Roman" isItalic="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[www.agi.so.ch]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-9" y="0" width="141" height="13" uuid="888e29f3-1aa8-4a82-a0e3-57ff7bbe07ac"/>
+				<textElement textAlignment="Right">
+					<font fontName="Frutiger 55 Roman" isBold="true" isItalic="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Amt für Geoinformation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-9" y="14" width="141" height="13" uuid="69ec2c6a-5d55-40d1-8b4b-f8189c86c41d"/>
+				<textElement textAlignment="Right">
+					<font fontName="Frutiger 55 Roman" isItalic="true" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Amtliche Vermessung]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="44" width="72" height="13" uuid="40a22c9c-e702-4d2a-9b96-8d705cf0eaed"/>
+				<textElement textAlignment="Left">
+					<font fontName="Frutiger 55 Roman" isItalic="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[4501 Solothurn]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="56" width="114" height="13" uuid="9f0319d6-9b9b-4e63-9312-ae36579d99ab"/>
+				<textElement textAlignment="Left">
+					<font fontName="Frutiger 55 Roman" isItalic="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Telefon 032 627 75 92]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="32" width="59" height="13" uuid="2a06dd33-e1f1-4d2f-bdc4-67142b14e36a"/>
+				<textElement textAlignment="Left">
+					<font fontName="Frutiger 55 Roman" isItalic="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Rötistrasse 4]]></text>
+			</staticText>
+			<image>
+				<reportElement x="622" y="0" width="180" height="18" uuid="b9f7ab40-d0ef-4525-ae48-b920c67de74e"/>
+				<imageExpression><![CDATA["/home/stefan/Projekte/av_geschaeftskontrolle/reports/kanton_sw.jpeg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="16" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="14" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" x="0" y="0" width="802" height="39" uuid="ace35464-f320-4be6-bcdd-f95592800900"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Laufende_Auftraege" uuid="f53df5dc-35cf-4ae8-8d19-2b7a5e57658d">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="eb0828c4-2408-4b9a-83e1-8cbbab3f6d96">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="30" uuid="0f1ae95a-267b-40a8-91dc-13ed213a04bb"/>
+								<textFieldExpression><![CDATA[$F{auftrag_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="d8915815-b4bc-45af-afc6-7cbdabc59801">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="30" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="90" uuid="1c5afff1-75ad-4c99-a634-bfc836bf1276">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="30" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="90" uuid="2673b94d-1054-4f33-883c-ce3b3c82ec01">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="30" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="90" uuid="a0f661a3-712f-44f7-a8ff-fb5030e43e6a">
+						<jr:columnHeader style="table_CH" height="30" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="30" rowSpan="1"/>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

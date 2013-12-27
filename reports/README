@@ -1,0 +1,19 @@
+- fonts via tools - options - fonts einstellen. für server kann man font-extension machen (jar-file) und anschliessne im lib-verzeichnis installieren.
+- die frutiger fonts können nicht embedded werden (mit itext) -> mit fontforge diesen tag auf "installable font" setzen (unter info -> os/2 -> embedded)
+  -> scheisse: geht nicht!! a) mit itext direkt ausprobiere b) mit jasper server und jar.
+- locale tools - options - compilation and execution
+
+
+
+- falls table component:
+ * main query SELECT 1 as foo FROM 'tabelle' LIMIT 1
+
+
+
+
+- remember: zum gruppieren müssen die sachen geordnet sein!!!
+
+
+- opaque nicht vergessen bei background sonst ists immer weiss
+- conditional styles: einfach field name schreiben, auch wenn er nicht zur verfügung steht (bei table components).
+$F{datum_ende}.getTime() < new Date().getTime() (welches Date wird bei server genommen? schon immer ein neues?)
