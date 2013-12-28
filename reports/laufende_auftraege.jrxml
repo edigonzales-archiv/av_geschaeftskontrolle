@@ -285,7 +285,7 @@
 						<jr:detailCell style="table_TD" height="20" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00">
 								<reportElement x="0" y="0" width="90" height="20" uuid="58277573-8575-4ba1-9cd4-ef533b95da95"/>
-								<textElement>
+								<textElement textAlignment="Right">
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{kosten_exkl}]]></textFieldExpression>
@@ -306,7 +306,7 @@
 						<jr:detailCell style="table_TD" height="20" rowSpan="1">
 							<textField pattern="#,##0.0;-#,##0.0">
 								<reportElement x="0" y="0" width="90" height="20" uuid="bfce9a89-ac76-46d1-8fd5-10b607f20c37"/>
-								<textElement>
+								<textElement textAlignment="Right">
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{mwst}]]></textFieldExpression>
@@ -327,7 +327,7 @@
 						<jr:detailCell style="table_TD" height="20" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00">
 								<reportElement x="0" y="0" width="90" height="20" uuid="2ef2ca78-f5c6-461f-ae5b-5b72dcf7c125"/>
-								<textElement>
+								<textElement textAlignment="Right">
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{kosten_inkl}]]></textFieldExpression>
@@ -348,7 +348,7 @@
 						<jr:detailCell style="table_TD" height="20" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 								<reportElement x="0" y="0" width="90" height="20" uuid="dd8327e4-197e-40c4-b191-6e9a76607737"/>
-								<textElement>
+								<textElement textAlignment="Right">
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{bezahlt}]]></textFieldExpression>
@@ -369,7 +369,7 @@
 						<jr:detailCell style="table_TD" height="20" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
 								<reportElement x="0" y="0" width="90" height="20" uuid="66c6a3ad-7805-4e28-a9a4-11d735789339"/>
-								<textElement>
+								<textElement textAlignment="Right">
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{ausstehend}]]></textFieldExpression>
