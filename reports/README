@@ -17,3 +17,8 @@
 - opaque nicht vergessen bei background sonst ists immer weiss
 - conditional styles: einfach field name schreiben, auch wenn er nicht zur verfügung steht (bei table components).
 $F{datum_ende}.getTime() < new Date().getTime() (welches Date wird bei server genommen? schon immer ein neues?)
+
+
+
+$F{geplant} ? "nein" : "ja" (-> im titel aber "ausgelöst?", sonst genau umgekehrt. ist so wegen qgis, da man keine defaultwerte setzen kann und man meistens das häkchen für ausgelöst setzten müsste...)
+
