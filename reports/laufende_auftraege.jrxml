@@ -18,8 +18,8 @@
 			<pen lineWidth="0.5" lineColor="#000000"/>
 		</box>
 	</style>
-	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
-		<box>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF" fontName="Frutiger 55 Roman">
+		<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
 			<pen lineWidth="0.5" lineColor="#000000"/>
 		</box>
 		<conditionalStyle>
@@ -124,7 +124,7 @@
 					<datasetRun subDataset="vr_laufende_auftraege" uuid="ebcc9491-73a1-4fff-81e6-8c7fa92819a1">
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
-					<jr:column width="90" uuid="0762abc2-8f7e-4d2f-955c-41b9f4a8b4d6">
+					<jr:column width="120" uuid="0762abc2-8f7e-4d2f-955c-41b9f4a8b4d6">
 						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
 							<staticText>
 								<reportElement x="0" y="0" width="90" height="30" uuid="80bd58c4-6e68-4548-a125-3d1a37ed041e"/>
@@ -135,9 +135,9 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
 							<textField isStretchWithOverflow="true">
-								<reportElement x="0" y="0" width="90" height="20" uuid="b26b8310-2e3d-41f3-ba85-bc2be06c315b"/>
+								<reportElement x="0" y="0" width="118" height="10" uuid="b26b8310-2e3d-41f3-ba85-bc2be06c315b"/>
 								<textElement>
 									<font fontName="Frutiger 55 Roman" size="8" isPdfEmbedded="true"/>
 								</textElement>
@@ -156,9 +156,9 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1">
-							<textField isStretchWithOverflow="true">
-								<reportElement x="0" y="0" width="90" height="20" uuid="92fb0187-c25f-4c8a-b672-9040a609c4d8"/>
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="88" height="10" uuid="92fb0187-c25f-4c8a-b672-9040a609c4d8"/>
 								<textElement>
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
@@ -166,10 +166,10 @@
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="90" uuid="f0f8e760-1d02-45ea-b07e-25dd0acab63a">
+					<jr:column width="50" uuid="f0f8e760-1d02-45ea-b07e-25dd0acab63a">
 						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="90" height="30" uuid="978d4920-7889-42b0-a58a-43a038850c62"/>
+								<reportElement x="0" y="0" width="50" height="30" uuid="978d4920-7889-42b0-a58a-43a038850c62"/>
 								<textElement verticalAlignment="Middle">
 									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
 								</textElement>
@@ -177,9 +177,9 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
 							<textField>
-								<reportElement x="0" y="0" width="90" height="20" uuid="071cd0ef-3494-469b-a559-ac3e16614f42"/>
+								<reportElement x="0" y="0" width="48" height="10" uuid="071cd0ef-3494-469b-a559-ac3e16614f42"/>
 								<textElement>
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
@@ -198,9 +198,9 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1">
-							<textField isStretchWithOverflow="true">
-								<reportElement x="0" y="0" width="90" height="20" uuid="ae3ff39f-1881-4a1d-b36b-b54d4ce607c8"/>
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="88" height="10" uuid="ae3ff39f-1881-4a1d-b36b-b54d4ce607c8"/>
 								<textElement>
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
@@ -208,10 +208,10 @@
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="90" uuid="5f7e7402-bd15-4a82-8222-a81ab2ef5381">
+					<jr:column width="50" uuid="5f7e7402-bd15-4a82-8222-a81ab2ef5381">
 						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="90" height="30" uuid="b6d5b37f-27f5-4772-b6a5-e712d454fe73"/>
+								<reportElement x="0" y="0" width="50" height="30" uuid="b6d5b37f-27f5-4772-b6a5-e712d454fe73"/>
 								<textElement verticalAlignment="Middle">
 									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
 								</textElement>
@@ -219,9 +219,9 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1">
-							<textField isStretchWithOverflow="true">
-								<reportElement x="0" y="0" width="90" height="20" uuid="34dd89f6-ac42-4b81-b15f-ec0c763c751b"/>
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="48" height="10" uuid="34dd89f6-ac42-4b81-b15f-ec0c763c751b"/>
 								<textElement>
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
@@ -229,10 +229,10 @@
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="90" uuid="fbb5041f-178c-4cde-950b-82b69f63e1e8">
+					<jr:column width="50" uuid="fbb5041f-178c-4cde-950b-82b69f63e1e8">
 						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="90" height="30" uuid="fabbda5c-45e4-4b7d-902a-3ec364c28277"/>
+								<reportElement x="0" y="0" width="50" height="30" uuid="fabbda5c-45e4-4b7d-902a-3ec364c28277"/>
 								<textElement verticalAlignment="Middle">
 									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
 								</textElement>
@@ -240,9 +240,9 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
 							<textField pattern="dd.MM.yyyy">
-								<reportElement x="0" y="0" width="90" height="20" uuid="2e79f0de-3b5d-49ba-9174-7087099b7e82"/>
+								<reportElement x="0" y="0" width="48" height="10" uuid="2e79f0de-3b5d-49ba-9174-7087099b7e82"/>
 								<textElement>
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
@@ -250,10 +250,10 @@
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="90" uuid="b719dfd5-3f9f-4613-a219-4a93d6f91bbd">
+					<jr:column width="50" uuid="b719dfd5-3f9f-4613-a219-4a93d6f91bbd">
 						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="90" height="30" uuid="df0d7ae1-5534-4805-822f-92dd3fe2d370"/>
+								<reportElement x="0" y="0" width="50" height="30" uuid="df0d7ae1-5534-4805-822f-92dd3fe2d370"/>
 								<textElement verticalAlignment="Middle">
 									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
 								</textElement>
@@ -261,9 +261,9 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
 							<textField pattern="dd.MM.yyyy">
-								<reportElement x="0" y="0" width="90" height="20" uuid="6fa06d06-f308-45c9-9837-6b59c1ad507b"/>
+								<reportElement x="0" y="0" width="48" height="10" uuid="6fa06d06-f308-45c9-9837-6b59c1ad507b"/>
 								<textElement>
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
@@ -271,10 +271,10 @@
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="90" uuid="5285bb23-a85d-4f2e-85a9-5e7873240f3e">
+					<jr:column width="60" uuid="5285bb23-a85d-4f2e-85a9-5e7873240f3e">
 						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="90" height="30" uuid="3d1d4812-b6e8-4e44-b917-89c00d6e045b"/>
+								<reportElement x="0" y="0" width="60" height="30" uuid="3d1d4812-b6e8-4e44-b917-89c00d6e045b"/>
 								<textElement verticalAlignment="Middle">
 									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
 								</textElement>
@@ -282,9 +282,9 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00">
-								<reportElement x="0" y="0" width="90" height="20" uuid="58277573-8575-4ba1-9cd4-ef533b95da95"/>
+								<reportElement x="0" y="0" width="58" height="10" uuid="58277573-8575-4ba1-9cd4-ef533b95da95"/>
 								<textElement textAlignment="Right">
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
@@ -292,10 +292,10 @@
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="90" uuid="7392bb28-627c-479e-8c80-a57c9dd15faa">
+					<jr:column width="50" uuid="7392bb28-627c-479e-8c80-a57c9dd15faa">
 						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="90" height="30" uuid="6b99db72-f7d7-46a8-8b9e-85f9863238e2"/>
+								<reportElement x="0" y="0" width="50" height="30" uuid="6b99db72-f7d7-46a8-8b9e-85f9863238e2"/>
 								<textElement verticalAlignment="Middle">
 									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
 								</textElement>
@@ -303,9 +303,9 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
 							<textField pattern="#,##0.0;-#,##0.0">
-								<reportElement x="0" y="0" width="90" height="20" uuid="bfce9a89-ac76-46d1-8fd5-10b607f20c37"/>
+								<reportElement x="0" y="0" width="48" height="10" uuid="bfce9a89-ac76-46d1-8fd5-10b607f20c37"/>
 								<textElement textAlignment="Right">
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
@@ -313,10 +313,10 @@
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="90" uuid="db172891-80cf-4db9-8ab7-5283a1d971cc">
+					<jr:column width="60" uuid="db172891-80cf-4db9-8ab7-5283a1d971cc">
 						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="90" height="30" uuid="a34151f8-a210-4b59-ab0f-a16119babbc9"/>
+								<reportElement x="0" y="0" width="60" height="30" uuid="a34151f8-a210-4b59-ab0f-a16119babbc9"/>
 								<textElement verticalAlignment="Middle">
 									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
 								</textElement>
@@ -324,9 +324,9 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00">
-								<reportElement x="0" y="0" width="90" height="20" uuid="2ef2ca78-f5c6-461f-ae5b-5b72dcf7c125"/>
+								<reportElement x="0" y="0" width="58" height="10" uuid="2ef2ca78-f5c6-461f-ae5b-5b72dcf7c125"/>
 								<textElement textAlignment="Right">
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
@@ -334,10 +334,10 @@
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="90" uuid="bad8176b-2d57-4aae-b1d9-3323c1428924">
+					<jr:column width="60" uuid="bad8176b-2d57-4aae-b1d9-3323c1428924">
 						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="90" height="30" uuid="2b874f64-e4ab-44a5-aa65-68e7c434d126"/>
+								<reportElement x="0" y="0" width="60" height="30" uuid="2b874f64-e4ab-44a5-aa65-68e7c434d126"/>
 								<textElement verticalAlignment="Middle">
 									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
 								</textElement>
@@ -345,9 +345,9 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
-								<reportElement x="0" y="0" width="90" height="20" uuid="dd8327e4-197e-40c4-b191-6e9a76607737"/>
+								<reportElement x="0" y="0" width="58" height="10" uuid="dd8327e4-197e-40c4-b191-6e9a76607737"/>
 								<textElement textAlignment="Right">
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
@@ -355,10 +355,10 @@
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="90" uuid="38452dce-1b05-4502-914d-18cf1c407037">
+					<jr:column width="60" uuid="38452dce-1b05-4502-914d-18cf1c407037">
 						<jr:columnHeader style="table_CH" height="30" rowSpan="1">
 							<staticText>
-								<reportElement x="0" y="0" width="90" height="30" uuid="032af023-4c5f-456e-b202-e182faeeb9fb"/>
+								<reportElement x="0" y="0" width="60" height="30" uuid="032af023-4c5f-456e-b202-e182faeeb9fb"/>
 								<textElement verticalAlignment="Middle">
 									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
 								</textElement>
@@ -366,9 +366,9 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+						<jr:detailCell style="table_TD" height="12" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-								<reportElement x="0" y="0" width="90" height="20" uuid="66c6a3ad-7805-4e28-a9a4-11d735789339"/>
+								<reportElement x="0" y="0" width="58" height="10" uuid="66c6a3ad-7805-4e28-a9a4-11d735789339"/>
 								<textElement textAlignment="Right">
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
