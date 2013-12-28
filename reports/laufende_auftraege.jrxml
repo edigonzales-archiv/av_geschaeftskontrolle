@@ -27,7 +27,7 @@
 		</box>
 	</style>
 	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF" fontName="Frutiger 55 Roman">
-		<box topPadding="1" leftPadding="1" bottomPadding="1" rightPadding="1">
+		<box topPadding="2" leftPadding="1" bottomPadding="2" rightPadding="1">
 			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
 			<topPen lineColor="#FFFFFF"/>
 			<leftPen lineColor="#FFFFFF"/>
@@ -37,6 +37,12 @@
 		<conditionalStyle>
 			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
 			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="verspaetet" mode="Transparent" forecolor="#000000">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{datum_ende}.getTime() < new Date().getTime() ]]></conditionExpression>
+			<style forecolor="#FF0000" fontName="Frutiger 55 Roman" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 		</conditionalStyle>
 	</style>
 	<subDataset name="vr_laufende_auftraege" uuid="71efe294-cea9-445c-9d83-c55a7ab8c839">
@@ -57,6 +63,18 @@
 		<field name="kosten_inkl" class="java.lang.Double"/>
 		<field name="bezahlt" class="java.lang.Double"/>
 		<field name="ausstehend" class="java.lang.Double"/>
+		<variable name="summe_kosten_exkl" class="java.lang.Number" calculation="Sum">
+			<variableExpression><![CDATA[$F{kosten_exkl}]]></variableExpression>
+		</variable>
+		<variable name="summe_kosten_inkl" class="java.lang.Double" calculation="Sum">
+			<variableExpression><![CDATA[$F{kosten_inkl}]]></variableExpression>
+		</variable>
+		<variable name="summe_bezahlt" class="java.lang.Double" calculation="Sum">
+			<variableExpression><![CDATA[$F{bezahlt}]]></variableExpression>
+		</variable>
+		<variable name="summe_ausstehend" class="java.lang.Double" calculation="Sum">
+			<variableExpression><![CDATA[$F{ausstehend}]]></variableExpression>
+		</variable>
 	</subDataset>
 	<queryString>
 		<![CDATA[SELECT 1 as foo FROM av_geschaeftskontrolle.vr_laufende_auftraege LIMIT 1;]]>
@@ -146,12 +164,21 @@
 								<text><![CDATA[Auftragsname]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="120" height="30" uuid="3e280ba7-0b35-4a02-a0dc-b13f66a270cc"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</jr:columnFooter>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField isStretchWithOverflow="true">
 								<reportElement x="0" y="0" width="118" height="10" uuid="b26b8310-2e3d-41f3-ba85-bc2be06c315b"/>
 								<textElement>
 									<font fontName="Frutiger 55 Roman" size="8" isPdfEmbedded="true"/>
+									<paragraph lineSpacing="Single"/>
 								</textElement>
 								<textFieldExpression><![CDATA[$F{auftrag_name}]]></textFieldExpression>
 							</textField>
@@ -168,8 +195,8 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="12" rowSpan="1">
-							<textField>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField isStretchWithOverflow="true">
 								<reportElement x="0" y="0" width="88" height="10" uuid="92fb0187-c25f-4c8a-b672-9040a609c4d8"/>
 								<textElement>
 									<font fontName="Frutiger 55 Roman" size="8"/>
@@ -189,7 +216,7 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField>
 								<reportElement x="0" y="0" width="48" height="10" uuid="071cd0ef-3494-469b-a559-ac3e16614f42"/>
 								<textElement>
@@ -210,8 +237,8 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="12" rowSpan="1">
-							<textField>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField isStretchWithOverflow="true">
 								<reportElement x="0" y="0" width="88" height="10" uuid="ae3ff39f-1881-4a1d-b36b-b54d4ce607c8"/>
 								<textElement>
 									<font fontName="Frutiger 55 Roman" size="8"/>
@@ -231,7 +258,7 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField>
 								<reportElement x="0" y="0" width="48" height="10" uuid="34dd89f6-ac42-4b81-b15f-ec0c763c751b"/>
 								<textElement>
@@ -252,7 +279,7 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField pattern="dd.MM.yyyy">
 								<reportElement x="0" y="0" width="48" height="10" uuid="2e79f0de-3b5d-49ba-9174-7087099b7e82"/>
 								<textElement>
@@ -273,9 +300,9 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField pattern="dd.MM.yyyy">
-								<reportElement x="0" y="0" width="48" height="10" uuid="6fa06d06-f308-45c9-9837-6b59c1ad507b"/>
+								<reportElement style="verspaetet" mode="Transparent" x="0" y="0" width="48" height="10" uuid="6fa06d06-f308-45c9-9837-6b59c1ad507b"/>
 								<textElement>
 									<font fontName="Frutiger 55 Roman" size="8"/>
 								</textElement>
@@ -293,8 +320,16 @@
 								<text><![CDATA[Kosten (exkl.)]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00">
+								<reportElement x="0" y="0" width="60" height="30" uuid="829f2b91-cacc-40d1-9075-45b2d45643bb"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{summe_kosten_exkl}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00">
 								<reportElement x="0" y="0" width="58" height="10" uuid="58277573-8575-4ba1-9cd4-ef533b95da95"/>
 								<textElement textAlignment="Right">
@@ -315,7 +350,7 @@
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField pattern="#,##0.0;-#,##0.0">
 								<reportElement x="0" y="0" width="48" height="10" uuid="bfce9a89-ac76-46d1-8fd5-10b607f20c37"/>
 								<textElement textAlignment="Right">
@@ -335,8 +370,16 @@
 								<text><![CDATA[Kosten (inkl.)]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00">
+								<reportElement x="0" y="0" width="60" height="30" uuid="6ec8bb2a-7424-4720-9ad1-ee3e30f3d11f"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{summe_kosten_inkl}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00">
 								<reportElement x="0" y="0" width="58" height="10" uuid="2ef2ca78-f5c6-461f-ae5b-5b72dcf7c125"/>
 								<textElement textAlignment="Right">
@@ -356,8 +399,16 @@
 								<text><![CDATA[bezahlt]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="12" rowSpan="1">
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00">
+								<reportElement x="0" y="0" width="60" height="30" uuid="7089efba-0f4f-4351-a337-b88ada713baf"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{summe_bezahlt}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 								<reportElement x="0" y="0" width="58" height="10" uuid="dd8327e4-197e-40c4-b191-6e9a76607737"/>
 								<textElement textAlignment="Right">
@@ -377,9 +428,17 @@
 								<text><![CDATA[ausstehend]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
-						<jr:detailCell style="table_TD" height="12" rowSpan="1">
-							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
+						<jr:columnFooter style="table_CH" height="30" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00">
+								<reportElement x="0" y="0" width="60" height="30" uuid="a4b7786a-bdc1-45dd-92c9-a46a205d4678"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{summe_ausstehend}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField pattern="#,##0.00;#,##0.00-" isBlankWhenNull="false">
 								<reportElement x="0" y="0" width="58" height="10" uuid="66c6a3ad-7805-4e28-a9a4-11d735789339"/>
 								<textElement textAlignment="Right">
 									<font fontName="Frutiger 55 Roman" size="8"/>

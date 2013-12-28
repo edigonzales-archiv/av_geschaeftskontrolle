@@ -22,3 +22,6 @@ $F{datum_ende}.getTime() < new Date().getTime() (welches Date wird bei server ge
 
 $F{geplant} ? "nein" : "ja" (-> im titel aber "ausgelöst?", sonst genau umgekehrt. ist so wegen qgis, da man keine defaultwerte setzen kann und man meistens das häkchen für ausgelöst setzten müsste...)
 
+
+Achtung beim zusammenzählen wegen den Datentypen. java.lang.Number funktioniert für kosten_exkl (in db ist das numeric(20,2). Wahrscheinlich tuts auch wenn double in db dann double in ireport
+
