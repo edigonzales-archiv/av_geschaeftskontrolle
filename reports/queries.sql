@@ -98,6 +98,7 @@ GRANT ALL ON TABLE av_geschaeftskontrolle.vr_laufende_auftraege TO stefan;
 GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_laufende_auftraege TO mspublic;
 */
 
+/*
 CREATE OR REPLACE VIEW av_geschaeftskontrolle.vr_zahlungsplan_14_17 AS 
 
 SELECT auf_name, proj."name" as proj_name, konto."nr" as konto, auf_start, auf_ende, auf_abschluss, plan_summe_a, plan_prozent_a, re_summe_a, (re_summe_a / auf_summe) * 100 as re_prozent_a,  plan_summe_b, plan_prozent_b, plan_summe_c, plan_prozent_c, plan_summe_d, plan_prozent_d, a_id, projekt_id
@@ -147,6 +148,28 @@ ORDER BY konto, auf_name;
 
 GRANT ALL ON TABLE av_geschaeftskontrolle.vr_zahlungsplan_14_17 TO stefan;
 GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_zahlungsplan_14_17 TO mspublic;
+*/
+
+CREATE OR REPLACE VIEW av_geschaeftskontrolle.vr_kontr_planprozent AS 
+
+SELECT a."name" as auf_name, d.firma, b."name" as proj_name, c.nr as konto_nr, a.sum_planprozent
+FROM
+(
+ SELECT sum(pz.kosten) as sum_plankosten_exkl, auf."name", sum(pz.prozent) as sum_planprozent, auf.projekt_id, auf.unternehmer_id
+ FROM av_geschaeftskontrolle.planzahlung as pz, av_geschaeftskontrolle.auftrag as auf, 
+      av_geschaeftskontrolle.projekt as proj 
+ WHERE pz.auftrag_id = auf.id
+ AND auf.projekt_id = proj.id
+ AND auf.datum_abschluss IS NULL or trim('' from datum_abschluss::text) = ''
+ GROUP BY auf.id
+) as a, av_geschaeftskontrolle.projekt as b, av_geschaeftskontrolle.konto as c, av_geschaeftskontrolle.unternehmer as d
+WHERE a.projekt_id = b.id
+AND c.id = b.konto_id
+AND a.unternehmer_id = d.id
+ORDER BY b."name", a."name";
+
+GRANT ALL ON TABLE av_geschaeftskontrolle.vr_kontr_planprozent TO stefan;
+GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_kontr_planprozent TO mspublic;
 
 
 
