@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="zahlungsplan_14_17" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2d7b4b7b-8fda-4900-89a1-a5804976be7a">
-	<property name="ireport.zoom" value="0.75"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="26"/>
 	<property name="ireport.y" value="0"/>
 	<style name="table">
 		<box>
@@ -63,6 +63,24 @@
 		<field name="plan_prozent_c" class="java.math.BigDecimal"/>
 		<field name="plan_summe_d" class="java.lang.Double"/>
 		<field name="plan_prozent_d" class="java.math.BigDecimal"/>
+		<variable name="sum_plan_a" class="java.lang.Double" resetType="Group" resetGroup="grp_konto" calculation="Sum">
+			<variableExpression><![CDATA[$F{plan_summe_a}]]></variableExpression>
+		</variable>
+		<variable name="sum_plan_b" class="java.lang.Double" resetType="Group" resetGroup="grp_konto" calculation="Sum">
+			<variableExpression><![CDATA[$F{plan_summe_b}]]></variableExpression>
+		</variable>
+		<variable name="sum_bez_a" class="java.lang.Double" resetType="Group" resetGroup="grp_konto" calculation="Sum">
+			<variableExpression><![CDATA[$F{re_summe_a}]]></variableExpression>
+		</variable>
+		<variable name="sum_plan_c" class="java.lang.Double" resetType="Group" resetGroup="grp_konto" calculation="Sum">
+			<variableExpression><![CDATA[$F{plan_summe_c}]]></variableExpression>
+		</variable>
+		<variable name="sum_plan_d" class="java.lang.Double" resetType="Group" resetGroup="grp_konto" calculation="Sum">
+			<variableExpression><![CDATA[$F{plan_summe_d}]]></variableExpression>
+		</variable>
+		<group name="grp_konto" isStartNewPage="true" isReprintHeaderOnEachPage="true">
+			<groupExpression><![CDATA[$F{konto}]]></groupExpression>
+		</group>
 	</subDataset>
 	<queryString>
 		<![CDATA[SELECT 1 as foo FROM av_geschaeftskontrolle.vr_zahlungsplan_14_17 LIMIT 1;]]>
@@ -153,7 +171,15 @@
 								<text><![CDATA[Auftrag]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="120" height="20" uuid="01c1a68d-f6ad-4d06-b7bc-c9cad0befd53"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA["Total (Kontonr. " + $F{konto} + ")"]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
 						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField isStretchWithOverflow="true">
 								<reportElement x="0" y="0" width="118" height="10" uuid="a1a1c813-0b97-420a-91a7-40de99f46cb7"/>
@@ -175,7 +201,7 @@
 								<text><![CDATA[Projekt]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
 						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField isStretchWithOverflow="true">
 								<reportElement x="0" y="0" width="88" height="10" uuid="4e6d10a4-ddf8-4b89-8b34-028cffd90701"/>
@@ -196,7 +222,7 @@
 								<text><![CDATA[Konto]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
 						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField>
 								<reportElement x="0" y="0" width="38" height="10" uuid="c6f4252e-db02-4c9f-a9c0-6e83ff781920"/>
@@ -218,7 +244,7 @@
 								<text><![CDATA[Start]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
 						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField pattern="dd.MM.yy">
 								<reportElement x="0" y="0" width="38" height="10" uuid="502d1873-8233-497e-9e02-5c56f21dcfc5"/>
@@ -240,7 +266,7 @@
 								<text><![CDATA[Ende]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
 						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField pattern="dd.MM.yy">
 								<reportElement x="0" y="0" width="38" height="10" uuid="322ddbae-88eb-4e8c-90e7-3e43a7822ae2"/>
@@ -262,7 +288,7 @@
 								<text><![CDATA[Abschl.]]></text>
 							</staticText>
 						</jr:columnHeader>
-						<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
 						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField isBlankWhenNull="true">
 								<reportElement x="0" y="0" width="38" height="10" uuid="79e69c54-0007-4e03-86fa-6b37ea5e708a"/>
@@ -294,7 +320,15 @@
 									<text><![CDATA[Fr.]]></text>
 								</staticText>
 							</jr:columnHeader>
-							<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+							<jr:columnFooter style="table_CH" height="20" rowSpan="1">
+								<textField pattern="#,##0.00;-#,##0.00">
+									<reportElement x="0" y="0" width="50" height="20" uuid="54955b71-b0c7-487a-acd4-f891c31eefcc"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$V{sum_plan_a}]]></textFieldExpression>
+								</textField>
+							</jr:columnFooter>
 							<jr:detailCell style="table_TD" height="14" rowSpan="1">
 								<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 									<reportElement x="0" y="0" width="48" height="10" uuid="0d2629aa-da3d-4dec-b00a-e9a988b211a9"/>
@@ -316,7 +350,7 @@
 									<text><![CDATA[%]]></text>
 								</staticText>
 							</jr:columnHeader>
-							<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+							<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
 							<jr:detailCell style="table_TD" height="14" rowSpan="1">
 								<textField pattern="###0">
 									<reportElement x="0" y="0" width="18" height="10" uuid="c54db061-ff23-4ac4-90b2-03d18f33672c"/>
@@ -349,7 +383,16 @@
 									<text><![CDATA[Fr.]]></text>
 								</staticText>
 							</jr:columnHeader>
-							<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+							<jr:columnFooter style="table_CH" height="20" rowSpan="1">
+								<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+									<reportElement mode="Transparent" x="0" y="0" width="50" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="7ee3cb55-3857-40a9-8f5c-a62bdbba9dde"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+										<font fontName="Frutiger 55 Roman" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$V{sum_bez_a}]]></textFieldExpression>
+								</textField>
+							</jr:columnFooter>
 							<jr:detailCell style="table_TD" height="14" rowSpan="1">
 								<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 									<reportElement mode="Transparent" x="0" y="0" width="48" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="f435733e-69a3-4934-95ad-9f971396c897"/>
@@ -372,7 +415,7 @@
 									<text><![CDATA[%]]></text>
 								</staticText>
 							</jr:columnHeader>
-							<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+							<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
 							<jr:detailCell style="table_TD" height="14" rowSpan="1">
 								<textField pattern="#,##0;-#,##0" isBlankWhenNull="true">
 									<reportElement mode="Transparent" x="0" y="0" width="18" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="93495a29-5ac1-4ecf-964f-4765219514da"/>
@@ -406,7 +449,16 @@
 									<text><![CDATA[Fr.]]></text>
 								</staticText>
 							</jr:columnHeader>
-							<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+							<jr:columnFooter style="table_CH" height="20" rowSpan="1">
+								<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+									<reportElement mode="Transparent" x="0" y="0" width="50" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="839b26f7-e5be-4141-8805-fe03f6deb6f4"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+										<font fontName="Frutiger 55 Roman" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$V{sum_plan_b}]]></textFieldExpression>
+								</textField>
+							</jr:columnFooter>
 							<jr:detailCell style="table_TD" height="14" rowSpan="1">
 								<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 									<reportElement mode="Transparent" x="0" y="0" width="48" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="23fb3956-3875-4472-a2b2-14d974cea343"/>
@@ -429,7 +481,7 @@
 									<text><![CDATA[%]]></text>
 								</staticText>
 							</jr:columnHeader>
-							<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+							<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
 							<jr:detailCell style="table_TD" height="14" rowSpan="1">
 								<textField pattern="#,##0;-#,##0" isBlankWhenNull="true">
 									<reportElement mode="Transparent" x="0" y="0" width="18" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="a2d7d40d-b762-425e-8873-77a505e14d55"/>
@@ -464,7 +516,16 @@
 									<text><![CDATA[Fr.]]></text>
 								</staticText>
 							</jr:columnHeader>
-							<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+							<jr:columnFooter style="table_CH" height="20" rowSpan="1">
+								<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+									<reportElement mode="Transparent" x="0" y="0" width="50" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="931422b0-17de-4feb-918f-8042c56682ca"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+										<font fontName="Frutiger 55 Roman" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$V{sum_plan_c}]]></textFieldExpression>
+								</textField>
+							</jr:columnFooter>
 							<jr:detailCell style="table_TD" height="14" rowSpan="1">
 								<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 									<reportElement mode="Transparent" x="0" y="0" width="48" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="06a8593b-78ef-42be-a14a-2ea84a003e9e"/>
@@ -487,7 +548,7 @@
 									<text><![CDATA[%]]></text>
 								</staticText>
 							</jr:columnHeader>
-							<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+							<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
 							<jr:detailCell style="table_TD" height="14" rowSpan="1">
 								<textField pattern="#,##0;-#,##0" isBlankWhenNull="true">
 									<reportElement mode="Transparent" x="0" y="0" width="18" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="49088eb1-1eef-40ba-ac33-673b72c4ef96"/>
@@ -522,7 +583,16 @@
 									<text><![CDATA[Fr.]]></text>
 								</staticText>
 							</jr:columnHeader>
-							<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+							<jr:columnFooter style="table_CH" height="20" rowSpan="1">
+								<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+									<reportElement mode="Transparent" x="0" y="0" width="50" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="d89fe18c-0d2f-46fd-9e78-357d0a80a264"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+										<font fontName="Frutiger 55 Roman" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+										<paragraph lineSpacing="Single"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$V{sum_plan_d}]]></textFieldExpression>
+								</textField>
+							</jr:columnFooter>
 							<jr:detailCell style="table_TD" height="14" rowSpan="1">
 								<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
 									<reportElement mode="Transparent" x="0" y="0" width="48" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="d1a41b25-e0b4-41aa-9d52-0a034cb6efd4"/>
@@ -545,7 +615,7 @@
 									<text><![CDATA[%]]></text>
 								</staticText>
 							</jr:columnHeader>
-							<jr:columnFooter style="table_CH" height="30" rowSpan="1"/>
+							<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
 							<jr:detailCell style="table_TD" height="14" rowSpan="1">
 								<textField pattern="#,##0;-#,##0" isBlankWhenNull="true">
 									<reportElement mode="Transparent" x="0" y="0" width="18" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="4a7b184e-35cb-4848-a7e3-b7ba4a64c2b7"/>
