@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="laufende_auftraege" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="978059c8-4cce-427e-9e06-3fed152b598c">
 	<property name="ireport.zoom" value="0.9090909090909111"/>
-	<property name="ireport.x" value="0"/>
+	<property name="ireport.x" value="113"/>
 	<property name="ireport.y" value="0"/>
 	<style name="table">
 		<box>
@@ -132,8 +132,8 @@
 				<imageExpression><![CDATA["/home/stefan/Projekte/av_geschaeftskontrolle/reports/kanton_sw.jpeg"]]></imageExpression>
 			</image>
 			<staticText>
-				<reportElement x="0" y="90" width="221" height="20" uuid="ae853216-1f6a-460a-8e4a-f0953c9d8244"/>
-				<textElement>
+				<reportElement x="0" y="90" width="802" height="20" uuid="ae853216-1f6a-460a-8e4a-f0953c9d8244"/>
+				<textElement textAlignment="Center">
 					<font fontName="Frutiger 55 Roman" size="12" isBold="true" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[Laufende Aufträge]]></text>
