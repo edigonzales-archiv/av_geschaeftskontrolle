@@ -26,6 +26,7 @@ CREATE ROLE mspublic WITH ;
 
 -- object: av_geschaeftskontrolle | type: SCHEMA --
 CREATE SCHEMA av_geschaeftskontrolle;
+ALTER SCHEMA av_geschaeftskontrolle OWNER TO stefan;
 -- ddl-end --
 
 SET search_path TO pg_catalog,public,av_geschaeftskontrolle;
@@ -56,6 +57,7 @@ CREATE TABLE av_geschaeftskontrolle.projekt(
 	konto_id int4 NOT NULL,
 	name varchar NOT NULL,
 	kosten numeric(20,2) NOT NULL,
+	mwst double precision,
 	datum_start date NOT NULL,
 	datum_ende date,
 	bemerkung varchar,
@@ -93,9 +95,12 @@ CREATE TABLE av_geschaeftskontrolle.auftrag(
 	projekt_id int4 NOT NULL,
 	name varchar NOT NULL,
 	kosten numeric(20,2),
+	mwst double precision,
 	unternehmer_id int4 NOT NULL,
 	datum_start date,
 	datum_ende date,
+	datum_abschluss date,
+	geplant boolean,
 	bemerkung varchar,
 	CONSTRAINT auftrag_pkey PRIMARY KEY (id)
 
@@ -112,7 +117,7 @@ CREATE TABLE av_geschaeftskontrolle.rechnung(
 	mwst double precision,
 	datum_eingang date,
 	datum_ausgang date,
-	rechnungsjahr av_geschaeftskontrolle.jahr,
+	rechnungsjahr int4,
 	bemerkung varchar,
 	CONSTRAINT rechnung_pkey PRIMARY KEY (id)
 
@@ -133,12 +138,11 @@ CREATE OR REPLACE FUNCTION av_geschaeftskontrolle.calculate_order_costs_from_per
 	CALLED ON NULL INPUT
 	SECURITY INVOKER
 	COST 100
-	AS $$ BEGIN
+	AS $$ DECLARE gesamtkosten DOUBLE PRECISION;
+ BEGIN
 
-UPDATE av_geschaeftskontrolle.planzahlung SET
-   kosten = a.kosten * 100 / NEW.prozent
-FROM (SELECT kosten FROM av_geschaeftskontrolle.auftrag) as a
-WHERE auftrag_id = a.id;
+SELECT kosten FROM av_geschaeftskontrolle.auftrag WHERE id = NEW.auftrag_id INTO gesamtkosten;
+NEW.kosten = gesamtkosten*(NEW.prozent/100);
  
  RETURN NEW;
  END;$$;
@@ -149,7 +153,7 @@ CREATE TABLE av_geschaeftskontrolle.plankostenkonto(
 	id serial,
 	konto_id int4 NOT NULL,
 	budget numeric(20,2) NOT NULL,
-	jahr av_geschaeftskontrolle.jahr NOT NULL,
+	jahr int4 NOT NULL,
 	bemerkung varchar,
 	CONSTRAINT plankostenkonto_pkey PRIMARY KEY (id),
 	CONSTRAINT plankostenkonto_konto_id_jahr_key UNIQUE (konto_id,jahr)
@@ -166,7 +170,7 @@ CREATE TABLE av_geschaeftskontrolle.planzahlung(
 	prozent numeric(6,3),
 	kosten numeric(20,2),
 	mwst double precision,
-	rechnungsjahr av_geschaeftskontrolle.jahr,
+	rechnungsjahr int4,
 	bemerkung varchar,
 	CONSTRAINT planzahlung_pkey PRIMARY KEY (id),
 	CONSTRAINT planzahlung_positiv_prozent CHECK ((prozent > 0::numeric))
@@ -175,9 +179,9 @@ CREATE TABLE av_geschaeftskontrolle.planzahlung(
 -- ddl-end --
 -- object: update_kosten | type: TRIGGER --
 CREATE TRIGGER update_kosten
-	AFTER INSERT OR UPDATE
+	BEFORE INSERT OR UPDATE
 	ON av_geschaeftskontrolle.planzahlung
-	FOR EACH STATEMENT
+	FOR EACH ROW
 	EXECUTE PROCEDURE av_geschaeftskontrolle.calculate_order_costs_from_percentage();
 -- ddl-end --
 
@@ -187,6 +191,30 @@ COMMENT ON TABLE av_geschaeftskontrolle.planzahlung IS 'Geplante Zahlung pro Jah
 COMMENT ON COLUMN av_geschaeftskontrolle.planzahlung.kosten IS 'exlusive Mehrwertsteuer';
 -- ddl-end --
 ALTER TABLE av_geschaeftskontrolle.planzahlung OWNER TO stefan;
+-- Appended SQL commands --
+ALTER FUNCTION av_geschaeftskontrolle.calculate_order_costs_from_percentage()
+  OWNER TO stefan;
+-- ddl-end --
+
+-- object: av_geschaeftskontrolle.rechnungsjahr | type: TABLE --
+CREATE TABLE av_geschaeftskontrolle.rechnungsjahr(
+	id serial,
+	jahr int4 NOT NULL
+);
+-- ddl-end --
+ALTER TABLE av_geschaeftskontrolle.rechnungsjahr OWNER TO stefan;
+-- ddl-end --
+
+-- object: av_geschaeftskontrolle.perimeter | type: TABLE --
+CREATE TABLE av_geschaeftskontrolle.perimeter(
+	id serial,
+	projekt_id int4 NOT NULL,
+	perimeter geometry,--(MULTIPOLYGON, 21781),
+	CONSTRAINT perimeter_pkey PRIMARY KEY (id)
+
+);
+-- ddl-end --
+ALTER TABLE av_geschaeftskontrolle.perimeter OWNER TO stefan;
 -- ddl-end --
 
 -- object: projekt_konto_id_fkey | type: CONSTRAINT --
@@ -217,13 +245,6 @@ ON DELETE NO ACTION ON UPDATE NO ACTION NOT DEFERRABLE;
 -- ddl-end --
 
 
--- object: planzahlung_projekt_id_fkey | type: CONSTRAINT --
-ALTER TABLE av_geschaeftskontrolle.planzahlung ADD CONSTRAINT planzahlung_projekt_id_fkey FOREIGN KEY (id)
-REFERENCES av_geschaeftskontrolle.auftrag (id) MATCH FULL
-ON DELETE NO ACTION ON UPDATE NO ACTION NOT DEFERRABLE;
--- ddl-end --
-
-
 -- object: plankostenkonto_konto_id_fkey | type: CONSTRAINT --
 ALTER TABLE av_geschaeftskontrolle.plankostenkonto ADD CONSTRAINT plankostenkonto_konto_id_fkey FOREIGN KEY (konto_id)
 REFERENCES av_geschaeftskontrolle.konto (id) MATCH FULL
@@ -231,31 +252,52 @@ ON DELETE NO ACTION ON UPDATE NO ACTION NOT DEFERRABLE;
 -- ddl-end --
 
 
--- object: grant_0ce46cd99e | type: PERMISSION --
+-- object: planzahlung_projekt_id_fkey | type: CONSTRAINT --
+ALTER TABLE av_geschaeftskontrolle.planzahlung ADD CONSTRAINT planzahlung_projekt_id_fkey FOREIGN KEY (auftrag_id)
+REFERENCES av_geschaeftskontrolle.auftrag (id) MATCH FULL
+ON DELETE NO ACTION ON UPDATE NO ACTION NOT DEFERRABLE;
+-- ddl-end --
+
+
+-- object: perimeter_projekt_id_fkey | type: CONSTRAINT --
+ALTER TABLE av_geschaeftskontrolle.perimeter ADD CONSTRAINT perimeter_projekt_id_fkey FOREIGN KEY (projekt_id)
+REFERENCES av_geschaeftskontrolle.projekt (id) MATCH FULL
+ON DELETE NO ACTION ON UPDATE NO ACTION NOT DEFERRABLE;
+-- ddl-end --
+
+
+-- object: grant_0446cdbd2e | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.konto
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_3fc45b5723 | type: PERMISSION --
+-- object: grant_e31ac6f604 | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.plankostenkonto
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_208987f042 | type: PERMISSION --
+-- object: grant_2ccefcbdbb | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.projekt
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_0c785889fb | type: PERMISSION --
+-- object: grant_cc186da61d | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.planzahlung
    TO mspublic;
+;
+-- ddl-end --
+
+-- object: grant_f7999484ef | type: PERMISSION --
+GRANT USAGE
+   ON SCHEMA av_geschaeftskontrolle
+   TO stefan;
 ;
 -- ddl-end --
 

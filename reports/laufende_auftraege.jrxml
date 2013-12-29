@@ -233,7 +233,7 @@
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
 								</textElement>
-								<text><![CDATA[Projekt]]></text>
+								<text><![CDATA[Projektname]]></text>
 							</staticText>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
