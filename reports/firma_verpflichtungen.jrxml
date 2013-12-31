@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="firma_verpflichtungen" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="40" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9f620442-59c1-45e4-8990-1752aaeb3651">
+	<property name="ireport.zoom" value="1.6105100000000028"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="0.0" lineColor="#000000"/>
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.0"/>
+			<rightPen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<topPen lineColor="#FFFFFF"/>
+			<leftPen lineColor="#FFFFFF"/>
+			<bottomPen lineColor="#FFFFFF"/>
+			<rightPen lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<topPen lineColor="#FFFFFF"/>
+			<leftPen lineColor="#FFFFFF"/>
+			<bottomPen lineColor="#FFFFFF"/>
+			<rightPen lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box topPadding="2" leftPadding="1" bottomPadding="2" rightPadding="1">
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+			<topPen lineColor="#FFFFFF"/>
+			<leftPen lineColor="#FFFFFF"/>
+			<bottomPen lineColor="#FFFFFF"/>
+			<rightPen lineColor="#FFFFFF"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Verpflichtungen_Zahlungen_Unternehmer" uuid="a392f24d-54e0-44b3-a0f1-bbad8b918c91">
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM av_geschaeftskontrolle.vr_firma_verpflichtungen ORDER BY firma, jahr]]>
+		</queryString>
+		<field name="firma" class="java.lang.String"/>
+		<field name="jahr" class="java.lang.Double"/>
+		<field name="kosten_vertrag_inkl" class="java.lang.Double"/>
+		<field name="kosten_bezahlt_inkl" class="java.lang.Double"/>
+		<variable name="sum_firma_verpflichtung" class="java.lang.Double" resetType="Group" resetGroup="grp_firma" calculation="Sum">
+			<variableExpression><![CDATA[$F{kosten_vertrag_inkl}]]></variableExpression>
+			<initialValueExpression><![CDATA[]]></initialValueExpression>
+		</variable>
+		<variable name="sum_firma_zahlung" class="java.lang.Double" resetType="Group" resetGroup="grp_firma" calculation="Sum">
+			<variableExpression><![CDATA[$F{kosten_bezahlt_inkl}]]></variableExpression>
+		</variable>
+		<group name="grp_firma" isStartNewPage="true" isReprintHeaderOnEachPage="true">
+			<groupExpression><![CDATA[$F{firma}]]></groupExpression>
+		</group>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT 1 as foo FROM av_geschaeftskontrolle.vr_firma_verpflichtungen LIMIT 1;]]>
+	</queryString>
+	<field name="foo" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="114" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="94" width="535" height="20" uuid="3edd6507-f6a1-4dff-b026-75368de2b966"/>
+				<textElement textAlignment="Center">
+					<font fontName="Frutiger 55 Roman" size="12" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Verpflichtungen und Zahlungen pro Unternehmer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="69" width="70" height="13" uuid="b3d229d0-2b8f-49d2-8b62-8f605bed66b9"/>
+				<textElement textAlignment="Left">
+					<font fontName="Frutiger 55 Roman" isItalic="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[www.agi.so.ch]]></text>
+			</staticText>
+			<image>
+				<reportElement x="355" y="0" width="180" height="18" uuid="d27e4c1c-36eb-4ad7-8f0b-1fa55c051f19"/>
+				<imageExpression><![CDATA["/home/stefan/Projekte/av_geschaeftskontrolle/reports/kanton_sw.jpeg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="30" y="57" width="114" height="13" uuid="dee3e6ba-9d1b-49da-8ccc-cfeedca45019"/>
+				<textElement textAlignment="Left">
+					<font fontName="Frutiger 55 Roman" isItalic="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Telefon 032 627 75 92]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-12" y="15" width="141" height="13" uuid="75783daf-f194-4090-9828-fade57a038e4"/>
+				<textElement textAlignment="Right">
+					<font fontName="Frutiger 55 Roman" isItalic="true" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Amtliche Vermessung]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-12" y="1" width="141" height="13" uuid="eae364c6-45fc-4c7b-911e-625c78d4aa94"/>
+				<textElement textAlignment="Right">
+					<font fontName="Frutiger 55 Roman" isBold="true" isItalic="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Amt für Geoinformation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="33" width="59" height="13" uuid="638c434c-68bf-4810-bab6-34185f0fb916"/>
+				<textElement textAlignment="Left">
+					<font fontName="Frutiger 55 Roman" isItalic="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Rötistrasse 4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="45" width="72" height="13" uuid="b75f165e-6aa5-47f0-8a57-6f1cfcae45a2"/>
+				<textElement textAlignment="Left">
+					<font fontName="Frutiger 55 Roman" isItalic="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[4501 Solothurn]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="535" height="50" uuid="1b399993-35fa-4e53-8474-7743ccaf1ff6"/>
+				<textElement>
+					<font fontName="Frutiger 55 Roman" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Achtung:
+Wurde im Jahr 20XX nichts verpflichtet, so erscheinen auch keine Zahlungen in diesem Jahr.
+Verpflichtungen und Zahlungen inkl. MWST.]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" x="0" y="0" width="555" height="125" uuid="02c322a8-15b2-4c0d-a5d9-d00815e0e935"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Verpflichtungen_Zahlungen_Unternehmer" uuid="02ff02aa-f24f-48d4-ad69-f17a9ff10283">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="200" uuid="4762056f-24fb-4e62-ad7e-3af16316f997">
+						<jr:columnHeader style="table_CH" height="20" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="200" height="20" uuid="4e8de065-e55b-46ad-8824-bf9448169064"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Firma]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="200" height="20" uuid="fb3148fc-6f41-4684-ba6c-81a6b8d3737f"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Total:]]></text>
+							</staticText>
+						</jr:columnFooter>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="198" height="10" uuid="066f85fd-af97-4cc7-81e4-86630fd7bd9d"/>
+								<textElement>
+									<font fontName="Frutiger 55 Roman" size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{firma}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="50caddfc-9c59-460c-9571-38cab9d2fb17">
+						<jr:columnHeader style="table_CH" height="20" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="90" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="9e67888e-474d-4587-8f6b-67aca2c51459"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Jahr]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField pattern="###0">
+								<reportElement x="0" y="0" width="88" height="10" uuid="fbd0118f-cc23-44a2-8e9e-76cfcbd8e35d"/>
+								<textElement textAlignment="Center">
+									<font fontName="Frutiger 55 Roman" size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{jahr}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="8e26ceb7-be9b-4ba5-9259-0033cdd0448d">
+						<jr:columnHeader style="table_CH" height="20" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="90" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="4a154f1b-799c-4f6a-a0a4-f75c14c8542a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Verpflichtungen]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00">
+								<reportElement x="0" y="0" width="90" height="20" uuid="053e4b16-88a1-4759-a146-b442b5ee4a0e"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Frutiger 55 Roman" size="8" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{sum_firma_verpflichtung}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00">
+								<reportElement x="0" y="0" width="88" height="10" uuid="b4650f11-10c5-4769-ae7c-49abfa28f401"/>
+								<textElement textAlignment="Right">
+									<font fontName="Frutiger 55 Roman" size="8"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{kosten_vertrag_inkl}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="c507d3e8-d88a-4f28-aca5-d379e7e6d37b">
+						<jr:columnHeader style="table_CH" height="20" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="90" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="dc462dd9-7e7a-4c02-9457-d2d366468f47"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Zahlungen]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+								<reportElement mode="Transparent" x="0" y="0" width="90" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="f98d1d5a-7ae0-43ca-8b14-dc5ace235b04"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{sum_firma_zahlung}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+								<reportElement mode="Transparent" x="0" y="0" width="88" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="a065017c-6d60-42a2-9a1c-d5993a1aad3b"/>
+								<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{kosten_bezahlt_inkl}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<textField pattern="dd. MMMMM yyyy">
+				<reportElement x="0" y="0" width="100" height="20" uuid="2690964f-c047-465c-94df-d0e4ed482c48"/>
+				<textElement>
+					<font fontName="Frutiger 55 Roman" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="415" y="0" width="80" height="20" uuid="319751ee-d85d-44c7-8a85-9e509f742577"/>
+				<textElement textAlignment="Right">
+					<font fontName="Frutiger 55 Roman" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Seite "+$V{PAGE_NUMBER}+" von"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="495" y="0" width="40" height="20" uuid="b2aabff8-cacd-4ba1-8892-4d2518319f9f"/>
+				<textElement>
+					<font fontName="Frutiger 55 Roman" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

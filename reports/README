@@ -1,3 +1,9 @@
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+
+-> auf java-7-openjdk-amd64 setzen
+
+
 - fonts via tools - options - fonts einstellen. für server kann man font-extension machen (jar-file) und anschliessne im lib-verzeichnis installieren.
 - die frutiger fonts können nicht embedded werden (mit itext) -> mit fontforge diesen tag auf "installable font" setzen (unter info -> os/2 -> embedded)
   -> scheisse: geht nicht!! a) mit itext direkt ausprobiere b) mit jasper server und jar.
@@ -14,7 +20,7 @@
 - remember: zum gruppieren müssen die sachen geordnet sein!!!
 
 
-- opaque nicht vergessen bei background sonst ists immer weiss
+- opaque nicht vergessen bei background sonst ists immer weiss (bissle rumprobieren, da versch. elemente opaque sein können)...
 - conditional styles: einfach field name schreiben, auch wenn er nicht zur verfügung steht (bei table components).
 $F{datum_ende}.getTime() < new Date().getTime() (welches Date wird bei server genommen? schon immer ein neues?)
 
@@ -24,4 +30,18 @@ $F{geplant} ? "nein" : "ja" (-> im titel aber "ausgelöst?", sonst genau umgekeh
 
 
 Achtung beim zusammenzählen wegen den Datentypen. java.lang.Number funktioniert für kosten_exkl (in db ist das numeric(20,2). Wahrscheinlich tuts auch wenn double in db dann double in ireport
+
+
+JasperServer:
+- mit 'minimal' versuchen, da dann  hoffenltich keine schrott-samples datenbanken angelegt werden...
+
+- sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';" (nicht wirklich zu empfehlen für Produktion. Für was wird eigentlich ein Superuser gebraucht?
+
+- um aufm server eine data source anzulegen muss man der role admin zugeteilt sein (wenn die dann da ist, kann man auch als normaler user deployen?).
+
+- schön: images scheint es automatisch (nach rückfrage) zu importieren! ABER: wird im original das jetzt ersetzt? komisch und beim preview des originals wird dann immer auf Main.jrxml geswitched?
+
+- das Frutiger... font extension jar muss ins WEB-INF/lib Verzeichnis. Sonst sehen die PDFs ganz übel aus (oder aber was anderes 'build in' verwenden. z.B. deja vu?)
+
+- wegen locale: in WEB-INF/applicationContext-security.xml einfach um de_CH ergänzen (suchen nach locale oder so). dann kann man beim einloggen wählen.
 

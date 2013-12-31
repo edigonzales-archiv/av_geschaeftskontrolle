@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="laufende_auftraege" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="978059c8-4cce-427e-9e06-3fed152b598c">
-	<property name="ireport.zoom" value="1.4641000000000062"/>
+	<property name="ireport.zoom" value="0.6209213230591575"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<property name="ireport.jasperserver.reportUnit" value="/reports/Test/laufende_auftraege"/>
+	<property name="ireport.jasperserver.url" value="http://localhost:8080/jasperserver/services/repository"/>
 	<style name="table">
 		<box>
 			<pen lineWidth="0.0" lineColor="#000000"/>
@@ -41,7 +43,7 @@
 	</style>
 	<style name="verspaetet" mode="Transparent" forecolor="#000000">
 		<conditionalStyle>
-			<conditionExpression><![CDATA[$F{datum_ende}.getTime() < new Date().getTime() ]]></conditionExpression>
+			<conditionExpression><![CDATA[$F{datum_ende}.getTime() < new Date().getTime()]]></conditionExpression>
 			<style forecolor="#FF0000" fontName="Frutiger 55 Roman" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 		</conditionalStyle>
 	</style>
@@ -129,7 +131,6 @@
 			</staticText>
 			<image>
 				<reportElement x="622" y="0" width="180" height="18" uuid="d4e0e66b-d1d8-4161-97ba-002c759059d0"/>
-				<imageExpression><![CDATA["/home/stefan/Projekte/av_geschaeftskontrolle/reports/kanton_sw.jpeg"]]></imageExpression>
 			</image>
 			<staticText>
 				<reportElement x="0" y="90" width="802" height="20" uuid="ae853216-1f6a-460a-8e4a-f0953c9d8244"/>

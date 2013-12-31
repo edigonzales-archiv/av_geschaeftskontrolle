@@ -150,6 +150,7 @@ GRANT ALL ON TABLE av_geschaeftskontrolle.vr_zahlungsplan_14_17 TO stefan;
 GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_zahlungsplan_14_17 TO mspublic;
 */
 
+/*
 CREATE OR REPLACE VIEW av_geschaeftskontrolle.vr_kontr_planprozent AS 
 
 SELECT a."name" as auf_name, d.firma, b."name" as proj_name, c.nr as konto_nr, a.sum_planprozent
@@ -163,7 +164,7 @@ FROM
  AND auf.datum_abschluss IS NULL or trim('' from datum_abschluss::text) = ''
  GROUP BY auf.id
 ) as a, av_geschaeftskontrolle.projekt as b, av_geschaeftskontrolle.konto as c, av_geschaeftskontrolle.unternehmer as d
-WHERE a.projekt_id = b.id
+WHERE a.projekt_id = b.idfile_1388497342682.jrxml
 AND c.id = b.konto_id
 AND a.unternehmer_id = d.id
 ORDER BY b."name", a."name";
@@ -171,5 +172,39 @@ ORDER BY b."name", a."name";
 GRANT ALL ON TABLE av_geschaeftskontrolle.vr_kontr_planprozent TO stefan;
 GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_kontr_planprozent TO mspublic;
 
+*/
 
+CREATE OR REPLACE VIEW av_geschaeftskontrolle.vr_firma_verpflichtungen AS 
+
+SELECT foo.firma, foo.jahr, foo.kosten_vertrag_inkl, bar.kosten_bezahlt_inkl
+FROM
+(
+ SELECT a.*, un.firma
+ FROM
+ (
+  SELECT sum(kosten * (1 + mwst/100)) as kosten_vertrag_inkl, unternehmer_id, EXTRACT(YEAR FROM datum_start) as jahr 
+  FROM av_geschaeftskontrolle.auftrag as auf
+  WHERE geplant = false
+  GROUP BY unternehmer_id, EXTRACT(YEAR FROM datum_start)
+ ) as a, av_geschaeftskontrolle.unternehmer as un
+ WHERE a.unternehmer_id = un.id
+) as foo
+
+LEFT JOIN
+
+(
+ SELECT a.*, auf.id, auf.unternehmer_id 
+ FROM 
+ (
+  SELECT sum(kosten * (1 + mwst/100)) as kosten_bezahlt_inkl, auftrag_id, rechnungsjahr
+  FROM av_geschaeftskontrolle.rechnung
+  GROUP BY auftrag_id, rechnungsjahr
+ ) as a, av_geschaeftskontrolle.auftrag as auf
+ WHERE a.auftrag_id = auf.id
+) bar 
+
+ON (foo.unternehmer_id = bar.unternehmer_id AND foo.jahr = bar.rechnungsjahr);
+
+GRANT ALL ON TABLE av_geschaeftskontrolle.vr_firma_verpflichtungen TO stefan;
+GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_firma_verpflichtungen TO mspublic;
 
