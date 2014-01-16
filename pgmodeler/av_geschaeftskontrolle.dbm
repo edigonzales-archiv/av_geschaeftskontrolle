@@ -63,7 +63,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="name" not-null="true">
 		<type name="varchar"/>
 	</column>
-	<column name="kosten" not-null="true">
+	<column name="kosten">
 		<type name="numeric" length="20" precision="2"/>
 		<comment><![CDATA[exlusive Mehrwertsteuer]]></comment>
 	</column>
@@ -126,7 +126,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="auftrag">
 	<schema name="av_geschaeftskontrolle"/>
 	<role name="stefan"/>
-	<position x="198.556" y="474.667"/>
+	<position x="364.556" y="468.667"/>
 	<column name="id">
 		<type name="serial"/>
 	</column>
@@ -141,6 +141,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</column>
 	<column name="mwst">
 		<type name="double precision"/>
+	</column>
+	<column name="verguetungsart_id">
+		<type name="int4"/>
 	</column>
 	<column name="unternehmer_id" not-null="true">
 		<type name="int4"/>
@@ -168,7 +171,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="rechnung">
 	<schema name="av_geschaeftskontrolle"/>
 	<role name="stefan"/>
-	<position x="686.571" y="337.429"/>
+	<position x="803.571" y="329.429"/>
 	<column name="id">
 		<type name="serial"/>
 	</column>
@@ -256,7 +259,7 @@ NEW.kosten = gesamtkosten*(NEW.prozent/100);
 	<comment><![CDATA[Geplante Zahlung pro Jahr.]]></comment>
 	<appended-sql><![CDATA[ALTER FUNCTION av_geschaeftskontrolle.calculate_order_costs_from_percentage()
   OWNER TO stefan;]]></appended-sql>
-	<position x="712" y="590"/>
+	<position x="815" y="537"/>
 	<column name="id">
 		<type name="serial"/>
 	</column>
@@ -322,6 +325,21 @@ NEW.kosten = gesamtkosten*(NEW.prozent/100);
 	</constraint>
 </table>
 
+<table name="verguetungsart">
+	<schema name="av_geschaeftskontrolle"/>
+	<role name="stefan"/>
+	<position x="8" y="542"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="art" not-null="true">
+		<type name="varchar"/>
+	</column>
+	<constraint name="verguetungsart_pkey" type="pk-constr" factor="10" table="av_geschaeftskontrolle.verguetungsart">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
 <constraint name="projekt_konto_id_fkey" type="fk-constr"	 comparison-type="MATCH FULL"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="av_geschaeftskontrolle.konto" table="av_geschaeftskontrolle.projekt">
 	<columns names="konto_id" ref-type="src-columns"/>
@@ -335,6 +353,11 @@ NEW.kosten = gesamtkosten*(NEW.prozent/100);
 <constraint name="auftrag_projekt_id_fkey" type="fk-constr"	 comparison-type="MATCH FULL"
 	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="av_geschaeftskontrolle.projekt" table="av_geschaeftskontrolle.auftrag">
 	<columns names="projekt_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+<constraint name="auftrag_verguetungsart_id" type="fk-constr"	 comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="av_geschaeftskontrolle.verguetungsart" table="av_geschaeftskontrolle.auftrag">
+	<columns names="verguetungsart_id" ref-type="src-columns"/>
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
 <constraint name="rechnung_auftrag_id_fkey" type="fk-constr"	 comparison-type="MATCH FULL"
@@ -392,6 +415,11 @@ NEW.kosten = gesamtkosten*(NEW.prozent/100);
 	 dst-table="av_geschaeftskontrolle.projekt"
 	 src-required="true" dst-required="true"/>
 
+<relationship name="rel_auftrag_verguetungsart" type="relfk"
+	 src-table="av_geschaeftskontrolle.auftrag"
+	 dst-table="av_geschaeftskontrolle.verguetungsart"
+	 src-required="true" dst-required="true"/>
+
 <permission>
 	<object name="av_geschaeftskontrolle.konto" type="table"/>
 	<roles names="mspublic"/>
@@ -416,5 +444,10 @@ NEW.kosten = gesamtkosten*(NEW.prozent/100);
 	<object name="av_geschaeftskontrolle" type="schema"/>
 	<roles names="stefan"/>
 	<privileges usage="true"/>
+</permission>
+<permission>
+	<object name="av_geschaeftskontrolle.verguetungsart" type="table"/>
+	<roles names="mspublic"/>
+	<privileges select="true"/>
 </permission>
 </dbmodel>

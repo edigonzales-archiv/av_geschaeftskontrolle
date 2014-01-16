@@ -5,6 +5,11 @@ INSERT INTO av_geschaeftskontrolle.rechnungsjahr VALUES (4, 2015);
 INSERT INTO av_geschaeftskontrolle.rechnungsjahr VALUES (5, 2016);
 INSERT INTO av_geschaeftskontrolle.rechnungsjahr VALUES (6, 2017);
 
+INSERT INTO av_geschaeftskontrolle.verguetungsart (id, art) VALUES (1, 'Kostendach');
+INSERT INTO av_geschaeftskontrolle.verguetungsart (id, art) VALUES (2, 'pauschal');
+INSERT INTO av_geschaeftskontrolle.verguetungsart (id, art) VALUES (3, 'effektive Elemente');
+
+
 INSERT INTO av_geschaeftskontrolle.konto VALUES (1, 3130015, 'Unterhalt und Nachführung', '');
 INSERT INTO av_geschaeftskontrolle.konto VALUES (2, 5640000, 'Oeffentl. Unternehmungen', 'RADAV-Konto');
 
@@ -76,6 +81,7 @@ SELECT setval('av_geschaeftskontrolle.auftrag_id_seq', max(id)) FROM av_geschaef
 SELECT setval('av_geschaeftskontrolle.planzahlung_id_seq', max(id)) FROM av_geschaeftskontrolle.planzahlung;
 SELECT setval('av_geschaeftskontrolle.rechnung_id_seq', max(id)) FROM av_geschaeftskontrolle.rechnung;
 SELECT setval('av_geschaeftskontrolle.perimeter_id_seq', max(id)) FROM av_geschaeftskontrolle.perimeter;
+SELECT setval('av_geschaeftskontrolle.verguetungsart_id_seq', max(id)) FROM av_geschaeftskontrolle.verguetungsart;
 
 
 

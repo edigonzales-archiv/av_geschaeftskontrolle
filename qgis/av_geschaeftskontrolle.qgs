@@ -24,10 +24,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>589748.17292792291846126</xmin>
-            <ymin>209179.39852144432370551</ymin>
-            <xmax>615878.08554271084722131</xmax>
-            <ymax>230023.2022563470818568</ymax>
+            <xmin>593897.36478384071961045</xmin>
+            <ymin>214797.72836883991840295</ymin>
+            <xmax>609008.47077286266721785</xmax>
+            <ymax>226103.54023783761658706</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -45,11 +45,6 @@
         <layer_coordinate_transform_info/>
     </mapcanvas>
     <legend updateDrawingOrder="false" activeLayer="auftrag20131218082931946">
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="vr_laufende_auftraege" showFeatureCount="0">
-            <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="vr_laufende_auftraege20131226143439596" visible="0"/>
-            </filegroup>
-        </legendlayer>
         <legendgroup open="true" checked="Qt::Unchecked" name="Teilzahlungen">
             <legendlayer drawingOrder="0" open="true" checked="Qt::Unchecked" name="planzahlung" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
@@ -99,9 +94,16 @@
             </legendlayer>
         </legendgroup>
         <legendgroup open="true" checked="Qt::Checked" name="Perimeter">
-            <legendlayer drawingOrder="9" open="true" checked="Qt::Checked" name="perimeter" showFeatureCount="0">
+            <legendlayer drawingOrder="8" open="true" checked="Qt::Checked" name="perimeter" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
                     <legendlayerfile isInOverview="0" layerid="perimeter20131219110851854" visible="1"/>
+                </filegroup>
+            </legendlayer>
+        </legendgroup>
+        <legendgroup open="true" checked="Qt::Unchecked" name="Verguetungsart">
+            <legendlayer drawingOrder="9" open="true" checked="Qt::Unchecked" name="verguetungsart" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="verguetungsart20140116160534226" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
@@ -148,6 +150,8 @@
                 <edittype labelontop="0" editable="1" widgetv2type="RelationReference" type="20" name="unternehmer_id">
                     <widgetv2config ShowForm="0" Relation="fk_projekt_unternehmer" AllowNULL="0"/>
                 </edittype>
+                <edittype labelontop="0" editable="1" allowNull="true" orderByValue="true" key="id" layer="verguetungsart20140116160534226" allowMulti="false" filterExpression="" type="15" value="art" name="verguetungsart"/>
+                <edittype labelontop="0" editable="1" allowNull="true" orderByValue="true" key="id" layer="verguetungsart20140116160534226" allowMulti="false" filterExpression="" type="15" value="art" name="verguetungsart_id"/>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
@@ -155,16 +159,17 @@
             <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <aliases>
-                <alias field="bemerkung" index="10" name="Bemerkungen"/>
-                <alias field="datum_abschluss" index="8" name="Auftragsabschluss"/>
-                <alias field="datum_ende" index="7" name="Auftragsende"/>
-                <alias field="datum_start" index="6" name="Auftragsbeginn"/>
-                <alias field="geplant" index="9" name="Auftrag geplant?"/>
+                <alias field="bemerkung" index="11" name="Bemerkungen"/>
+                <alias field="datum_abschluss" index="9" name="Auftragsabschluss"/>
+                <alias field="datum_ende" index="8" name="Auftragsende"/>
+                <alias field="datum_start" index="7" name="Auftragsbeginn"/>
+                <alias field="geplant" index="10" name="Auftrag geplant?"/>
                 <alias field="kosten" index="3" name="Kosten (exkl. MWST)"/>
                 <alias field="mwst" index="4" name="MWST [%]"/>
                 <alias field="name" index="2" name="Auftragsname"/>
                 <alias field="projekt_id" index="1" name="Projekt"/>
-                <alias field="unternehmer_id" index="5" name="Unternehmer"/>
+                <alias field="unternehmer_id" index="6" name="Unternehmer"/>
+                <alias field="verguetungsart_id" index="5" name="Vergütungsart"/>
             </aliases>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
@@ -174,15 +179,15 @@
                     <attributeEditorField index="2" name="name"/>
                     <attributeEditorField index="3" name="kosten"/>
                     <attributeEditorField index="4" name="mwst"/>
-                    <attributeEditorField index="5" name="unternehmer_id"/>
-                    <attributeEditorField index="6" name="datum_start"/>
-                    <attributeEditorField index="7" name="datum_ende"/>
-                    <attributeEditorField index="8" name="datum_abschluss"/>
-                    <attributeEditorField index="9" name="geplant"/>
+                    <attributeEditorField index="6" name="unternehmer_id"/>
+                    <attributeEditorField index="7" name="datum_start"/>
+                    <attributeEditorField index="8" name="datum_ende"/>
+                    <attributeEditorField index="9" name="datum_abschluss"/>
+                    <attributeEditorField index="10" name="geplant"/>
                 </attributeEditorContainer>
                 <attributeEditorContainer name="Planzahlung">
-                    <attributeEditorField index="145" name="fk_auftrag_planzahlung"/>
-                    <attributeEditorField index="145" name="fk_auftrag_rechnung"/>
+                    <attributeEditorField index="-1" name="fk_auftrag_planzahlung"/>
+                    <attributeEditorField index="-1" name="fk_auftrag_rechnung"/>
                 </attributeEditorContainer>
             </attributeEditorForm>
             <attributeactions/>
@@ -787,14 +792,14 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>vr_laufende_auftraege20131226143439596</id>
-            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='auf_id' table="av_geschaeftskontrolle"."vr_laufende_auftraege" sql=</datasource>
+            <id>verguetungsart20140116160534226</id>
+            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."verguetungsart" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
                 <value></value>
             </keywordList>
-            <layername>vr_laufende_auftraege</layername>
+            <layername>verguetungsart</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
@@ -809,12 +814,12 @@
             </srs>
             <customproperties/>
             <provider encoding="System">postgres</provider>
-            <previewExpression>COALESCE("auf_id", '&lt;NULL>')</previewExpression>
+            <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>

@@ -56,7 +56,7 @@ CREATE TABLE av_geschaeftskontrolle.projekt(
 	id serial,
 	konto_id int4 NOT NULL,
 	name varchar NOT NULL,
-	kosten numeric(20,2) NOT NULL,
+	kosten numeric(20,2),
 	mwst double precision,
 	datum_start date NOT NULL,
 	datum_ende date,
@@ -96,6 +96,7 @@ CREATE TABLE av_geschaeftskontrolle.auftrag(
 	name varchar NOT NULL,
 	kosten numeric(20,2),
 	mwst double precision,
+	verguetungsart_id int4,
 	unternehmer_id int4 NOT NULL,
 	datum_start date,
 	datum_ende date,
@@ -209,12 +210,23 @@ ALTER TABLE av_geschaeftskontrolle.rechnungsjahr OWNER TO stefan;
 CREATE TABLE av_geschaeftskontrolle.perimeter(
 	id serial,
 	projekt_id int4 NOT NULL,
-	perimeter geometry,--(MULTIPOLYGON, 21781),
+	perimeter geometry(MULTIPOLYGON, 21781),
 	CONSTRAINT perimeter_pkey PRIMARY KEY (id)
 
 );
 -- ddl-end --
 ALTER TABLE av_geschaeftskontrolle.perimeter OWNER TO stefan;
+-- ddl-end --
+
+-- object: av_geschaeftskontrolle.verguetungsart | type: TABLE --
+CREATE TABLE av_geschaeftskontrolle.verguetungsart(
+	id serial,
+	art varchar NOT NULL,
+	CONSTRAINT verguetungsart_pkey PRIMARY KEY (id)
+
+);
+-- ddl-end --
+ALTER TABLE av_geschaeftskontrolle.verguetungsart OWNER TO stefan;
 -- ddl-end --
 
 -- object: projekt_konto_id_fkey | type: CONSTRAINT --
@@ -234,6 +246,13 @@ ON DELETE NO ACTION ON UPDATE NO ACTION NOT DEFERRABLE;
 -- object: auftrag_projekt_id_fkey | type: CONSTRAINT --
 ALTER TABLE av_geschaeftskontrolle.auftrag ADD CONSTRAINT auftrag_projekt_id_fkey FOREIGN KEY (projekt_id)
 REFERENCES av_geschaeftskontrolle.projekt (id) MATCH FULL
+ON DELETE NO ACTION ON UPDATE NO ACTION NOT DEFERRABLE;
+-- ddl-end --
+
+
+-- object: auftrag_verguetungsart_id | type: CONSTRAINT --
+ALTER TABLE av_geschaeftskontrolle.auftrag ADD CONSTRAINT auftrag_verguetungsart_id FOREIGN KEY (verguetungsart_id)
+REFERENCES av_geschaeftskontrolle.verguetungsart (id) MATCH FULL
 ON DELETE NO ACTION ON UPDATE NO ACTION NOT DEFERRABLE;
 -- ddl-end --
 
@@ -266,38 +285,45 @@ ON DELETE NO ACTION ON UPDATE NO ACTION NOT DEFERRABLE;
 -- ddl-end --
 
 
--- object: grant_0446cdbd2e | type: PERMISSION --
+-- object: grant_73a7ffaa24 | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.konto
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_e31ac6f604 | type: PERMISSION --
+-- object: grant_0a2d426c17 | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.plankostenkonto
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_2ccefcbdbb | type: PERMISSION --
+-- object: grant_d9002d89eb | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.projekt
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_cc186da61d | type: PERMISSION --
+-- object: grant_5d3d6fc310 | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.planzahlung
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_f7999484ef | type: PERMISSION --
+-- object: grant_25dade0cb3 | type: PERMISSION --
 GRANT USAGE
    ON SCHEMA av_geschaeftskontrolle
    TO stefan;
+;
+-- ddl-end --
+
+-- object: grant_519d439e7c | type: PERMISSION --
+GRANT SELECT
+   ON TABLE av_geschaeftskontrolle.verguetungsart
+   TO mspublic;
 ;
 -- ddl-end --
 

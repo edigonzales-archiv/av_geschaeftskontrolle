@@ -1,3 +1,18 @@
 Ubuntu 13.04:
  - sudo apt-get install qt5-default qttools5-dev-tools
  - export LD_LIBRARY_PATH (Installationsverzeichnis). 
+
+Beim Kompilieren von QGIS gibts nach Installieren von Qt5 Probleme: qmake-qt4 statt qmake
+
+
+Ubuntu 12.04:
+
+Ok, zuerst wirklich mit LD_LIBRARY_PATH probieren, vielleicht reicht das?
+Shell-Skript:
+
+
+sudo apt-add-repository ppa:ubuntu-sdk-team/ppa
+sudo apt-get update
+
+sudo apt-get install qtdeclarative5-dev
+sudo apt-get install qt5-default qttools5-dev-tools

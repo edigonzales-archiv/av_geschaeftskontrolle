@@ -72,31 +72,43 @@ ORDER BY b."name", a."name"
 ) as y ON (y.id = x.id)
 */
 
-/*
+
 -- laufende Aufträge
+DROP VIEW av_geschaeftskontrolle.vr_laufende_auftraege;
+
 CREATE OR REPLACE VIEW av_geschaeftskontrolle.vr_laufende_auftraege AS 
 
-SELECT auftrag.*, rechnung.bezahlt, (auftrag.kosten_inkl - CASE WHEN rechnung.bezahlt IS NULL THEN 0 ELSE rechnung.bezahlt END) as ausstehend
+SELECT a.auf_id, a.auftrag_name, a.firma, a.geplant, a.proj_id, a.projekt_name, a.konto, a.datum_start, a.datum_ende, v.verguetungsart, a.kosten_exkl, a.mwst, a.kosten_inkl, a.bezahlt, a.ausstehend
 FROM
 (
- SELECT auf.id as auf_id, auf."name" as auftrag_name, u.firma as firma, auf.geplant, proj.id as proj_id, proj."name" as projekt_name, konto.nr::text as konto, auf.datum_start, auf.datum_ende, auf.kosten as kosten_exkl, auf.mwst, (auf.kosten * (1 + auf.mwst / 100)) as kosten_inkl
- FROM av_geschaeftskontrolle.auftrag as auf, av_geschaeftskontrolle.projekt as proj, av_geschaeftskontrolle.konto as konto, av_geschaeftskontrolle.unternehmer as u
- WHERE auf.projekt_id = proj.id
- AND proj.konto_id = konto.id
- AND auf.unternehmer_id = u.id
- AND auf.datum_abschluss IS NULL or trim('' from datum_abschluss::text) = ''
- ORDER BY auf.datum_start, auf."name"
-) as auftrag LEFT JOIN
+ SELECT auftrag.*, rechnung.bezahlt, (auftrag.kosten_inkl - CASE WHEN rechnung.bezahlt IS NULL THEN 0 ELSE rechnung.bezahlt END) as ausstehend
+ FROM
+ (
+  SELECT auf.id as auf_id, auf."name" as auftrag_name, u.firma as firma, auf.geplant, auf.verguetungsart_id, proj.id as proj_id, proj."name" as projekt_name, konto.nr::text as konto, auf.datum_start, auf.datum_ende, auf.kosten as kosten_exkl, auf.mwst, (auf.kosten * (1 + auf.mwst / 100)) as kosten_inkl
+  FROM av_geschaeftskontrolle.auftrag as auf, av_geschaeftskontrolle.projekt as proj, av_geschaeftskontrolle.konto as konto, 
+       av_geschaeftskontrolle.unternehmer as u
+  WHERE auf.projekt_id = proj.id
+  AND proj.konto_id = konto.id
+  AND auf.unternehmer_id = u.id
+  AND auf.datum_abschluss IS NULL or trim('' from datum_abschluss::text) = ''
+  --ORDER BY auf.datum_start, auf."name"
+ ) as auftrag LEFT JOIN
+ (
+  SELECT sum(kosten * (1 + mwst / 100)) as bezahlt, auftrag_id
+  FROM av_geschaeftskontrolle.rechnung
+  GROUP BY auftrag_id
+ ) as rechnung ON (rechnung.auftrag_id = auftrag.auf_id)
+) as a LEFT JOIN
 (
- SELECT sum(kosten * (1 + mwst / 100)) as bezahlt, auftrag_id
- FROM av_geschaeftskontrolle.rechnung
- GROUP BY auftrag_id
-) as rechnung ON (rechnung.auftrag_id = auftrag.auf_id);
+ SELECT id, art as verguetungsart
+ FROM av_geschaeftskontrolle.verguetungsart
+) as v ON (a.verguetungsart_id = v.id)
+ORDER BY a.datum_start, a.auftrag_name;
 
 
 GRANT ALL ON TABLE av_geschaeftskontrolle.vr_laufende_auftraege TO stefan;
 GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_laufende_auftraege TO mspublic;
-*/
+
 
 /*
 CREATE OR REPLACE VIEW av_geschaeftskontrolle.vr_zahlungsplan_14_17 AS 
@@ -174,6 +186,7 @@ GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_kontr_planprozent TO mspublic;
 
 */
 
+/*
 CREATE OR REPLACE VIEW av_geschaeftskontrolle.vr_firma_verpflichtungen AS 
 
 SELECT foo.firma, foo.jahr, foo.kosten_vertrag_inkl, bar.kosten_bezahlt_inkl
@@ -207,4 +220,4 @@ ON (foo.unternehmer_id = bar.unternehmer_id AND foo.jahr = bar.rechnungsjahr);
 
 GRANT ALL ON TABLE av_geschaeftskontrolle.vr_firma_verpflichtungen TO stefan;
 GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_firma_verpflichtungen TO mspublic;
-
+*/
