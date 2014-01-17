@@ -229,6 +229,18 @@ CREATE TABLE av_geschaeftskontrolle.verguetungsart(
 ALTER TABLE av_geschaeftskontrolle.verguetungsart OWNER TO stefan;
 -- ddl-end --
 
+-- object: av_geschaeftskontrolle.amo | type: TABLE --
+CREATE TABLE av_geschaeftskontrolle.amo(
+	id serial NOT NULL,
+	auftrag_id int4 NOT NULL,
+	amo_nr varchar,
+	CONSTRAINT amo_pkey PRIMARY KEY (id)
+
+);
+-- ddl-end --
+ALTER TABLE av_geschaeftskontrolle.amo OWNER TO stefan;
+-- ddl-end --
+
 -- object: projekt_konto_id_fkey | type: CONSTRAINT --
 ALTER TABLE av_geschaeftskontrolle.projekt ADD CONSTRAINT projekt_konto_id_fkey FOREIGN KEY (konto_id)
 REFERENCES av_geschaeftskontrolle.konto (id) MATCH FULL
@@ -285,44 +297,58 @@ ON DELETE NO ACTION ON UPDATE NO ACTION NOT DEFERRABLE;
 -- ddl-end --
 
 
--- object: grant_73a7ffaa24 | type: PERMISSION --
+-- object: amo_auftrag_id_fkey | type: CONSTRAINT --
+ALTER TABLE av_geschaeftskontrolle.amo ADD CONSTRAINT amo_auftrag_id_fkey FOREIGN KEY (auftrag_id)
+REFERENCES av_geschaeftskontrolle.auftrag (id) MATCH FULL
+ON DELETE NO ACTION ON UPDATE NO ACTION NOT DEFERRABLE;
+-- ddl-end --
+
+
+-- object: grant_fe2e612d80 | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.konto
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_0a2d426c17 | type: PERMISSION --
+-- object: grant_40599ba760 | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.plankostenkonto
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_d9002d89eb | type: PERMISSION --
+-- object: grant_7294bb8424 | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.projekt
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_5d3d6fc310 | type: PERMISSION --
+-- object: grant_a7d40223ff | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.planzahlung
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_25dade0cb3 | type: PERMISSION --
+-- object: grant_46e19d1eff | type: PERMISSION --
 GRANT USAGE
    ON SCHEMA av_geschaeftskontrolle
    TO stefan;
 ;
 -- ddl-end --
 
--- object: grant_519d439e7c | type: PERMISSION --
+-- object: grant_966d466090 | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.verguetungsart
+   TO mspublic;
+;
+-- ddl-end --
+
+-- object: grant_63e9f4551e | type: PERMISSION --
+GRANT SELECT
+   ON TABLE av_geschaeftskontrolle.amo
    TO mspublic;
 ;
 -- ddl-end --

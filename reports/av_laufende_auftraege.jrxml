@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="av_laufende_auftraege" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="034a5417-68d3-4aff-84c3-7f7adbb951e3">
+	<property name="ireport.zoom" value="1.2100000000000009"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#FEFEFE"/>
+			<topPen lineColor="#FEFEFE"/>
+			<leftPen lineColor="#FEFEFE"/>
+			<bottomPen lineColor="#FEFEFE"/>
+			<rightPen lineColor="#FEFEFE"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FEFEFE"/>
+			<topPen lineColor="#FEFEFE"/>
+			<leftPen lineColor="#FEFEFE"/>
+			<bottomPen lineColor="#FEFEFE"/>
+			<rightPen lineColor="#FEFEFE"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FEFEFE"/>
+			<topPen lineColor="#FEFEFE"/>
+			<leftPen lineColor="#FEFEFE"/>
+			<bottomPen lineColor="#FEFEFE"/>
+			<rightPen lineColor="#FEFEFE"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box topPadding="2" leftPadding="1" bottomPadding="2" rightPadding="1">
+			<pen lineWidth="0.5" lineColor="#FEFEFE"/>
+			<topPen lineColor="#FEFEFE"/>
+			<leftPen lineColor="#FEFEFE"/>
+			<bottomPen lineColor="#FEFEFE"/>
+			<rightPen lineColor="#FEFEFE"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF"/>
+		</conditionalStyle>
+	</style>
+	<style name="verspaetet" mode="Transparent" forecolor="#000000">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{datum_ende}.getTime() < new Date().getTime()]]></conditionExpression>
+			<style forecolor="#FF0000" fontName="Frutiger 55 Roman" fontSize="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+		</conditionalStyle>
+	</style>
+	<style name="kosten_ueberschritten">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{ausstehend} < 0]]></conditionExpression>
+			<style forecolor="#FF0000" backcolor="#FFFFFF" fontName="Frutiger 55 Roman" fontSize="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="AV_Laufende_Auftraege" uuid="f1e10ffb-fa88-4d5d-aacb-dd1c847b466f">
+		<queryString language="SQL">
+			<![CDATA[SELECT * FROM av_geschaeftskontrolle.vr_laufende_auftraege;]]>
+		</queryString>
+		<field name="auf_id" class="java.lang.Integer"/>
+		<field name="auftrag_name" class="java.lang.String"/>
+		<field name="firma" class="java.lang.String"/>
+		<field name="geplant" class="java.lang.Boolean"/>
+		<field name="proj_id" class="java.lang.Integer"/>
+		<field name="projekt_name" class="java.lang.String"/>
+		<field name="konto" class="java.lang.String"/>
+		<field name="datum_start" class="java.sql.Date"/>
+		<field name="datum_ende" class="java.sql.Date"/>
+		<field name="verguetungsart" class="java.lang.String"/>
+		<field name="kosten_exkl" class="java.math.BigDecimal"/>
+		<field name="mwst" class="java.lang.Double"/>
+		<field name="kosten_inkl" class="java.lang.Double"/>
+		<field name="bezahlt" class="java.lang.Double"/>
+		<field name="ausstehend" class="java.lang.Double"/>
+		<field name="id_auftrag" class="java.lang.Integer"/>
+		<field name="amo_nr" class="java.lang.String"/>
+		<variable name="summe_kosten_exkl" class="java.lang.Double" calculation="Sum">
+			<variableExpression><![CDATA[$F{kosten_exkl}]]></variableExpression>
+		</variable>
+		<variable name="summe_kosten_inkl" class="java.lang.Double" calculation="Sum">
+			<variableExpression><![CDATA[$F{kosten_inkl}]]></variableExpression>
+		</variable>
+		<variable name="summe_bezahlt" class="java.lang.Double" calculation="Sum">
+			<variableExpression><![CDATA[$F{bezahlt}]]></variableExpression>
+		</variable>
+		<variable name="summe_ausstehend" class="java.lang.Double" calculation="Sum">
+			<variableExpression><![CDATA[$F{ausstehend}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT 1 as foo FROM av_geschaeftskontrolle.vr_laufende_auftraege LIMIT 1;]]>
+	</queryString>
+	<field name="foo" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="114" splitType="Stretch">
+			<staticText>
+				<reportElement x="-13" y="-2" width="141" height="13" uuid="452f0da6-8aae-48cc-ab41-fb4dbde15bfa"/>
+				<textElement textAlignment="Right">
+					<font fontName="Frutiger 55 Roman" isBold="true" isItalic="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Amt für Geoinformation]]></text>
+			</staticText>
+			<image>
+				<reportElement x="622" y="0" width="180" height="18" uuid="f5d8ea4d-298b-41d8-b4c9-2151aab1da3a"/>
+				<imageExpression><![CDATA["/home/stefan/Projekte/av_geschaeftskontrolle/reports/kanton_sw.jpeg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="29" y="30" width="59" height="13" uuid="0cabd4eb-b82b-4f10-bd5d-f3e5845f5de6"/>
+				<textElement textAlignment="Left">
+					<font fontName="Frutiger 55 Roman" isItalic="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Rötistrasse 4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="29" y="66" width="70" height="13" uuid="f4b6a650-550c-47c8-8a58-92218345c546"/>
+				<textElement textAlignment="Left">
+					<font fontName="Frutiger 55 Roman" isItalic="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[www.agi.so.ch]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-13" y="12" width="141" height="13" uuid="e77c9371-dfcb-4aa9-b289-5fa7f62863b6"/>
+				<textElement textAlignment="Right">
+					<font fontName="Frutiger 55 Roman" isItalic="true" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Amtliche Vermessung]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="29" y="42" width="72" height="13" uuid="50a3a11c-1e66-4bc8-95f5-2fdd8e0f6eec"/>
+				<textElement textAlignment="Left">
+					<font fontName="Frutiger 55 Roman" isItalic="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[4501 Solothurn]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="29" y="54" width="114" height="13" uuid="ceb0cd5d-04bd-4d09-9aa2-46084c30298b"/>
+				<textElement textAlignment="Left">
+					<font fontName="Frutiger 55 Roman" isItalic="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Telefon 032 627 75 92]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="94" width="802" height="20" uuid="41a49cc9-2407-4d9a-996e-da2de9054eea"/>
+				<textElement textAlignment="Center">
+					<font fontName="Frutiger 55 Roman" size="12" isBold="true" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[Laufende Aufträge]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" x="0" y="0" width="802" height="125" uuid="9ce4e364-2150-4424-a170-7f1702514b56"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="AV_Laufende_Auftraege" uuid="10631240-8569-43c0-bef0-3d41575e8d3e">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="100" uuid="13c14a6b-e3fc-43ab-b44f-b38c26f5e59e">
+						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="25" uuid="7df59867-ae1d-471a-ac2d-27f1812b7073"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Auftrag]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="20" uuid="61ae9ef9-aed7-4646-9fd4-ea057e8bda0b"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Total]]></text>
+							</staticText>
+						</jr:columnFooter>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="98" height="10" uuid="502af7f4-2f22-45a1-af7c-be40a854b573"/>
+								<textElement>
+									<font fontName="Frutiger 55 Roman" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{auftrag_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="1fae9c3f-7bc8-48b0-9de0-f02674162590">
+						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="40" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="6ed47e54-06d4-404c-bc03-53b2c709e7aa"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[AMO-ID]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="38" height="10" uuid="cd365ef1-9e9b-494e-9d17-fcdf2d8d105a"/>
+								<textElement>
+									<font fontName="Frutiger 55 Roman" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{amo_nr}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="b3ff958a-48b0-49bd-b570-ba87388eb969">
+						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="80" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="93d135e3-a919-4569-b834-5dab7f2d919d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Firma]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
+								<reportElement mode="Transparent" x="0" y="0" width="78" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="94eb1699-dbe1-4551-b8bc-393fc31bdfa8"/>
+								<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{firma}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="50" uuid="c5aed3f3-8b1b-4229-b503-b9de6abfa208">
+						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="50" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="b79a36ae-4a29-4a67-95b6-ec46f77a1ea5"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Vertrag
+vorhanden?]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="48" height="10" uuid="a87e2428-ae87-4adb-a9f0-83878ad14000"/>
+								<textElement>
+									<font fontName="Frutiger 55 Roman" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{geplant} ? "nein" : "ja"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="853ea32f-cf39-426d-a98a-a2972e1ec8f6">
+						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="90" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="49b0c4ca-b9e8-451f-a07c-7b343e43602a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Projekt]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField isStretchWithOverflow="true">
+								<reportElement x="0" y="0" width="88" height="10" uuid="3a245499-9cc2-4e14-89cb-1fb06b050f19"/>
+								<textElement>
+									<font fontName="Frutiger 55 Roman" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{projekt_name}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="45" uuid="308be24d-668f-432e-8cab-902104b33720">
+						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="45" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="d245ada5-1758-4713-9b05-cadb161a85d4"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Konto]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="43" height="10" uuid="0b51e757-f77b-4f53-980c-20e03ce57b1e"/>
+								<textElement>
+									<font fontName="Frutiger 55 Roman" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{konto}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="788b7b41-9db3-4c5f-a90e-f8d4ab5585f1">
+						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="42" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="1b4eb870-0892-4726-bc3a-580311d8318d"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Start]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField pattern="dd.MM.yyyy">
+								<reportElement x="0" y="0" width="40" height="10" uuid="136c5fb6-fa1c-460d-8ff6-1bd9b21ffb5e"/>
+								<textElement>
+									<font fontName="Frutiger 55 Roman" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{datum_start}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="42" uuid="c0a8d569-4ac8-47e5-937d-b2084ff026b2">
+						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="42" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="62b5d72f-7b4d-4e0e-9890-faf6366e00ad"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Ende]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField pattern="dd.MM.yyyy">
+								<reportElement style="verspaetet" x="0" y="0" width="40" height="10" uuid="62d946ce-f2b4-4901-95d4-b54c973e21fe"/>
+								<textElement>
+									<font fontName="Frutiger 55 Roman" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{datum_ende}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="45" uuid="15854b7a-8ddd-4fd6-b9f8-97c0442c04cc">
+						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="45" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="ddc999dc-1020-4cf9-96f1-962f32e69396"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Vergütung]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="43" height="10" uuid="d643e1ca-da8d-4129-96db-9159f3179f42"/>
+								<textElement>
+									<font fontName="Frutiger 55 Roman" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{verguetungsart}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="45" uuid="f5352de0-af82-4afa-9b43-2c5793f972ce">
+						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="45" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="0264fdae-19b9-4b84-b850-091cfd2e7917"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Kosten
+(exkl.)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00">
+								<reportElement x="0" y="0" width="45" height="20" uuid="0e6a0c8c-8af2-48f9-97be-c752ef58294b"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true"/>
+									<paragraph rightIndent="1"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{summe_kosten_exkl}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00">
+								<reportElement x="0" y="0" width="43" height="10" uuid="123ac062-cd0d-4d05-ab00-15c223a2ef19"/>
+								<textElement textAlignment="Right">
+									<font fontName="Frutiger 55 Roman" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{kosten_exkl}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="35" uuid="56aba458-ae98-4df9-a2f9-892327b1d4ee">
+						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="35" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="8198a772-649f-4e61-83bb-20ed27e38af0"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[MWST.]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="33" height="10" uuid="3b920c59-2eb4-4859-b684-77bf92c078f4"/>
+								<textElement textAlignment="Right">
+									<font fontName="Frutiger 55 Roman" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{mwst}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="45" uuid="722ae4c7-2317-429b-878a-53fc8967b5c3">
+						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="45" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="e1d2a5d4-a0f5-4e20-9214-a512712ac460"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[Kosten
+(inkl.)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
+								<reportElement mode="Transparent" x="0" y="0" width="45" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="a2d1f2a9-ad35-4bb7-b492-7ec3d765bb81"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single" rightIndent="1"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{summe_kosten_inkl}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField pattern="#,##0.00">
+								<reportElement x="0" y="0" width="43" height="10" uuid="578b96ef-7d8b-4865-b310-a8c6f4054906"/>
+								<textElement textAlignment="Right">
+									<font fontName="Frutiger 55 Roman" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{kosten_inkl}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="45" uuid="e2caccc3-5f89-4859-87ae-539026060244">
+						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="45" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="412ffa07-3487-401e-aa8a-0a3e7013183e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[bezahlt]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
+								<reportElement mode="Transparent" x="0" y="0" width="45" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="98908e56-2ca5-4e0e-bb01-c7307788d64a"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single" rightIndent="1"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{summe_bezahlt}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="43" height="10" uuid="243812f7-9980-4033-9513-ba35fa21f047"/>
+								<textElement textAlignment="Right">
+									<font fontName="Frutiger 55 Roman" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{bezahlt}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="45" uuid="d0f0c09d-ed35-4cfa-bef7-9a1c9334ad4e">
+						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="45" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="cc418b50-c6ef-4c9b-9189-398656892747"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[bezahlt
+[%]]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField pattern="#,##0;-#,##0" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="43" height="10" uuid="2e87eadc-7ae0-4722-9b3d-f4da2d39020b"/>
+								<textElement textAlignment="Right">
+									<font fontName="Frutiger 55 Roman" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[($F{bezahlt} / $F{kosten_inkl}) * 100]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="45" uuid="158e02ce-3d23-4636-a692-a2774ce0e5e7">
+						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
+							<staticText>
+								<reportElement mode="Transparent" x="0" y="0" width="45" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="d3adc347-6230-4bd6-8e7d-6ea2e28d0a7e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single"/>
+								</textElement>
+								<text><![CDATA[ausstehend]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="20" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
+								<reportElement mode="Transparent" x="0" y="0" width="45" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="1fe1a169-007a-43b4-b0b5-e913281f6bc0"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+									<paragraph lineSpacing="Single" rightIndent="1"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{summe_ausstehend}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table_TD" height="14" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
+								<reportElement style="kosten_ueberschritten" x="0" y="0" width="43" height="10" uuid="7cff4e7a-e927-4304-a95e-39d01b83a09f"/>
+								<textElement textAlignment="Right">
+									<font fontName="Frutiger 55 Roman" size="7"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ausstehend}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField pattern="dd. MMMMM yyyy">
+				<reportElement x="0" y="0" width="100" height="20" uuid="8c1502ca-a9fb-468f-b452-a9bcbf0cabbf"/>
+				<textElement>
+					<font fontName="Frutiger 55 Roman" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="762" y="0" width="40" height="20" uuid="0b178eac-69fa-46df-9ca6-21e6c052c487"/>
+				<textElement>
+					<font fontName="Frutiger 55 Roman" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="682" y="0" width="80" height="20" uuid="72e7ffda-5864-45de-8d00-2ccc8cdc493b"/>
+				<textElement textAlignment="Right">
+					<font fontName="Frutiger 55 Roman" size="8" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Seite "+$V{PAGE_NUMBER}+" von"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

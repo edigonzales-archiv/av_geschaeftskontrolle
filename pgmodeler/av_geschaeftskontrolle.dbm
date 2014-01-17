@@ -126,7 +126,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="auftrag">
 	<schema name="av_geschaeftskontrolle"/>
 	<role name="stefan"/>
-	<position x="364.556" y="468.667"/>
+	<position x="371.556" y="502.667"/>
 	<column name="id">
 		<type name="serial"/>
 	</column>
@@ -298,7 +298,7 @@ NEW.kosten = gesamtkosten*(NEW.prozent/100);
 <table name="rechnungsjahr">
 	<schema name="av_geschaeftskontrolle"/>
 	<role name="stefan"/>
-	<position x="34" y="679.143"/>
+	<position x="52" y="716.143"/>
 	<column name="id">
 		<type name="serial"/>
 	</column>
@@ -328,7 +328,7 @@ NEW.kosten = gesamtkosten*(NEW.prozent/100);
 <table name="verguetungsart">
 	<schema name="av_geschaeftskontrolle"/>
 	<role name="stefan"/>
-	<position x="8" y="542"/>
+	<position x="22" y="458"/>
 	<column name="id">
 		<type name="serial"/>
 	</column>
@@ -336,6 +336,24 @@ NEW.kosten = gesamtkosten*(NEW.prozent/100);
 		<type name="varchar"/>
 	</column>
 	<constraint name="verguetungsart_pkey" type="pk-constr" factor="10" table="av_geschaeftskontrolle.verguetungsart">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="amo">
+	<schema name="av_geschaeftskontrolle"/>
+	<role name="stefan"/>
+	<position x="21" y="589"/>
+	<column name="id" not-null="true">
+		<type name="serial"/>
+	</column>
+	<column name="auftrag_id" not-null="true">
+		<type name="int4"/>
+	</column>
+	<column name="amo_nr">
+		<type name="varchar"/>
+	</column>
+	<constraint name="amo_pkey" type="pk-constr" factor="10" table="av_geschaeftskontrolle.amo">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
@@ -380,6 +398,11 @@ NEW.kosten = gesamtkosten*(NEW.prozent/100);
 	<columns names="projekt_id" ref-type="src-columns"/>
 	<columns names="id" ref-type="dst-columns"/>
 </constraint>
+<constraint name="amo_auftrag_id_fkey" type="fk-constr"	 comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="av_geschaeftskontrolle.auftrag" table="av_geschaeftskontrolle.amo">
+	<columns names="auftrag_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
 <relationship name="rel_plankostenkonto_konto" type="relfk"
 	 src-table="av_geschaeftskontrolle.plankostenkonto"
 	 dst-table="av_geschaeftskontrolle.konto"
@@ -420,6 +443,11 @@ NEW.kosten = gesamtkosten*(NEW.prozent/100);
 	 dst-table="av_geschaeftskontrolle.verguetungsart"
 	 src-required="true" dst-required="true"/>
 
+<relationship name="rel_amo_auftrag" type="relfk"
+	 src-table="av_geschaeftskontrolle.amo"
+	 dst-table="av_geschaeftskontrolle.auftrag"
+	 src-required="true" dst-required="true"/>
+
 <permission>
 	<object name="av_geschaeftskontrolle.konto" type="table"/>
 	<roles names="mspublic"/>
@@ -447,6 +475,11 @@ NEW.kosten = gesamtkosten*(NEW.prozent/100);
 </permission>
 <permission>
 	<object name="av_geschaeftskontrolle.verguetungsart" type="table"/>
+	<roles names="mspublic"/>
+	<privileges select="true"/>
+</permission>
+<permission>
+	<object name="av_geschaeftskontrolle.amo" type="table"/>
 	<roles names="mspublic"/>
 	<privileges select="true"/>
 </permission>
