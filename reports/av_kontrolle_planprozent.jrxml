@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="kontrolle_planprozent" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="83c9e659-b728-404e-b3b0-91c6b2e34ae4">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="av_kontrolle_planprozent" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="83c9e659-b728-404e-b3b0-91c6b2e34ae4">
 	<property name="ireport.zoom" value="2.1435888100000025"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="77"/>
@@ -45,11 +45,11 @@
 	</style>
 	<style name="prozent_groesser_100" mode="Transparent" forecolor="#000000">
 		<conditionalStyle>
-			<conditionExpression><![CDATA[$F{sum_planprozent} > 100]]></conditionExpression>
+			<conditionExpression><![CDATA[$F{sum_planprozent} != 100]]></conditionExpression>
 			<style mode="Transparent" forecolor="#FF0000" fontName="Frutiger 55 Roman" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 		</conditionalStyle>
 	</style>
-	<subDataset name="Kontrolle_Summe_Planzahlungen" uuid="c45685ed-c6f8-4de7-80c8-d17ee3b01657">
+	<subDataset name="AV_Kontrolle_Summe_Planzahlungen" uuid="c45685ed-c6f8-4de7-80c8-d17ee3b01657">
 		<queryString language="SQL">
 			<![CDATA[SELECT * FROM av_geschaeftskontrolle.vr_kontr_planprozent;]]>
 		</queryString>
@@ -134,7 +134,7 @@
 			<componentElement>
 				<reportElement key="table" style="table" x="0" y="0" width="803" height="125" uuid="eb9c784a-95aa-45f1-bcd0-c19fdd70a10f"/>
 				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
-					<datasetRun subDataset="Kontrolle_Summe_Planzahlungen" uuid="fed26ef6-f8e3-4858-b269-b9188062c4b1">
+					<datasetRun subDataset="AV_Kontrolle_Summe_Planzahlungen" uuid="fed26ef6-f8e3-4858-b269-b9188062c4b1">
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
 					<jr:column width="200" uuid="3de00beb-65fe-43c1-9631-595b441ae853">

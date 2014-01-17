@@ -73,6 +73,7 @@ ORDER BY b."name", a."name"
 */
 
 
+/*
 -- laufende Aufträge
 --DROP VIEW av_geschaeftskontrolle.vr_laufende_auftraege;
 
@@ -121,21 +122,18 @@ ORDER BY af.datum_start, af.auftrag_name;
 
 GRANT ALL ON TABLE av_geschaeftskontrolle.vr_laufende_auftraege TO stefan;
 GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_laufende_auftraege TO mspublic;
-
-
-
-
+*/
 
 /*
 CREATE OR REPLACE VIEW av_geschaeftskontrolle.vr_zahlungsplan_14_17 AS 
 
-SELECT auf_name, proj."name" as proj_name, konto."nr" as konto, auf_start, auf_ende, auf_abschluss, plan_summe_a, plan_prozent_a, re_summe_a, (re_summe_a / auf_summe) * 100 as re_prozent_a,  plan_summe_b, plan_prozent_b, plan_summe_c, plan_prozent_c, plan_summe_d, plan_prozent_d, a_id, projekt_id
+SELECT auf_name, auf_geplant, proj."name" as proj_name, konto."nr" as konto, auf_start, auf_ende, auf_abschluss, plan_summe_a, plan_prozent_a, re_summe_a, (re_summe_a / auf_summe) * 100 as re_prozent_a,  plan_summe_b, plan_prozent_b, plan_summe_c, plan_prozent_c, plan_summe_d, plan_prozent_d, a_id, projekt_id
 FROM
 (
  SELECT *
  FROM
  (
-  SELECT auf."name" as auf_name, auf.datum_start as auf_start, auf.datum_ende as auf_ende, auf.datum_abschluss as auf_abschluss, (auf.kosten * (1 + (auf.mwst/100))) as auf_summe, sum(pz.kosten * (1 + (pz.mwst/100))) as plan_summe_a, sum(pz.prozent) as plan_prozent_a, auf.id as a_id, auf.projekt_id
+  SELECT auf."name" as auf_name, auf.geplant as auf_geplant, auf.datum_start as auf_start, auf.datum_ende as auf_ende, auf.datum_abschluss as auf_abschluss, (auf.kosten * (1 + (auf.mwst/100))) as auf_summe, sum(pz.kosten * (1 + (pz.mwst/100))) as plan_summe_a, sum(pz.prozent) as plan_prozent_a, auf.id as a_id, auf.projekt_id
   FROM av_geschaeftskontrolle.planzahlung as pz, av_geschaeftskontrolle.auftrag as auf
   WHERE pz.auftrag_id = auf.id
   AND pz.rechnungsjahr = 2014
@@ -178,7 +176,7 @@ GRANT ALL ON TABLE av_geschaeftskontrolle.vr_zahlungsplan_14_17 TO stefan;
 GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_zahlungsplan_14_17 TO mspublic;
 */
 
-/*
+ 
 CREATE OR REPLACE VIEW av_geschaeftskontrolle.vr_kontr_planprozent AS 
 
 SELECT a."name" as auf_name, d.firma, b."name" as proj_name, c.nr as konto_nr, a.sum_planprozent
@@ -192,20 +190,20 @@ FROM
  AND auf.datum_abschluss IS NULL or trim('' from datum_abschluss::text) = ''
  GROUP BY auf.id
 ) as a, av_geschaeftskontrolle.projekt as b, av_geschaeftskontrolle.konto as c, av_geschaeftskontrolle.unternehmer as d
-WHERE a.projekt_id = b.idfile_1388497342682.jrxml
+WHERE a.projekt_id = b.id
 AND c.id = b.konto_id
 AND a.unternehmer_id = d.id
 ORDER BY b."name", a."name";
 
 GRANT ALL ON TABLE av_geschaeftskontrolle.vr_kontr_planprozent TO stefan;
 GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_kontr_planprozent TO mspublic;
+ 
 
-*/
 
 /*
 CREATE OR REPLACE VIEW av_geschaeftskontrolle.vr_firma_verpflichtungen AS 
 
-SELECT foo.firma, foo.jahr, foo.kosten_vertrag_inkl, bar.kosten_bezahlt_inkl
+SELECT CASE WHEN foo.firma IS NULL THEN bar.firma ELSE foo.firma END as firma, CASE WHEN foo.jahr IS NULL THEN bar.jahr ELSE foo.jahr END as jahr, foo.kosten_vertrag_inkl, bar.kosten_bezahlt_inkl
 FROM
 (
  SELECT a.*, un.firma
@@ -219,20 +217,22 @@ FROM
  WHERE a.unternehmer_id = un.id
 ) as foo
 
-LEFT JOIN
+FULL JOIN
 
 (
- SELECT a.*, auf.id, auf.unternehmer_id 
+ SELECT a.*, auf.id, auf.unternehmer_id, un.firma 
  FROM 
  (
-  SELECT sum(kosten * (1 + mwst/100)) as kosten_bezahlt_inkl, auftrag_id, rechnungsjahr
+  SELECT sum(kosten * (1 + mwst/100)) as kosten_bezahlt_inkl, auftrag_id, rechnungsjahr as jahr
   FROM av_geschaeftskontrolle.rechnung
   GROUP BY auftrag_id, rechnungsjahr
- ) as a, av_geschaeftskontrolle.auftrag as auf
+ ) as a, av_geschaeftskontrolle.auftrag as auf, av_geschaeftskontrolle.unternehmer as un
  WHERE a.auftrag_id = auf.id
+ AND auf.unternehmer_id = un.id
 ) bar 
 
-ON (foo.unternehmer_id = bar.unternehmer_id AND foo.jahr = bar.rechnungsjahr);
+ON (foo.unternehmer_id = bar.unternehmer_id AND foo.jahr = bar.jahr);
+
 
 GRANT ALL ON TABLE av_geschaeftskontrolle.vr_firma_verpflichtungen TO stefan;
 GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_firma_verpflichtungen TO mspublic;
