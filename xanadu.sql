@@ -89,25 +89,23 @@ CREATE TABLE av_geschaeftskontrolle.unternehmer(
 ALTER TABLE av_geschaeftskontrolle.unternehmer OWNER TO stefan;
 -- ddl-end --
 
--- object: av_geschaeftskontrolle.auftrag | type: TABLE --
-CREATE TABLE av_geschaeftskontrolle.auftrag(
-	id serial,
-	projekt_id int4 NOT NULL,
-	name varchar NOT NULL,
-	kosten numeric(20,2),
-	mwst double precision,
-	verguetungsart_id int4,
-	unternehmer_id int4 NOT NULL,
-	datum_start date,
-	datum_ende date,
-	datum_abschluss date,
-	geplant boolean,
-	bemerkung varchar,
-	CONSTRAINT auftrag_pkey PRIMARY KEY (id)
+-- object: av_geschaeftskontrolle.calculate_budget_payment_from_total_cost | type: FUNCTION --
+CREATE OR REPLACE FUNCTION av_geschaeftskontrolle.calculate_budget_payment_from_total_cost ()
+	RETURNS trigger
+	LANGUAGE plpgsql
+	VOLATILE 
+	CALLED ON NULL INPUT
+	SECURITY INVOKER
+	COST 100
+	AS $$ BEGIN
 
-);
--- ddl-end --
-ALTER TABLE av_geschaeftskontrolle.auftrag OWNER TO stefan;
+UPDATE av_geschaeftskontrolle.planzahlung SET kosten = auf.kosten * (prozent/100) 
+FROM av_geschaeftskontrolle.auftrag as auf
+WHERE auf.id = auftrag_id;
+ 
+ RETURN NULL;
+ END;$$;
+ALTER FUNCTION av_geschaeftskontrolle.calculate_budget_payment_from_total_cost() OWNER TO stefan;
 -- ddl-end --
 
 -- object: av_geschaeftskontrolle.rechnung | type: TABLE --
@@ -241,6 +239,39 @@ CREATE TABLE av_geschaeftskontrolle.amo(
 ALTER TABLE av_geschaeftskontrolle.amo OWNER TO stefan;
 -- ddl-end --
 
+-- object: av_geschaeftskontrolle.auftrag | type: TABLE --
+CREATE TABLE av_geschaeftskontrolle.auftrag(
+	id serial,
+	projekt_id int4 NOT NULL,
+	name varchar NOT NULL,
+	kosten numeric(20,2),
+	mwst double precision,
+	verguetungsart_id int4,
+	unternehmer_id int4 NOT NULL,
+	datum_start date,
+	datum_ende date,
+	datum_abschluss date,
+	geplant boolean,
+	bemerkung varchar,
+	CONSTRAINT auftrag_pkey PRIMARY KEY (id)
+
+);
+-- ddl-end --
+-- object: update_planzahlungskosten | type: TRIGGER --
+CREATE TRIGGER update_planzahlungskosten
+	AFTER UPDATE
+	ON av_geschaeftskontrolle.auftrag
+	FOR EACH ROW
+	EXECUTE PROCEDURE av_geschaeftskontrolle.calculate_budget_payment_from_total_cost();
+-- ddl-end --
+
+
+ALTER TABLE av_geschaeftskontrolle.auftrag OWNER TO stefan;
+-- Appended SQL commands --
+ALTER FUNCTION av_geschaeftskontrolle.calculate_budget_payment_from_total_cost()
+  OWNER TO stefan;
+-- ddl-end --
+
 -- object: projekt_konto_id_fkey | type: CONSTRAINT --
 ALTER TABLE av_geschaeftskontrolle.projekt ADD CONSTRAINT projekt_konto_id_fkey FOREIGN KEY (konto_id)
 REFERENCES av_geschaeftskontrolle.konto (id) MATCH FULL
@@ -304,49 +335,49 @@ ON DELETE NO ACTION ON UPDATE NO ACTION NOT DEFERRABLE;
 -- ddl-end --
 
 
--- object: grant_fe2e612d80 | type: PERMISSION --
+-- object: grant_ff9120cda2 | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.konto
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_40599ba760 | type: PERMISSION --
+-- object: grant_f6107000e5 | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.plankostenkonto
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_7294bb8424 | type: PERMISSION --
+-- object: grant_72a334c0e8 | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.projekt
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_a7d40223ff | type: PERMISSION --
+-- object: grant_50941e81ee | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.planzahlung
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_46e19d1eff | type: PERMISSION --
+-- object: grant_43000df13d | type: PERMISSION --
 GRANT USAGE
    ON SCHEMA av_geschaeftskontrolle
    TO stefan;
 ;
 -- ddl-end --
 
--- object: grant_966d466090 | type: PERMISSION --
+-- object: grant_89c5474f56 | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.verguetungsart
    TO mspublic;
 ;
 -- ddl-end --
 
--- object: grant_63e9f4551e | type: PERMISSION --
+-- object: grant_093f30516c | type: PERMISSION --
 GRANT SELECT
    ON TABLE av_geschaeftskontrolle.amo
    TO mspublic;

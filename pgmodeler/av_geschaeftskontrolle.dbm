@@ -123,50 +123,29 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<table name="auftrag">
+<function name="calculate_budget_payment_from_total_cost"
+		window-func="false"
+		returns-setof="false"
+		behavior-type="CALLED ON NULL INPUT"
+		function-type="VOLATILE"
+		security-type="SECURITY INVOKER"
+		execution-cost="100"
+		row-amount="0">
 	<schema name="av_geschaeftskontrolle"/>
 	<role name="stefan"/>
-	<position x="371.556" y="502.667"/>
-	<column name="id">
-		<type name="serial"/>
-	</column>
-	<column name="projekt_id" not-null="true">
-		<type name="int4"/>
-	</column>
-	<column name="name" not-null="true">
-		<type name="varchar"/>
-	</column>
-	<column name="kosten">
-		<type name="numeric" length="20" precision="2"/>
-	</column>
-	<column name="mwst">
-		<type name="double precision"/>
-	</column>
-	<column name="verguetungsart_id">
-		<type name="int4"/>
-	</column>
-	<column name="unternehmer_id" not-null="true">
-		<type name="int4"/>
-	</column>
-	<column name="datum_start">
-		<type name="date"/>
-	</column>
-	<column name="datum_ende">
-		<type name="date"/>
-	</column>
-	<column name="datum_abschluss">
-		<type name="date"/>
-	</column>
-	<column name="geplant">
-		<type name="boolean"/>
-	</column>
-	<column name="bemerkung">
-		<type name="varchar"/>
-	</column>
-	<constraint name="auftrag_pkey" type="pk-constr" factor="10" table="av_geschaeftskontrolle.auftrag">
-		<columns names="id" ref-type="src-columns"/>
-	</constraint>
-</table>
+	<language name="plpgsql" protected="true" sql-disabled="true"/>
+	<return-type>
+	<type name="trigger"/>
+	</return-type>
+	<definition><![CDATA[ BEGIN
+
+UPDATE av_geschaeftskontrolle.planzahlung SET kosten = auf.kosten * (prozent/100) 
+FROM av_geschaeftskontrolle.auftrag as auf
+WHERE auf.id = auftrag_id;
+ 
+ RETURN NULL;
+ END;]]></definition>
+</function>
 
 <table name="rechnung">
 	<schema name="av_geschaeftskontrolle"/>
@@ -356,6 +335,58 @@ NEW.kosten = gesamtkosten*(NEW.prozent/100);
 	<constraint name="amo_pkey" type="pk-constr" factor="10" table="av_geschaeftskontrolle.amo">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
+</table>
+
+<table name="auftrag">
+	<schema name="av_geschaeftskontrolle"/>
+	<role name="stefan"/>
+	<appended-sql><![CDATA[ALTER FUNCTION av_geschaeftskontrolle.calculate_budget_payment_from_total_cost()
+  OWNER TO stefan;]]></appended-sql>
+	<position x="371.556" y="502.667"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="projekt_id" not-null="true">
+		<type name="int4"/>
+	</column>
+	<column name="name" not-null="true">
+		<type name="varchar"/>
+	</column>
+	<column name="kosten">
+		<type name="numeric" length="20" precision="2"/>
+	</column>
+	<column name="mwst">
+		<type name="double precision"/>
+	</column>
+	<column name="verguetungsart_id">
+		<type name="int4"/>
+	</column>
+	<column name="unternehmer_id" not-null="true">
+		<type name="int4"/>
+	</column>
+	<column name="datum_start">
+		<type name="date"/>
+	</column>
+	<column name="datum_ende">
+		<type name="date"/>
+	</column>
+	<column name="datum_abschluss">
+		<type name="date"/>
+	</column>
+	<column name="geplant">
+		<type name="boolean"/>
+	</column>
+	<column name="bemerkung">
+		<type name="varchar"/>
+	</column>
+	<constraint name="auftrag_pkey" type="pk-constr" factor="10" table="av_geschaeftskontrolle.auftrag">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+	<trigger name="update_planzahlungskosten" firing-type="AFTER" per-line="true" constraint="false"
+		 ins-event="false" del-event="false" upd-event="true" trunc-event="false"
+	 table="av_geschaeftskontrolle.auftrag">
+		<function signature="av_geschaeftskontrolle.calculate_budget_payment_from_total_cost()"/>
+	</trigger>
 </table>
 
 <constraint name="projekt_konto_id_fkey" type="fk-constr"	 comparison-type="MATCH FULL"
