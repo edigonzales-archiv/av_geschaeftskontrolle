@@ -124,59 +124,77 @@ GRANT ALL ON TABLE av_geschaeftskontrolle.vr_laufende_auftraege TO stefan;
 GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_laufende_auftraege TO mspublic;
 */
 
-/*
+--DROP VIEW av_geschaeftskontrolle.vr_zahlungsplan_14_17;
+
 CREATE OR REPLACE VIEW av_geschaeftskontrolle.vr_zahlungsplan_14_17 AS 
 
-SELECT auf_name, auf_geplant, proj."name" as proj_name, konto."nr" as konto, auf_start, auf_ende, auf_abschluss, plan_summe_a, plan_prozent_a, re_summe_a, (re_summe_a / auf_summe) * 100 as re_prozent_a,  plan_summe_b, plan_prozent_b, plan_summe_c, plan_prozent_c, plan_summe_d, plan_prozent_d, a_id, projekt_id
+SELECT *
 FROM
 (
- SELECT *
+ SELECT auf_name, auf_geplant, proj."name" as proj_name, konto."nr" as konto, auf_start, auf_ende, auf_abschluss, plan_summe_a, plan_prozent_a, re_summe_a, (re_summe_a / auf_summe) * 100 as re_prozent_a,  plan_summe_b, plan_prozent_b, plan_summe_c, plan_prozent_c, plan_summe_d, plan_prozent_d, a_id, projekt_id
  FROM
  (
-  SELECT auf."name" as auf_name, auf.geplant as auf_geplant, auf.datum_start as auf_start, auf.datum_ende as auf_ende, auf.datum_abschluss as auf_abschluss, (auf.kosten * (1 + (auf.mwst/100))) as auf_summe, sum(pz.kosten * (1 + (pz.mwst/100))) as plan_summe_a, sum(pz.prozent) as plan_prozent_a, auf.id as a_id, auf.projekt_id
-  FROM av_geschaeftskontrolle.planzahlung as pz, av_geschaeftskontrolle.auftrag as auf
-  WHERE pz.auftrag_id = auf.id
-  AND pz.rechnungsjahr = 2014
-  GROUP BY auf.id
- ) as a LEFT JOIN
- (
-  SELECT sum(re.kosten * (1 + (re.mwst/100))) as re_summe_a, auf.id as r_id
-  FROM av_geschaeftskontrolle.rechnung as re, av_geschaeftskontrolle.auftrag as auf
-  WHERE re.auftrag_id = auf.id
-  AND re.rechnungsjahr = 2014
-  GROUP BY auf.id
- ) as r ON (a.a_id = r.r_id) LEFT JOIN
- (
-  SELECT sum(pz.kosten * (1 + (pz.mwst/100))) as plan_summe_b, sum(pz.prozent) as plan_prozent_b, auf.id as b_id
-  FROM av_geschaeftskontrolle.planzahlung as pz, av_geschaeftskontrolle.auftrag as auf
-  WHERE pz.auftrag_id = auf.id
-  AND pz.rechnungsjahr = 2015
-  GROUP BY auf.id
- ) as b ON (a.a_id = b.b_id) LEFT JOIN
- (
-  SELECT sum(pz.kosten * (1 + (pz.mwst/100))) as plan_summe_c, sum(pz.prozent) as plan_prozent_c, auf.id as c_id
-  FROM av_geschaeftskontrolle.planzahlung as pz, av_geschaeftskontrolle.auftrag as auf
-  WHERE pz.auftrag_id = auf.id
-  AND pz.rechnungsjahr = 2016
-  GROUP BY auf.id
- ) as c ON (a.a_id = c.c_id) LEFT JOIN
- (
-  SELECT sum(pz.kosten * (1 + (pz.mwst/100))) as plan_summe_d, sum(pz.prozent) as plan_prozent_d, auf.id as d_id
-  FROM av_geschaeftskontrolle.planzahlung as pz, av_geschaeftskontrolle.auftrag as auf
-  WHERE pz.auftrag_id = auf.id
-  AND pz.rechnungsjahr = 2017
-  GROUP BY auf.id
- ) as d ON (a.a_id = d.d_id)
-) as foo, av_geschaeftskontrolle.projekt as proj, av_geschaeftskontrolle.konto as konto
-WHERE foo.projekt_id = proj.id
-AND proj.konto_id = konto.id
+  SELECT *
+  FROM
+  (
+   SELECT auf."name" as auf_name, auf.geplant as auf_geplant, auf.datum_start as auf_start, auf.datum_ende as auf_ende, auf.datum_abschluss as auf_abschluss, (auf.kosten * (1 + (auf.mwst/100))) as auf_summe, sum(pz.kosten * (1 + (pz.mwst/100))) as plan_summe_a, sum(pz.prozent) as plan_prozent_a, auf.id as a_id, auf.projekt_id
+   FROM av_geschaeftskontrolle.planzahlung as pz, av_geschaeftskontrolle.auftrag as auf
+   WHERE pz.auftrag_id = auf.id
+   AND pz.rechnungsjahr = 2014
+   GROUP BY auf.id
+  ) as a LEFT JOIN
+  (
+   SELECT sum(re.kosten * (1 + (re.mwst/100))) as re_summe_a, auf.id as r_id
+   FROM av_geschaeftskontrolle.rechnung as re, av_geschaeftskontrolle.auftrag as auf
+   WHERE re.auftrag_id = auf.id
+   AND re.rechnungsjahr = 2014
+   GROUP BY auf.id
+  ) as r ON (a.a_id = r.r_id) LEFT JOIN
+  (
+   SELECT sum(pz.kosten * (1 + (pz.mwst/100))) as plan_summe_b, sum(pz.prozent) as plan_prozent_b, auf.id as b_id
+   FROM av_geschaeftskontrolle.planzahlung as pz, av_geschaeftskontrolle.auftrag as auf
+   WHERE pz.auftrag_id = auf.id
+   AND pz.rechnungsjahr = 2015
+   GROUP BY auf.id
+  ) as b ON (a.a_id = b.b_id) LEFT JOIN
+  (
+   SELECT sum(pz.kosten * (1 + (pz.mwst/100))) as plan_summe_c, sum(pz.prozent) as plan_prozent_c, auf.id as c_id
+   FROM av_geschaeftskontrolle.planzahlung as pz, av_geschaeftskontrolle.auftrag as auf
+   WHERE pz.auftrag_id = auf.id
+   AND pz.rechnungsjahr = 2016
+   GROUP BY auf.id
+  ) as c ON (a.a_id = c.c_id) LEFT JOIN
+  (
+   SELECT sum(pz.kosten * (1 + (pz.mwst/100))) as plan_summe_d, sum(pz.prozent) as plan_prozent_d, auf.id as d_id
+   FROM av_geschaeftskontrolle.planzahlung as pz, av_geschaeftskontrolle.auftrag as auf
+   WHERE pz.auftrag_id = auf.id
+   AND pz.rechnungsjahr = 2017
+   GROUP BY auf.id
+  ) as d ON (a.a_id = d.d_id)
+ ) as foo, av_geschaeftskontrolle.projekt as proj, av_geschaeftskontrolle.konto as konto
+ WHERE foo.projekt_id = proj.id
+ AND proj.konto_id = konto.id
+ --ORDER BY konto, auf_name
+) as aa LEFT JOIN
+(
+ SELECT auftrag_id bb_auftrag_id, sum(kosten * (1 + mwst/100)) as summe_rechnung
+ FROM av_geschaeftskontrolle.rechnung
+ WHERE rechnungsjahr < EXTRACT(YEAR from now())
+ GROUP BY auftrag_id
+) as bb ON (aa.a_id = bb_auftrag_id) LEFT JOIN
+(
+ SELECT auftrag_id as cc_auftrag_id, sum(kosten * (1 + mwst/100)) as summe_planzahlung
+ FROM av_geschaeftskontrolle.planzahlung
+ WHERE rechnungsjahr < EXTRACT(YEAR from now())
+ GROUP BY auftrag_id
+) as cc ON (aa.a_id = cc_auftrag_id)
 ORDER BY konto, auf_name;
 
 GRANT ALL ON TABLE av_geschaeftskontrolle.vr_zahlungsplan_14_17 TO stefan;
 GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_zahlungsplan_14_17 TO mspublic;
-*/
 
- 
+
+/*
 CREATE OR REPLACE VIEW av_geschaeftskontrolle.vr_kontr_planprozent AS 
 
 SELECT a."name" as auf_name, d.firma, b."name" as proj_name, c.nr as konto_nr, a.sum_planprozent
@@ -197,7 +215,7 @@ ORDER BY b."name", a."name";
 
 GRANT ALL ON TABLE av_geschaeftskontrolle.vr_kontr_planprozent TO stefan;
 GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_kontr_planprozent TO mspublic;
- 
+*/
 
 
 /*
