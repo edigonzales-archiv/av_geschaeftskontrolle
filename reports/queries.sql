@@ -177,6 +177,7 @@ GRANT ALL ON TABLE av_geschaeftskontrolle.vr_zahlungsplan_14_17 TO stefan;
 GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_zahlungsplan_14_17 TO mspublic;
 */
 
+/*
 CREATE OR REPLACE VIEW av_geschaeftskontrolle.vr_zahlungsplan_13_16 AS 
 
 SELECT auf_name, auf_geplant, proj."name" as proj_name, konto."nr" as konto, auf_start, auf_ende, auf_abschluss, plan_summe_a, plan_prozent_a, re_summe_a, (re_summe_a / auf_summe) * 100 as re_prozent_a,  plan_summe_b, plan_prozent_b, plan_summe_c, plan_prozent_c, plan_summe_d, plan_prozent_d, a_id, projekt_id
@@ -226,7 +227,7 @@ ORDER BY konto, auf_name;
 
 GRANT ALL ON TABLE av_geschaeftskontrolle.vr_zahlungsplan_13_16 TO stefan;
 GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_zahlungsplan_13_16 TO mspublic;
-
+*/
 
 
 /*
@@ -253,7 +254,7 @@ GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_kontr_planprozent TO mspublic;
 */
 
 
-/*
+
 CREATE OR REPLACE VIEW av_geschaeftskontrolle.vr_firma_verpflichtungen AS 
 
 SELECT CASE WHEN foo.firma IS NULL THEN bar.firma ELSE foo.firma END as firma, CASE WHEN foo.jahr IS NULL THEN bar.jahr ELSE foo.jahr END as jahr, foo.kosten_vertrag_inkl, bar.kosten_bezahlt_inkl
@@ -273,7 +274,7 @@ FROM
 FULL JOIN
 
 (
- SELECT a.*, auf.id, auf.unternehmer_id, un.firma 
+ SELECT sum(kosten_bezahlt_inkl) as kosten_bezahlt_inkl, jahr, unternehmer_id, firma
  FROM 
  (
   SELECT sum(kosten * (1 + mwst/100)) as kosten_bezahlt_inkl, auftrag_id, rechnungsjahr as jahr
@@ -282,11 +283,11 @@ FULL JOIN
  ) as a, av_geschaeftskontrolle.auftrag as auf, av_geschaeftskontrolle.unternehmer as un
  WHERE a.auftrag_id = auf.id
  AND auf.unternehmer_id = un.id
-) bar 
+ GROUP BY unternehmer_id, firma, jahr
+) as bar 
 
 ON (foo.unternehmer_id = bar.unternehmer_id AND foo.jahr = bar.jahr);
 
-
 GRANT ALL ON TABLE av_geschaeftskontrolle.vr_firma_verpflichtungen TO stefan;
 GRANT SELECT ON TABLE av_geschaeftskontrolle.vr_firma_verpflichtungen TO mspublic;
-*/
+

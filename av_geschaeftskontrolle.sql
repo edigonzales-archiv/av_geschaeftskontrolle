@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.11
 -- Dumped by pg_dump version 9.1.11
--- Started on 2014-01-24 17:50:58 CET
+-- Started on 2014-01-27 15:43:29 CET
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -611,7 +611,7 @@ ALTER SEQUENCE verguetungsart_id_seq OWNED BY verguetungsart.id;
 --
 
 CREATE VIEW vr_firma_verpflichtungen AS
-    SELECT CASE WHEN (foo.firma IS NULL) THEN bar.firma ELSE foo.firma END AS firma, CASE WHEN (foo.jahr IS NULL) THEN (bar.jahr)::double precision ELSE foo.jahr END AS jahr, foo.kosten_vertrag_inkl, bar.kosten_bezahlt_inkl FROM ((SELECT a.kosten_vertrag_inkl, a.unternehmer_id, a.jahr, un.firma FROM (SELECT sum(((auf.kosten)::double precision * ((1)::double precision + (auf.mwst / (100)::double precision)))) AS kosten_vertrag_inkl, auf.unternehmer_id, date_part('year'::text, auf.datum_start) AS jahr FROM auftrag auf WHERE (auf.geplant = false) GROUP BY auf.unternehmer_id, date_part('year'::text, auf.datum_start)) a, unternehmer un WHERE (a.unternehmer_id = un.id)) foo FULL JOIN (SELECT a.kosten_bezahlt_inkl, a.auftrag_id, a.jahr, auf.id, auf.unternehmer_id, un.firma FROM (SELECT sum(((rechnung.kosten)::double precision * ((1)::double precision + (rechnung.mwst / (100)::double precision)))) AS kosten_bezahlt_inkl, rechnung.auftrag_id, rechnung.rechnungsjahr AS jahr FROM rechnung GROUP BY rechnung.auftrag_id, rechnung.rechnungsjahr) a, auftrag auf, unternehmer un WHERE ((a.auftrag_id = auf.id) AND (auf.unternehmer_id = un.id))) bar ON (((foo.unternehmer_id = bar.unternehmer_id) AND (foo.jahr = (bar.jahr)::double precision))));
+    SELECT CASE WHEN (foo.firma IS NULL) THEN bar.firma ELSE foo.firma END AS firma, CASE WHEN (foo.jahr IS NULL) THEN (bar.jahr)::double precision ELSE foo.jahr END AS jahr, foo.kosten_vertrag_inkl, bar.kosten_bezahlt_inkl FROM ((SELECT a.kosten_vertrag_inkl, a.unternehmer_id, a.jahr, un.firma FROM (SELECT sum(((auf.kosten)::double precision * ((1)::double precision + (auf.mwst / (100)::double precision)))) AS kosten_vertrag_inkl, auf.unternehmer_id, date_part('year'::text, auf.datum_start) AS jahr FROM auftrag auf WHERE (auf.geplant = false) GROUP BY auf.unternehmer_id, date_part('year'::text, auf.datum_start)) a, unternehmer un WHERE (a.unternehmer_id = un.id)) foo FULL JOIN (SELECT sum(a.kosten_bezahlt_inkl) AS kosten_bezahlt_inkl, a.jahr, auf.unternehmer_id, un.firma FROM (SELECT sum(((rechnung.kosten)::double precision * ((1)::double precision + (rechnung.mwst / (100)::double precision)))) AS kosten_bezahlt_inkl, rechnung.auftrag_id, rechnung.rechnungsjahr AS jahr FROM rechnung GROUP BY rechnung.auftrag_id, rechnung.rechnungsjahr) a, auftrag auf, unternehmer un WHERE ((a.auftrag_id = auf.id) AND (auf.unternehmer_id = un.id)) GROUP BY auf.unternehmer_id, un.firma, a.jahr) bar ON (((foo.unternehmer_id = bar.unternehmer_id) AND (foo.jahr = (bar.jahr)::double precision))));
 
 
 ALTER TABLE av_geschaeftskontrolle.vr_firma_verpflichtungen OWNER TO stefan;
@@ -932,6 +932,7 @@ SELECT pg_catalog.setval('plankostenkonto_id_seq', 3, true);
 
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (28, 24, 100.000, 2500.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (29, 25, 100.000, 2300.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (3, 2, 100.000, 85600.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (1, 1, 90.000, 31536.00, 8, 2013, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (2, 1, 10.000, 3504.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (4, 3, 25.000, 5032.50, 8, 2015, NULL);
@@ -945,7 +946,6 @@ INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, b
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (13, 8, 100.000, 10000.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (14, 9, 100.000, 23574.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (15, 13, 100.000, 200000.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (3, 2, 99.000, 84744.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (19, 15, 23.000, 989.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (20, 15, 77.000, 3311.00, 8, 2013, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (17, 14, 77.000, 11396.00, 8, 2013, NULL);
@@ -1242,7 +1242,7 @@ CREATE RULE "_RETURN" AS ON SELECT TO vr_zahlungsplan_14_17 DO INSTEAD SELECT fo
 
 --
 -- TOC entry 2705 (class 2618 OID 20964)
--- Dependencies: 174 168 170 170 170 174 174 174 174 174 174 174 174 176 176 176 176 180 180 180 180 2569 180 168 193 2729
+-- Dependencies: 2569 174 174 174 174 174 174 170 170 170 168 168 174 174 174 176 176 176 176 180 180 180 180 180 193 2729
 -- Name: _RETURN; Type: RULE; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1251,7 +1251,7 @@ CREATE RULE "_RETURN" AS ON SELECT TO vr_zahlungsplan_13_16 DO INSTEAD SELECT fo
 
 --
 -- TOC entry 2594 (class 2620 OID 20945)
--- Dependencies: 771 180 2729
+-- Dependencies: 180 771 2729
 -- Name: update_kosten; Type: TRIGGER; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1260,7 +1260,7 @@ CREATE TRIGGER update_kosten BEFORE INSERT OR UPDATE ON planzahlung FOR EACH ROW
 
 --
 -- TOC entry 2593 (class 2620 OID 20950)
--- Dependencies: 174 770 2729
+-- Dependencies: 770 174 2729
 -- Name: update_planzahlungskosten; Type: TRIGGER; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1500,7 +1500,7 @@ GRANT ALL ON TABLE vr_zahlungsplan_14_17 TO stefan;
 GRANT SELECT ON TABLE vr_zahlungsplan_14_17 TO mspublic;
 
 
--- Completed on 2014-01-24 17:50:58 CET
+-- Completed on 2014-01-27 15:43:29 CET
 
 --
 -- PostgreSQL database dump complete
