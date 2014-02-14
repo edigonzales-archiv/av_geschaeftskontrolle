@@ -27,10 +27,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>583242.02709075144957751</xmin>
-            <ymin>206613.53767648432403803</ymin>
-            <xmax>623125.65007131395395845</xmax>
-            <ymax>230850.82781243487261236</ymax>
+            <xmin>579061.63608596683479846</xmin>
+            <ymin>204650.99557369455578737</ymin>
+            <xmax>627306.04107609856873751</xmax>
+            <ymax>232813.36991522464086302</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -305,7 +305,7 @@
             </attributeEditorForm>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="7" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="7" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>perimeter20131219110851854</id>
             <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' srid=21781 type=MULTIPOLYGON table="av_geschaeftskontrolle"."perimeter" (perimeter) sql=</datasource>
             <title></title>
@@ -344,8 +344,8 @@
                         </layer>
                     </symbol>
                 </symbols>
-                <rotation field=""/>
-                <sizescale field="" scalemethod="area"/>
+                <rotation/>
+                <sizescale scalemethod="area"/>
             </renderer-v2>
             <customproperties>
                 <property key="labeling" value="pal"/>

@@ -27,10 +27,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>594779.64123081031721085</xmin>
-            <ymin>213046.38009270411566831</ymin>
-            <xmax>614721.45272109133657068</xmax>
-            <ymax>225165.02516067927354015</ymax>
+            <xmin>579061.63608596683479846</xmin>
+            <ymin>206469.83954062743578106</ymin>
+            <xmax>627306.04107609856873751</xmax>
+            <ymax>230994.52594829176086932</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -47,7 +47,7 @@
         </destinationsrs>
         <layer_coordinate_transform_info/>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="perimeter20131219110851854">
+    <legend updateDrawingOrder="false" activeLayer="auftrag20131218082931946">
         <legendgroup open="true" checked="Qt::Unchecked" name="Teilzahlungen">
             <legendlayer drawingOrder="0" open="true" checked="Qt::Unchecked" name="planzahlung" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
@@ -305,7 +305,7 @@
             </attributeEditorForm>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="7" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0" scaleBasedLabelVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="7" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
             <id>perimeter20131219110851854</id>
             <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' srid=21781 type=MULTIPOLYGON table="av_geschaeftskontrolle"."perimeter" (perimeter) sql=</datasource>
             <title></title>
@@ -344,8 +344,8 @@
                         </layer>
                     </symbol>
                 </symbols>
-                <rotation field=""/>
-                <sizescale field="" scalemethod="area"/>
+                <rotation/>
+                <sizescale scalemethod="area"/>
             </renderer-v2>
             <customproperties>
                 <property key="labeling" value="pal"/>

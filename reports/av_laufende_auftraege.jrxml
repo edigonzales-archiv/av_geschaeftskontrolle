@@ -308,10 +308,10 @@ vorhanden?]]></text>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="42" uuid="788b7b41-9db3-4c5f-a90e-f8d4ab5585f1">
+					<jr:column width="37" uuid="788b7b41-9db3-4c5f-a90e-f8d4ab5585f1">
 						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
 							<staticText>
-								<reportElement mode="Transparent" x="0" y="0" width="42" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="1b4eb870-0892-4726-bc3a-580311d8318d"/>
+								<reportElement mode="Transparent" x="0" y="0" width="37" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="1b4eb870-0892-4726-bc3a-580311d8318d"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
 									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 									<paragraph lineSpacing="Single"/>
@@ -321,8 +321,8 @@ vorhanden?]]></text>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
 						<jr:detailCell style="table_TD" height="14" rowSpan="1">
-							<textField pattern="dd.MM.yyyy">
-								<reportElement x="0" y="0" width="40" height="10" uuid="136c5fb6-fa1c-460d-8ff6-1bd9b21ffb5e"/>
+							<textField pattern="dd.MM.yy">
+								<reportElement x="0" y="0" width="35" height="10" uuid="136c5fb6-fa1c-460d-8ff6-1bd9b21ffb5e"/>
 								<textElement>
 									<font fontName="Frutiger 55 Roman" size="7"/>
 								</textElement>
@@ -330,10 +330,10 @@ vorhanden?]]></text>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="42" uuid="c0a8d569-4ac8-47e5-937d-b2084ff026b2">
+					<jr:column width="37" uuid="c0a8d569-4ac8-47e5-937d-b2084ff026b2">
 						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
 							<staticText>
-								<reportElement mode="Transparent" x="0" y="0" width="42" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="62b5d72f-7b4d-4e0e-9890-faf6366e00ad"/>
+								<reportElement mode="Transparent" x="0" y="0" width="37" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="62b5d72f-7b4d-4e0e-9890-faf6366e00ad"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
 									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 									<paragraph lineSpacing="Single"/>
@@ -343,8 +343,8 @@ vorhanden?]]></text>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
 						<jr:detailCell style="table_TD" height="14" rowSpan="1">
-							<textField pattern="dd.MM.yyyy">
-								<reportElement style="verspaetet" x="0" y="0" width="40" height="10" uuid="62d946ce-f2b4-4901-95d4-b54c973e21fe"/>
+							<textField pattern="dd.MM.yy">
+								<reportElement style="verspaetet" x="0" y="0" width="35" height="10" uuid="62d946ce-f2b4-4901-95d4-b54c973e21fe"/>
 								<textElement>
 									<font fontName="Frutiger 55 Roman" size="7"/>
 								</textElement>
@@ -374,10 +374,10 @@ vorhanden?]]></text>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="45" uuid="f5352de0-af82-4afa-9b43-2c5793f972ce">
+					<jr:column width="48" uuid="f5352de0-af82-4afa-9b43-2c5793f972ce">
 						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
 							<staticText>
-								<reportElement mode="Transparent" x="0" y="0" width="45" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="0264fdae-19b9-4b84-b850-091cfd2e7917"/>
+								<reportElement mode="Transparent" x="0" y="0" width="48" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="0264fdae-19b9-4b84-b850-091cfd2e7917"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
 									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 									<paragraph lineSpacing="Single"/>
@@ -388,7 +388,7 @@ vorhanden?]]></text>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="20" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00">
-								<reportElement x="0" y="0" width="45" height="20" uuid="0e6a0c8c-8af2-48f9-97be-c752ef58294b"/>
+								<reportElement x="0" y="0" width="48" height="20" uuid="0e6a0c8c-8af2-48f9-97be-c752ef58294b"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle">
 									<font fontName="Frutiger 55 Roman" size="7" isBold="true"/>
 									<paragraph rightIndent="1"/>
@@ -398,7 +398,7 @@ vorhanden?]]></text>
 						</jr:columnFooter>
 						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00">
-								<reportElement x="0" y="0" width="43" height="10" uuid="123ac062-cd0d-4d05-ab00-15c223a2ef19"/>
+								<reportElement x="0" y="0" width="46" height="10" uuid="123ac062-cd0d-4d05-ab00-15c223a2ef19"/>
 								<textElement textAlignment="Right">
 									<font fontName="Frutiger 55 Roman" size="7"/>
 								</textElement>
@@ -428,10 +428,10 @@ vorhanden?]]></text>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="45" uuid="722ae4c7-2317-429b-878a-53fc8967b5c3">
+					<jr:column width="48" uuid="722ae4c7-2317-429b-878a-53fc8967b5c3">
 						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
 							<staticText>
-								<reportElement mode="Transparent" x="0" y="0" width="45" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="e1d2a5d4-a0f5-4e20-9214-a512712ac460"/>
+								<reportElement mode="Transparent" x="0" y="0" width="48" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="e1d2a5d4-a0f5-4e20-9214-a512712ac460"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
 									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 									<paragraph lineSpacing="Single"/>
@@ -442,7 +442,7 @@ vorhanden?]]></text>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="20" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-								<reportElement mode="Transparent" x="0" y="0" width="45" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="a2d1f2a9-ad35-4bb7-b492-7ec3d765bb81"/>
+								<reportElement mode="Transparent" x="0" y="0" width="48" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="a2d1f2a9-ad35-4bb7-b492-7ec3d765bb81"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
 									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 									<paragraph lineSpacing="Single" rightIndent="1"/>
@@ -452,7 +452,7 @@ vorhanden?]]></text>
 						</jr:columnFooter>
 						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField pattern="#,##0.00">
-								<reportElement x="0" y="0" width="43" height="10" uuid="578b96ef-7d8b-4865-b310-a8c6f4054906"/>
+								<reportElement x="0" y="0" width="46" height="10" uuid="578b96ef-7d8b-4865-b310-a8c6f4054906"/>
 								<textElement textAlignment="Right">
 									<font fontName="Frutiger 55 Roman" size="7"/>
 								</textElement>
@@ -460,10 +460,10 @@ vorhanden?]]></text>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="45" uuid="e2caccc3-5f89-4859-87ae-539026060244">
+					<jr:column width="48" uuid="e2caccc3-5f89-4859-87ae-539026060244">
 						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
 							<staticText>
-								<reportElement mode="Transparent" x="0" y="0" width="45" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="412ffa07-3487-401e-aa8a-0a3e7013183e"/>
+								<reportElement mode="Transparent" x="0" y="0" width="48" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="412ffa07-3487-401e-aa8a-0a3e7013183e"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
 									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 									<paragraph lineSpacing="Single"/>
@@ -473,7 +473,7 @@ vorhanden?]]></text>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="20" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-								<reportElement mode="Transparent" x="0" y="0" width="45" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="98908e56-2ca5-4e0e-bb01-c7307788d64a"/>
+								<reportElement mode="Transparent" x="0" y="0" width="48" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="98908e56-2ca5-4e0e-bb01-c7307788d64a"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
 									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 									<paragraph lineSpacing="Single" rightIndent="1"/>
@@ -483,7 +483,7 @@ vorhanden?]]></text>
 						</jr:columnFooter>
 						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
-								<reportElement x="0" y="0" width="43" height="10" uuid="243812f7-9980-4033-9513-ba35fa21f047"/>
+								<reportElement x="0" y="0" width="46" height="10" uuid="243812f7-9980-4033-9513-ba35fa21f047"/>
 								<textElement textAlignment="Right">
 									<font fontName="Frutiger 55 Roman" size="7"/>
 								</textElement>
@@ -491,10 +491,10 @@ vorhanden?]]></text>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="45" uuid="d0f0c09d-ed35-4cfa-bef7-9a1c9334ad4e">
+					<jr:column width="35" uuid="d0f0c09d-ed35-4cfa-bef7-9a1c9334ad4e">
 						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
 							<staticText>
-								<reportElement mode="Transparent" x="0" y="0" width="45" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="cc418b50-c6ef-4c9b-9189-398656892747"/>
+								<reportElement mode="Transparent" x="0" y="0" width="35" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="cc418b50-c6ef-4c9b-9189-398656892747"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
 									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 									<paragraph lineSpacing="Single"/>
@@ -506,7 +506,7 @@ vorhanden?]]></text>
 						<jr:columnFooter style="table_CH" height="20" rowSpan="1"/>
 						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField pattern="#,##0;-#,##0" isBlankWhenNull="true">
-								<reportElement x="0" y="0" width="43" height="10" uuid="2e87eadc-7ae0-4722-9b3d-f4da2d39020b"/>
+								<reportElement x="0" y="0" width="33" height="10" uuid="2e87eadc-7ae0-4722-9b3d-f4da2d39020b"/>
 								<textElement textAlignment="Right">
 									<font fontName="Frutiger 55 Roman" size="7"/>
 								</textElement>
@@ -514,10 +514,10 @@ vorhanden?]]></text>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="45" uuid="158e02ce-3d23-4636-a692-a2774ce0e5e7">
+					<jr:column width="48" uuid="158e02ce-3d23-4636-a692-a2774ce0e5e7">
 						<jr:columnHeader style="table_CH" height="25" rowSpan="1">
 							<staticText>
-								<reportElement mode="Transparent" x="0" y="0" width="45" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="d3adc347-6230-4bd6-8e7d-6ea2e28d0a7e"/>
+								<reportElement mode="Transparent" x="0" y="0" width="48" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="d3adc347-6230-4bd6-8e7d-6ea2e28d0a7e"/>
 								<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
 									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 									<paragraph lineSpacing="Single"/>
@@ -527,7 +527,7 @@ vorhanden?]]></text>
 						</jr:columnHeader>
 						<jr:columnFooter style="table_CH" height="20" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-								<reportElement mode="Transparent" x="0" y="0" width="45" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="1fe1a169-007a-43b4-b0b5-e913281f6bc0"/>
+								<reportElement mode="Transparent" x="0" y="0" width="48" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="1fe1a169-007a-43b4-b0b5-e913281f6bc0"/>
 								<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
 									<font fontName="Frutiger 55 Roman" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 									<paragraph lineSpacing="Single" rightIndent="1"/>
@@ -537,7 +537,7 @@ vorhanden?]]></text>
 						</jr:columnFooter>
 						<jr:detailCell style="table_TD" height="14" rowSpan="1">
 							<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="false">
-								<reportElement style="kosten_ueberschritten" x="0" y="0" width="43" height="10" uuid="7cff4e7a-e927-4304-a95e-39d01b83a09f"/>
+								<reportElement style="kosten_ueberschritten" x="0" y="0" width="46" height="10" uuid="7cff4e7a-e927-4304-a95e-39d01b83a09f"/>
 								<textElement textAlignment="Right">
 									<font fontName="Frutiger 55 Roman" size="7"/>
 								</textElement>
