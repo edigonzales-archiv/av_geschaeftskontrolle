@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="2.1.0-Master">
+<qgis projectname="" version="2.3.0-Master">
     <title></title>
     <relations>
         <relation referencingLayer="amo20140117081557817" referencedLayer="auftrag20131218082931946" id="fk_auftrag_amo" name="AMO">
@@ -27,10 +27,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>579061.63608596683479846</xmin>
-            <ymin>204650.99557369455578737</ymin>
-            <xmax>627306.04107609856873751</xmax>
-            <ymax>232813.36991522464086302</ymax>
+            <xmin>586926.88659172377083451</xmin>
+            <ymin>205654.53232721870881505</ymin>
+            <xmax>621318.64959172310773283</xmax>
+            <ymax>233786.13368899296619929</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -45,7 +45,6 @@
                 <geographicflag>true</geographicflag>
             </spatialrefsys>
         </destinationsrs>
-        <layer_coordinate_transform_info/>
     </mapcanvas>
     <legend updateDrawingOrder="false" activeLayer="auftrag20131218082931946">
         <legendgroup open="true" checked="Qt::Unchecked" name="Teilzahlungen">
