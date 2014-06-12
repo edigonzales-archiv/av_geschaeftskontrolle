@@ -5,91 +5,91 @@
         <customproperties/>
         <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Teilzahlungen">
             <customproperties/>
-            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="planzahlung20131218153106010" name="planzahlung">
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="planzahlung20140612085529144" name="planzahlung">
                 <customproperties/>
             </layer-tree-layer>
-            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="rechnung20131218153106024" name="rechnung">
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="rechnung20140612085530811" name="rechnung">
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
         <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Projekte">
             <customproperties/>
-            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="auftrag20131218082931946" name="auftrag">
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="auftrag20140612085502567" name="auftrag">
                 <customproperties/>
             </layer-tree-layer>
-            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="projekt20131218082931932" name="projekt">
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="projekt20140612085504092" name="projekt">
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
-        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Buchhaltung">
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Buchaltung">
             <customproperties/>
-            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="plankostenkonto20131204162834238" name="plankostenkonto">
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="plankostenkonto20140612085349676" name="plankostenkonto">
                 <customproperties/>
             </layer-tree-layer>
-            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="konto20131204152724930" name="konto">
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="konto20140612085352742" name="konto">
                 <customproperties/>
             </layer-tree-layer>
-            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="rechnungsjahr20131204162834226" name="rechnungsjahr">
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="rechnungsjahr20140612085421065" name="rechnungsjahr">
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
         <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Unternehmer">
             <customproperties/>
-            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="unternehmer20131218082305403" name="unternehmer">
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="unternehmer20140612085303330" name="unternehmer">
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
         <layer-tree-group expanded="1" checked="Qt::Checked" name="Perimeter">
             <customproperties/>
-            <layer-tree-layer expanded="1" checked="Qt::Checked" id="perimeter20131219110851854" name="perimeter">
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="perimeter20140612085007668" name="perimeter">
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
-        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Verguetungsart">
+        <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Verguetungsart">
             <customproperties/>
-            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="verguetungsart20140116160534226" name="verguetungsart">
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="verguetungsart20140612085240485" name="verguetungsart">
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
         <layer-tree-group expanded="1" checked="Qt::Unchecked" name="AMO">
             <customproperties/>
-            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="amo20140117081557817" name="amo">
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="amo20140612084945106" name="amo">
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
     </layer-tree-group>
     <relations>
-        <relation referencingLayer="amo20140117081557817" referencedLayer="auftrag20131218082931946" id="fk_auftrag_amo" name="AMO">
+        <relation referencingLayer="amo20140612084945106" referencedLayer="auftrag20140612085502567" id="fk_auftrag_amo" name="AMO">
             <fieldRef referencedField="id" referencingField="auftrag_id"/>
         </relation>
-        <relation referencingLayer="planzahlung20131218153106010" referencedLayer="auftrag20131218082931946" id="fk_auftrag_planzahlung" name="Planzahlung">
-            <fieldRef referencedField="id" referencingField="auftrag_id"/>
-        </relation>
-        <relation referencingLayer="auftrag20131218082931946" referencedLayer="projekt20131218082931932" id="fk_auftrag_projekt" name="Aufträge">
+        <relation referencingLayer="auftrag20140612085502567" referencedLayer="projekt20140612085504092" id="fk_auftrag_projekt" name="Auftraege">
             <fieldRef referencedField="id" referencingField="projekt_id"/>
         </relation>
-        <relation referencingLayer="rechnung20131218153106024" referencedLayer="auftrag20131218082931946" id="fk_auftrag_rechnung" name="Rechnung">
+        <relation referencingLayer="rechnung20140612085530811" referencedLayer="auftrag20140612085502567" id="fk_auftrag_rechnung" name="Rechnung">
             <fieldRef referencedField="id" referencingField="auftrag_id"/>
         </relation>
-        <relation referencingLayer="plankostenkonto20131204162834238" referencedLayer="konto20131204152724930" id="fk_konto_plankostenkonto" name="Plankostenkonto">
+        <relation referencingLayer="planzahlung20140612085529144" referencedLayer="auftrag20140612085502567" id="fk_autrag_planzahlung" name="Planzahlung">
+            <fieldRef referencedField="id" referencingField="auftrag_id"/>
+        </relation>
+        <relation referencingLayer="plankostenkonto20140612085349676" referencedLayer="konto20140612085352742" id="fk_konto_plankostenkonto" name="Plankostenkonto">
             <fieldRef referencedField="id" referencingField="konto_id"/>
         </relation>
-        <relation referencingLayer="projekt20131218082931932" referencedLayer="konto20131204152724930" id="fk_konto_projekt" name="Projekte">
+        <relation referencingLayer="projekt20140612085504092" referencedLayer="konto20140612085352742" id="fk_konto_projekt" name="Projekte">
             <fieldRef referencedField="id" referencingField="konto_id"/>
         </relation>
-        <relation referencingLayer="auftrag20131218082931946" referencedLayer="unternehmer20131218082305403" id="fk_projekt_unternehmer" name="Auftrag_Unternehmer">
+        <relation referencingLayer="auftrag20140612085502567" referencedLayer="unternehmer20140612085303330" id="fk_projekt_unternehmer" name="Auftrag_Unternehmer">
             <fieldRef referencedField="id" referencingField="unternehmer_id"/>
         </relation>
     </relations>
     <mapcanvas>
-        <units>meters</units>
+        <units>degrees</units>
         <extent>
-            <xmin>597574.82555671234149486</xmin>
-            <ymin>217049.25490429121418856</ymin>
-            <xmax>607928.03570886061061174</xmax>
-            <ymax>223945.11462346548796631</ymax>
+            <xmin>594544.68051460909191519</xmin>
+            <ymin>215404.26035920338472351</ymin>
+            <xmax>608831.34165545052383095</xmax>
+            <ymax>224920.03465865377802402</ymax>
         </extent>
-        <projections>1</projections>
+        <projections>0</projections>
         <destinationsrs>
             <spatialrefsys>
                 <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
@@ -102,100 +102,98 @@
                 <geographicflag>false</geographicflag>
             </spatialrefsys>
         </destinationsrs>
-        <layer_coordinate_transform_info>
-            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="perimeter20131219110851854"/>
-        </layer_coordinate_transform_info>
+        <layer_coordinate_transform_info/>
     </mapcanvas>
     <layer-tree-canvas>
-        <custom-order enabled="1">
-            <item>planzahlung20131218153106010</item>
-            <item>rechnung20131218153106024</item>
-            <item>auftrag20131218082931946</item>
-            <item>projekt20131218082931932</item>
-            <item>plankostenkonto20131204162834238</item>
-            <item>konto20131204152724930</item>
-            <item>rechnungsjahr20131204162834226</item>
-            <item>unternehmer20131218082305403</item>
-            <item>perimeter20131219110851854</item>
-            <item>verguetungsart20140116160534226</item>
-            <item>amo20140117081557817</item>
+        <custom-order enabled="0">
+            <item>amo20140612084945106</item>
+            <item>perimeter20140612085007668</item>
+            <item>verguetungsart20140612085240485</item>
+            <item>unternehmer20140612085303330</item>
+            <item>plankostenkonto20140612085349676</item>
+            <item>konto20140612085352742</item>
+            <item>rechnungsjahr20140612085421065</item>
+            <item>auftrag20140612085502567</item>
+            <item>projekt20140612085504092</item>
+            <item>planzahlung20140612085529144</item>
+            <item>rechnung20140612085530811</item>
         </custom-order>
     </layer-tree-canvas>
-    <legend updateDrawingOrder="false">
+    <legend updateDrawingOrder="true">
         <legendgroup open="true" checked="Qt::Unchecked" name="Teilzahlungen">
-            <legendlayer drawingOrder="0" open="true" checked="Qt::Unchecked" name="planzahlung" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="planzahlung" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="planzahlung20131218153106010" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="planzahlung20140612085529144" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="1" open="true" checked="Qt::Unchecked" name="rechnung" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="rechnung" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="rechnung20131218153106024" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="rechnung20140612085530811" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
         <legendgroup open="true" checked="Qt::Unchecked" name="Projekte">
-            <legendlayer drawingOrder="2" open="true" checked="Qt::Unchecked" name="auftrag" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="auftrag" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="auftrag20131218082931946" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="auftrag20140612085502567" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="3" open="true" checked="Qt::Unchecked" name="projekt" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="projekt" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="projekt20131218082931932" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="projekt20140612085504092" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::Unchecked" name="Buchhaltung">
-            <legendlayer drawingOrder="4" open="true" checked="Qt::Unchecked" name="plankostenkonto" showFeatureCount="0">
+        <legendgroup open="true" checked="Qt::Unchecked" name="Buchaltung">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="plankostenkonto" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="plankostenkonto20131204162834238" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="plankostenkonto20140612085349676" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="5" open="true" checked="Qt::Unchecked" name="konto" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="konto" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="konto20131204152724930" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="konto20140612085352742" visible="0"/>
                 </filegroup>
             </legendlayer>
-            <legendlayer drawingOrder="6" open="true" checked="Qt::Unchecked" name="rechnungsjahr" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="rechnungsjahr" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="rechnungsjahr20131204162834226" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="rechnungsjahr20140612085421065" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
         <legendgroup open="true" checked="Qt::Unchecked" name="Unternehmer">
-            <legendlayer drawingOrder="7" open="true" checked="Qt::Unchecked" name="unternehmer" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="unternehmer" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="unternehmer20131218082305403" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="unternehmer20140612085303330" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
         <legendgroup open="true" checked="Qt::Checked" name="Perimeter">
-            <legendlayer drawingOrder="8" open="true" checked="Qt::Checked" name="perimeter" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="perimeter" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="perimeter20131219110851854" visible="1"/>
+                    <legendlayerfile isInOverview="0" layerid="perimeter20140612085007668" visible="1"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
-        <legendgroup open="true" checked="Qt::Unchecked" name="Verguetungsart">
-            <legendlayer drawingOrder="9" open="true" checked="Qt::Unchecked" name="verguetungsart" showFeatureCount="0">
+        <legendgroup open="false" checked="Qt::Unchecked" name="Verguetungsart">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="verguetungsart" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="verguetungsart20140116160534226" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="verguetungsart20140612085240485" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
         <legendgroup open="true" checked="Qt::Unchecked" name="AMO">
-            <legendlayer drawingOrder="10" open="true" checked="Qt::Unchecked" name="amo" showFeatureCount="0">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="amo" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
-                    <legendlayerfile isInOverview="0" layerid="amo20140117081557817" visible="0"/>
+                    <legendlayerfile isInOverview="0" layerid="amo20140612084945106" visible="0"/>
                 </filegroup>
             </legendlayer>
         </legendgroup>
     </legend>
     <projectlayers layercount="11">
-        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>amo20140117081557817</id>
-            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."amo" sql=</datasource>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>amo20140612084945106</id>
+            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' srid=-2147483648 table="av_geschaeftskontrolle"."amo" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -234,17 +232,13 @@
             <featformsuppress>0</featformsuppress>
             <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
-            <aliases>
-                <alias field="amo_nr" index="2" name="AMO Nr."/>
-                <alias field="auftrag_id" index="1" name="Auftrag"/>
-            </aliases>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>auftrag20131218082931946</id>
-            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."auftrag" sql=</datasource>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>auftrag20140612085502567</id>
+            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' srid=-2147483648 table="av_geschaeftskontrolle"."auftrag" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -265,43 +259,43 @@
             </srs>
             <customproperties/>
             <provider encoding="System">postgres</provider>
-            <previewExpression>COALESCE("name", '&lt;NULL>')</previewExpression>
+            <previewExpression>coalesce(name, '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <edittypes>
-                <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
+                <edittype labelontop="0" editable="1" widgetv2type="Hidden" name="id">
                     <widgetv2config/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="projekt_id">
+                <edittype labelontop="0" editable="1" widgetv2type="RelationReference" name="projekt_id">
                     <widgetv2config/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="name">
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="name">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="kosten">
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="kosten">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="mwst">
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="mwst">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="ValueRelation" name="verguetungsart_id">
-                    <widgetv2config OrderByValue="1" FilterExpression="" Key="id" Layer="verguetungsart20140116160534226" Value="art" AllowMulti="0"/>
+                <edittype labelontop="0" editable="1" widgetv2type="ValueRelation" name="verguetungsart_id">
+                    <widgetv2config OrderByValue="0" FilterExpression="" Key="id" Layer="verguetungsart20140612085240485" Value="art" AllowMulti="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="unternehmer_id">
+                <edittype labelontop="0" editable="1" widgetv2type="RelationReference" name="unternehmer_id">
                     <widgetv2config/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="DateTime" name="datum_start">
-                    <widgetv2config calendar_popup="0" display_format="dd.MM.yyyy" field_format="yyyy-mm-dd"/>
-                </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="DateTime" name="datum_ende">
-                    <widgetv2config calendar_popup="0" display_format="dd.MM.yyyy" field_format="yyyy-mm-dd"/>
-                </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="DateTime" name="datum_abschluss">
+                <edittype labelontop="0" editable="1" widgetv2type="DateTime" name="datum_start">
                     <widgetv2config calendar_popup="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd"/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="CheckBox" name="geplant">
+                <edittype labelontop="0" editable="1" widgetv2type="DateTime" name="datum_ende">
+                    <widgetv2config calendar_popup="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="datum_abschluss">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="CheckBox" name="geplant">
                     <widgetv2config UncheckedState="f" CheckedState="t"/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="bemerkung">
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="bemerkung">
                     <widgetv2config IsMultiline="1" UseHtml="0"/>
                 </edittype>
             </edittypes>
@@ -325,28 +319,11 @@
             </aliases>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
-            <attributeEditorForm>
-                <attributeEditorContainer name="Allgemein">
-                    <attributeEditorField index="1" name="projekt_id"/>
-                    <attributeEditorField index="2" name="name"/>
-                    <attributeEditorField index="3" name="kosten"/>
-                    <attributeEditorField index="4" name="mwst"/>
-                    <attributeEditorField index="6" name="unternehmer_id"/>
-                    <attributeEditorField index="7" name="datum_start"/>
-                    <attributeEditorField index="8" name="datum_ende"/>
-                    <attributeEditorField index="9" name="datum_abschluss"/>
-                    <attributeEditorField index="10" name="geplant"/>
-                </attributeEditorContainer>
-                <attributeEditorContainer name="Planzahlung">
-                    <attributeEditorField index="145" name="fk_auftrag_planzahlung"/>
-                    <attributeEditorField index="145" name="fk_auftrag_rechnung"/>
-                </attributeEditorContainer>
-            </attributeEditorForm>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>konto20131204152724930</id>
-            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."konto" sql=</datasource>
+            <id>konto20140612085352742</id>
+            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' srid=-2147483648 table="av_geschaeftskontrolle"."konto" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -367,7 +344,7 @@
             </srs>
             <customproperties/>
             <provider encoding="System">postgres</provider>
-            <previewExpression>COALESCE( "nr", '&lt;NULL>' ) || ' (' || COALESCE( "name", '&lt;NULL>' ) || ')'</previewExpression>
+            <previewExpression></previewExpression>
             <vectorjoins/>
             <edittypes>
                 <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
@@ -380,7 +357,7 @@
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
                 <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="bemerkung">
-                    <widgetv2config IsMultiline="1" UseHtml="0"/>
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
             </edittypes>
             <editform>.</editform>
@@ -395,23 +372,10 @@
             </aliases>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
-            <attributeEditorForm>
-                <attributeEditorContainer name="Allgemein">
-                    <attributeEditorField index="1" name="nr"/>
-                    <attributeEditorField index="2" name="name"/>
-                    <attributeEditorField index="3" name="bemerkung"/>
-                </attributeEditorContainer>
-                <attributeEditorContainer name="Plankostenkonto">
-                    <attributeEditorField index="145" name="fk_konto_plankostenkonto"/>
-                </attributeEditorContainer>
-                <attributeEditorContainer name="Projekte">
-                    <attributeEditorField index="145" name="fk_konto_projekt"/>
-                </attributeEditorContainer>
-            </attributeEditorForm>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="7" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-            <id>perimeter20131219110851854</id>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>perimeter20140612085007668</id>
             <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' srid=21781 type=MULTIPOLYGON table="av_geschaeftskontrolle"."perimeter" (perimeter) sql=</datasource>
             <title></title>
             <abstract></abstract>
@@ -432,7 +396,7 @@
                 </spatialrefsys>
             </srs>
             <provider encoding="System">postgres</provider>
-            <previewExpression>COALESCE( "id", '&lt;NULL>' )</previewExpression>
+            <previewExpression></previewExpression>
             <vectorjoins/>
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
@@ -440,7 +404,7 @@
                         <layer pass="0" class="SimpleFill" locked="0">
                             <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
-                            <prop k="color" v="253,132,213,255"/>
+                            <prop k="color" v="11,91,170,255"/>
                             <prop k="color_border" v="0,0,0,255"/>
                             <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
@@ -470,31 +434,40 @@
                 <property key="labeling/bufferNoFill" value="false"/>
                 <property key="labeling/bufferSize" value="1"/>
                 <property key="labeling/bufferSizeInMapUnits" value="false"/>
+                <property key="labeling/bufferSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/bufferSizeMapUnitMinScale" value="0"/>
                 <property key="labeling/bufferTransp" value="0"/>
+                <property key="labeling/centroidInside" value="false"/>
                 <property key="labeling/centroidWhole" value="false"/>
                 <property key="labeling/decimals" value="3"/>
                 <property key="labeling/displayAll" value="false"/>
                 <property key="labeling/dist" value="0"/>
                 <property key="labeling/distInMapUnits" value="false"/>
+                <property key="labeling/distMapUnitMaxScale" value="0"/>
+                <property key="labeling/distMapUnitMinScale" value="0"/>
                 <property key="labeling/enabled" value="false"/>
                 <property key="labeling/fieldName" value=""/>
-                <property key="labeling/fontBold" value="true"/>
+                <property key="labeling/fontBold" value="false"/>
                 <property key="labeling/fontCapitals" value="0"/>
                 <property key="labeling/fontFamily" value="Ubuntu"/>
-                <property key="labeling/fontItalic" value="true"/>
+                <property key="labeling/fontItalic" value="false"/>
                 <property key="labeling/fontLetterSpacing" value="0"/>
                 <property key="labeling/fontLimitPixelSize" value="false"/>
                 <property key="labeling/fontMaxPixelSize" value="10000"/>
                 <property key="labeling/fontMinPixelSize" value="3"/>
                 <property key="labeling/fontSize" value="11"/>
                 <property key="labeling/fontSizeInMapUnits" value="false"/>
+                <property key="labeling/fontSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/fontSizeMapUnitMinScale" value="0"/>
                 <property key="labeling/fontStrikeout" value="false"/>
                 <property key="labeling/fontUnderline" value="false"/>
-                <property key="labeling/fontWeight" value="75"/>
+                <property key="labeling/fontWeight" value="50"/>
                 <property key="labeling/fontWordSpacing" value="0"/>
                 <property key="labeling/formatNumbers" value="false"/>
                 <property key="labeling/isExpression" value="false"/>
                 <property key="labeling/labelOffsetInMapUnits" value="true"/>
+                <property key="labeling/labelOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/labelOffsetMapUnitMinScale" value="0"/>
                 <property key="labeling/labelPerPart" value="false"/>
                 <property key="labeling/leftDirectionSymbol" value="&lt;"/>
                 <property key="labeling/limitNumLabels" value="false"/>
@@ -508,13 +481,17 @@
                 <property key="labeling/namedStyle" value="Bold Italic"/>
                 <property key="labeling/obstacle" value="true"/>
                 <property key="labeling/placeDirectionSymbol" value="0"/>
-                <property key="labeling/placement" value="0"/>
+                <property key="labeling/placement" value="1"/>
                 <property key="labeling/placementFlags" value="0"/>
                 <property key="labeling/plussign" value="false"/>
                 <property key="labeling/preserveRotation" value="true"/>
                 <property key="labeling/previewBkgrdColor" value="#ffffff"/>
                 <property key="labeling/priority" value="5"/>
                 <property key="labeling/quadOffset" value="4"/>
+                <property key="labeling/repeatDistance" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMaxScale" value="0"/>
+                <property key="labeling/repeatDistanceMapUnitMinScale" value="0"/>
+                <property key="labeling/repeatDistanceUnit" value="1"/>
                 <property key="labeling/reverseDirectionSymbol" value="false"/>
                 <property key="labeling/rightDirectionSymbol" value=">"/>
                 <property key="labeling/scaleMax" value="10000000"/>
@@ -528,9 +505,13 @@
                 <property key="labeling/shadowOffsetAngle" value="135"/>
                 <property key="labeling/shadowOffsetDist" value="1"/>
                 <property key="labeling/shadowOffsetGlobal" value="true"/>
+                <property key="labeling/shadowOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowOffsetMapUnitMinScale" value="0"/>
                 <property key="labeling/shadowOffsetUnits" value="1"/>
                 <property key="labeling/shadowRadius" value="1.5"/>
                 <property key="labeling/shadowRadiusAlphaOnly" value="false"/>
+                <property key="labeling/shadowRadiusMapUnitMaxScale" value="0"/>
+                <property key="labeling/shadowRadiusMapUnitMinScale" value="0"/>
                 <property key="labeling/shadowRadiusUnits" value="1"/>
                 <property key="labeling/shadowScale" value="100"/>
                 <property key="labeling/shadowTransparency" value="30"/>
@@ -541,6 +522,8 @@
                 <property key="labeling/shapeBorderColorG" value="128"/>
                 <property key="labeling/shapeBorderColorR" value="128"/>
                 <property key="labeling/shapeBorderWidth" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeBorderWidthMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeBorderWidthUnits" value="1"/>
                 <property key="labeling/shapeDraw" value="false"/>
                 <property key="labeling/shapeFillColorA" value="255"/>
@@ -548,15 +531,21 @@
                 <property key="labeling/shapeFillColorG" value="255"/>
                 <property key="labeling/shapeFillColorR" value="255"/>
                 <property key="labeling/shapeJoinStyle" value="64"/>
+                <property key="labeling/shapeOffsetMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeOffsetMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeOffsetUnits" value="1"/>
                 <property key="labeling/shapeOffsetX" value="0"/>
                 <property key="labeling/shapeOffsetY" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeRadiiMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeRadiiUnits" value="1"/>
                 <property key="labeling/shapeRadiiX" value="0"/>
                 <property key="labeling/shapeRadiiY" value="0"/>
                 <property key="labeling/shapeRotation" value="0"/>
                 <property key="labeling/shapeRotationType" value="0"/>
                 <property key="labeling/shapeSVGFile" value=""/>
+                <property key="labeling/shapeSizeMapUnitMaxScale" value="0"/>
+                <property key="labeling/shapeSizeMapUnitMinScale" value="0"/>
                 <property key="labeling/shapeSizeType" value="0"/>
                 <property key="labeling/shapeSizeUnits" value="1"/>
                 <property key="labeling/shapeSizeX" value="0"/>
@@ -579,7 +568,7 @@
             <displayfield>id</displayfield>
             <label>0</label>
             <labelattributes>
-                <label fieldname="" text="Beschriftung"/>
+                <label fieldname="" text="Label"/>
                 <family fieldname="" name="Ubuntu"/>
                 <size fieldname="" units="pt" value="12"/>
                 <bold fieldname="" on="0"/>
@@ -603,7 +592,7 @@
                     <widgetv2config/>
                 </edittype>
                 <edittype labelontop="0" editable="0" widgetv2type="ValueRelation" name="projekt_id">
-                    <widgetv2config OrderByValue="0" FilterExpression="" Key="id" Layer="projekt20131218082931932" Value="name" AllowMulti="0"/>
+                    <widgetv2config OrderByValue="0" FilterExpression="" Key="id" Layer="projekt20140612085504092" Value="name" AllowMulti="0"/>
                 </edittype>
             </edittypes>
             <editform>.</editform>
@@ -611,16 +600,13 @@
             <featformsuppress>0</featformsuppress>
             <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
-            <aliases>
-                <alias field="projekt_id" index="1" name="Projekt"/>
-            </aliases>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>plankostenkonto20131204162834238</id>
-            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."plankostenkonto" sql=</datasource>
+            <id>plankostenkonto20140612085349676</id>
+            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' srid=-2147483648 table="av_geschaeftskontrolle"."plankostenkonto" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -641,7 +627,7 @@
             </srs>
             <customproperties/>
             <provider encoding="System">postgres</provider>
-            <previewExpression>COALESCE("id", '&lt;NULL>') || ' (' || jahr || ' - ' || bemerkung || ')'</previewExpression>
+            <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <edittypes>
                 <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
@@ -664,7 +650,7 @@
                     </widgetv2config>
                 </edittype>
                 <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="bemerkung">
-                    <widgetv2config IsMultiline="1" UseHtml="0"/>
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
             </edittypes>
             <editform>.</editform>
@@ -683,8 +669,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>planzahlung20131218153106010</id>
-            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."planzahlung" sql=</datasource>
+            <id>planzahlung20140612085529144</id>
+            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' srid=-2147483648 table="av_geschaeftskontrolle"."planzahlung" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -705,29 +691,29 @@
             </srs>
             <customproperties/>
             <provider encoding="System">postgres</provider>
-            <previewExpression>COALESCE( "auftrag_id", '&lt;NULL>' )</previewExpression>
+            <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <edittypes>
-                <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
+                <edittype labelontop="0" editable="1" widgetv2type="Hidden" name="id">
                     <widgetv2config/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="auftrag_id">
+                <edittype labelontop="0" editable="1" widgetv2type="RelationReference" name="auftrag_id">
                     <widgetv2config/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="prozent">
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="prozent">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="kosten">
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="kosten">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="mwst">
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="mwst">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="ValueRelation" name="rechnungsjahr">
-                    <widgetv2config OrderByValue="0" FilterExpression="" Key="jahr" Layer="rechnungsjahr20131204162834226" Value="jahr" AllowMulti="0"/>
+                <edittype labelontop="0" editable="1" widgetv2type="ValueRelation" name="rechnungsjahr">
+                    <widgetv2config OrderByValue="0" FilterExpression="" Key="jahr" Layer="rechnungsjahr20140612085421065" Value="jahr" AllowMulti="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="bemerkung">
-                    <widgetv2config IsMultiline="1" UseHtml="0"/>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
             </edittypes>
             <editform>.</editform>
@@ -747,9 +733,9 @@
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>projekt20131218082931932</id>
-            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."projekt" sql=</datasource>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>projekt20140612085504092</id>
+            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' srid=-2147483648 table="av_geschaeftskontrolle"."projekt" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -770,7 +756,7 @@
             </srs>
             <customproperties/>
             <provider encoding="System">postgres</provider>
-            <previewExpression>COALESCE("name", '&lt;NULL>')</previewExpression>
+            <previewExpression>coalesce(name, '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <edittypes>
                 <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
@@ -789,13 +775,13 @@
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
                 <edittype labelontop="0" editable="0" widgetv2type="DateTime" name="datum_start">
-                    <widgetv2config calendar_popup="0" display_format="dd.MM.yyyy" field_format="yyyy-mm-dd"/>
+                    <widgetv2config calendar_popup="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd"/>
                 </edittype>
                 <edittype labelontop="0" editable="0" widgetv2type="DateTime" name="datum_ende">
-                    <widgetv2config calendar_popup="0" display_format="dd.MM.yyyy" field_format="yyyy-mm-dd"/>
+                    <widgetv2config calendar_popup="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd"/>
                 </edittype>
                 <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="bemerkung">
-                    <widgetv2config IsMultiline="1" UseHtml="0"/>
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
             </edittypes>
             <editform>.</editform>
@@ -830,9 +816,9 @@
             </attributeEditorForm>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>rechnung20131218153106024</id>
-            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."rechnung" sql=</datasource>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>rechnung20140612085530811</id>
+            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' srid=-2147483648 table="av_geschaeftskontrolle"."rechnung" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -856,29 +842,29 @@
             <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <edittypes>
-                <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
+                <edittype labelontop="0" editable="1" widgetv2type="Hidden" name="id">
                     <widgetv2config/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="auftrag_id">
+                <edittype labelontop="0" editable="1" widgetv2type="RelationReference" name="auftrag_id">
                     <widgetv2config/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="kosten">
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="kosten">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="mwst">
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="mwst">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="DateTime" name="datum_eingang">
-                    <widgetv2config calendar_popup="0" display_format="dd.MM.yyyy" field_format="yyyy-mm-dd"/>
+                <edittype labelontop="0" editable="1" widgetv2type="DateTime" name="datum_eingang">
+                    <widgetv2config calendar_popup="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd"/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="DateTime" name="datum_ausgang">
-                    <widgetv2config calendar_popup="0" display_format="dd.MM.yyyy" field_format="yyyy-mm-dd"/>
+                <edittype labelontop="0" editable="1" widgetv2type="DateTime" name="datum_ausgang">
+                    <widgetv2config calendar_popup="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd"/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="ValueRelation" name="rechnungsjahr">
-                    <widgetv2config OrderByValue="0" FilterExpression="" Key="jahr" Layer="rechnungsjahr20131204162834226" Value="jahr" AllowMulti="0"/>
+                <edittype labelontop="0" editable="1" widgetv2type="ValueRelation" name="rechnungsjahr">
+                    <widgetv2config OrderByValue="0" FilterExpression="" Key="jahr" Layer="rechnungsjahr20140612085421065" Value="jahr" AllowMulti="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="bemerkung">
-                    <widgetv2config IsMultiline="1" UseHtml="0"/>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
             </edittypes>
             <editform>.</editform>
@@ -887,7 +873,7 @@
             <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <aliases>
-                <alias field="auftrag_id" index="1" name="Auftrag"/>
+                <alias field="auftrag_id" index="1" name="Aufrag"/>
                 <alias field="bemerkung" index="7" name="Bemerkungen"/>
                 <alias field="datum_ausgang" index="5" name="Ausgang"/>
                 <alias field="datum_eingang" index="4" name="Eingang"/>
@@ -900,8 +886,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>rechnungsjahr20131204162834226</id>
-            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='tid' table="av_geschaeftskontrolle"."rechnungsjahr" sql=</datasource>
+            <id>rechnungsjahr20140612085421065</id>
+            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='tid' srid=-2147483648 table="av_geschaeftskontrolle"."rechnungsjahr" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -922,7 +908,7 @@
             </srs>
             <customproperties/>
             <provider encoding="System">postgres</provider>
-            <previewExpression>COALESCE("id", '&lt;NULL>')||', '||COALESCE("jahr", '&lt;NULL>')</previewExpression>
+            <previewExpression></previewExpression>
             <vectorjoins/>
             <edittypes>
                 <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="id">
@@ -942,8 +928,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>unternehmer20131218082305403</id>
-            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."unternehmer" sql=</datasource>
+            <id>unternehmer20140612085303330</id>
+            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' srid=-2147483648 table="av_geschaeftskontrolle"."unternehmer" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -964,17 +950,17 @@
             </srs>
             <customproperties/>
             <provider encoding="System">postgres</provider>
-            <previewExpression> "vorname" || ' ' ||  "nachname" || ' (' ||  "firma" ||')'</previewExpression>
+            <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <edittypes>
-                <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
-                    <widgetv2config/>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
                 <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="firma">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="uid">
-                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="uid">
+                    <widgetv2config/>
                 </edittype>
                 <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="nachname">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
@@ -1004,7 +990,7 @@
             <annotationform>.</annotationform>
             <editorlayout>tablayout</editorlayout>
             <aliases>
-                <alias field="bemerkung" index="9" name="Bemerkung"/>
+                <alias field="bemerkung" index="9" name="Bemerkungen"/>
                 <alias field="firma" index="1" name="Firma"/>
                 <alias field="hausnummer" index="6" name="Hausnummer"/>
                 <alias field="nachname" index="3" name="Nachname"/>
@@ -1035,8 +1021,8 @@
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>verguetungsart20140116160534226</id>
-            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."verguetungsart" sql=</datasource>
+            <id>verguetungsart20140612085240485</id>
+            <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' srid=-2147483648 table="av_geschaeftskontrolle"."verguetungsart" sql=</datasource>
             <title></title>
             <abstract></abstract>
             <keywordList>
@@ -1057,7 +1043,7 @@
             </srs>
             <customproperties/>
             <provider encoding="System">postgres</provider>
-            <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
+            <previewExpression></previewExpression>
             <vectorjoins/>
             <edittypes>
                 <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="id">
@@ -1097,12 +1083,12 @@
             <DegreeFormat type="QString">D</DegreeFormat>
         </PositionPrecision>
         <WCSUrl type="QString"></WCSUrl>
-        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
         <WMSContactPhone type="QString"></WMSContactPhone>
+        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
         <WMSServiceAbstract type="QString"></WMSServiceAbstract>
         <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
         <Measure>
-            <Ellipsoid type="QString">bessel</Ellipsoid>
+            <Ellipsoid type="QString">NONE</Ellipsoid>
         </Measure>
         <WFSTLayers>
             <Insert type="QStringList"/>
@@ -1120,27 +1106,20 @@
         </Gui>
         <Digitizing>
             <LayerSnappingList type="QStringList">
-                <value>perimeter20131219110851854</value>
-                <value>mbsf20131219110923729</value>
+                <value>perimeter20140612085007668</value>
             </LayerSnappingList>
             <LayerSnappingEnabledList type="QStringList">
-                <value>enabled</value>
                 <value>disabled</value>
             </LayerSnappingEnabledList>
-            <AvoidIntersectionsList type="QStringList">
-                <value>perimeter20131219110851854</value>
-            </AvoidIntersectionsList>
+            <AvoidIntersectionsList type="QStringList"/>
             <LayerSnappingToleranceUnitList type="QStringList">
-                <value>1</value>
                 <value>1</value>
             </LayerSnappingToleranceUnitList>
             <LayerSnapToList type="QStringList">
                 <value>to_vertex_and_segment</value>
-                <value>to_vertex_and_segment</value>
             </LayerSnapToList>
             <LayerSnappingToleranceList type="QStringList">
-                <value>10.000000</value>
-                <value>10.000000</value>
+                <value>20.000000</value>
             </LayerSnappingToleranceList>
         </Digitizing>
         <Identify>
@@ -1155,7 +1134,7 @@
             <ProjectCRSProj4String type="QString">+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</ProjectCRSProj4String>
             <ProjectCrs type="QString">EPSG:21781</ProjectCrs>
             <ProjectCRSID type="int">1919</ProjectCRSID>
-            <ProjectionsEnabled type="int">1</ProjectionsEnabled>
+            <ProjectionsEnabled type="int">0</ProjectionsEnabled>
         </SpatialRefSys>
         <DefaultStyles>
             <Fill type="QString"></Fill>

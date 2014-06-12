@@ -1,6 +1,63 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
 <qgis projectname="" version="2.3.0-Master">
     <title></title>
+    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
+        <customproperties/>
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Teilzahlungen">
+            <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="planzahlung20131218153106010" name="planzahlung">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="rechnung20131218153106024" name="rechnung">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Projekte">
+            <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="auftrag20131218082931946" name="auftrag">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="projekt20131218082931932" name="projekt">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Buchhaltung">
+            <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="plankostenkonto20131204162834238" name="plankostenkonto">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="konto20131204152724930" name="konto">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="rechnungsjahr20131204162834226" name="rechnungsjahr">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Unternehmer">
+            <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="unternehmer20131218082305403" name="unternehmer">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
+        <layer-tree-group expanded="1" checked="Qt::Checked" name="Perimeter">
+            <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="perimeter20131219110851854" name="perimeter">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Verguetungsart">
+            <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="verguetungsart20140116160534226" name="verguetungsart">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="AMO">
+            <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="amo20140117081557817" name="amo">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
+    </layer-tree-group>
     <relations>
         <relation referencingLayer="amo20140117081557817" referencedLayer="auftrag20131218082931946" id="fk_auftrag_amo" name="AMO">
             <fieldRef referencedField="id" referencingField="auftrag_id"/>
@@ -25,28 +82,46 @@
         </relation>
     </relations>
     <mapcanvas>
-        <units>degrees</units>
+        <units>meters</units>
         <extent>
-            <xmin>598517.96712500008288771</xmin>
-            <ymin>218089.11624999999185093</ymin>
-            <xmax>607115.90787499991711229</xmax>
-            <ymax>223200.25375000000349246</ymax>
+            <xmin>596943.64713979326188564</xmin>
+            <ymin>217096.35777122547733597</ymin>
+            <xmax>607296.85729194153100252</xmax>
+            <ymax>223992.21749039975111373</ymax>
         </extent>
-        <projections>0</projections>
+        <projections>1</projections>
         <destinationsrs>
             <spatialrefsys>
-                <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
-                <srsid>3452</srsid>
-                <srid>4326</srid>
-                <authid>EPSG:4326</authid>
-                <description>WGS 84</description>
-                <projectionacronym>longlat</projectionacronym>
-                <ellipsoidacronym>WGS84</ellipsoidacronym>
-                <geographicflag>true</geographicflag>
+                <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
+                <srsid>1919</srsid>
+                <srid>21781</srid>
+                <authid>EPSG:21781</authid>
+                <description>CH1903 / LV03</description>
+                <projectionacronym>somerc</projectionacronym>
+                <ellipsoidacronym>bessel</ellipsoidacronym>
+                <geographicflag>false</geographicflag>
             </spatialrefsys>
         </destinationsrs>
+        <layer_coordinate_transform_info>
+            <layer_coordinate_transform destAuthId="EPSG:21781" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="perimeter20131219110851854"/>
+        </layer_coordinate_transform_info>
     </mapcanvas>
-    <legend updateDrawingOrder="false" activeLayer="auftrag20131218082931946">
+    <layer-tree-canvas>
+        <custom-order enabled="1">
+            <item>planzahlung20131218153106010</item>
+            <item>rechnung20131218153106024</item>
+            <item>auftrag20131218082931946</item>
+            <item>projekt20131218082931932</item>
+            <item>plankostenkonto20131204162834238</item>
+            <item>konto20131204152724930</item>
+            <item>rechnungsjahr20131204162834226</item>
+            <item>unternehmer20131218082305403</item>
+            <item>perimeter20131219110851854</item>
+            <item>verguetungsart20140116160534226</item>
+            <item>amo20140117081557817</item>
+        </custom-order>
+    </layer-tree-canvas>
+    <legend updateDrawingOrder="false">
         <legendgroup open="true" checked="Qt::Unchecked" name="Teilzahlungen">
             <legendlayer drawingOrder="0" open="true" checked="Qt::Unchecked" name="planzahlung" showFeatureCount="0">
                 <filegroup open="true" hidden="false">
@@ -144,11 +219,15 @@
             <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <edittypes>
-                <edittype labelontop="0" editable="1" type="0" name="amo_nr"/>
-                <edittype labelontop="0" editable="1" widgetv2type="RelationReference" type="20" name="auftrag_id">
-                    <widgetv2config ShowForm="0" Relation="fk_auftrag_amo" AllowNULL="0"/>
+                <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
+                    <widgetv2config/>
                 </edittype>
-                <edittype labelontop="0" editable="1" type="11" name="id"/>
+                <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="auftrag_id">
+                    <widgetv2config/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="amo_nr">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
@@ -189,23 +268,42 @@
             <previewExpression>COALESCE("name", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <edittypes>
-                <edittype labelontop="0" editable="1" type="12" name="bemerkung"/>
-                <edittype labelontop="0" editable="1" dateFormat="dd.MM.yyyy" type="13" name="datum_abschluss"/>
-                <edittype labelontop="0" editable="1" dateFormat="dd.MM.yyyy" type="13" name="datum_ende"/>
-                <edittype labelontop="0" editable="1" dateFormat="dd.MM.yyyy" type="13" name="datum_start"/>
-                <edittype labelontop="0" editable="1" unchecked="f" type="7" checked="t" name="geplant"/>
-                <edittype labelontop="0" editable="1" type="11" name="id"/>
-                <edittype labelontop="0" editable="1" type="0" name="kosten"/>
-                <edittype labelontop="0" editable="1" type="0" name="mwst"/>
-                <edittype labelontop="0" editable="1" type="0" name="name"/>
-                <edittype labelontop="0" editable="1" widgetv2type="RelationReference" type="20" name="projekt_id">
-                    <widgetv2config ShowForm="0" Relation="fk_auftrag_projekt" AllowNULL="0"/>
+                <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
+                    <widgetv2config/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="RelationReference" type="20" name="unternehmer_id">
-                    <widgetv2config ShowForm="0" Relation="fk_projekt_unternehmer" AllowNULL="0"/>
+                <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="projekt_id">
+                    <widgetv2config/>
                 </edittype>
-                <edittype labelontop="0" editable="1" allowNull="true" orderByValue="true" key="id" layer="verguetungsart20140116160534226" allowMulti="false" filterExpression="" type="15" value="art" name="verguetungsart"/>
-                <edittype labelontop="0" editable="1" allowNull="true" orderByValue="true" key="id" layer="verguetungsart20140116160534226" allowMulti="false" filterExpression="" type="15" value="art" name="verguetungsart_id"/>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="kosten">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="mwst">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="ValueRelation" name="verguetungsart_id">
+                    <widgetv2config OrderByValue="1" FilterExpression="" Key="id" Layer="verguetungsart20140116160534226" Value="art" AllowMulti="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="unternehmer_id">
+                    <widgetv2config/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="DateTime" name="datum_start">
+                    <widgetv2config calendar_popup="0" display_format="dd.MM.yyyy" field_format="yyyy-mm-dd"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="DateTime" name="datum_ende">
+                    <widgetv2config calendar_popup="0" display_format="dd.MM.yyyy" field_format="yyyy-mm-dd"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="DateTime" name="datum_abschluss">
+                    <widgetv2config calendar_popup="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="CheckBox" name="geplant">
+                    <widgetv2config UncheckedState="f" CheckedState="t"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" UseHtml="0"/>
+                </edittype>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
@@ -272,10 +370,18 @@
             <previewExpression>COALESCE( "nr", '&lt;NULL>' ) || ' (' || COALESCE( "name", '&lt;NULL>' ) || ')'</previewExpression>
             <vectorjoins/>
             <edittypes>
-                <edittype labelontop="0" editable="1" type="12" name="bemerkung"/>
-                <edittype labelontop="0" editable="1" type="11" name="id"/>
-                <edittype labelontop="0" editable="1" type="0" name="name"/>
-                <edittype labelontop="0" editable="1" type="0" name="nr"/>
+                <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
+                    <widgetv2config/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="nr">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" UseHtml="0"/>
+                </edittype>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
@@ -493,8 +599,12 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
-                <edittype labelontop="0" editable="1" type="11" name="id"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="id" layer="projekt20131218082931932" allowMulti="false" filterExpression="" type="15" value="name" name="projekt_id"/>
+                <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
+                    <widgetv2config/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="ValueRelation" name="projekt_id">
+                    <widgetv2config OrderByValue="0" FilterExpression="" Key="id" Layer="projekt20131218082931932" Value="name" AllowMulti="0"/>
+                </edittype>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
@@ -534,19 +644,27 @@
             <previewExpression>COALESCE("id", '&lt;NULL>') || ' (' || jahr || ' - ' || bemerkung || ')'</previewExpression>
             <vectorjoins/>
             <edittypes>
-                <edittype labelontop="0" editable="1" type="12" name="bemerkung"/>
-                <edittype labelontop="0" editable="1" type="0" name="budget"/>
-                <edittype labelontop="0" editable="1" type="11" name="id"/>
-                <edittype labelontop="0" editable="1" type="3" name="jahr">
-                    <valuepair key="2012" value="2012"/>
-                    <valuepair key="2013" value="2013"/>
-                    <valuepair key="2014" value="2014"/>
-                    <valuepair key="2015" value="2015"/>
-                    <valuepair key="2016" value="2016"/>
-                    <valuepair key="2017" value="2017"/>
+                <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
+                    <widgetv2config/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="RelationReference" type="20" name="konto_id">
-                    <widgetv2config ShowForm="0" Relation="fk_konto_plankostenkonto" AllowNULL="0"/>
+                <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="konto_id">
+                    <widgetv2config/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="budget">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="ValueMap" name="jahr">
+                    <widgetv2config>
+                        <value key="2012" value="2012"/>
+                        <value key="2013" value="2013"/>
+                        <value key="2014" value="2014"/>
+                        <value key="2015" value="2015"/>
+                        <value key="2016" value="2016"/>
+                        <value key="2017" value="2017"/>
+                    </widgetv2config>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" UseHtml="0"/>
                 </edittype>
             </edittypes>
             <editform>.</editform>
@@ -590,15 +708,27 @@
             <previewExpression>COALESCE( "auftrag_id", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <edittypes>
-                <edittype labelontop="0" editable="1" widgetv2type="RelationReference" type="20" name="auftrag_id">
-                    <widgetv2config ShowForm="0" Relation="fk_auftrag_planzahlung" AllowNULL="0"/>
+                <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
+                    <widgetv2config/>
                 </edittype>
-                <edittype labelontop="0" editable="1" type="12" name="bemerkung"/>
-                <edittype labelontop="0" editable="1" type="11" name="id"/>
-                <edittype labelontop="0" editable="1" type="10" name="kosten"/>
-                <edittype labelontop="0" editable="1" type="0" name="mwst"/>
-                <edittype labelontop="0" editable="1" type="0" name="prozent"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="jahr" layer="rechnungsjahr20131204162834226" allowMulti="false" filterExpression="" type="15" value="jahr" name="rechnungsjahr"/>
+                <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="auftrag_id">
+                    <widgetv2config/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="prozent">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="kosten">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="mwst">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="ValueRelation" name="rechnungsjahr">
+                    <widgetv2config OrderByValue="0" FilterExpression="" Key="jahr" Layer="rechnungsjahr20131204162834226" Value="jahr" AllowMulti="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" UseHtml="0"/>
+                </edittype>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
@@ -643,16 +773,30 @@
             <previewExpression>COALESCE("name", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <edittypes>
-                <edittype labelontop="0" editable="1" type="12" name="bemerkung"/>
-                <edittype labelontop="0" editable="1" dateFormat="dd.MM.yyyy" type="13" name="datum_ende"/>
-                <edittype labelontop="0" editable="1" dateFormat="dd.MM.yyyy" type="13" name="datum_start"/>
-                <edittype labelontop="0" editable="1" type="11" name="id"/>
-                <edittype labelontop="0" editable="1" widgetv2type="RelationReference" type="20" name="konto_id">
-                    <widgetv2config ShowForm="0" Relation="fk_konto_projekt" AllowNULL="0"/>
+                <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
+                    <widgetv2config/>
                 </edittype>
-                <edittype labelontop="0" editable="1" type="0" name="kosten"/>
-                <edittype labelontop="0" editable="1" type="0" name="mwst"/>
-                <edittype labelontop="0" editable="1" type="0" name="name"/>
+                <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="konto_id">
+                    <widgetv2config/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="kosten">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="mwst">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="DateTime" name="datum_start">
+                    <widgetv2config calendar_popup="0" display_format="dd.MM.yyyy" field_format="yyyy-mm-dd"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="DateTime" name="datum_ende">
+                    <widgetv2config calendar_popup="0" display_format="dd.MM.yyyy" field_format="yyyy-mm-dd"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" UseHtml="0"/>
+                </edittype>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
@@ -712,16 +856,30 @@
             <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <edittypes>
-                <edittype labelontop="0" editable="1" widgetv2type="RelationReference" type="20" name="auftrag_id">
-                    <widgetv2config ShowForm="0" Relation="fk_auftrag_rechnung" AllowNULL="0"/>
+                <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
+                    <widgetv2config/>
                 </edittype>
-                <edittype labelontop="0" editable="1" type="12" name="bemerkung"/>
-                <edittype labelontop="0" editable="1" dateFormat="dd.MM.yyyy" type="13" name="datum_ausgang"/>
-                <edittype labelontop="0" editable="1" dateFormat="dd.MM.yyyy" type="13" name="datum_eingang"/>
-                <edittype labelontop="0" editable="1" type="11" name="id"/>
-                <edittype labelontop="0" editable="1" type="0" name="kosten"/>
-                <edittype labelontop="0" editable="1" type="0" name="mwst"/>
-                <edittype labelontop="0" editable="1" allowNull="false" orderByValue="false" key="jahr" layer="rechnungsjahr20131204162834226" allowMulti="false" filterExpression="" type="15" value="jahr" name="rechnungsjahr"/>
+                <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="auftrag_id">
+                    <widgetv2config/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="kosten">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="mwst">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="DateTime" name="datum_eingang">
+                    <widgetv2config calendar_popup="0" display_format="dd.MM.yyyy" field_format="yyyy-mm-dd"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="DateTime" name="datum_ausgang">
+                    <widgetv2config calendar_popup="0" display_format="dd.MM.yyyy" field_format="yyyy-mm-dd"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="ValueRelation" name="rechnungsjahr">
+                    <widgetv2config OrderByValue="0" FilterExpression="" Key="jahr" Layer="rechnungsjahr20131204162834226" Value="jahr" AllowMulti="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" UseHtml="0"/>
+                </edittype>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
@@ -766,6 +924,14 @@
             <provider encoding="System">postgres</provider>
             <previewExpression>COALESCE("id", '&lt;NULL>')||', '||COALESCE("jahr", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
+            <edittypes>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="jahr">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+            </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
@@ -801,16 +967,36 @@
             <previewExpression> "vorname" || ' ' ||  "nachname" || ' (' ||  "firma" ||')'</previewExpression>
             <vectorjoins/>
             <edittypes>
-                <edittype labelontop="0" editable="1" type="0" name="bemerkung"/>
-                <edittype labelontop="0" editable="1" type="0" name="firma"/>
-                <edittype labelontop="0" editable="1" type="0" name="hausnummer"/>
-                <edittype labelontop="0" editable="1" type="11" name="id"/>
-                <edittype labelontop="0" editable="1" type="0" name="nachname"/>
-                <edittype labelontop="0" editable="1" type="0" name="ortschaft"/>
-                <edittype labelontop="0" editable="1" type="0" name="plz"/>
-                <edittype labelontop="0" editable="1" type="0" name="strasse"/>
-                <edittype labelontop="0" editable="1" type="0" name="uid"/>
-                <edittype labelontop="0" editable="1" type="0" name="vorname"/>
+                <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
+                    <widgetv2config/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="firma">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="uid">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="nachname">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="vorname">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="strasse">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="hausnummer">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="plz">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="ortschaft">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
@@ -873,6 +1059,14 @@
             <provider encoding="System">postgres</provider>
             <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
+            <edittypes>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="art">
+                    <widgetv2config IsMultiline="0" UseHtml="0"/>
+                </edittype>
+            </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
@@ -902,12 +1096,13 @@
             <Automatic type="bool">true</Automatic>
             <DegreeFormat type="QString">D</DegreeFormat>
         </PositionPrecision>
-        <WMSContactPhone type="QString"></WMSContactPhone>
+        <WCSUrl type="QString"></WCSUrl>
         <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
+        <WMSContactPhone type="QString"></WMSContactPhone>
         <WMSServiceAbstract type="QString"></WMSServiceAbstract>
         <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
         <Measure>
-            <Ellipsoid type="QString">NONE</Ellipsoid>
+            <Ellipsoid type="QString">bessel</Ellipsoid>
         </Measure>
         <WFSTLayers>
             <Insert type="QStringList"/>
@@ -955,11 +1150,12 @@
             <pythonCode type="QString"></pythonCode>
         </Macros>
         <WMSAccessConstraints type="QString"></WMSAccessConstraints>
+        <WCSLayers type="QStringList"/>
         <SpatialRefSys>
-            <ProjectCRSProj4String type="QString">+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs +towgs84=0,0,0</ProjectCRSProj4String>
+            <ProjectCRSProj4String type="QString">+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</ProjectCRSProj4String>
             <ProjectCrs type="QString">EPSG:21781</ProjectCrs>
-            <ProjectCRSID type="int">3452</ProjectCRSID>
-            <ProjectionsEnabled type="int">0</ProjectionsEnabled>
+            <ProjectCRSID type="int">1919</ProjectCRSID>
+            <ProjectionsEnabled type="int">1</ProjectionsEnabled>
         </SpatialRefSys>
         <DefaultStyles>
             <Fill type="QString"></Fill>
@@ -970,6 +1166,7 @@
             <ColorRamp type="QString"></ColorRamp>
         </DefaultStyles>
         <WMSFees type="QString"></WMSFees>
+        <WMSImageQuality type="int">90</WMSImageQuality>
         <WMSUrl type="QString"></WMSUrl>
     </properties>
 </qgis>
