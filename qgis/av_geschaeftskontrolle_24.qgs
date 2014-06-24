@@ -84,10 +84,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>594544.68051460909191519</xmin>
-            <ymin>215404.26035920338472351</ymin>
-            <xmax>608831.34165545052383095</xmax>
-            <ymax>224920.03465865377802402</ymax>
+            <xmin>592163.84075557929463685</xmin>
+            <ymin>210492.63566706251003779</ymin>
+            <xmax>613397.7908758616540581</xmax>
+            <ymax>228325.91503404898685403</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -221,7 +221,7 @@
                     <widgetv2config/>
                 </edittype>
                 <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="auftrag_id">
-                    <widgetv2config/>
+                    <widgetv2config ShowForm="0" Relation="" AllowNULL="0"/>
                 </edittype>
                 <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="amo_nr">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
@@ -262,40 +262,40 @@
             <previewExpression>coalesce(name, '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <edittypes>
-                <edittype labelontop="0" editable="1" widgetv2type="Hidden" name="id">
+                <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
                     <widgetv2config/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="RelationReference" name="projekt_id">
-                    <widgetv2config/>
+                <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="projekt_id">
+                    <widgetv2config ShowForm="0" Relation="fk_auftrag_projekt" AllowNULL="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="name">
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="name">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="kosten">
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="kosten">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="mwst">
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="mwst">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="ValueRelation" name="verguetungsart_id">
+                <edittype labelontop="0" editable="0" widgetv2type="ValueRelation" name="verguetungsart_id">
                     <widgetv2config OrderByValue="0" FilterExpression="" Key="id" Layer="verguetungsart20140612085240485" Value="art" AllowMulti="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="RelationReference" name="unternehmer_id">
-                    <widgetv2config/>
+                <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="unternehmer_id">
+                    <widgetv2config ShowForm="0" Relation="fk_projekt_unternehmer" AllowNULL="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="DateTime" name="datum_start">
+                <edittype labelontop="0" editable="0" widgetv2type="DateTime" name="datum_start">
                     <widgetv2config calendar_popup="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="DateTime" name="datum_ende">
+                <edittype labelontop="0" editable="0" widgetv2type="DateTime" name="datum_ende">
                     <widgetv2config calendar_popup="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="datum_abschluss">
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="datum_abschluss">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="CheckBox" name="geplant">
+                <edittype labelontop="0" editable="0" widgetv2type="CheckBox" name="geplant">
                     <widgetv2config UncheckedState="f" CheckedState="t"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="bemerkung">
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="bemerkung">
                     <widgetv2config IsMultiline="1" UseHtml="0"/>
                 </edittype>
             </edittypes>
@@ -634,7 +634,7 @@
                     <widgetv2config/>
                 </edittype>
                 <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="konto_id">
-                    <widgetv2config/>
+                    <widgetv2config ShowForm="0" Relation="" AllowNULL="0"/>
                 </edittype>
                 <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="budget">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
@@ -694,25 +694,25 @@
             <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <edittypes>
-                <edittype labelontop="0" editable="1" widgetv2type="Hidden" name="id">
+                <edittype labelontop="0" editable="0" widgetv2type="Hidden" name="id">
                     <widgetv2config/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="RelationReference" name="auftrag_id">
-                    <widgetv2config/>
+                <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="auftrag_id">
+                    <widgetv2config ShowForm="0" Relation="fk_autrag_planzahlung" AllowNULL="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="prozent">
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="prozent">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="kosten">
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="kosten">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="mwst">
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="mwst">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="ValueRelation" name="rechnungsjahr">
+                <edittype labelontop="0" editable="0" widgetv2type="ValueRelation" name="rechnungsjahr">
                     <widgetv2config OrderByValue="0" FilterExpression="" Key="jahr" Layer="rechnungsjahr20140612085421065" Value="jahr" AllowMulti="0"/>
                 </edittype>
-                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="bemerkung">
+                <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="bemerkung">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
                 </edittype>
             </edittypes>
@@ -733,7 +733,7 @@
             <excludeAttributesWFS/>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>projekt20140612085504092</id>
             <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' srid=-2147483648 table="av_geschaeftskontrolle"."projekt" sql=</datasource>
             <title></title>
@@ -763,7 +763,7 @@
                     <widgetv2config/>
                 </edittype>
                 <edittype labelontop="0" editable="0" widgetv2type="RelationReference" name="konto_id">
-                    <widgetv2config/>
+                    <widgetv2config ShowForm="0" Relation="fk_konto_projekt" AllowNULL="0"/>
                 </edittype>
                 <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="name">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
@@ -816,7 +816,7 @@
             </attributeEditorForm>
             <attributeactions/>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>rechnung20140612085530811</id>
             <datasource>dbname='xanadu' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' srid=-2147483648 table="av_geschaeftskontrolle"."rechnung" sql=</datasource>
             <title></title>
@@ -846,7 +846,7 @@
                     <widgetv2config/>
                 </edittype>
                 <edittype labelontop="0" editable="1" widgetv2type="RelationReference" name="auftrag_id">
-                    <widgetv2config/>
+                    <widgetv2config ShowForm="0" Relation="fk_auftrag_rechnung" AllowNULL="0"/>
                 </edittype>
                 <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="kosten">
                     <widgetv2config IsMultiline="0" UseHtml="0"/>
@@ -950,7 +950,7 @@
             </srs>
             <customproperties/>
             <provider encoding="System">postgres</provider>
-            <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
+            <previewExpression>COALESCE( "nachname", '&lt;NULL>' )</previewExpression>
             <vectorjoins/>
             <edittypes>
                 <edittype labelontop="0" editable="0" widgetv2type="TextEdit" name="id">
