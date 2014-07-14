@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.13
 -- Dumped by pg_dump version 9.1.13
--- Started on 2014-07-11 13:13:47 CEST
+-- Started on 2014-07-14 11:17:25 CEST
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -959,6 +959,8 @@ SELECT pg_catalog.setval('plankostenkonto_id_seq', 3, true);
 -- Data for Name: planzahlung; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (10, 12, 44.000, 87120.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (9, 12, 28.000, 55440.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (69, 59, 100.000, 500.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (68, 3, 25.000, 5032.50, 8, 2013, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (27, 21, 100.000, 5000.00, 8, 2014, NULL);
@@ -966,8 +968,6 @@ INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, b
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (66, 57, 100.000, 4479.60, 0, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (67, 58, 100.000, 1200.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (8, 12, 28.000, 55440.00, 8, 2013, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (9, 12, 36.000, 71280.00, 8, 2015, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (10, 12, 36.000, 71280.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (44, 38, 100.000, 2080.60, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (45, 39, 100.000, 450.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (46, 40, 100.000, 750.00, 8, 2014, NULL);
@@ -1128,6 +1128,7 @@ INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang
 INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (46, 47, 588.60, 8, '2014-07-08', '2014-07-08', 2014, NULL);
 INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (47, 26, 18393.75, 8, '2014-07-10', '2014-07-10', 2014, NULL);
 INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (48, 23, 2992.50, 8, '2014-07-10', '2014-07-11', 2014, NULL);
+INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (49, 12, 36992.25, 8, '2014-07-11', '2014-07-14', 2014, NULL);
 
 
 --
@@ -1136,7 +1137,7 @@ INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang
 -- Name: rechnung_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('rechnung_id_seq', 48, true);
+SELECT pg_catalog.setval('rechnung_id_seq', 49, true);
 
 
 --
@@ -1610,7 +1611,7 @@ GRANT ALL ON TABLE vr_zahlungsplan_14_17 TO stefan;
 GRANT SELECT ON TABLE vr_zahlungsplan_14_17 TO mspublic;
 
 
--- Completed on 2014-07-11 13:13:47 CEST
+-- Completed on 2014-07-14 11:17:26 CEST
 
 --
 -- PostgreSQL database dump complete
