@@ -1,0 +1,1128 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<qgis projectname="" version="2.5.0-Master">
+    <title></title>
+    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="">
+        <customproperties/>
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Teilzahlungen">
+            <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="planzahlung20141017170945726" name="planzahlung">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="rechnung20141017170945759" name="rechnung">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Buchaltung">
+            <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="plankostenkonto20141017154536076" name="plankostenkonto">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="konto20141017154536029" name="konto">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="rechnungsjahr20141017154536106" name="rechnungsjahr">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Projekte">
+            <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="auftrag20141017164220623" name="auftrag">
+                <customproperties/>
+            </layer-tree-layer>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="projekt20141017164220692" name="projekt">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Unternehmer">
+            <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="unternehmer20141017164704647" name="unternehmer">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Verguetungsart">
+            <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="verguetungsart20141017165727190" name="verguetungsart">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="AMO">
+            <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="amo20141017165840232" name="amo">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
+    </layer-tree-group>
+    <relations>
+        <relation referencingLayer="amo20141017165840232" referencedLayer="auftrag20141017164220623" id="fk_auftrag_amo" name="AMO">
+            <fieldRef referencedField="id" referencingField="auftrag_id"/>
+        </relation>
+        <relation referencingLayer="planzahlung20141017170945726" referencedLayer="auftrag20141017164220623" id="fk_auftrag_planzahlung" name="Planzahlung">
+            <fieldRef referencedField="id" referencingField="auftrag_id"/>
+        </relation>
+        <relation referencingLayer="auftrag20141017164220623" referencedLayer="projekt20141017164220692" id="fk_auftrag_projekt" name="Auftraege">
+            <fieldRef referencedField="id" referencingField="projekt_id"/>
+        </relation>
+        <relation referencingLayer="rechnung20141017170945759" referencedLayer="auftrag20141017164220623" id="fk_auftrag_rechnung" name="Rechnung">
+            <fieldRef referencedField="id" referencingField="auftrag_id"/>
+        </relation>
+        <relation referencingLayer="auftrag20141017164220623" referencedLayer="unternehmer20141017164704647" id="fk_auftrag_unternehmer" name="Auftrag_UNternehmer">
+            <fieldRef referencedField="id" referencingField="unternehmer_id"/>
+        </relation>
+        <relation referencingLayer="plankostenkonto20141017154536076" referencedLayer="konto20141017154536029" id="fk_konto_plankostenkonto" name="Plankostenkonto">
+            <fieldRef referencedField="id" referencingField="konto_id"/>
+        </relation>
+        <relation referencingLayer="projekt20141017164220692" referencedLayer="konto20141017154536029" id="fk_konto_projekt" name="Projekte">
+            <fieldRef referencedField="id" referencingField="konto_id"/>
+        </relation>
+    </relations>
+    <mapcanvas>
+        <units>degrees</units>
+        <extent>
+            <xmin>-5.61093861092152935</xmin>
+            <ymin>4.92893060524353643</ymin>
+            <xmax>-0.99341203648445564</xmax>
+            <ymax>13.30678967900327336</ymax>
+        </extent>
+        <projections>0</projections>
+        <destinationsrs>
+            <spatialrefsys>
+                <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
+                <srsid>1919</srsid>
+                <srid>21781</srid>
+                <authid>EPSG:21781</authid>
+                <description>CH1903 / LV03</description>
+                <projectionacronym>somerc</projectionacronym>
+                <ellipsoidacronym>bessel</ellipsoidacronym>
+                <geographicflag>false</geographicflag>
+            </spatialrefsys>
+        </destinationsrs>
+        <layer_coordinate_transform_info/>
+    </mapcanvas>
+    <visibility-presets/>
+    <layer-tree-canvas>
+        <custom-order enabled="0">
+            <item>konto20141017154536029</item>
+            <item>plankostenkonto20141017154536076</item>
+            <item>rechnungsjahr20141017154536106</item>
+            <item>auftrag20141017164220623</item>
+            <item>projekt20141017164220692</item>
+            <item>unternehmer20141017164704647</item>
+            <item>verguetungsart20141017165727190</item>
+            <item>amo20141017165840232</item>
+            <item>planzahlung20141017170945726</item>
+            <item>rechnung20141017170945759</item>
+        </custom-order>
+    </layer-tree-canvas>
+    <legend updateDrawingOrder="true">
+        <legendgroup open="true" checked="Qt::Unchecked" name="Teilzahlungen">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="planzahlung" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="planzahlung20141017170945726" visible="0"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="rechnung" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="rechnung20141017170945759" visible="0"/>
+                </filegroup>
+            </legendlayer>
+        </legendgroup>
+        <legendgroup open="true" checked="Qt::Unchecked" name="Buchaltung">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="plankostenkonto" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="plankostenkonto20141017154536076" visible="0"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="konto" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="konto20141017154536029" visible="0"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="rechnungsjahr" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="rechnungsjahr20141017154536106" visible="0"/>
+                </filegroup>
+            </legendlayer>
+        </legendgroup>
+        <legendgroup open="true" checked="Qt::Unchecked" name="Projekte">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="auftrag" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="auftrag20141017164220623" visible="0"/>
+                </filegroup>
+            </legendlayer>
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="projekt" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="projekt20141017164220692" visible="0"/>
+                </filegroup>
+            </legendlayer>
+        </legendgroup>
+        <legendgroup open="true" checked="Qt::Unchecked" name="Unternehmer">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="unternehmer" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="unternehmer20141017164704647" visible="0"/>
+                </filegroup>
+            </legendlayer>
+        </legendgroup>
+        <legendgroup open="true" checked="Qt::Unchecked" name="Verguetungsart">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="verguetungsart" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="verguetungsart20141017165727190" visible="0"/>
+                </filegroup>
+            </legendlayer>
+        </legendgroup>
+        <legendgroup open="true" checked="Qt::Unchecked" name="AMO">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="amo" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="amo20141017165840232" visible="0"/>
+                </filegroup>
+            </legendlayer>
+        </legendgroup>
+    </legend>
+    <projectlayers layercount="10">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>amo20141017165840232</id>
+            <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."amo" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>amo</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties/>
+            <provider encoding="System">postgres</provider>
+            <previewExpression>COALESCE( "amo_nr", '&lt;NULL>' )</previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="RelationReference" name="auftrag_id">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="fk_auftrag_amo" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="amo_nr">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="RelationReference" name="auftrag_id">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="fk_auftrag_amo" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="amo_nr">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>auftrag20141017164220623</id>
+            <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."auftrag" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>auftrag</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties/>
+            <provider encoding="System">postgres</provider>
+            <previewExpression>coalesce(name, '&lt;NULL>')</previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="Hidden" name="id">
+                    <widgetv2config fieldEditable="1" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="projekt_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="kosten">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="mwst">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="verguetungsart_id">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="verguetungsart20141017165727190" Value="art" labelOnTop="0" AllowMulti="0"/>
+                </edittype>
+                <edittype widgetv2type="RelationReference" name="unternehmer_id">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="fk_auftrag_unternehmer" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
+                </edittype>
+                <edittype widgetv2type="DateTime" name="datum_start">
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="DateTime" name="datum_ende">
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="DateTime" name="datum_abschluss">
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="CheckBox" name="geplant">
+                    <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>tablayout</editorlayout>
+            <aliases>
+                <alias field="bemerkung" index="11" name="Bemerkungen"/>
+                <alias field="datum_abschluss" index="9" name="Auftragsabschluss"/>
+                <alias field="datum_ende" index="8" name="Auftragsende"/>
+                <alias field="datum_start" index="7" name="Auftragsbeginn"/>
+                <alias field="geplant" index="10" name="Auftrag geplant?"/>
+                <alias field="kosten" index="3" name="Kosten (exkl. MWST)"/>
+                <alias field="mwst" index="4" name="MWST [%]"/>
+                <alias field="name" index="2" name="Auftragsname"/>
+                <alias field="projekt_id" index="1" name="Projekt"/>
+                <alias field="unternehmer_id" index="6" name="Unternehmer"/>
+                <alias field="verguetungsart_id" index="5" name="Vergütungsart"/>
+            </aliases>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeEditorForm>
+                <attributeEditorContainer name="Allgemein">
+                    <attributeEditorField index="1" name="projekt_id"/>
+                    <attributeEditorField index="2" name="name"/>
+                    <attributeEditorField index="3" name="kosten"/>
+                    <attributeEditorField index="4" name="mwst"/>
+                    <attributeEditorField index="5" name="verguetungsart_id"/>
+                    <attributeEditorField index="6" name="unternehmer_id"/>
+                    <attributeEditorField index="7" name="datum_start"/>
+                    <attributeEditorField index="8" name="datum_ende"/>
+                    <attributeEditorField index="9" name="datum_abschluss"/>
+                    <attributeEditorField index="10" name="geplant"/>
+                    <attributeEditorField index="11" name="bemerkung"/>
+                </attributeEditorContainer>
+                <attributeEditorContainer name="Zahlungen">
+                    <attributeEditorRelation relation="fk_auftrag_planzahlung" name="fk_auftrag_planzahlung"/>
+                    <attributeEditorRelation relation="fk_auftrag_rechnung" name="fk_auftrag_rechnung"/>
+                </attributeEditorContainer>
+                <attributeEditorContainer name="AMO">
+                    <attributeEditorRelation relation="fk_auftrag_amo" name="fk_auftrag_amo"/>
+                </attributeEditorContainer>
+            </attributeEditorForm>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="Hidden" name="id">
+                    <widgetv2config fieldEditable="1" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="projekt_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="kosten">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="mwst">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="verguetungsart_id">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="id" Layer="verguetungsart20141017165727190" Value="art" labelOnTop="0" AllowMulti="0"/>
+                </edittype>
+                <edittype widgetv2type="RelationReference" name="unternehmer_id">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="fk_auftrag_unternehmer" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
+                </edittype>
+                <edittype widgetv2type="DateTime" name="datum_start">
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="DateTime" name="datum_ende">
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="DateTime" name="datum_abschluss">
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="CheckBox" name="geplant">
+                    <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>konto20141017154536029</id>
+            <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."konto" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>konto</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties/>
+            <provider encoding="System">postgres</provider>
+            <previewExpression>COALESCE("nr", '&lt;NULL>')</previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="Hidden" name="id">
+                    <widgetv2config fieldEditable="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="nr">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <aliases>
+                <alias field="bemerkung" index="3" name="Bemerkungen"/>
+                <alias field="name" index="2" name="Name"/>
+                <alias field="nr" index="1" name="Kontonummer"/>
+            </aliases>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="Hidden" name="id">
+                    <widgetv2config fieldEditable="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="nr">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>plankostenkonto20141017154536076</id>
+            <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."plankostenkonto" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>plankostenkonto</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties/>
+            <provider encoding="System">postgres</provider>
+            <previewExpression>coalesce("bemerkung", '&lt;NULL>') || ' - ' || jahr</previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="Hidden" name="id">
+                    <widgetv2config fieldEditable="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="RelationReference" name="konto_id">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="fk_konto_plankostenkonto" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="budget">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueMap" name="jahr">
+                    <widgetv2config fieldEditable="1" labelOnTop="0">
+                        <value key="2012" value="2012"/>
+                        <value key="2013" value="2013"/>
+                        <value key="2014" value="2014"/>
+                        <value key="2015" value="2015"/>
+                        <value key="2016" value="2016"/>
+                        <value key="2017" value="2017"/>
+                    </widgetv2config>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <aliases>
+                <alias field="bemerkung" index="4" name="Bemerkungen"/>
+                <alias field="budget" index="2" name="Budget"/>
+                <alias field="jahr" index="3" name="Rechnungsjahr"/>
+                <alias field="konto_id" index="1" name="Konto"/>
+            </aliases>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="Hidden" name="id">
+                    <widgetv2config fieldEditable="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="RelationReference" name="konto_id">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="fk_konto_plankostenkonto" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="budget">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueMap" name="jahr">
+                    <widgetv2config fieldEditable="1" labelOnTop="0">
+                        <value key="2012" value="2012"/>
+                        <value key="2013" value="2013"/>
+                        <value key="2014" value="2014"/>
+                        <value key="2015" value="2015"/>
+                        <value key="2016" value="2016"/>
+                        <value key="2017" value="2017"/>
+                    </widgetv2config>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>planzahlung20141017170945726</id>
+            <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."planzahlung" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>planzahlung</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties/>
+            <provider encoding="System">postgres</provider>
+            <previewExpression>coalesce(id, '&lt;NULL>')</previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="Hidden" name="id">
+                    <widgetv2config fieldEditable="1" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="RelationReference" name="auftrag_id">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="fk_auftrag_planzahlung" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="prozent">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="kosten">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="mwst">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="rechnungsjahr">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <aliases>
+                <alias field="auftrag_id" index="1" name="Auftrag"/>
+                <alias field="bemerkung" index="6" name="Bemerkungen"/>
+                <alias field="kosten" index="3" name="Kosten"/>
+                <alias field="mwst" index="4" name="MWST [%]"/>
+                <alias field="prozent" index="2" name="Prozent"/>
+                <alias field="rechnungsjahr" index="5" name="Rechnungsjahr"/>
+            </aliases>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="Hidden" name="id">
+                    <widgetv2config fieldEditable="1" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="RelationReference" name="auftrag_id">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="fk_auftrag_planzahlung" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="prozent">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="kosten">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="mwst">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="rechnungsjahr">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>projekt20141017164220692</id>
+            <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."projekt" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>projekt</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties/>
+            <provider encoding="System">postgres</provider>
+            <previewExpression>COALESCE( "name", '&lt;NULL>' )</previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="Hidden" name="id">
+                    <widgetv2config fieldEditable="1" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="RelationReference" name="konto_id">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="fk_konto_projekt" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="kosten">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="mwst">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="DateTime" name="datum_start">
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="DateTime" name="datum_ende">
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>tablayout</editorlayout>
+            <aliases>
+                <alias field="bemerkung" index="7" name="Bmerkungen"/>
+                <alias field="datum_ende" index="6" name="Projektende"/>
+                <alias field="datum_start" index="5" name="Projektstart"/>
+                <alias field="konto_id" index="1" name="Konto"/>
+                <alias field="kosten" index="3" name="Kosten (exkl. MWST)"/>
+                <alias field="mwst" index="4" name="MWST [%]"/>
+                <alias field="name" index="2" name="Projektname"/>
+            </aliases>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeEditorForm>
+                <attributeEditorContainer name="Allgemein">
+                    <attributeEditorField index="1" name="konto_id"/>
+                    <attributeEditorField index="2" name="name"/>
+                    <attributeEditorField index="3" name="kosten"/>
+                    <attributeEditorField index="4" name="mwst"/>
+                    <attributeEditorField index="5" name="datum_start"/>
+                    <attributeEditorField index="6" name="datum_ende"/>
+                    <attributeEditorField index="7" name="bemerkung"/>
+                </attributeEditorContainer>
+                <attributeEditorContainer name="Aufträge">
+                    <attributeEditorRelation relation="fk_auftrag_projekt" name="fk_auftrag_projekt"/>
+                </attributeEditorContainer>
+            </attributeEditorForm>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="Hidden" name="id">
+                    <widgetv2config fieldEditable="1" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="RelationReference" name="konto_id">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="fk_konto_projekt" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="kosten">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="mwst">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="DateTime" name="datum_start">
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="DateTime" name="datum_ende">
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>rechnung20141017170945759</id>
+            <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."rechnung" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>rechnung</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties/>
+            <provider encoding="System">postgres</provider>
+            <previewExpression>coalesce(id, '&lt;NULL>')</previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="RelationReference" name="auftrag_id">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="fk_auftrag_rechnung" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="kosten">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="mwst">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="DateTime" name="datum_eingang">
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="DateTime" name="datum_ausgang">
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="rechnungsjahr">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="jahr" Layer="rechnungsjahr20141017154536106" Value="jahr" labelOnTop="0" AllowMulti="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <aliases>
+                <alias field="auftrag_id" index="1" name="Auftrag"/>
+                <alias field="bemerkung" index="7" name="Bemerkungen"/>
+                <alias field="datum_ausgang" index="5" name="Ausgang"/>
+                <alias field="datum_eingang" index="4" name="Eingang"/>
+                <alias field="kosten" index="2" name="Kosten (exkl. MWST)"/>
+                <alias field="mwst" index="3" name="MWST [%]"/>
+                <alias field="rechnungsjahr" index="6" name="Rechnungsjahr"/>
+            </aliases>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="RelationReference" name="auftrag_id">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="fk_auftrag_rechnung" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="kosten">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="mwst">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="DateTime" name="datum_eingang">
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="DateTime" name="datum_ausgang">
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="ValueRelation" name="rechnungsjahr">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="jahr" Layer="rechnungsjahr20141017154536106" Value="jahr" labelOnTop="0" AllowMulti="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>rechnungsjahr20141017154536106</id>
+            <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='tid' table="av_geschaeftskontrolle"."rechnungsjahr" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>rechnungsjahr</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties/>
+            <provider encoding="System">postgres</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="jahr">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="jahr">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>unternehmer20141017164704647</id>
+            <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."unternehmer" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>unternehmer</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties/>
+            <provider encoding="System">postgres</provider>
+            <previewExpression>coalesce(firma, '&lt;NULL>') || ' - ' || coalesce(nachname, '&lt;NULL>') || ' ' || coalesce(vorname, '&lt;NULL>')</previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="Hidden" name="id">
+                    <widgetv2config fieldEditable="1" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="firma">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="Hidden" name="uid">
+                    <widgetv2config fieldEditable="1" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="nachname">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vorname">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="strasse">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="hausnummer">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="plz">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ortschaft">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <aliases>
+                <alias field="bemerkung" index="9" name="Bemerkungen"/>
+                <alias field="firma" index="1" name="Firma"/>
+                <alias field="hausnummer" index="6" name="Hausnummer"/>
+                <alias field="nachname" index="3" name="Nachname"/>
+                <alias field="ortschaft" index="8" name="Ortschaft"/>
+                <alias field="plz" index="7" name="PLZ"/>
+                <alias field="strasse" index="5" name="Strasse"/>
+                <alias field="uid" index="2" name="UID"/>
+                <alias field="vorname" index="4" name="Vorname"/>
+            </aliases>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="Hidden" name="id">
+                    <widgetv2config fieldEditable="1" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="firma">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="Hidden" name="uid">
+                    <widgetv2config fieldEditable="1" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="nachname">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="vorname">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="strasse">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="hausnummer">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="plz">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="ortschaft">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="bemerkung">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>verguetungsart20141017165727190</id>
+            <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."verguetungsart" sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>verguetungsart</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+                    <srsid>3452</srsid>
+                    <srid>4326</srid>
+                    <authid>EPSG:4326</authid>
+                    <description>WGS 84</description>
+                    <projectionacronym>longlat</projectionacronym>
+                    <ellipsoidacronym>WGS84</ellipsoidacronym>
+                    <geographicflag>true</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <customproperties/>
+            <provider encoding="System">postgres</provider>
+            <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="art">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="art">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+    </projectlayers>
+    <properties>
+        <WMSContactPerson type="QString"></WMSContactPerson>
+        <WMSOnlineResource type="QString"></WMSOnlineResource>
+        <WMSUseLayerIDs type="bool">false</WMSUseLayerIDs>
+        <WMSContactOrganization type="QString"></WMSContactOrganization>
+        <WMSKeywordList type="QStringList">
+            <value></value>
+        </WMSKeywordList>
+        <WFSUrl type="QString"></WFSUrl>
+        <Paths>
+            <Absolute type="bool">false</Absolute>
+        </Paths>
+        <WMSServiceTitle type="QString"></WMSServiceTitle>
+        <WFSLayers type="QStringList"/>
+        <WMSContactMail type="QString"></WMSContactMail>
+        <PositionPrecision>
+            <DecimalPlaces type="int">2</DecimalPlaces>
+            <Automatic type="bool">true</Automatic>
+            <DegreeFormat type="QString">D</DegreeFormat>
+        </PositionPrecision>
+        <WCSUrl type="QString"></WCSUrl>
+        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
+        <WMSContactPhone type="QString"></WMSContactPhone>
+        <WMSServiceAbstract type="QString"></WMSServiceAbstract>
+        <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
+        <Measure>
+            <Ellipsoid type="QString">NONE</Ellipsoid>
+        </Measure>
+        <WMSPrecision type="QString">8</WMSPrecision>
+        <WFSTLayers>
+            <Insert type="QStringList"/>
+            <Update type="QStringList"/>
+            <Delete type="QStringList"/>
+        </WFSTLayers>
+        <Gui>
+            <SelectionColorBluePart type="int">0</SelectionColorBluePart>
+            <CanvasColorGreenPart type="int">255</CanvasColorGreenPart>
+            <CanvasColorRedPart type="int">255</CanvasColorRedPart>
+            <SelectionColorRedPart type="int">255</SelectionColorRedPart>
+            <SelectionColorAlphaPart type="int">255</SelectionColorAlphaPart>
+            <SelectionColorGreenPart type="int">255</SelectionColorGreenPart>
+            <CanvasColorBluePart type="int">255</CanvasColorBluePart>
+        </Gui>
+        <Digitizing>
+            <LayerSnappingList type="QStringList"/>
+            <LayerSnappingEnabledList type="QStringList"/>
+            <AvoidIntersectionsList type="QStringList"/>
+            <LayerSnappingToleranceUnitList type="QStringList"/>
+            <LayerSnapToList type="QStringList"/>
+            <LayerSnappingToleranceList type="QStringList"/>
+        </Digitizing>
+        <Identify>
+            <disabledLayers type="QStringList"/>
+        </Identify>
+        <Macros>
+            <pythonCode type="QString"></pythonCode>
+        </Macros>
+        <WMSAccessConstraints type="QString"></WMSAccessConstraints>
+        <WCSLayers type="QStringList"/>
+        <Legend>
+            <filterByMap type="bool">false</filterByMap>
+        </Legend>
+        <SpatialRefSys>
+            <ProjectCRSProj4String type="QString">+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</ProjectCRSProj4String>
+            <ProjectCrs type="QString">EPSG:21781</ProjectCrs>
+            <ProjectCRSID type="int">1919</ProjectCRSID>
+        </SpatialRefSys>
+        <DefaultStyles>
+            <Fill type="QString"></Fill>
+            <Line type="QString"></Line>
+            <Marker type="QString"></Marker>
+            <RandomColors type="bool">true</RandomColors>
+            <AlphaInt type="int">255</AlphaInt>
+            <ColorRamp type="QString"></ColorRamp>
+        </DefaultStyles>
+        <WMSFees type="QString"></WMSFees>
+        <WMSImageQuality type="int">90</WMSImageQuality>
+        <WMSUrl type="QString"></WMSUrl>
+    </properties>
+</qgis>
