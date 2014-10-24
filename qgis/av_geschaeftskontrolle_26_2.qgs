@@ -1,7 +1,7 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
 <qgis projectname="" version="2.5.0-Master">
     <title></title>
-    <layer-tree-group expanded="1" checked="Qt::Unchecked" name="">
+    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
         <customproperties/>
         <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Teilzahlungen">
             <customproperties/>
@@ -51,6 +51,12 @@
                 <customproperties/>
             </layer-tree-layer>
         </layer-tree-group>
+        <layer-tree-group expanded="1" checked="Qt::Checked" name="Perimeter">
+            <customproperties/>
+            <layer-tree-layer expanded="1" checked="Qt::Checked" id="perimeter20141017172258568" name="perimeter">
+                <customproperties/>
+            </layer-tree-layer>
+        </layer-tree-group>
     </layer-tree-group>
     <relations>
         <relation referencingLayer="amo20141017165840232" referencedLayer="auftrag20141017164220623" id="fk_auftrag_amo" name="AMO">
@@ -78,10 +84,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>-5.61093861092152935</xmin>
-            <ymin>4.92893060524353643</ymin>
-            <xmax>-0.99341203648445564</xmax>
-            <ymax>13.30678967900327336</ymax>
+            <xmin>599256.27204209438059479</xmin>
+            <ymin>217224.63893392926547676</ymin>
+            <xmax>606742.92105496174190193</xmax>
+            <ymax>225768.11043278186116368</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -111,6 +117,7 @@
             <item>amo20141017165840232</item>
             <item>planzahlung20141017170945726</item>
             <item>rechnung20141017170945759</item>
+            <item>perimeter20141017172258568</item>
         </custom-order>
     </layer-tree-canvas>
     <legend updateDrawingOrder="true">
@@ -176,8 +183,15 @@
                 </filegroup>
             </legendlayer>
         </legendgroup>
+        <legendgroup open="true" checked="Qt::Checked" name="Perimeter">
+            <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="perimeter" showFeatureCount="0">
+                <filegroup open="true" hidden="false">
+                    <legendlayerfile isInOverview="0" layerid="perimeter20141017172258568" visible="1"/>
+                </filegroup>
+            </legendlayer>
+        </legendgroup>
     </legend>
-    <projectlayers layercount="10">
+    <projectlayers layercount="11">
         <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>amo20141017165840232</id>
             <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."amo" sql=</datasource>
@@ -235,7 +249,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>auftrag20141017164220623</id>
             <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."auftrag" sql=</datasource>
             <title></title>
@@ -296,7 +310,7 @@
                     <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="bemerkung">
-                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
             <editform>.</editform>
@@ -377,11 +391,11 @@
                     <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="bemerkung">
-                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>konto20141017154536029</id>
             <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."konto" sql=</datasource>
             <title></title>
@@ -418,7 +432,7 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="bemerkung">
-                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
             <editform>.</editform>
@@ -445,11 +459,108 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="bemerkung">
-                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+            <id>perimeter20141017172258568</id>
+            <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' srid=21781 type=MULTIPOLYGON table="av_geschaeftskontrolle"."perimeter" (perimeter) sql=</datasource>
+            <title></title>
+            <abstract></abstract>
+            <keywordList>
+                <value></value>
+            </keywordList>
+            <layername>perimeter</layername>
+            <srs>
+                <spatialrefsys>
+                    <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
+                    <srsid>1919</srsid>
+                    <srid>21781</srid>
+                    <authid>EPSG:21781</authid>
+                    <description>CH1903 / LV03</description>
+                    <projectionacronym>somerc</projectionacronym>
+                    <ellipsoidacronym>bessel</ellipsoidacronym>
+                    <geographicflag>false</geographicflag>
+                </spatialrefsys>
+            </srs>
+            <provider encoding="System">postgres</provider>
+            <previewExpression></previewExpression>
+            <vectorjoins/>
+            <expressionfields/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="projekt_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+            <renderer-v2 symbollevels="0" type="singleSymbol">
+                <symbols>
+                    <symbol alpha="1" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
+                            <prop k="color" v="69,187,50,255"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
+                            <prop k="offset_unit" v="MM"/>
+                            <prop k="outline_color" v="0,0,0,255"/>
+                            <prop k="outline_style" v="solid"/>
+                            <prop k="outline_width" v="0.26"/>
+                            <prop k="outline_width_unit" v="MM"/>
+                            <prop k="style" v="solid"/>
+                        </layer>
+                    </symbol>
+                </symbols>
+                <rotation/>
+                <sizescale scalemethod="area"/>
+            </renderer-v2>
+            <customproperties/>
+            <blendMode>0</blendMode>
+            <featureBlendMode>0</featureBlendMode>
+            <layerTransparency>0</layerTransparency>
+            <displayfield>id</displayfield>
+            <label>0</label>
+            <labelattributes>
+                <label fieldname="" text="Label"/>
+                <family fieldname="" name="Ubuntu"/>
+                <size fieldname="" units="pt" value="12"/>
+                <bold fieldname="" on="0"/>
+                <italic fieldname="" on="0"/>
+                <underline fieldname="" on="0"/>
+                <strikeout fieldname="" on="0"/>
+                <color fieldname="" red="0" blue="0" green="0"/>
+                <x fieldname=""/>
+                <y fieldname=""/>
+                <offset x="0" y="0" units="pt" yfieldname="" xfieldname=""/>
+                <angle fieldname="" value="0" auto="0"/>
+                <alignment fieldname="" value="center"/>
+                <buffercolor fieldname="" red="255" blue="255" green="255"/>
+                <buffersize fieldname="" units="pt" value="1"/>
+                <bufferenabled fieldname="" on=""/>
+                <multilineenabled fieldname="" on=""/>
+                <selectedonly on=""/>
+            </labelattributes>
+            <editform>.</editform>
+            <editforminit></editforminit>
+            <featformsuppress>0</featformsuppress>
+            <annotationform>.</annotationform>
+            <editorlayout>generatedlayout</editorlayout>
+            <excludeAttributesWMS/>
+            <excludeAttributesWFS/>
+            <attributeactions/>
+            <edittypes>
+                <edittype widgetv2type="TextEdit" name="id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype widgetv2type="TextEdit" name="projekt_id">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+            </edittypes>
+        </maplayer>
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>plankostenkonto20141017154536076</id>
             <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."plankostenkonto" sql=</datasource>
             <title></title>
@@ -496,7 +607,7 @@
                     </widgetv2config>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="bemerkung">
-                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
             <editform>.</editform>
@@ -534,7 +645,7 @@
                     </widgetv2config>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="bemerkung">
-                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
         </maplayer>
@@ -561,7 +672,7 @@
             </srs>
             <customproperties/>
             <provider encoding="System">postgres</provider>
-            <previewExpression>coalesce(id, '&lt;NULL>')</previewExpression>
+            <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <expressionfields/>
             <edittypes>
@@ -575,13 +686,13 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="kosten">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="mwst">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="rechnungsjahr">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="rechnungsjahr">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="jahr" Layer="rechnungsjahr20141017154536106" Value="jahr" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="bemerkung">
                     <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -593,8 +704,7 @@
             <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <aliases>
-                <alias field="auftrag_id" index="1" name="Auftrag"/>
-                <alias field="bemerkung" index="6" name="Bemerkungen"/>
+                <alias field="bemerkung" index="6" name="Bemerkung"/>
                 <alias field="kosten" index="3" name="Kosten"/>
                 <alias field="mwst" index="4" name="MWST [%]"/>
                 <alias field="prozent" index="2" name="Prozent"/>
@@ -614,20 +724,20 @@
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="kosten">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                    <widgetv2config IsMultiline="0" fieldEditable="0" UseHtml="0" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="mwst">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="rechnungsjahr">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="ValueRelation" name="rechnungsjahr">
+                    <widgetv2config OrderByValue="0" AllowNull="0" FilterExpression="" fieldEditable="1" Key="jahr" Layer="rechnungsjahr20141017154536106" Value="jahr" labelOnTop="0" AllowMulti="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="bemerkung">
                     <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>projekt20141017164220692</id>
             <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."projekt" sql=</datasource>
             <title></title>
@@ -676,7 +786,7 @@
                     <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="bemerkung">
-                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
             <editform>.</editform>
@@ -733,7 +843,7 @@
                     <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="bemerkung">
-                    <widgetv2config IsMultiline="1" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
                 </edittype>
             </edittypes>
         </maplayer>
@@ -760,12 +870,12 @@
             </srs>
             <customproperties/>
             <provider encoding="System">postgres</provider>
-            <previewExpression>coalesce(id, '&lt;NULL>')</previewExpression>
+            <previewExpression>coalesce(auftrag_id, '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <expressionfields/>
             <edittypes>
-                <edittype widgetv2type="TextEdit" name="id">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="Hidden" name="id">
+                    <widgetv2config fieldEditable="1" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="RelationReference" name="auftrag_id">
                     <widgetv2config fieldEditable="1" ShowForm="0" Relation="fk_auftrag_rechnung" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
@@ -796,10 +906,10 @@
             <editorlayout>generatedlayout</editorlayout>
             <aliases>
                 <alias field="auftrag_id" index="1" name="Auftrag"/>
-                <alias field="bemerkung" index="7" name="Bemerkungen"/>
-                <alias field="datum_ausgang" index="5" name="Ausgang"/>
-                <alias field="datum_eingang" index="4" name="Eingang"/>
-                <alias field="kosten" index="2" name="Kosten (exkl. MWST)"/>
+                <alias field="bemerkung" index="7" name="Bemerkung"/>
+                <alias field="datum_ausgang" index="5" name="Datum Ausgang"/>
+                <alias field="datum_eingang" index="4" name="Datum Eingang"/>
+                <alias field="kosten" index="2" name="Kosten"/>
                 <alias field="mwst" index="3" name="MWST [%]"/>
                 <alias field="rechnungsjahr" index="6" name="Rechnungsjahr"/>
             </aliases>
@@ -807,8 +917,8 @@
             <excludeAttributesWFS/>
             <attributeactions/>
             <edittypes>
-                <edittype widgetv2type="TextEdit" name="id">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="Hidden" name="id">
+                    <widgetv2config fieldEditable="1" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="RelationReference" name="auftrag_id">
                     <widgetv2config fieldEditable="1" ShowForm="0" Relation="fk_auftrag_rechnung" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
@@ -1067,8 +1177,8 @@
             <DegreeFormat type="QString">D</DegreeFormat>
         </PositionPrecision>
         <WCSUrl type="QString"></WCSUrl>
-        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
         <WMSContactPhone type="QString"></WMSContactPhone>
+        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
         <WMSServiceAbstract type="QString"></WMSServiceAbstract>
         <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
         <Measure>
@@ -1090,12 +1200,22 @@
             <CanvasColorBluePart type="int">255</CanvasColorBluePart>
         </Gui>
         <Digitizing>
-            <LayerSnappingList type="QStringList"/>
-            <LayerSnappingEnabledList type="QStringList"/>
+            <LayerSnappingList type="QStringList">
+                <value>perimeter20141017172258568</value>
+            </LayerSnappingList>
+            <LayerSnappingEnabledList type="QStringList">
+                <value>disabled</value>
+            </LayerSnappingEnabledList>
             <AvoidIntersectionsList type="QStringList"/>
-            <LayerSnappingToleranceUnitList type="QStringList"/>
-            <LayerSnapToList type="QStringList"/>
-            <LayerSnappingToleranceList type="QStringList"/>
+            <LayerSnappingToleranceUnitList type="QStringList">
+                <value>1</value>
+            </LayerSnappingToleranceUnitList>
+            <LayerSnapToList type="QStringList">
+                <value>to_vertex_and_segment</value>
+            </LayerSnapToList>
+            <LayerSnappingToleranceList type="QStringList">
+                <value>20.000000</value>
+            </LayerSnappingToleranceList>
         </Digitizing>
         <Identify>
             <disabledLayers type="QStringList"/>
