@@ -249,7 +249,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>auftrag20141017164220623</id>
             <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."auftrag" sql=</datasource>
             <title></title>
@@ -279,8 +279,8 @@
                 <edittype widgetv2type="Hidden" name="id">
                     <widgetv2config fieldEditable="1" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="projekt_id">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="RelationReference" name="projekt_id">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="fk_auftrag_projekt" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="name">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
@@ -360,8 +360,8 @@
                 <edittype widgetv2type="Hidden" name="id">
                     <widgetv2config fieldEditable="1" labelOnTop="0"/>
                 </edittype>
-                <edittype widgetv2type="TextEdit" name="projekt_id">
-                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                <edittype widgetv2type="RelationReference" name="projekt_id">
+                    <widgetv2config fieldEditable="1" ShowForm="0" Relation="fk_auftrag_projekt" ReadOnly="0" MapIdentification="0" labelOnTop="0" AllowNULL="0"/>
                 </edittype>
                 <edittype widgetv2type="TextEdit" name="name">
                     <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>

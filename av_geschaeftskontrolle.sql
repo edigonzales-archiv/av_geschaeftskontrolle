@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.3.5
 -- Dumped by pg_dump version 9.3.5
--- Started on 2014-10-24 18:12:51 CEST
+-- Started on 2014-10-29 08:02:09 CET
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -985,6 +985,7 @@ INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unte
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (76, 35, 'Ergänzung Mutationsplan mit öffentlichen Grundstücksnummern (BSB Oe/Gr)', 143.15, 8, 2, 2, '2014-10-07', '2014-10-07', NULL, false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (77, 10, 'Erweiterung Checkservice MOCHECKSO mit DM01AVSOLV95', 800.00, 8, 2, 10, '2014-10-13', '2014-11-28', NULL, false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (78, 36, 'PNF/Homogenisierung Grenchen/Bettlach Etappe 2014-1 Phase 1 (Pilot)', 30000.00, 8, 1, 2, '2014-10-13', '2014-12-31', NULL, false, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (79, 37, 'Abänderung Mutationspläne und Mitteilungsschreiben Flächen alt/neu (BSB Oe)', 1608.50, 8, 2, 2, '2014-10-29', '2014-10-29', '2014-10-29', false, NULL);
 
 
 --
@@ -993,7 +994,7 @@ INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unte
 -- Name: auftrag_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('auftrag_id_seq', 78, true);
+SELECT pg_catalog.setval('auftrag_id_seq', 79, true);
 
 
 --
@@ -1138,6 +1139,7 @@ INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, b
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (24, 18, 100.000, 4600.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (25, 19, 100.000, 5000.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (26, 20, 100.000, 5000.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (92, 79, 100.000, 1608.50, 8, 2014, NULL);
 
 
 --
@@ -1146,7 +1148,7 @@ INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, b
 -- Name: planzahlung_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('planzahlung_id_seq', 91, true);
+SELECT pg_catalog.setval('planzahlung_id_seq', 92, true);
 
 
 --
@@ -1195,6 +1197,7 @@ INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, 
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (34, 1, 'Strassenachsen bereinigen (AVT)', 7000.00, 8, '2014-10-06', '2014-12-31', NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (35, 1, 'Ergänzung Mutationsplan mit öffentlichen Grundstücksnummern', 5000.00, 8, '2014-10-07', '2014-12-31', NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (36, 1, 'PNF/Homogenisierung Grenchen/Bettlach Etappe 2014-1', 150000.00, 8, '2014-10-13', '2014-10-13', NULL);
+INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (37, 1, 'Einführung Capitastra', 6000.00, 8, '2014-10-29', '2015-12-31', NULL);
 
 
 --
@@ -1203,7 +1206,7 @@ INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, 
 -- Name: projekt_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('projekt_id_seq', 36, true);
+SELECT pg_catalog.setval('projekt_id_seq', 37, true);
 
 
 --
@@ -1274,6 +1277,7 @@ INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang
 INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (61, 65, 5600.00, 8, '2014-10-06', '2014-10-06', 2014, '1 Rechnung (13''600.-)');
 INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (62, 76, 143.15, 8, '2014-10-07', '2014-10-07', 2014, NULL);
 INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (63, 77, 1050.00, 8, '2014-10-24', '2014-10-24', 2014, 'Zu Pauschale kommt noch pro rata eines neuen Datenmodells.');
+INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (64, 79, 1608.50, 8, '2014-10-28', '2014-10-29', 2014, NULL);
 
 
 --
@@ -1282,7 +1286,7 @@ INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang
 -- Name: rechnung_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('rechnung_id_seq', 63, true);
+SELECT pg_catalog.setval('rechnung_id_seq', 64, true);
 
 
 --
@@ -1922,7 +1926,7 @@ GRANT ALL ON TABLE vr_zahlungsplan_14_17 TO stefan;
 GRANT SELECT ON TABLE vr_zahlungsplan_14_17 TO mspublic;
 
 
--- Completed on 2014-10-24 18:12:51 CEST
+-- Completed on 2014-10-29 08:02:09 CET
 
 --
 -- PostgreSQL database dump complete
