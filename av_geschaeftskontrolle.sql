@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.3.5
 -- Dumped by pg_dump version 9.3.5
--- Started on 2014-11-03 07:35:11 CET
+-- Started on 2014-11-03 16:21:56 CET
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -1280,6 +1280,8 @@ INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang
 INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (63, 77, 1050.00, 8, '2014-10-24', '2014-10-24', 2014, 'Zu Pauschale kommt noch pro rata eines neuen Datenmodells.');
 INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (64, 79, 1608.50, 8, '2014-10-28', '2014-10-29', 2014, NULL);
 INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (65, 67, 1500.00, 8, '2014-10-16', '2014-11-03', 2014, NULL);
+INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (66, 71, 1365.00, 8, '2014-10-14', '2014-11-03', 2014, NULL);
+INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (67, 74, 420.00, 8, '2014-10-09', '2014-11-03', 2014, NULL);
 
 
 --
@@ -1288,7 +1290,7 @@ INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang
 -- Name: rechnung_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('rechnung_id_seq', 65, true);
+SELECT pg_catalog.setval('rechnung_id_seq', 67, true);
 
 
 --
@@ -1928,7 +1930,7 @@ GRANT ALL ON TABLE vr_zahlungsplan_14_17 TO stefan;
 GRANT SELECT ON TABLE vr_zahlungsplan_14_17 TO mspublic;
 
 
--- Completed on 2014-11-03 07:35:11 CET
+-- Completed on 2014-11-03 16:21:56 CET
 
 --
 -- PostgreSQL database dump complete

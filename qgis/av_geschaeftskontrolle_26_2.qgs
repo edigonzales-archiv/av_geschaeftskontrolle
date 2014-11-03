@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="2.5.0-Master">
+<qgis projectname="" version="2.7.0-Master">
     <title></title>
     <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
         <customproperties/>
@@ -84,10 +84,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>596674.14168880018405616</xmin>
-            <ymin>216585.05212529239361174</ymin>
-            <xmax>610968.02669649687595665</xmax>
-            <ymax>225128.52362414562958293</ymax>
+            <xmin>597863.79908718029037118</xmin>
+            <ymin>216971.29474097143975087</ymin>
+            <xmax>609062.35041608335450292</xmax>
+            <ymax>224212.16495363690773956</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
