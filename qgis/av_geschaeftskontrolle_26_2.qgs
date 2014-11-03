@@ -84,10 +84,10 @@
     <mapcanvas>
         <units>degrees</units>
         <extent>
-            <xmin>599256.27204209438059479</xmin>
-            <ymin>217224.63893392926547676</ymin>
-            <xmax>606742.92105496174190193</xmax>
-            <ymax>225768.11043278186116368</ymax>
+            <xmin>596674.14168880018405616</xmin>
+            <ymin>216585.05212529239361174</ymin>
+            <xmax>610968.02669649687595665</xmax>
+            <ymax>225128.52362414562958293</ymax>
         </extent>
         <projections>0</projections>
         <destinationsrs>
@@ -672,7 +672,7 @@
             </srs>
             <customproperties/>
             <provider encoding="System">postgres</provider>
-            <previewExpression>COALESCE("id", '&lt;NULL>')</previewExpression>
+            <previewExpression>coalesce(id, '&lt;NULL>')</previewExpression>
             <vectorjoins/>
             <expressionfields/>
             <edittypes>
