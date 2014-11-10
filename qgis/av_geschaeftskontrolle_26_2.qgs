@@ -249,7 +249,7 @@
                 </edittype>
             </edittypes>
         </maplayer>
-        <maplayer minimumScale="0" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+        <maplayer minimumScale="-4.65661e-10" maximumScale="1e+08" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
             <id>auftrag20141017164220623</id>
             <datasource>dbname='rosebud2' host=localhost port=5432 user='stefan' password='ziegler12' sslmode=disable key='id' table="av_geschaeftskontrolle"."auftrag" sql=</datasource>
             <title></title>
@@ -304,7 +304,7 @@
                     <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="DateTime" name="datum_abschluss">
-                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="CheckBox" name="geplant">
                     <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>
@@ -385,7 +385,7 @@
                     <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="DateTime" name="datum_abschluss">
-                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="0" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
+                    <widgetv2config fieldEditable="1" calendar_popup="1" allow_null="1" display_format="yyyy-MM-dd" field_format="yyyy-MM-dd" labelOnTop="0"/>
                 </edittype>
                 <edittype widgetv2type="CheckBox" name="geplant">
                     <widgetv2config fieldEditable="1" UncheckedState="f" CheckedState="t" labelOnTop="0"/>

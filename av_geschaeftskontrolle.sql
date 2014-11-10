@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.3.5
 -- Dumped by pg_dump version 9.3.5
--- Started on 2014-11-05 11:43:46 CET
+-- Started on 2014-11-10 10:29:44 CET
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -987,6 +987,7 @@ INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unte
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (79, 37, 'Abänderung Mutationspläne und Mitteilungsschreiben Flächen alt/neu (BSB Oe)', 1608.50, 8, 2, 2, '2014-10-29', '2014-10-29', '2014-10-29', false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (78, 36, 'PNF/Homogenisierung Grenchen/Bettlach Etappe 2014-1 Phase 1 (Pilot)', 30000.00, 8, 1, 2, '2014-10-13', '2014-12-31', NULL, false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (80, 38, 'Berichtungsmutation Erschwil GB-Nr. 8,10, 1446', 1693.60, 8, 2, 11, '2014-11-05', '2014-11-30', NULL, false, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (81, 25, 'Bereinigung Differenzen GB - AV (Wasseramt) 2. Runde', 11000.00, 8, 1, 1, '2014-11-10', '2014-12-23', NULL, false, NULL);
 
 
 --
@@ -995,7 +996,7 @@ INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unte
 -- Name: auftrag_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('auftrag_id_seq', 80, true);
+SELECT pg_catalog.setval('auftrag_id_seq', 81, true);
 
 
 --
@@ -1061,45 +1062,6 @@ SELECT pg_catalog.setval('plankostenkonto_id_seq', 3, true);
 -- Data for Name: planzahlung; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (80, 69, 20.000, 3200.00, 8, 2015, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (81, 69, 80.000, 12800.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (73, 62, 100.000, 5900.00, 0, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (74, 63, 10.000, 4900.00, 0, 2015, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (79, 68, 100.000, 3800.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (77, 65, 100.000, 5600.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (78, 66, 100.000, 3600.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (75, 63, 90.000, 44100.00, 0, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (10, 12, 44.000, 87120.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (9, 12, 28.000, 55440.00, 8, 2015, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (71, 60, 100.000, 6000.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (72, 61, 100.000, 886.50, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (69, 59, 100.000, 500.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (68, 3, 25.000, 5032.50, 8, 2013, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (27, 21, 100.000, 5000.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (7, 4, 100.000, 211500.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (66, 57, 100.000, 4479.60, 0, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (67, 58, 100.000, 1200.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (8, 12, 28.000, 55440.00, 8, 2013, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (83, 71, 100.000, 1365.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (84, 72, 100.000, 1815.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (85, 73, 100.000, 1680.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (86, 74, 100.000, 420.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (87, 75, 100.000, 1695.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (88, 76, 100.000, 143.15, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (89, 77, 100.000, 800.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (90, 78, 10.000, 3000.00, 8, 2015, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (91, 78, 90.000, 27000.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (44, 38, 100.000, 2080.60, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (45, 39, 100.000, 450.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (82, 70, 100.000, 5000.00, 8, 2015, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (46, 40, 100.000, 750.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (47, 41, 100.000, 5335.20, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (48, 42, 100.000, 22000.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (60, 48, 100.000, 35000.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (57, 45, 33.000, 1805.76, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (58, 45, 67.000, 3666.24, 8, 2013, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (11, 7, 100.000, 7325.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (12, 6, 100.000, 54305.10, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (70, 23, 100.000, 3000.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (76, 64, 100.000, 320.00, 0, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (35, 29, 60.000, 69840.00, 8, 2014, NULL);
@@ -1139,6 +1101,46 @@ INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, b
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (23, 17, 100.000, 10000.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (24, 18, 100.000, 4600.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (25, 19, 100.000, 5000.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (95, 81, 100.000, 11000.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (80, 69, 20.000, 3200.00, 8, 2015, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (81, 69, 80.000, 12800.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (73, 62, 100.000, 5900.00, 0, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (74, 63, 10.000, 4900.00, 0, 2015, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (79, 68, 100.000, 3800.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (77, 65, 100.000, 5600.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (78, 66, 100.000, 3600.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (75, 63, 90.000, 44100.00, 0, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (10, 12, 44.000, 87120.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (9, 12, 28.000, 55440.00, 8, 2015, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (71, 60, 100.000, 6000.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (72, 61, 100.000, 886.50, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (69, 59, 100.000, 500.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (68, 3, 25.000, 5032.50, 8, 2013, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (27, 21, 100.000, 5000.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (7, 4, 100.000, 211500.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (66, 57, 100.000, 4479.60, 0, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (67, 58, 100.000, 1200.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (8, 12, 28.000, 55440.00, 8, 2013, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (83, 71, 100.000, 1365.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (84, 72, 100.000, 1815.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (85, 73, 100.000, 1680.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (86, 74, 100.000, 420.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (87, 75, 100.000, 1695.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (88, 76, 100.000, 143.15, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (89, 77, 100.000, 800.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (90, 78, 10.000, 3000.00, 8, 2015, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (91, 78, 90.000, 27000.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (44, 38, 100.000, 2080.60, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (45, 39, 100.000, 450.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (82, 70, 100.000, 5000.00, 8, 2015, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (46, 40, 100.000, 750.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (47, 41, 100.000, 5335.20, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (48, 42, 100.000, 22000.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (60, 48, 100.000, 35000.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (57, 45, 33.000, 1805.76, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (58, 45, 67.000, 3666.24, 8, 2013, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (11, 7, 100.000, 7325.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (12, 6, 100.000, 54305.10, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (26, 20, 100.000, 5000.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (92, 79, 100.000, 1608.50, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (93, 67, 100.000, 1500.00, 8, 2014, NULL);
@@ -1151,7 +1153,7 @@ INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, b
 -- Name: planzahlung_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('planzahlung_id_seq', 94, true);
+SELECT pg_catalog.setval('planzahlung_id_seq', 95, true);
 
 
 --
@@ -1188,7 +1190,6 @@ INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, 
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (22, 1, 'Abgleich und Bereinigung Liegenschafts- und Hoheitsgrenzen (Lebern ohne Grenchen u. Bettlach)', 5472.00, 8, '2011-12-22', '2014-05-19', NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (23, 1, 'Bereinigung Gebäudegrundriss Dulliken GB-Nr. 277/755', 1400.00, 8, '2014-05-28', '2014-06-30', NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (24, 1, 'Bereinigung der Differenzen zwischen Grundbuch und der amtlichen Vermessung (Thal / Gäu)', 4479.60, 8, '2014-06-24', '2014-07-31', NULL);
-INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (25, 1, 'Bereinigung der Flächendifferenzen AV - GB (Wasseramt)', 5000.00, 8, '2014-06-30', '2014-12-31', NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (26, 1, 'Umnummerierung 90''000er Grundstücke mit Index (Zullwil)', 500.00, 8, '2014-07-09', '2014-07-18', NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (27, 1, 'Passpunkte- und Kontrollpunktmessung Drei Höfe', 6000.00, 8, '2014-07-15', '2014-09-30', NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (28, 1, 'Umnummerierung der 90''000er mit Index (Lerch Weber AG)', 900.00, 8, '2014-07-01', '2014-07-18', NULL);
@@ -1202,6 +1203,7 @@ INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, 
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (36, 1, 'PNF/Homogenisierung Grenchen/Bettlach Etappe 2014-1', 150000.00, 8, '2014-10-13', '2014-10-13', NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (37, 1, 'Einführung Capitastra', 6000.00, 8, '2014-10-29', '2015-12-31', NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (38, 1, 'Berichtigungen Erschwil', 1693.60, 8, '2014-11-05', '2014-11-05', NULL);
+INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (25, 1, 'Bereinigung der Flächendifferenzen AV - GB (Wasseramt)', 16000.00, 8, '2014-06-30', '2014-12-31', NULL);
 
 
 --
@@ -1934,7 +1936,7 @@ GRANT ALL ON TABLE vr_zahlungsplan_14_17 TO stefan;
 GRANT SELECT ON TABLE vr_zahlungsplan_14_17 TO mspublic;
 
 
--- Completed on 2014-11-05 11:43:47 CET
+-- Completed on 2014-11-10 10:29:44 CET
 
 --
 -- PostgreSQL database dump complete
