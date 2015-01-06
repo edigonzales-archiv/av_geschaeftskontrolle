@@ -89,6 +89,7 @@
             <xmax>609062.35041608335450292</xmax>
             <ymax>224212.16495363690773956</ymax>
         </extent>
+        <rotation>0</rotation>
         <projections>0</projections>
         <destinationsrs>
             <spatialrefsys>
