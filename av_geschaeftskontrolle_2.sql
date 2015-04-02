@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.3.6
 -- Dumped by pg_dump version 9.3.6
--- Started on 2015-03-17 17:53:38 CET
+-- Started on 2015-04-02 14:51:49 CEST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -1353,6 +1353,7 @@ INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang
 INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (98, 93, 1381.00, 8, '2015-02-23', '2015-02-23', 2015, NULL);
 INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (99, 89, 6423.75, 8, '2015-03-17', '2015-03-17', 2015, NULL);
 INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (100, 94, 2150.00, 8, '2015-03-17', '2015-03-17', 2015, NULL);
+INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang, rechnungsjahr, bemerkung) VALUES (105, 8, 6500.00, 8, '2015-04-01', '2015-04-01', 2015, NULL);
 
 
 --
@@ -1361,7 +1362,7 @@ INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang
 -- Name: rechnung_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('rechnung_id_seq', 100, true);
+SELECT pg_catalog.setval('rechnung_id_seq', 105, true);
 
 
 --
@@ -2001,7 +2002,7 @@ GRANT ALL ON TABLE vr_zahlungsplan_14_17 TO stefan;
 GRANT SELECT ON TABLE vr_zahlungsplan_14_17 TO mspublic;
 
 
--- Completed on 2015-03-17 17:53:38 CET
+-- Completed on 2015-04-02 14:51:49 CEST
 
 --
 -- PostgreSQL database dump complete
