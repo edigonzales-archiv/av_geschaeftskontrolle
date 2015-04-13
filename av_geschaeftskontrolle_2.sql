@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.3.6
 -- Dumped by pg_dump version 9.3.6
--- Started on 2015-04-07 10:20:05 CEST
+-- Started on 2015-04-13 13:51:51 CEST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -910,7 +910,6 @@ SELECT pg_catalog.setval('amo_id_seq', 5, true);
 -- Data for Name: auftrag; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (36, 21, 'Berichtigung Breitenbach GB-Nr. 76, 77', 501.60, 8, 2, 11, '2014-02-17', '2014-02-28', '2014-03-10', false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (39, 13, 'Teilrückmutation Mutation Ord. Nr. 7518 (Bootshafen)', 450.00, 8, 1, 13, '2014-03-17', '2014-04-30', '2014-04-07', false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (47, 23, 'Bereinigung Gebäudegrundriss Dulliken GB-Nr. 277/755', 1400.00, 8, 1, 9, '2014-05-28', '2014-06-30', '2014-07-08', false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (20, 12, 'AVGBS-Workshop 2014 (Emch + Berger AG Vermessungen)', 5000.00, 8, NULL, 3, '2014-01-01', '2014-12-31', NULL, false, 'Schätzung. Auftrag?');
@@ -925,7 +924,6 @@ INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unte
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (31, 18, 'swipos-GIS/GEO 2014', 2150.00, 8, 2, 12, '2014-01-29', '2014-01-29', '2014-02-03', false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (42, 20, 'PNF/Homogenisierung Gäu Etappe 2014-1 Phase 1 (Pilot)', 22000.00, 8, 1, 2, '2014-03-24', '2014-05-03', '2014-05-03', false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (59, 26, 'Umnummerierung 90''000er Grunstücke mit Index (Zullwil)', 500.00, 8, 2, 11, '2014-07-09', '2014-07-18', '2014-10-06', false, NULL);
-INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (35, 20, 'PNF/Homogenisierung Gäu Etappe 2014-1 Phase 2 (Rest)', 147000.00, 8, 1, 2, '2014-02-14', '2015-02-12', NULL, true, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (49, 20, 'PNF/Homogenisierung Gäu Etappe 2014-1 Phase 1 (Rest)', 49000.00, 8, 1, 2, '2014-06-09', '2014-12-31', NULL, false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (58, 25, 'Bereinigung der Flächendifferenzen Etappe 1 AV - GB (Wasseramt)', 1200.00, 8, 1, 1, '2014-06-30', '2014-08-31', '2014-07-08', false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (18, 11, 'Korrektur der Kantonsgrenze Schönenwerd SO - Unterentfelden AG', 4600.00, 8, 1, 9, '2013-12-16', '2014-02-28', '2014-06-26', false, NULL);
@@ -963,6 +961,8 @@ INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unte
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (1, 1, 'Fusion Buchegg (Zusammenführen der AV-Operate)', 35040.00, 8, NULL, 3, '2013-10-03', '2014-02-28', NULL, false, 'Kostendach, Abrechnung nach Aufwand mit KBOB95%-Ansätzen');
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (8, 5, 'Mümliswil-Ramiswil Los 4', 10000.00, 8, 2, 2, '2014-01-01', '2014-12-31', NULL, false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (9, 5, 'Mümliswil-Ramiswil Los 2', 23574.00, 8, 2, 2, '2014-01-01', '2014-12-31', NULL, false, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (35, 20, 'PNF/Homogenisierung Gäu Etappe 2014-1 Phase 2 (Rest)', 121000.00, 8, 1, 2, '2015-05-01', '2015-11-02', NULL, true, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (36, 21, 'Berichtigung Breitenbach GB-Nr. 76, 77', 501.60, 8, 2, 11, '2014-02-17', '2014-02-28', '2014-03-10', false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (70, 30, 'Erweiterung ili2pg um Flächenbildung', 5000.00, 8, 2, 15, '2014-10-06', '2015-03-31', NULL, false, '* Gesamtkosten 15''000.- 
 * Kosten wurden gedrittelt (GL, BE, SO)');
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (32, 13, 'Herkunft Flächendifferenzen eruieren > 5m2 2014 (Lerch Weber AG)', 8000.00, 8, 1, 9, '2014-02-05', '2014-07-31', '2014-10-06', false, '* Zusatzauftrag am 28. März 2014 / Fr. 2''000.-
@@ -972,6 +972,7 @@ INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unte
 
 ');
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (79, 37, 'Abänderung Mutationspläne und Mitteilungsschreiben Flächen alt/neu (BSB Oe)', 1608.50, 8, 2, 2, '2014-10-29', '2014-10-29', '2014-10-29', false, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (100, 45, 'AVGBS-Einführung / Projektphase - Emch + Berger', 8000.00, 8, 1, 3, '2015-02-12', '2015-12-31', NULL, false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (93, 43, 'Rückmutation Ramadani', 1381.00, 8, 2, 3, '2015-02-23', '2015-02-23', '2015-02-23', false, 'Komplizierte Geschichte: AGI zahlt Rückmutation, da der Eigentümer die Mutation gar nicht wollte und von anderen in Auftrag gegeben wurde. Dieser ist aber pleite und wurde bereits für die normale Mutaion betrieben.');
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (83, 39, 'Deko für RADAV-Fest', 220.37, 8, 2, 8, '2014-11-14', '2014-11-14', '2015-11-14', false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (89, 42, 'PNF/Homogenisierung Olten Etappe 2015-1 Phase 1 (Pilot)', 18000.00, 8, 1, 9, '2014-11-28', '2015-01-31', '2014-03-17', false, NULL);
@@ -996,12 +997,19 @@ INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unte
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (78, 36, 'PNF/Homogenisierung Grenchen/Bettlach Etappe 2014-1 Phase 1 (Pilot)', 30000.00, 8, 1, 2, '2014-10-13', '2014-12-31', NULL, false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (91, 36, 'PNF/Homogenisierung Grenchen/Bettlach Etappe 2014-1 Phase 2 (Pilot)', 57000.00, 8, 1, 2, '2015-01-22', '2015-06-05', NULL, false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (92, 10, 'Checkservice MOCHECKSO (2015)', 10000.00, 8, 2, 10, '2015-01-26', '2015-01-26', NULL, false, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (94, 18, 'swipos-GIS/GEO 2015', 2150.00, 8, 2, 1, '2015-03-17', '2015-03-17', '2014-03-17', false, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (95, 42, 'PNF/Homogenisierung Olten Etappe 2015-1 Phase 2 (Pilot)', 7500.00, 8, 1, 9, '2015-03-17', '2015-05-15', NULL, false, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (96, 44, 'Luftbildbefliegung & Orthofotoerstellung Kt. SO - 2015 (Teilgebiet Ost)', 59600.00, 8, 2, 16, '2014-10-14', '2015-09-01', NULL, false, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (97, 44, 'Lufbildbefliegung & Orthofotoerstellung Kt. BL - 2015 (Anteil Solothurn)', 18530.00, 8, 2, 4, '2015-04-01', '2015-08-30', NULL, false, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (98, 44, 'Satellitenbilder Testbeschaffung - 2015', 5505.00, 8, 2, 17, '2015-02-23', '2015-05-13', NULL, false, 'Bilddaten 5325 Fr.  + 1 h swisstopo (180 Fr.)');
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (99, 45, 'AVGBS-Einführung / Projektphase - BSB', 10000.00, 8, 1, 2, '2015-02-12', '2015-12-31', NULL, false, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (101, 45, 'AVGBS-Einführung / Projektphase W+H AG', 8000.00, 8, 1, 1, '2015-02-19', '2015-12-31', NULL, false, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (102, 45, 'AVGBS-Einführung / Projektphase - Anpassung AV-Software', 20000.00, 8, 1, 1, '2015-04-13', '2015-12-31', NULL, false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (12, 6, 'LRO - Zweitvermessung nach LU', 198000.00, 8, 3, 3, '2015-12-31', '2015-12-31', NULL, false, 'Höhere Kosten aufgrund des definitiven Perimeters (hochgerechnet). Die Abrechnung erfolgt auf Grund
 der effektiven Elemente.
 
 Abgabetermin gemäss Vertrag "1 Jahr nach Arbeitsbeginn". In dieser Form nicht umsetzbar. Geschätzter Abschluss ist Ende 2015.');
-INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (94, 18, 'swipos-GIS/GEO 2015', 2150.00, 8, 2, 1, '2015-03-17', '2015-03-17', '2014-03-17', false, NULL);
-INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (95, 42, 'PNF/Homogenisierung Olten Etappe 2015-1 Phase 2 (Pilot)', 7500.00, 8, 1, 9, '2015-03-17', '2015-05-15', NULL, false, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (104, 45, 'AVGBS-Einführung / Projektphase Emch+Berger ', 8000.00, NULL, 1, 3, '2015-02-12', '2015-12-31', NULL, false, NULL);
 
 
 --
@@ -1010,7 +1018,7 @@ INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unte
 -- Name: auftrag_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('auftrag_id_seq', 95, true);
+SELECT pg_catalog.setval('auftrag_id_seq', 104, true);
 
 
 --
@@ -1059,6 +1067,8 @@ SELECT pg_catalog.setval('perimeter_id_seq', 1, true);
 INSERT INTO plankostenkonto (id, konto_id, budget, jahr, bemerkung) VALUES (1, 2, 400000.00, 2014, 'RADAV');
 INSERT INTO plankostenkonto (id, konto_id, budget, jahr, bemerkung) VALUES (2, 1, 700000.00, 2014, 'Nachführung');
 INSERT INTO plankostenkonto (id, konto_id, budget, jahr, bemerkung) VALUES (3, 1, 500000.00, 2013, 'Nachführung');
+INSERT INTO plankostenkonto (id, konto_id, budget, jahr, bemerkung) VALUES (4, 1, 700000.00, 2015, 'Nachführung');
+INSERT INTO plankostenkonto (id, konto_id, budget, jahr, bemerkung) VALUES (6, 2, 300000.00, 2015, 'RADAV');
 
 
 --
@@ -1067,7 +1077,7 @@ INSERT INTO plankostenkonto (id, konto_id, budget, jahr, bemerkung) VALUES (3, 1
 -- Name: plankostenkonto_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('plankostenkonto_id_seq', 3, true);
+SELECT pg_catalog.setval('plankostenkonto_id_seq', 6, true);
 
 
 --
@@ -1076,6 +1086,11 @@ SELECT pg_catalog.setval('plankostenkonto_id_seq', 3, true);
 -- Data for Name: planzahlung; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (118, 101, 100.000, 8000.00, 8, 2015, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (41, 35, 90.000, 108900.00, 8, 2015, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (116, 99, 100.000, 10000.00, 8, 2015, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (112, 35, 10.000, 12100.00, 8, 2016, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (113, 96, 100.000, 59600.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (109, 93, 100.000, 1381.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (108, 92, 100.000, 10000.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (102, 87, 100.000, 7380.00, 8, 2015, NULL);
@@ -1088,7 +1103,6 @@ INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, b
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (105, 89, 50.000, 9000.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (61, 49, 54.000, 26460.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (62, 49, 46.000, 22540.00, 8, 2015, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (41, 35, 90.000, 132300.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (70, 23, 100.000, 3000.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (107, 91, 100.000, 57000.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (76, 64, 100.000, 320.00, 0, 2014, NULL);
@@ -1096,6 +1110,11 @@ INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, b
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (19, 15, 23.000, 989.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (20, 15, 77.000, 3311.00, 8, 2013, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (17, 14, 77.000, 11396.00, 8, 2013, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (119, 102, 100.000, 20000.00, 8, 2015, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (92, 79, 100.000, 1608.50, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (93, 67, 100.000, 1500.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (94, 80, 100.000, 1693.60, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (117, 100, 100.000, 8000.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (36, 31, 100.000, 2150.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (5, 3, 75.000, 15097.50, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (37, 32, 100.000, 8000.00, 8, 2014, NULL);
@@ -1118,6 +1137,8 @@ INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, b
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (104, 89, 50.000, 9000.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (110, 94, 100.000, 2150.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (111, 95, 100.000, 7500.00, 8, 2015, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (114, 97, 100.000, 18530.00, 8, 2015, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (115, 98, 100.000, 5505.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (81, 69, 100.000, 16000.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (10, 12, 18.000, 35640.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (9, 12, 54.000, 106920.00, 8, 2015, NULL);
@@ -1170,9 +1191,6 @@ INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, b
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (11, 7, 100.000, 7325.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (12, 6, 100.000, 54305.10, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (26, 20, 100.000, 5000.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (92, 79, 100.000, 1608.50, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (93, 67, 100.000, 1500.00, 8, 2014, NULL);
-INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (94, 80, 100.000, 1693.60, 8, 2014, NULL);
 
 
 --
@@ -1181,7 +1199,7 @@ INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, b
 -- Name: planzahlung_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('planzahlung_id_seq', 111, true);
+SELECT pg_catalog.setval('planzahlung_id_seq', 119, true);
 
 
 --
@@ -1190,11 +1208,6 @@ SELECT pg_catalog.setval('planzahlung_id_seq', 111, true);
 -- Data for Name: projekt; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (5, 2, 'Schlusszahlungen RADAV-Operate', 95204.10, 8, '2014-01-01', NULL, 'Sammelprojekt für die ausstehenden Schlusszahlungen der RADAV-Operate. Verschiedene Gemeinden und verschiedene Unternehmer.
-
-Achtung: LRO noch ergänzen!!!');
-INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (4, 1, 'Lidar-Befliegung Kanton Solothurn', 250000.00, 8, '2014-01-01', NULL, NULL);
-INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (6, 2, 'LRO', 198000.00, 8, '2006-03-28', NULL, NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (7, 2, 'Digitalisierung Nutzungspläne (2014)', 200000.00, 8, '2014-01-01', NULL, 'Budgetiert sind Fr. 300''000. Es ist davon auszugehen, dass im ersten Jahr nicht alles ausgeschöpft wird.
 
 Anmerkung: Oder ein ''Projekt'' für das gesamte Projekt? In diesem Fall ist es ja von geringerem Interesse, da kein AGI-/AV-Projekt...');
@@ -1237,6 +1250,13 @@ INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, 
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (42, 1, 'PNF/Homogenisierung Olten Etappe 2015-1', 150000.00, 8, '2015-01-06', '2015-12-31', NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (3, 1, 'Beratungsmandat lokale Spannungen', 20130.00, 8, '2012-09-03', '2015-02-23', NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (43, 1, 'Rückmutation Ramadani', 1500.00, 8, '2015-02-23', '2015-02-23', NULL);
+INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (5, 2, 'Schlusszahlungen RADAV-Operate', 95204.10, 8, '2014-01-01', '2015-04-13', 'Sammelprojekt für die ausstehenden Schlusszahlungen der RADAV-Operate. Verschiedene Gemeinden und verschiedene Unternehmer.
+
+Achtung: LRO noch ergänzen!!!');
+INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (4, 1, 'Lidar-Befliegung Kanton Solothurn', 250000.00, 8, '2014-01-01', '2015-04-13', NULL);
+INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (44, 2, 'Fernerkundung 2015', 90000.00, 8, '2014-10-14', '2015-11-02', NULL);
+INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (45, 1, 'AVGBS-Einführung / Projektphase', 40000.00, 8, '2015-02-02', '2016-01-29', NULL);
+INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (6, 2, 'LRO', 198000.00, 8, '2006-03-28', '2015-04-13', NULL);
 
 
 --
@@ -1245,7 +1265,7 @@ INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, 
 -- Name: projekt_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('projekt_id_seq', 43, true);
+SELECT pg_catalog.setval('projekt_id_seq', 45, true);
 
 
 --
@@ -1411,6 +1431,8 @@ INSERT INTO unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer,
 INSERT INTO unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer, plz, ortschaft, bemerkung) VALUES (13, 'BSB + Partner, Ingenieure und Planer', NULL, 'Kohli', 'Alexander', 'Dammstrasse', '14', 2540, 'Grenchen', NULL);
 INSERT INTO unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer, plz, ortschaft, bemerkung) VALUES (14, 'Sourcepole AG', NULL, 'Hugentobler', 'Marco', 'Weberstrasse', '5', 8004, 'Zürich', NULL);
 INSERT INTO unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer, plz, ortschaft, bemerkung) VALUES (15, 'Eisenhut Informatik AG', NULL, 'Eisenhut', 'Claude', 'Kirchbergstrasse', '107', 3401, 'Burgdorf', NULL);
+INSERT INTO unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer, plz, ortschaft, bemerkung) VALUES (16, 'Flotron AG', NULL, 'Budmiger', 'Klaus', 'Worbstrasse', '  164', 3073, 'Gümligen', NULL);
+INSERT INTO unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer, plz, ortschaft, bemerkung) VALUES (17, 'swisstopo', NULL, 'NPOC', 'NOPC', 'Seftigenstrasse', '264', 3084, 'Wabern', NULL);
 
 
 --
@@ -1419,7 +1441,7 @@ INSERT INTO unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer,
 -- Name: unternehmer_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('unternehmer_id_seq', 15, true);
+SELECT pg_catalog.setval('unternehmer_id_seq', 17, true);
 
 
 --
@@ -2004,7 +2026,7 @@ GRANT ALL ON TABLE vr_zahlungsplan_14_17 TO stefan;
 GRANT SELECT ON TABLE vr_zahlungsplan_14_17 TO mspublic;
 
 
--- Completed on 2015-04-07 10:20:06 CEST
+-- Completed on 2015-04-13 13:51:52 CEST
 
 --
 -- PostgreSQL database dump complete
