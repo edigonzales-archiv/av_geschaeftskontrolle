@@ -2,7 +2,7 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="av_zahlungsplan_14_17" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2d7b4b7b-8fda-4900-89a1-a5804976be7a">
 	<property name="ireport.zoom" value="2.4793388429752103"/>
 	<property name="ireport.x" value="62"/>
-	<property name="ireport.y" value="218"/>
+	<property name="ireport.y" value="106"/>
 	<style name="table">
 		<box>
 			<pen lineWidth="0.0" lineColor="#000000"/>
@@ -99,7 +99,7 @@
 				<textElement textAlignment="Center">
 					<font fontName="Frutiger 55 Roman" size="12" isBold="true" isPdfEmbedded="true"/>
 				</textElement>
-				<text><![CDATA[Zahlungsplan 2015 - 2017 (inkl. MWST.) pro Konto]]></text>
+				<text><![CDATA[Zahlungsplan 2014 - 2017 (inkl. MWST.) pro Konto]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="29" y="32" width="59" height="13" uuid="13a1ff9b-12bd-41e4-8a64-c95d6683d6c9"/>
