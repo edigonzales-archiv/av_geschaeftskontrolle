@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.3.9
 -- Dumped by pg_dump version 9.3.9
--- Started on 2015-07-22 09:27:22 CEST
+-- Started on 2015-07-27 08:23:51 CEST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -26,7 +26,7 @@ ALTER SCHEMA av_geschaeftskontrolle OWNER TO stefan;
 SET search_path = av_geschaeftskontrolle, pg_catalog;
 
 --
--- TOC entry 1151 (class 1247 OID 19337)
+-- TOC entry 1164 (class 1247 OID 19337)
 -- Name: jahr; Type: TYPE; Schema: av_geschaeftskontrolle; Owner: postgres
 --
 
@@ -43,7 +43,7 @@ CREATE TYPE jahr AS ENUM (
 ALTER TYPE av_geschaeftskontrolle.jahr OWNER TO postgres;
 
 --
--- TOC entry 784 (class 1255 OID 19349)
+-- TOC entry 797 (class 1255 OID 19349)
 -- Name: calculate_budget_payment_from_total_cost(); Type: FUNCTION; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -63,7 +63,7 @@ WHERE auf.id = auftrag_id;
 ALTER FUNCTION av_geschaeftskontrolle.calculate_budget_payment_from_total_cost() OWNER TO stefan;
 
 --
--- TOC entry 785 (class 1255 OID 19350)
+-- TOC entry 798 (class 1255 OID 19350)
 -- Name: calculate_order_costs_from_percentage(); Type: FUNCTION; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -86,7 +86,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- TOC entry 179 (class 1259 OID 19351)
+-- TOC entry 180 (class 1259 OID 19351)
 -- Name: amo; Type: TABLE; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -100,7 +100,7 @@ CREATE TABLE amo (
 ALTER TABLE av_geschaeftskontrolle.amo OWNER TO stefan;
 
 --
--- TOC entry 180 (class 1259 OID 19357)
+-- TOC entry 181 (class 1259 OID 19357)
 -- Name: amo_id_seq; Type: SEQUENCE; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -115,8 +115,8 @@ CREATE SEQUENCE amo_id_seq
 ALTER TABLE av_geschaeftskontrolle.amo_id_seq OWNER TO stefan;
 
 --
--- TOC entry 2827 (class 0 OID 0)
--- Dependencies: 180
+-- TOC entry 2869 (class 0 OID 0)
+-- Dependencies: 181
 -- Name: amo_id_seq; Type: SEQUENCE OWNED BY; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -124,7 +124,7 @@ ALTER SEQUENCE amo_id_seq OWNED BY amo.id;
 
 
 --
--- TOC entry 181 (class 1259 OID 19359)
+-- TOC entry 182 (class 1259 OID 19359)
 -- Name: auftrag; Type: TABLE; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -147,7 +147,7 @@ CREATE TABLE auftrag (
 ALTER TABLE av_geschaeftskontrolle.auftrag OWNER TO stefan;
 
 --
--- TOC entry 182 (class 1259 OID 19365)
+-- TOC entry 183 (class 1259 OID 19365)
 -- Name: auftrag_id_seq; Type: SEQUENCE; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -162,8 +162,8 @@ CREATE SEQUENCE auftrag_id_seq
 ALTER TABLE av_geschaeftskontrolle.auftrag_id_seq OWNER TO stefan;
 
 --
--- TOC entry 2828 (class 0 OID 0)
--- Dependencies: 182
+-- TOC entry 2870 (class 0 OID 0)
+-- Dependencies: 183
 -- Name: auftrag_id_seq; Type: SEQUENCE OWNED BY; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -171,7 +171,7 @@ ALTER SEQUENCE auftrag_id_seq OWNED BY auftrag.id;
 
 
 --
--- TOC entry 183 (class 1259 OID 19367)
+-- TOC entry 184 (class 1259 OID 19367)
 -- Name: konto; Type: TABLE; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -186,7 +186,7 @@ CREATE TABLE konto (
 ALTER TABLE av_geschaeftskontrolle.konto OWNER TO stefan;
 
 --
--- TOC entry 184 (class 1259 OID 19373)
+-- TOC entry 185 (class 1259 OID 19373)
 -- Name: konto_id_seq; Type: SEQUENCE; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -201,8 +201,8 @@ CREATE SEQUENCE konto_id_seq
 ALTER TABLE av_geschaeftskontrolle.konto_id_seq OWNER TO stefan;
 
 --
--- TOC entry 2830 (class 0 OID 0)
--- Dependencies: 184
+-- TOC entry 2872 (class 0 OID 0)
+-- Dependencies: 185
 -- Name: konto_id_seq; Type: SEQUENCE OWNED BY; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -210,7 +210,7 @@ ALTER SEQUENCE konto_id_seq OWNED BY konto.id;
 
 
 --
--- TOC entry 185 (class 1259 OID 19375)
+-- TOC entry 186 (class 1259 OID 19375)
 -- Name: perimeter; Type: TABLE; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -224,7 +224,7 @@ CREATE TABLE perimeter (
 ALTER TABLE av_geschaeftskontrolle.perimeter OWNER TO stefan;
 
 --
--- TOC entry 186 (class 1259 OID 19381)
+-- TOC entry 187 (class 1259 OID 19381)
 -- Name: perimeter_id_seq; Type: SEQUENCE; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -239,8 +239,8 @@ CREATE SEQUENCE perimeter_id_seq
 ALTER TABLE av_geschaeftskontrolle.perimeter_id_seq OWNER TO stefan;
 
 --
--- TOC entry 2831 (class 0 OID 0)
--- Dependencies: 186
+-- TOC entry 2873 (class 0 OID 0)
+-- Dependencies: 187
 -- Name: perimeter_id_seq; Type: SEQUENCE OWNED BY; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -248,7 +248,7 @@ ALTER SEQUENCE perimeter_id_seq OWNED BY perimeter.id;
 
 
 --
--- TOC entry 187 (class 1259 OID 19383)
+-- TOC entry 188 (class 1259 OID 19383)
 -- Name: plankostenkonto; Type: TABLE; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -264,7 +264,7 @@ CREATE TABLE plankostenkonto (
 ALTER TABLE av_geschaeftskontrolle.plankostenkonto OWNER TO stefan;
 
 --
--- TOC entry 188 (class 1259 OID 19389)
+-- TOC entry 189 (class 1259 OID 19389)
 -- Name: plankostenkonto_id_seq; Type: SEQUENCE; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -279,8 +279,8 @@ CREATE SEQUENCE plankostenkonto_id_seq
 ALTER TABLE av_geschaeftskontrolle.plankostenkonto_id_seq OWNER TO stefan;
 
 --
--- TOC entry 2833 (class 0 OID 0)
--- Dependencies: 188
+-- TOC entry 2875 (class 0 OID 0)
+-- Dependencies: 189
 -- Name: plankostenkonto_id_seq; Type: SEQUENCE OWNED BY; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -288,7 +288,7 @@ ALTER SEQUENCE plankostenkonto_id_seq OWNED BY plankostenkonto.id;
 
 
 --
--- TOC entry 189 (class 1259 OID 19391)
+-- TOC entry 190 (class 1259 OID 19391)
 -- Name: planzahlung; Type: TABLE; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -307,8 +307,8 @@ CREATE TABLE planzahlung (
 ALTER TABLE av_geschaeftskontrolle.planzahlung OWNER TO stefan;
 
 --
--- TOC entry 2834 (class 0 OID 0)
--- Dependencies: 189
+-- TOC entry 2876 (class 0 OID 0)
+-- Dependencies: 190
 -- Name: TABLE planzahlung; Type: COMMENT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -316,8 +316,8 @@ COMMENT ON TABLE planzahlung IS 'Geplante Zahlung pro Jahr.';
 
 
 --
--- TOC entry 2835 (class 0 OID 0)
--- Dependencies: 189
+-- TOC entry 2877 (class 0 OID 0)
+-- Dependencies: 190
 -- Name: COLUMN planzahlung.kosten; Type: COMMENT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -325,7 +325,7 @@ COMMENT ON COLUMN planzahlung.kosten IS 'exlusive Mehrwertsteuer';
 
 
 --
--- TOC entry 190 (class 1259 OID 19398)
+-- TOC entry 191 (class 1259 OID 19398)
 -- Name: planzahlung_id_seq; Type: SEQUENCE; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -340,8 +340,8 @@ CREATE SEQUENCE planzahlung_id_seq
 ALTER TABLE av_geschaeftskontrolle.planzahlung_id_seq OWNER TO stefan;
 
 --
--- TOC entry 2837 (class 0 OID 0)
--- Dependencies: 190
+-- TOC entry 2879 (class 0 OID 0)
+-- Dependencies: 191
 -- Name: planzahlung_id_seq; Type: SEQUENCE OWNED BY; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -349,7 +349,7 @@ ALTER SEQUENCE planzahlung_id_seq OWNED BY planzahlung.id;
 
 
 --
--- TOC entry 191 (class 1259 OID 19400)
+-- TOC entry 192 (class 1259 OID 19400)
 -- Name: projekt; Type: TABLE; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -368,8 +368,8 @@ CREATE TABLE projekt (
 ALTER TABLE av_geschaeftskontrolle.projekt OWNER TO stefan;
 
 --
--- TOC entry 2838 (class 0 OID 0)
--- Dependencies: 191
+-- TOC entry 2880 (class 0 OID 0)
+-- Dependencies: 192
 -- Name: COLUMN projekt.kosten; Type: COMMENT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -377,7 +377,7 @@ COMMENT ON COLUMN projekt.kosten IS 'exlusive Mehrwertsteuer';
 
 
 --
--- TOC entry 192 (class 1259 OID 19406)
+-- TOC entry 193 (class 1259 OID 19406)
 -- Name: projekt_id_seq; Type: SEQUENCE; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -392,8 +392,8 @@ CREATE SEQUENCE projekt_id_seq
 ALTER TABLE av_geschaeftskontrolle.projekt_id_seq OWNER TO stefan;
 
 --
--- TOC entry 2840 (class 0 OID 0)
--- Dependencies: 192
+-- TOC entry 2882 (class 0 OID 0)
+-- Dependencies: 193
 -- Name: projekt_id_seq; Type: SEQUENCE OWNED BY; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -401,7 +401,7 @@ ALTER SEQUENCE projekt_id_seq OWNED BY projekt.id;
 
 
 --
--- TOC entry 193 (class 1259 OID 19408)
+-- TOC entry 194 (class 1259 OID 19408)
 -- Name: rechnung; Type: TABLE; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -420,8 +420,8 @@ CREATE TABLE rechnung (
 ALTER TABLE av_geschaeftskontrolle.rechnung OWNER TO stefan;
 
 --
--- TOC entry 2841 (class 0 OID 0)
--- Dependencies: 193
+-- TOC entry 2883 (class 0 OID 0)
+-- Dependencies: 194
 -- Name: COLUMN rechnung.kosten; Type: COMMENT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -429,8 +429,8 @@ COMMENT ON COLUMN rechnung.kosten IS 'exklusive Mehrwertsteuer';
 
 
 --
--- TOC entry 2842 (class 0 OID 0)
--- Dependencies: 193
+-- TOC entry 2884 (class 0 OID 0)
+-- Dependencies: 194
 -- Name: COLUMN rechnung.datum_ausgang; Type: COMMENT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -438,7 +438,7 @@ COMMENT ON COLUMN rechnung.datum_ausgang IS 'Beim Sekretariat im Kistli.';
 
 
 --
--- TOC entry 194 (class 1259 OID 19414)
+-- TOC entry 195 (class 1259 OID 19414)
 -- Name: rechnung_id_seq; Type: SEQUENCE; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -453,8 +453,8 @@ CREATE SEQUENCE rechnung_id_seq
 ALTER TABLE av_geschaeftskontrolle.rechnung_id_seq OWNER TO stefan;
 
 --
--- TOC entry 2843 (class 0 OID 0)
--- Dependencies: 194
+-- TOC entry 2885 (class 0 OID 0)
+-- Dependencies: 195
 -- Name: rechnung_id_seq; Type: SEQUENCE OWNED BY; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -462,7 +462,7 @@ ALTER SEQUENCE rechnung_id_seq OWNED BY rechnung.id;
 
 
 --
--- TOC entry 195 (class 1259 OID 19416)
+-- TOC entry 196 (class 1259 OID 19416)
 -- Name: rechnungsjahr; Type: TABLE; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -475,7 +475,7 @@ CREATE TABLE rechnungsjahr (
 ALTER TABLE av_geschaeftskontrolle.rechnungsjahr OWNER TO stefan;
 
 --
--- TOC entry 196 (class 1259 OID 19419)
+-- TOC entry 197 (class 1259 OID 19419)
 -- Name: rechnungsjahr_id_seq; Type: SEQUENCE; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -490,8 +490,8 @@ CREATE SEQUENCE rechnungsjahr_id_seq
 ALTER TABLE av_geschaeftskontrolle.rechnungsjahr_id_seq OWNER TO stefan;
 
 --
--- TOC entry 2844 (class 0 OID 0)
--- Dependencies: 196
+-- TOC entry 2886 (class 0 OID 0)
+-- Dependencies: 197
 -- Name: rechnungsjahr_id_seq; Type: SEQUENCE OWNED BY; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -499,7 +499,7 @@ ALTER SEQUENCE rechnungsjahr_id_seq OWNED BY rechnungsjahr.id;
 
 
 --
--- TOC entry 197 (class 1259 OID 19421)
+-- TOC entry 198 (class 1259 OID 19421)
 -- Name: unternehmer; Type: TABLE; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -520,7 +520,7 @@ CREATE TABLE unternehmer (
 ALTER TABLE av_geschaeftskontrolle.unternehmer OWNER TO stefan;
 
 --
--- TOC entry 198 (class 1259 OID 19427)
+-- TOC entry 199 (class 1259 OID 19427)
 -- Name: unternehmer_id_seq; Type: SEQUENCE; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -535,8 +535,8 @@ CREATE SEQUENCE unternehmer_id_seq
 ALTER TABLE av_geschaeftskontrolle.unternehmer_id_seq OWNER TO stefan;
 
 --
--- TOC entry 2845 (class 0 OID 0)
--- Dependencies: 198
+-- TOC entry 2887 (class 0 OID 0)
+-- Dependencies: 199
 -- Name: unternehmer_id_seq; Type: SEQUENCE OWNED BY; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -544,7 +544,7 @@ ALTER SEQUENCE unternehmer_id_seq OWNED BY unternehmer.id;
 
 
 --
--- TOC entry 199 (class 1259 OID 19429)
+-- TOC entry 200 (class 1259 OID 19429)
 -- Name: verguetungsart; Type: TABLE; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -557,7 +557,7 @@ CREATE TABLE verguetungsart (
 ALTER TABLE av_geschaeftskontrolle.verguetungsart OWNER TO stefan;
 
 --
--- TOC entry 200 (class 1259 OID 19435)
+-- TOC entry 201 (class 1259 OID 19435)
 -- Name: verguetungsart_id_seq; Type: SEQUENCE; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -572,8 +572,8 @@ CREATE SEQUENCE verguetungsart_id_seq
 ALTER TABLE av_geschaeftskontrolle.verguetungsart_id_seq OWNER TO stefan;
 
 --
--- TOC entry 2847 (class 0 OID 0)
--- Dependencies: 200
+-- TOC entry 2889 (class 0 OID 0)
+-- Dependencies: 201
 -- Name: verguetungsart_id_seq; Type: SEQUENCE OWNED BY; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -581,7 +581,7 @@ ALTER SEQUENCE verguetungsart_id_seq OWNED BY verguetungsart.id;
 
 
 --
--- TOC entry 201 (class 1259 OID 19437)
+-- TOC entry 202 (class 1259 OID 19437)
 -- Name: vr_firma_verpflichtungen; Type: VIEW; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -627,7 +627,7 @@ CREATE VIEW vr_firma_verpflichtungen AS
 ALTER TABLE av_geschaeftskontrolle.vr_firma_verpflichtungen OWNER TO stefan;
 
 --
--- TOC entry 202 (class 1259 OID 19442)
+-- TOC entry 203 (class 1259 OID 19442)
 -- Name: vr_kontr_planprozent; Type: TABLE; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -643,7 +643,7 @@ CREATE TABLE vr_kontr_planprozent (
 ALTER TABLE av_geschaeftskontrolle.vr_kontr_planprozent OWNER TO stefan;
 
 --
--- TOC entry 203 (class 1259 OID 19448)
+-- TOC entry 204 (class 1259 OID 19448)
 -- Name: vr_laufende_auftraege; Type: VIEW; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -738,7 +738,7 @@ CREATE VIEW vr_laufende_auftraege AS
 ALTER TABLE av_geschaeftskontrolle.vr_laufende_auftraege OWNER TO stefan;
 
 --
--- TOC entry 204 (class 1259 OID 19453)
+-- TOC entry 205 (class 1259 OID 19453)
 -- Name: vr_zahlungsplan_13_16; Type: TABLE; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -768,7 +768,7 @@ CREATE TABLE vr_zahlungsplan_13_16 (
 ALTER TABLE av_geschaeftskontrolle.vr_zahlungsplan_13_16 OWNER TO stefan;
 
 --
--- TOC entry 205 (class 1259 OID 19459)
+-- TOC entry 206 (class 1259 OID 19459)
 -- Name: vr_zahlungsplan_14_17; Type: TABLE; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -798,7 +798,7 @@ CREATE TABLE vr_zahlungsplan_14_17 (
 ALTER TABLE av_geschaeftskontrolle.vr_zahlungsplan_14_17 OWNER TO stefan;
 
 --
--- TOC entry 206 (class 1259 OID 30087)
+-- TOC entry 207 (class 1259 OID 30087)
 -- Name: vr_zahlungsplan_15_18; Type: TABLE; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -828,7 +828,7 @@ CREATE TABLE vr_zahlungsplan_15_18 (
 ALTER TABLE av_geschaeftskontrolle.vr_zahlungsplan_15_18 OWNER TO stefan;
 
 --
--- TOC entry 2634 (class 2604 OID 19465)
+-- TOC entry 2676 (class 2604 OID 19465)
 -- Name: id; Type: DEFAULT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -836,7 +836,7 @@ ALTER TABLE ONLY amo ALTER COLUMN id SET DEFAULT nextval('amo_id_seq'::regclass)
 
 
 --
--- TOC entry 2635 (class 2604 OID 19466)
+-- TOC entry 2677 (class 2604 OID 19466)
 -- Name: id; Type: DEFAULT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -844,7 +844,7 @@ ALTER TABLE ONLY auftrag ALTER COLUMN id SET DEFAULT nextval('auftrag_id_seq'::r
 
 
 --
--- TOC entry 2636 (class 2604 OID 19467)
+-- TOC entry 2678 (class 2604 OID 19467)
 -- Name: id; Type: DEFAULT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -852,7 +852,7 @@ ALTER TABLE ONLY konto ALTER COLUMN id SET DEFAULT nextval('konto_id_seq'::regcl
 
 
 --
--- TOC entry 2637 (class 2604 OID 19468)
+-- TOC entry 2679 (class 2604 OID 19468)
 -- Name: id; Type: DEFAULT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -860,7 +860,7 @@ ALTER TABLE ONLY perimeter ALTER COLUMN id SET DEFAULT nextval('perimeter_id_seq
 
 
 --
--- TOC entry 2638 (class 2604 OID 19469)
+-- TOC entry 2680 (class 2604 OID 19469)
 -- Name: id; Type: DEFAULT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -868,7 +868,7 @@ ALTER TABLE ONLY plankostenkonto ALTER COLUMN id SET DEFAULT nextval('plankosten
 
 
 --
--- TOC entry 2639 (class 2604 OID 19470)
+-- TOC entry 2681 (class 2604 OID 19470)
 -- Name: id; Type: DEFAULT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -876,7 +876,7 @@ ALTER TABLE ONLY planzahlung ALTER COLUMN id SET DEFAULT nextval('planzahlung_id
 
 
 --
--- TOC entry 2641 (class 2604 OID 19471)
+-- TOC entry 2683 (class 2604 OID 19471)
 -- Name: id; Type: DEFAULT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -884,7 +884,7 @@ ALTER TABLE ONLY projekt ALTER COLUMN id SET DEFAULT nextval('projekt_id_seq'::r
 
 
 --
--- TOC entry 2642 (class 2604 OID 19472)
+-- TOC entry 2684 (class 2604 OID 19472)
 -- Name: id; Type: DEFAULT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -892,7 +892,7 @@ ALTER TABLE ONLY rechnung ALTER COLUMN id SET DEFAULT nextval('rechnung_id_seq':
 
 
 --
--- TOC entry 2643 (class 2604 OID 19473)
+-- TOC entry 2685 (class 2604 OID 19473)
 -- Name: id; Type: DEFAULT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -900,7 +900,7 @@ ALTER TABLE ONLY rechnungsjahr ALTER COLUMN id SET DEFAULT nextval('rechnungsjah
 
 
 --
--- TOC entry 2644 (class 2604 OID 19474)
+-- TOC entry 2686 (class 2604 OID 19474)
 -- Name: id; Type: DEFAULT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -908,7 +908,7 @@ ALTER TABLE ONLY unternehmer ALTER COLUMN id SET DEFAULT nextval('unternehmer_id
 
 
 --
--- TOC entry 2645 (class 2604 OID 19475)
+-- TOC entry 2687 (class 2604 OID 19475)
 -- Name: id; Type: DEFAULT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -916,8 +916,8 @@ ALTER TABLE ONLY verguetungsart ALTER COLUMN id SET DEFAULT nextval('verguetungs
 
 
 --
--- TOC entry 2799 (class 0 OID 19351)
--- Dependencies: 179
+-- TOC entry 2841 (class 0 OID 19351)
+-- Dependencies: 180
 -- Data for Name: amo; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -926,8 +926,8 @@ INSERT INTO amo (id, auftrag_id, amo_nr) VALUES (5, 9, 'SO2064');
 
 
 --
--- TOC entry 2854 (class 0 OID 0)
--- Dependencies: 180
+-- TOC entry 2896 (class 0 OID 0)
+-- Dependencies: 181
 -- Name: amo_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -935,12 +935,11 @@ SELECT pg_catalog.setval('amo_id_seq', 5, true);
 
 
 --
--- TOC entry 2801 (class 0 OID 19359)
--- Dependencies: 181
+-- TOC entry 2843 (class 0 OID 19359)
+-- Dependencies: 182
 -- Data for Name: auftrag; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (39, 13, 'Teilrückmutation Mutation Ord. Nr. 7518 (Bootshafen)', 450.00, 8, 1, 13, '2014-03-17', '2014-04-30', '2014-04-07', false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (47, 23, 'Bereinigung Gebäudegrundriss Dulliken GB-Nr. 277/755', 1400.00, 8, 1, 9, '2014-05-28', '2014-06-30', '2014-07-08', false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (65, 13, 'Herkunft Flächendifferenzen eruieren (Lerch Weber, Zusatzauftrag)', 5600.00, 8, 1, 9, '2014-09-01', '2014-09-23', '2014-10-06', false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (15, 8, 'Bereinigung Kantonsgrenze SO - BL / Zusatzauftrag (Armin Weber)', 4300.00, 8, 1, 9, '2013-11-19', '2013-12-31', '2014-04-07', false, NULL);
@@ -988,6 +987,7 @@ INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unte
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (9, 5, 'Mümliswil-Ramiswil Los 2', 23574.00, 8, 2, 2, '2014-01-01', '2014-12-31', NULL, false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (44, 13, 'Herkunft Flächendifferenzen eruieren 2014 (2. Auftrag) (Emch + Berger AG Vermessungen)', 3000.00, 8, 1, 3, '2014-04-09', '2015-12-31', NULL, false, 'Muss erweitert werden, falls noch weitere Bereinigungen anstehen.');
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (36, 21, 'Berichtigung Breitenbach GB-Nr. 76, 77', 501.60, 8, 2, 11, '2014-02-17', '2014-02-28', '2014-03-10', false, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (39, 13, 'Teilrückmutation Mutation Ord. Nr. 7518 (Bootshafen)', 450.00, 8, 1, 13, '2014-03-17', '2014-04-30', '2014-04-07', true, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (21, 12, 'AVGBS-Workshop 2014 (Lerch Weber AG)', 3255.00, 8, NULL, 9, '2014-01-01', '2014-12-31', '2015-01-06', false, 'Schätzung. Auftrag?');
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (19, 12, 'AVGBS-Workshop 2014 (BSB + Partner)', 5000.00, 8, NULL, 2, '2014-01-01', '2014-12-31', '2014-12-17', false, 'Schätzung. Auftrag?');
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (1, 1, 'Fusion Buchegg (Zusammenführen der AV-Operate)', 35040.00, 8, NULL, 3, '2013-10-03', '2014-02-28', '2014-12-17', false, 'Kostendach, Abrechnung nach Aufwand mit KBOB95%-Ansätzen');
@@ -1048,20 +1048,25 @@ INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unte
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (113, 41, 'PNF/Homogenisierung Thierstein Etappte 2015-1 Phase 2 (Rest)', 120000.00, 8, 1, 11, '2015-05-06', '2016-02-29', NULL, true, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (98, 44, 'Satellitenbilder Testbeschaffung - 2015', 5685.00, 8, 2, 17, '2015-02-23', '2015-05-13', NULL, false, 'Bilddaten 5325 Fr.  + 1 h swisstopo (180 Fr.)');
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (100, 45, 'AVGBS-Einführung / Projektphase - Emch + Berger', 8000.00, 8, 1, 3, '2015-02-12', '2015-12-31', NULL, false, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (115, 33, 'BRW Pilot E+B', 7000.00, 8, 2, 3, '2015-07-27', '2015-11-30', NULL, true, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (116, 33, 'BRW Pilot W+H AG', 7000.00, 8, 2, 1, '2015-07-27', '2015-11-30', NULL, true, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (114, 33, 'BRW Dummy', 410709.85, 8, 2, 8, '2015-07-27', '2017-03-31', NULL, false, 'Habe Fr. 20''000 abgezogen für Pilotprojekte.');
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (117, 33, 'BRW Pilot Lerch Weber AG', 7000.00, 8, 2, 9, '2015-07-27', '2015-11-30', NULL, true, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (118, 33, 'BRW Pilot Sutter AG', 7000.00, 8, 2, 11, '2015-07-27', '2015-11-30', NULL, true, NULL);
 
 
 --
--- TOC entry 2855 (class 0 OID 0)
--- Dependencies: 182
+-- TOC entry 2897 (class 0 OID 0)
+-- Dependencies: 183
 -- Name: auftrag_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('auftrag_id_seq', 113, true);
+SELECT pg_catalog.setval('auftrag_id_seq', 118, true);
 
 
 --
--- TOC entry 2803 (class 0 OID 19367)
--- Dependencies: 183
+-- TOC entry 2845 (class 0 OID 19367)
+-- Dependencies: 184
 -- Data for Name: konto; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1070,8 +1075,8 @@ INSERT INTO konto (id, nr, name, bemerkung) VALUES (2, 5640000, 'Oeffentl. Unter
 
 
 --
--- TOC entry 2856 (class 0 OID 0)
--- Dependencies: 184
+-- TOC entry 2898 (class 0 OID 0)
+-- Dependencies: 185
 -- Name: konto_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1079,8 +1084,8 @@ SELECT pg_catalog.setval('konto_id_seq', 2, true);
 
 
 --
--- TOC entry 2805 (class 0 OID 19375)
--- Dependencies: 185
+-- TOC entry 2847 (class 0 OID 19375)
+-- Dependencies: 186
 -- Data for Name: perimeter; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1088,8 +1093,8 @@ INSERT INTO perimeter (id, projekt_id, perimeter) VALUES (1, 1, '010600002015550
 
 
 --
--- TOC entry 2857 (class 0 OID 0)
--- Dependencies: 186
+-- TOC entry 2899 (class 0 OID 0)
+-- Dependencies: 187
 -- Name: perimeter_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1097,8 +1102,8 @@ SELECT pg_catalog.setval('perimeter_id_seq', 1, true);
 
 
 --
--- TOC entry 2807 (class 0 OID 19383)
--- Dependencies: 187
+-- TOC entry 2849 (class 0 OID 19383)
+-- Dependencies: 188
 -- Data for Name: plankostenkonto; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1110,8 +1115,8 @@ INSERT INTO plankostenkonto (id, konto_id, budget, jahr, bemerkung) VALUES (6, 2
 
 
 --
--- TOC entry 2858 (class 0 OID 0)
--- Dependencies: 188
+-- TOC entry 2900 (class 0 OID 0)
+-- Dependencies: 189
 -- Name: plankostenkonto_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1119,11 +1124,12 @@ SELECT pg_catalog.setval('plankostenkonto_id_seq', 6, true);
 
 
 --
--- TOC entry 2809 (class 0 OID 19391)
--- Dependencies: 189
+-- TOC entry 2851 (class 0 OID 19391)
+-- Dependencies: 190
 -- Data for Name: planzahlung; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (137, 118, 100.000, 7000.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (126, 110, 70.000, 84000.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (127, 110, 30.000, 36000.00, 8, 2016, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (123, 107, 100.000, 14000.00, 8, 2015, NULL);
@@ -1161,12 +1167,17 @@ INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, b
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (117, 100, 100.000, 8000.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (122, 106, 100.000, 5000.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (125, 109, 100.000, 50000.00, 8, 2015, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (136, 117, 100.000, 7000.00, 8, 2015, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (134, 115, 100.000, 7000.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (1, 1, 90.000, 31536.00, 8, 2013, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (2, 1, 10.000, 3504.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (18, 14, 23.000, 3404.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (21, 16, 10.000, 500.00, 8, 2014, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (22, 16, 90.000, 4500.00, 8, 2012, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (23, 17, 100.000, 10000.00, 8, 2014, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (132, 114, 20.000, 82141.97, 8, 2017, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (133, 114, 80.000, 328567.88, 8, 2016, NULL);
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (135, 116, 100.000, 7000.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (128, 111, 100.000, 49000.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (130, 113, 60.000, 72000.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (131, 113, 40.000, 48000.00, 8, 2016, NULL);
@@ -1244,17 +1255,17 @@ INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, b
 
 
 --
--- TOC entry 2859 (class 0 OID 0)
--- Dependencies: 190
+-- TOC entry 2901 (class 0 OID 0)
+-- Dependencies: 191
 -- Name: planzahlung_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('planzahlung_id_seq', 131, true);
+SELECT pg_catalog.setval('planzahlung_id_seq', 137, true);
 
 
 --
--- TOC entry 2811 (class 0 OID 19400)
--- Dependencies: 191
+-- TOC entry 2853 (class 0 OID 19400)
+-- Dependencies: 192
 -- Data for Name: projekt; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1312,8 +1323,8 @@ INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, 
 
 
 --
--- TOC entry 2860 (class 0 OID 0)
--- Dependencies: 192
+-- TOC entry 2902 (class 0 OID 0)
+-- Dependencies: 193
 -- Name: projekt_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1321,8 +1332,8 @@ SELECT pg_catalog.setval('projekt_id_seq', 47, true);
 
 
 --
--- TOC entry 2813 (class 0 OID 19408)
--- Dependencies: 193
+-- TOC entry 2855 (class 0 OID 19408)
+-- Dependencies: 194
 -- Data for Name: rechnung; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1448,8 +1459,8 @@ INSERT INTO rechnung (id, auftrag_id, kosten, mwst, datum_eingang, datum_ausgang
 
 
 --
--- TOC entry 2861 (class 0 OID 0)
--- Dependencies: 194
+-- TOC entry 2903 (class 0 OID 0)
+-- Dependencies: 195
 -- Name: rechnung_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1457,8 +1468,8 @@ SELECT pg_catalog.setval('rechnung_id_seq', 124, true);
 
 
 --
--- TOC entry 2815 (class 0 OID 19416)
--- Dependencies: 195
+-- TOC entry 2857 (class 0 OID 19416)
+-- Dependencies: 196
 -- Data for Name: rechnungsjahr; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1471,8 +1482,8 @@ INSERT INTO rechnungsjahr (id, jahr) VALUES (7, 2012);
 
 
 --
--- TOC entry 2862 (class 0 OID 0)
--- Dependencies: 196
+-- TOC entry 2904 (class 0 OID 0)
+-- Dependencies: 197
 -- Name: rechnungsjahr_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1480,8 +1491,8 @@ SELECT pg_catalog.setval('rechnungsjahr_id_seq', 7, true);
 
 
 --
--- TOC entry 2817 (class 0 OID 19421)
--- Dependencies: 197
+-- TOC entry 2859 (class 0 OID 19421)
+-- Dependencies: 198
 -- Data for Name: unternehmer; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1505,8 +1516,8 @@ INSERT INTO unternehmer (id, firma, uid, nachname, vorname, strasse, hausnummer,
 
 
 --
--- TOC entry 2863 (class 0 OID 0)
--- Dependencies: 198
+-- TOC entry 2905 (class 0 OID 0)
+-- Dependencies: 199
 -- Name: unternehmer_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1514,8 +1525,8 @@ SELECT pg_catalog.setval('unternehmer_id_seq', 17, true);
 
 
 --
--- TOC entry 2819 (class 0 OID 19429)
--- Dependencies: 199
+-- TOC entry 2861 (class 0 OID 19429)
+-- Dependencies: 200
 -- Data for Name: verguetungsart; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1525,8 +1536,8 @@ INSERT INTO verguetungsart (id, art) VALUES (3, 'effektive Elemente');
 
 
 --
--- TOC entry 2864 (class 0 OID 0)
--- Dependencies: 200
+-- TOC entry 2906 (class 0 OID 0)
+-- Dependencies: 201
 -- Name: verguetungsart_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1534,7 +1545,7 @@ SELECT pg_catalog.setval('verguetungsart_id_seq', 3, true);
 
 
 --
--- TOC entry 2647 (class 2606 OID 19478)
+-- TOC entry 2689 (class 2606 OID 19478)
 -- Name: amo_pkey; Type: CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -1543,7 +1554,7 @@ ALTER TABLE ONLY amo
 
 
 --
--- TOC entry 2649 (class 2606 OID 19480)
+-- TOC entry 2691 (class 2606 OID 19480)
 -- Name: auftrag_pkey; Type: CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -1552,7 +1563,7 @@ ALTER TABLE ONLY auftrag
 
 
 --
--- TOC entry 2651 (class 2606 OID 19482)
+-- TOC entry 2693 (class 2606 OID 19482)
 -- Name: konto_nr_key; Type: CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -1561,7 +1572,7 @@ ALTER TABLE ONLY konto
 
 
 --
--- TOC entry 2653 (class 2606 OID 19484)
+-- TOC entry 2695 (class 2606 OID 19484)
 -- Name: konto_pkey; Type: CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -1570,7 +1581,7 @@ ALTER TABLE ONLY konto
 
 
 --
--- TOC entry 2655 (class 2606 OID 19486)
+-- TOC entry 2697 (class 2606 OID 19486)
 -- Name: perimeter_pkey; Type: CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -1579,7 +1590,7 @@ ALTER TABLE ONLY perimeter
 
 
 --
--- TOC entry 2657 (class 2606 OID 19488)
+-- TOC entry 2699 (class 2606 OID 19488)
 -- Name: plankostenkonto_konto_id_jahr_key; Type: CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -1588,7 +1599,7 @@ ALTER TABLE ONLY plankostenkonto
 
 
 --
--- TOC entry 2659 (class 2606 OID 19490)
+-- TOC entry 2701 (class 2606 OID 19490)
 -- Name: plankostenkonto_pkey; Type: CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -1597,7 +1608,7 @@ ALTER TABLE ONLY plankostenkonto
 
 
 --
--- TOC entry 2661 (class 2606 OID 19492)
+-- TOC entry 2703 (class 2606 OID 19492)
 -- Name: planzahlung_pkey; Type: CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -1606,7 +1617,7 @@ ALTER TABLE ONLY planzahlung
 
 
 --
--- TOC entry 2663 (class 2606 OID 19494)
+-- TOC entry 2705 (class 2606 OID 19494)
 -- Name: projekt_pkey; Type: CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -1615,7 +1626,7 @@ ALTER TABLE ONLY projekt
 
 
 --
--- TOC entry 2665 (class 2606 OID 19496)
+-- TOC entry 2707 (class 2606 OID 19496)
 -- Name: rechnung_pkey; Type: CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -1624,7 +1635,7 @@ ALTER TABLE ONLY rechnung
 
 
 --
--- TOC entry 2667 (class 2606 OID 19498)
+-- TOC entry 2709 (class 2606 OID 19498)
 -- Name: unternehmer_pkey; Type: CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -1633,7 +1644,7 @@ ALTER TABLE ONLY unternehmer
 
 
 --
--- TOC entry 2669 (class 2606 OID 19500)
+-- TOC entry 2711 (class 2606 OID 19500)
 -- Name: verguetungsart_pkey; Type: CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan; Tablespace: 
 --
 
@@ -1642,7 +1653,7 @@ ALTER TABLE ONLY verguetungsart
 
 
 --
--- TOC entry 2795 (class 2618 OID 19501)
+-- TOC entry 2837 (class 2618 OID 19501)
 -- Name: _RETURN; Type: RULE; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1670,7 +1681,7 @@ CREATE RULE "_RETURN" AS
 
 
 --
--- TOC entry 2796 (class 2618 OID 19503)
+-- TOC entry 2838 (class 2618 OID 19503)
 -- Name: _RETURN; Type: RULE; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1763,7 +1774,7 @@ CREATE RULE "_RETURN" AS
 
 
 --
--- TOC entry 2797 (class 2618 OID 19505)
+-- TOC entry 2839 (class 2618 OID 19505)
 -- Name: _RETURN; Type: RULE; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1856,7 +1867,7 @@ CREATE RULE "_RETURN" AS
 
 
 --
--- TOC entry 2798 (class 2618 OID 30090)
+-- TOC entry 2840 (class 2618 OID 30090)
 -- Name: _RETURN; Type: RULE; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1949,7 +1960,7 @@ CREATE RULE "_RETURN" AS
 
 
 --
--- TOC entry 2680 (class 2620 OID 19507)
+-- TOC entry 2722 (class 2620 OID 19507)
 -- Name: update_kosten; Type: TRIGGER; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1957,7 +1968,7 @@ CREATE TRIGGER update_kosten BEFORE INSERT OR UPDATE ON planzahlung FOR EACH ROW
 
 
 --
--- TOC entry 2679 (class 2620 OID 19508)
+-- TOC entry 2721 (class 2620 OID 19508)
 -- Name: update_planzahlungskosten; Type: TRIGGER; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1965,7 +1976,7 @@ CREATE TRIGGER update_planzahlungskosten AFTER UPDATE ON auftrag FOR EACH ROW EX
 
 
 --
--- TOC entry 2670 (class 2606 OID 19509)
+-- TOC entry 2712 (class 2606 OID 19509)
 -- Name: amo_auftrag_id_fkey; Type: FK CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1974,7 +1985,7 @@ ALTER TABLE ONLY amo
 
 
 --
--- TOC entry 2671 (class 2606 OID 19514)
+-- TOC entry 2713 (class 2606 OID 19514)
 -- Name: auftrag_projekt_id_fkey; Type: FK CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1983,7 +1994,7 @@ ALTER TABLE ONLY auftrag
 
 
 --
--- TOC entry 2672 (class 2606 OID 19519)
+-- TOC entry 2714 (class 2606 OID 19519)
 -- Name: auftrag_unternehmer_id_fkey; Type: FK CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -1992,7 +2003,7 @@ ALTER TABLE ONLY auftrag
 
 
 --
--- TOC entry 2673 (class 2606 OID 19524)
+-- TOC entry 2715 (class 2606 OID 19524)
 -- Name: auftrag_verguetungsart_id; Type: FK CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2001,7 +2012,7 @@ ALTER TABLE ONLY auftrag
 
 
 --
--- TOC entry 2674 (class 2606 OID 19529)
+-- TOC entry 2716 (class 2606 OID 19529)
 -- Name: perimeter_projekt_id_fkey; Type: FK CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2010,7 +2021,7 @@ ALTER TABLE ONLY perimeter
 
 
 --
--- TOC entry 2675 (class 2606 OID 19534)
+-- TOC entry 2717 (class 2606 OID 19534)
 -- Name: plankostenkonto_konto_id_fkey; Type: FK CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2019,7 +2030,7 @@ ALTER TABLE ONLY plankostenkonto
 
 
 --
--- TOC entry 2676 (class 2606 OID 19539)
+-- TOC entry 2718 (class 2606 OID 19539)
 -- Name: planzahlung_projekt_id_fkey; Type: FK CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2028,7 +2039,7 @@ ALTER TABLE ONLY planzahlung
 
 
 --
--- TOC entry 2677 (class 2606 OID 19544)
+-- TOC entry 2719 (class 2606 OID 19544)
 -- Name: projekt_konto_id_fkey; Type: FK CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2037,7 +2048,7 @@ ALTER TABLE ONLY projekt
 
 
 --
--- TOC entry 2678 (class 2606 OID 19549)
+-- TOC entry 2720 (class 2606 OID 19549)
 -- Name: rechnung_auftrag_id_fkey; Type: FK CONSTRAINT; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2046,7 +2057,7 @@ ALTER TABLE ONLY rechnung
 
 
 --
--- TOC entry 2825 (class 0 OID 0)
+-- TOC entry 2867 (class 0 OID 0)
 -- Dependencies: 8
 -- Name: av_geschaeftskontrolle; Type: ACL; Schema: -; Owner: stefan
 --
@@ -2057,8 +2068,8 @@ GRANT ALL ON SCHEMA av_geschaeftskontrolle TO stefan;
 
 
 --
--- TOC entry 2826 (class 0 OID 0)
--- Dependencies: 179
+-- TOC entry 2868 (class 0 OID 0)
+-- Dependencies: 180
 -- Name: amo; Type: ACL; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2069,8 +2080,8 @@ GRANT SELECT ON TABLE amo TO mspublic;
 
 
 --
--- TOC entry 2829 (class 0 OID 0)
--- Dependencies: 183
+-- TOC entry 2871 (class 0 OID 0)
+-- Dependencies: 184
 -- Name: konto; Type: ACL; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2081,8 +2092,8 @@ GRANT SELECT ON TABLE konto TO mspublic;
 
 
 --
--- TOC entry 2832 (class 0 OID 0)
--- Dependencies: 187
+-- TOC entry 2874 (class 0 OID 0)
+-- Dependencies: 188
 -- Name: plankostenkonto; Type: ACL; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2093,8 +2104,8 @@ GRANT SELECT ON TABLE plankostenkonto TO mspublic;
 
 
 --
--- TOC entry 2836 (class 0 OID 0)
--- Dependencies: 189
+-- TOC entry 2878 (class 0 OID 0)
+-- Dependencies: 190
 -- Name: planzahlung; Type: ACL; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2105,8 +2116,8 @@ GRANT SELECT ON TABLE planzahlung TO mspublic;
 
 
 --
--- TOC entry 2839 (class 0 OID 0)
--- Dependencies: 191
+-- TOC entry 2881 (class 0 OID 0)
+-- Dependencies: 192
 -- Name: projekt; Type: ACL; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2117,8 +2128,8 @@ GRANT SELECT ON TABLE projekt TO mspublic;
 
 
 --
--- TOC entry 2846 (class 0 OID 0)
--- Dependencies: 199
+-- TOC entry 2888 (class 0 OID 0)
+-- Dependencies: 200
 -- Name: verguetungsart; Type: ACL; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2129,8 +2140,8 @@ GRANT SELECT ON TABLE verguetungsart TO mspublic;
 
 
 --
--- TOC entry 2848 (class 0 OID 0)
--- Dependencies: 201
+-- TOC entry 2890 (class 0 OID 0)
+-- Dependencies: 202
 -- Name: vr_firma_verpflichtungen; Type: ACL; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2141,8 +2152,8 @@ GRANT SELECT ON TABLE vr_firma_verpflichtungen TO mspublic;
 
 
 --
--- TOC entry 2849 (class 0 OID 0)
--- Dependencies: 202
+-- TOC entry 2891 (class 0 OID 0)
+-- Dependencies: 203
 -- Name: vr_kontr_planprozent; Type: ACL; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2153,8 +2164,8 @@ GRANT SELECT ON TABLE vr_kontr_planprozent TO mspublic;
 
 
 --
--- TOC entry 2850 (class 0 OID 0)
--- Dependencies: 203
+-- TOC entry 2892 (class 0 OID 0)
+-- Dependencies: 204
 -- Name: vr_laufende_auftraege; Type: ACL; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2165,8 +2176,8 @@ GRANT SELECT ON TABLE vr_laufende_auftraege TO mspublic;
 
 
 --
--- TOC entry 2851 (class 0 OID 0)
--- Dependencies: 204
+-- TOC entry 2893 (class 0 OID 0)
+-- Dependencies: 205
 -- Name: vr_zahlungsplan_13_16; Type: ACL; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2177,8 +2188,8 @@ GRANT SELECT ON TABLE vr_zahlungsplan_13_16 TO mspublic;
 
 
 --
--- TOC entry 2852 (class 0 OID 0)
--- Dependencies: 205
+-- TOC entry 2894 (class 0 OID 0)
+-- Dependencies: 206
 -- Name: vr_zahlungsplan_14_17; Type: ACL; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2189,8 +2200,8 @@ GRANT SELECT ON TABLE vr_zahlungsplan_14_17 TO mspublic;
 
 
 --
--- TOC entry 2853 (class 0 OID 0)
--- Dependencies: 206
+-- TOC entry 2895 (class 0 OID 0)
+-- Dependencies: 207
 -- Name: vr_zahlungsplan_15_18; Type: ACL; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
@@ -2200,7 +2211,7 @@ GRANT ALL ON TABLE vr_zahlungsplan_15_18 TO stefan;
 GRANT SELECT ON TABLE vr_zahlungsplan_15_18 TO mspublic;
 
 
--- Completed on 2015-07-22 09:27:22 CEST
+-- Completed on 2015-07-27 08:23:51 CEST
 
 --
 -- PostgreSQL database dump complete
