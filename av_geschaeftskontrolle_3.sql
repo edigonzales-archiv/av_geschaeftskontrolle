@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.3.9
 -- Dumped by pg_dump version 9.3.9
--- Started on 2015-07-30 08:11:38 CEST
+-- Started on 2015-08-17 08:44:59 CEST
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -1057,6 +1057,7 @@ INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unte
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (120, 10, 'Transformationsdienst LV03 -> LV95', 650.00, 8, 2, 10, '2015-07-30', '2015-10-31', NULL, false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (121, 10, 'Checkservice MOCHECKSO (2016)', 13000.00, 8, 2, 10, '2016-01-01', '2016-12-31', NULL, false, NULL);
 INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (122, 45, 'Checkservice AVGBS einrichten', 15000.00, 8, 2, 10, '2015-07-30', '2015-08-17', NULL, false, NULL);
+INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unternehmer_id, datum_start, datum_ende, datum_abschluss, geplant, bemerkung) VALUES (123, 48, 'Bereinigung der EGID und EDID in der Gemeinde Kleinlützel', 2700.00, 8, 1, 11, '2015-08-17', '2015-08-31', NULL, false, NULL);
 
 
 --
@@ -1065,7 +1066,7 @@ INSERT INTO auftrag (id, projekt_id, name, kosten, mwst, verguetungsart_id, unte
 -- Name: auftrag_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('auftrag_id_seq', 122, true);
+SELECT pg_catalog.setval('auftrag_id_seq', 123, true);
 
 
 --
@@ -1133,6 +1134,7 @@ SELECT pg_catalog.setval('plankostenkonto_id_seq', 6, true);
 -- Data for Name: planzahlung; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
+INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (143, 123, 100.000, 2700.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (139, 119, 100.000, 16005.60, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (137, 118, 100.000, 7000.00, 8, 2015, NULL);
 INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, bemerkung) VALUES (126, 110, 70.000, 84000.00, 8, 2015, NULL);
@@ -1269,7 +1271,7 @@ INSERT INTO planzahlung (id, auftrag_id, prozent, kosten, mwst, rechnungsjahr, b
 -- Name: planzahlung_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('planzahlung_id_seq', 142, true);
+SELECT pg_catalog.setval('planzahlung_id_seq', 143, true);
 
 
 --
@@ -1278,7 +1280,6 @@ SELECT pg_catalog.setval('planzahlung_id_seq', 142, true);
 -- Data for Name: projekt; Type: TABLE DATA; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (9, 1, 'Abgleich und Bereinigung der Liegenschafts- und Hoheitsgrenzen (Wasseramt)', 5000.00, 8, '2012-01-01', NULL, NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (10, 1, 'Checkservice MOCHECKSO', 10000.00, 8, '2014-01-01', NULL, NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (11, 1, 'Korrektur der Kantonsgrenze Schönenwerd SO - Unterentfelden AG', 4600.00, 8, '2013-12-16', NULL, NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (12, 1, 'AVGBS-Workshop', 15000.00, 8, '2014-01-01', NULL, NULL);
@@ -1329,6 +1330,8 @@ Anmerkung: Oder ein ''Projekt'' für das gesamte Projekt? In diesem Fall ist es 
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (46, 1, 'Lokale Entzerrung', 150000.00, 8, '2015-04-29', '2017-04-28', NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (8, 1, 'Bereinigung Kantonsgrenze SO - BL (Armin Weber)', 19100.00, 8, '2013-09-09', '2015-04-29', NULL);
 INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (47, 1, 'Nachführung LFP3', 10000.00, 8, '2015-04-29', '2019-04-29', NULL);
+INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (9, 1, 'Abgleich und Bereinigung der Liegenschafts- und Hoheitsgrenzen (Wasseramt)', 5000.00, 8, '2012-01-01', '2015-08-17', NULL);
+INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, bemerkung) VALUES (48, 1, 'Bereinigung der EGID und EDID in der Gemeinde Kleinlützel', 2700.00, 8, '2015-08-17', '2015-08-31', NULL);
 
 
 --
@@ -1337,7 +1340,7 @@ INSERT INTO projekt (id, konto_id, name, kosten, mwst, datum_start, datum_ende, 
 -- Name: projekt_id_seq; Type: SEQUENCE SET; Schema: av_geschaeftskontrolle; Owner: stefan
 --
 
-SELECT pg_catalog.setval('projekt_id_seq', 47, true);
+SELECT pg_catalog.setval('projekt_id_seq', 48, true);
 
 
 --
@@ -2222,7 +2225,7 @@ GRANT ALL ON TABLE vr_zahlungsplan_15_18 TO stefan;
 GRANT SELECT ON TABLE vr_zahlungsplan_15_18 TO mspublic;
 
 
--- Completed on 2015-07-30 08:11:38 CEST
+-- Completed on 2015-08-17 08:44:59 CEST
 
 --
 -- PostgreSQL database dump complete
